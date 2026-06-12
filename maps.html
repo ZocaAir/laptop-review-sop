@@ -1,750 +1,422 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>赛博家电 · 内容知识库</title>
-  <style>
-    :root {
-      --bg: #0f0f17;
-      --surface: #1a1a2e;
-      --surface2: #16213e;
-      --card: #1e1e35;
-      --card-hover: #252540;
-      --border: rgba(255,255,255,0.07);
-      --text: #e8e8f0;
-      --muted: #8888aa;
-      --primary: #7c6ef5;
-      --primary-glow: rgba(124,110,245,0.25);
-      --cyan: #00d4cc;
-      --cyan-glow: rgba(0,212,204,0.2);
-      --orange: #ff8c42;
-      --orange-glow: rgba(255,140,66,0.2);
-      --green: #00c98d;
-      --green-glow: rgba(0,201,141,0.2);
-      --pink: #ff6b9d;
-      --pink-glow: rgba(255,107,157,0.2);
-      --yellow: #ffd166;
-      --yellow-glow: rgba(255,209,102,0.2);
-      --radius: 16px;
-      --radius-sm: 10px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛博家电 · 知识库导航</title>
+    <style>
+        :root {
+            --bg: #0d0d1a;
+            --card: #16162a;
+            --border: #2a2a4a;
+            --accent: #e74c3c;
+            --accent2: #f39c12;
+            --text: #e0e0f0;
+            --muted: #7a7a8a;
+            --green: #2ecc71;
+            --blue: #3498db;
+            --purple: #9b59b6;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a3e 0%, #0d0d2a 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header p {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 0.4rem;
+        }
+        /* Search */
+        .search-wrap {
+            max-width: 600px;
+            margin: 1.2rem auto 0;
+            position: relative;
+        }
+        .search-wrap input {
+            width: 100%;
+            padding: 0.65rem 1rem 0.65rem 2.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-wrap input:focus { border-color: var(--accent); }
+        .search-wrap .icon {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem 1.5rem 0;
+        }
+        .filter-btn {
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 14px 14px 0 0;
+        }
+        .card.sop::before { background: linear-gradient(90deg, var(--accent), #ff6b6b); }
+        .card.plan::before { background: linear-gradient(90deg, var(--blue), #00d4ff); }
+        .card.report::before { background: linear-gradient(90deg, var(--purple), #e056a0); }
+        .card.workflow::before { background: linear-gradient(90deg, var(--accent2), #f0c040); }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.08);
+        }
+        .card-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 0.7rem;
+        }
+        .card.sop .card-icon { background: rgba(231,76,60,0.15); }
+        .card.plan .card-icon { background: rgba(52,152,219,0.15); }
+        .card.report .card-icon { background: rgba(155,89,182,0.15); }
+        .card.workflow .card-icon { background: rgba(243,156,18,0.15); }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
+        .card-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .card.sop .card-tag { background: rgba(231,76,60,0.15); color: #e74c3c; }
+        .card.plan .card-tag { background: rgba(52,152,219,0.15); color: #5dade2; }
+        .card.report .card-tag { background: rgba(155,89,182,0.15); color: #c39bd3; }
+        .card.workflow .card-tag { background: rgba(243,156,18,0.15); color: #f0c040; }
 
-    /* ── background mesh ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 40% at 10% 5%, rgba(124,110,245,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 35% at 90% 8%, rgba(0,212,204,0.14) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 30% at 50% 95%, rgba(255,107,157,0.10) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    /* ── header ── */
-    header {
-      padding: 48px 0 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 12px;
-    }
-
-    .logo-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary-glow);
-      border: 1px solid rgba(124,110,245,0.4);
-      border-radius: 100px;
-      padding: 6px 16px;
-      font-size: 13px;
-      color: #a89cf5;
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
-    }
-
-    .logo-badge span { font-size: 16px; }
-
-    h1 {
-      font-size: clamp(28px, 5vw, 46px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #e8e8f8 30%, var(--primary) 70%, var(--cyan) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    .stats-row {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .stat-num {
-      font-size: 28px;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--primary), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .stat-label { font-size: 12px; color: var(--muted); }
-
-    /* ── search & filter ── */
-    .controls {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .search-box {
-      flex: 1;
-      min-width: 220px;
-      position: relative;
-    }
-
-    .search-box svg {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.4;
-    }
-
-    .search-box input {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 11px 14px 11px 42px;
-      color: var(--text);
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .search-box input:focus { border-color: rgba(124,110,245,0.5); }
-    .search-box input::placeholder { color: var(--muted); }
-
-    .filter-group {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 8px 16px;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--muted);
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .filter-btn:hover { border-color: rgba(124,110,245,0.4); color: var(--text); }
-    .filter-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
-
-    /* ── section ── */
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .section-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .section-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .section-count {
-      margin-left: auto;
-      font-size: 12px;
-      color: var(--muted);
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 3px 10px;
-      border-radius: 100px;
-    }
-
-    /* ── grid ── */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 14px;
-    }
-
-    /* ── card ── */
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: all 0.22s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      border-radius: var(--radius) var(--radius) 0 0;
-      opacity: 0;
-      transition: opacity 0.22s;
-    }
-
-    .card:hover {
-      background: var(--card-hover);
-      border-color: rgba(255,255,255,0.14);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-
-    .card:hover::before { opacity: 1; }
-
-    /* accent colors per category */
-    .cat-sop .card::before { background: linear-gradient(90deg, var(--primary), var(--cyan)); }
-    .cat-sop .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(124,110,245,0.2); }
-
-    .cat-plan .card::before { background: linear-gradient(90deg, var(--orange), var(--yellow)); }
-    .cat-plan .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,140,66,0.2); }
-
-    .cat-workflow .card::before { background: linear-gradient(90deg, var(--green), var(--cyan)); }
-    .cat-workflow .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,201,141,0.2); }
-
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .card-emoji {
-      font-size: 26px;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .card-title {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.4;
-    }
-
-    .card-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 8px;
-      border-top: 1px solid var(--border);
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 3px 10px;
-      border-radius: 100px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-
-    .tag-sop { background: var(--primary-glow); color: #a89cf5; border: 1px solid rgba(124,110,245,0.3); }
-    .tag-plan { background: var(--orange-glow); color: #ffb07c; border: 1px solid rgba(255,140,66,0.3); }
-    .tag-workflow { background: var(--green-glow); color: #5ef5c0; border: 1px solid rgba(0,201,141,0.3); }
-    .tag-laptop { background: var(--cyan-glow); color: #4deee8; border: 1px solid rgba(0,212,204,0.3); }
-
-    .arrow-link {
-      font-size: 13px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: color 0.2s;
-    }
-
-    .card:hover .arrow-link { color: var(--text); }
-
-    /* ── no results ── */
-    .no-results {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--muted);
-      display: none;
-    }
-
-    .no-results.show { display: block; }
-
-    /* ── footer ── */
-    footer {
-      text-align: center;
-      padding: 32px 0 0;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--primary); text-decoration: none; }
-
-    /* ── responsive ── */
-    @media (max-width: 640px) {
-      .stats-row { gap: 16px; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .controls { flex-direction: column; }
-      .search-box { min-width: 100%; }
-    }
-
-    /* ── hidden (filter) ── */
-    .card-wrap.hidden { display: none; }
-  </style>
+        .card h3 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 0.4rem;
+        }
+        .card p {
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+        .card-meta {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.7rem;
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+        .hidden { display: none !important; }
+        /* Platform links */
+        .platform-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.5rem 1.5rem 0;
+        }
+        .platform-link {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .platform-link:hover { color: var(--text); border-color: rgba(255,255,255,0.15); }
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- Header -->
-  <header>
-    <div class="logo-badge"><span>📺</span> 赛博家电 · CyberHome Appliance</div>
-    <h1>内容知识库</h1>
-    <p class="subtitle">测评 SOP、项目策划、执行流程 — 家电数码全品类内容生产指南</p>
-    <div class="stats-row">
-      <div class="stat"><span class="stat-num">17</span><span class="stat-label">文档总数</span></div>
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label">测评品类</span></div>
-      <div class="stat"><span class="stat-num">3</span><span class="stat-label">内容类型</span></div>
+<div class="header">
+    <h1>赛博家电 · 知识库导航</h1>
+    <p>大学生轻薄本测评 SOP + 家电数码内容策划全集</p>
+    <div class="search-wrap">
+        <span class="icon">🔍</span>
+        <input type="text" id="search" placeholder="搜索文档...">
     </div>
-  </header>
-
-  <!-- Controls -->
-  <div class="controls">
-    <div class="search-box">
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-      </svg>
-      <input type="text" id="search" placeholder="搜索文档名称或品类…" autocomplete="off" />
+    <div class="platform-links">
+        <a class="platform-link" href="https://laptop-review-sop.pages.dev" target="_blank">🌐 Cloudflare Pages</a>
+        <a class="platform-link" href="https://zocaair.github.io/laptop-review-sop/" target="_blank">🐙 GitHub Pages</a>
     </div>
-    <div class="filter-group">
-      <button class="filter-btn active" data-filter="all">全部</button>
-      <button class="filter-btn" data-filter="sop">SOP 指南</button>
-      <button class="filter-btn" data-filter="plan">项目策划</button>
-      <button class="filter-btn" data-filter="workflow">工作流</button>
-    </div>
-  </div>
+</div>
 
-  <!-- Section 1: SOP -->
-  <div class="section cat-sop" data-section="sop">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--primary-glow);">📋</div>
-      <span class="section-title">测评 SOP 指南</span>
-      <span class="section-count" id="count-sop">7 篇</span>
-    </div>
-    <div class="cards-grid" id="grid-sop">
+<div class="filters">
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="sop">SOP 指南</button>
+    <button class="filter-btn" data-filter="plan">项目策划</button>
+    <button class="filter-btn" data-filter="report">行业报告</button>
+    <button class="filter-btn" data-filter="workflow">工作流</button>
+</div>
 
-      <div class="card-wrap" data-cat="sop" data-tags="轻薄本 笔记本 大学生">
-        <a class="card" href="index.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">💻</div>
-            <div class="card-title">大学生轻薄本测评 SOP 指南</div>
-          </div>
-          <div class="card-desc">大学生购机场景下轻薄本的完整测评流程、评分体系与内容拍摄规范</div>
-          <div class="card-footer">
-            <span class="tag tag-laptop">轻薄本</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+<div class="grid" id="grid">
 
-      <div class="card-wrap" data-cat="sop" data-tags="家电 数码 长视频 YouTube B站">
-        <a class="card" href="sop-longvideo.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🎬</div>
-            <div class="card-title">家电数码长视频 SOP（YouTube · B站）</div>
-          </div>
-          <div class="card-desc">适用于 YouTube 和 B站的家电数码长视频制作全流程标准操作手册</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">长视频</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <!-- 首页 -->
+    <a class="card plan" href="index.html" target="_blank">
+        <div class="card-icon">📘</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>大学生轻薄本测评 SOP 指南</h3>
+        <p>面向大学生群体的轻薄本测评标准执行流程</p>
+        <div class="card-meta"><span>📄 HTML</span><span>🕐 入门指南</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="sop" data-tags="家庭影院 测评 商务">
-        <a class="card" href="sop-hometheater.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🎵</div>
-            <div class="card-title">家庭影院测评 SOP 与商务开发报告</div>
-          </div>
-          <div class="card-desc">家庭影院品类测评内容制作 SOP，含商务合作开发策略与报价体系</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">家庭影院</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <!-- SOP 指南 -->
+    <a class="card sop" href="sop-longvideo.html" target="_blank">
+        <div class="card-icon">🎬</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>家电数码长视频 SOP（YouTube + B站）</h3>
+        <p>长视频内容制作标准流程，覆盖 YouTube 与 B站双平台</p>
+        <div class="card-meta"><span>📄 HTML</span><span>🕐 10 min</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="sop" data-tags="冰箱 测评 商务">
-        <a class="card" href="sop-fridge.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🧊</div>
-            <div class="card-title">冰箱测评 SOP 与商务开发报告</div>
-          </div>
-          <div class="card-desc">冰箱品类系统测评标准、拍摄流程及品牌商务开发完整指南</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">冰箱</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card sop" href="sop-hometheater.html" target="_blank">
+        <div class="card-icon">🎦</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>家庭影院测评内容 SOP 与商务开发报告</h3>
+        <p>家庭影院测评标准流程及商务合作框架</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="sop" data-tags="空调 测评 商务">
-        <a class="card" href="sop-aircon.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">❄️</div>
-            <div class="card-title">空调测评 SOP 与商务开发报告</div>
-          </div>
-          <div class="card-desc">空调品类测评方法论、内容制作规范与品牌商务开发策略</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">空调</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card sop" href="sop-fridge.html" target="_blank">
+        <div class="card-icon">❄️</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>冰箱测评内容 SOP 与商务开发报告</h3>
+        <p>冰箱品类测评标准 + 商务开发策略</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="sop" data-tags="扫地机器人 测评 商务">
-        <a class="card" href="sop-robot.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🤖</div>
-            <div class="card-title">扫地机器人测评 SOP 与商务开发报告</div>
-          </div>
-          <div class="card-desc">扫地机器人品类测评框架、实测流程与品牌商单开发完整指南</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">扫地机</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card sop" href="sop-aircon.html" target="_blank">
+        <div class="card-icon">❄️</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>空调测评内容 SOP 与商务开发报告</h3>
+        <p>空调测评标准执行流程及品牌合作指南</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="sop" data-tags="电视 测评 材料清单">
-        <a class="card" href="sop-tv.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">📺</div>
-            <div class="card-title">电视机测评 SOP 与商务开发材料清单</div>
-          </div>
-          <div class="card-desc">电视机品类专项测评 SOP，含商务合作材料清单与报价参考</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">电视</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card sop" href="sop-robot.html" target="_blank">
+        <div class="card-icon">🤖</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>扫地机器人测评内容 SOP 与商务开发报告</h3>
+        <p>扫地机器人测评标准 + 商务开发材料清单</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="sop" data-tags="数码 家电 测评体系 清单">
-        <a class="card" href="sop-system.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🗂️</div>
-            <div class="card-title">数码与家电产品测评体系清单 v1.0</div>
-          </div>
-          <div class="card-desc">跨品类通用测评体系框架，涵盖所有家电数码品类的评分维度与方法</div>
-          <div class="card-footer">
-            <span class="tag tag-sop">全品类</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card sop" href="sop-tv.html" target="_blank">
+        <div class="card-icon">📺</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>电视机测评内容 SOP 与商务开发材料清单</h3>
+        <p>电视测评标准体系 + 商务材料模板</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
-    </div>
-  </div>
+    <a class="card sop" href="sop-system.html" target="_blank">
+        <div class="card-icon">📋</div>
+        <span class="card-tag">SOP 指南</span>
+        <h3>数码与家电产品测评体系清单 v1.0</h3>
+        <p>全品类测评指标体系总览</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
-  <!-- Section 2: 项目策划 -->
-  <div class="section cat-plan" data-section="plan">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--orange-glow);">📊</div>
-      <span class="section-title">2026 年下半年项目策划报告</span>
-      <span class="section-count" id="count-plan">8 篇</span>
-    </div>
-    <div class="cards-grid" id="grid-plan">
+    <!-- 项目策划 -->
+    <a class="card plan" href="plan-hometheater.html" target="_blank">
+        <div class="card-icon">🎦</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 家庭影院长视频项目策划</h3>
+        <p>家庭影院品类下半年内容规划与执行方案</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="电视 长视频 整体 策划">
-        <a class="card" href="plan-tv-overall.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">📺</div>
-            <div class="card-title">电视长视频整体项目策划报告</div>
-          </div>
-          <div class="card-desc">2026年下半年电视品类长视频整体项目策划，含选题矩阵与资源规划</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">电视·整体</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-oven.html" target="_blank">
+        <div class="card-icon">🍳</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 蒸烤箱长视频项目策划</h3>
+        <p>蒸烤箱品类长视频内容策划方案</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="电视 长视频 策划 中国市场">
-        <a class="card" href="plan-tv.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🖥️</div>
-            <div class="card-title">中国市场电视长视频项目策划报告</div>
-          </div>
-          <div class="card-desc">面向中国市场的电视品类长视频内容策划，含竞品分析与投放建议</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">电视</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-aircon.html" target="_blank">
+        <div class="card-icon">❄️</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 空调长视频项目策划</h3>
+        <p>空调品类下半年长视频项目完整策划报告</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="扫地机器人 长视频 整体 策划">
-        <a class="card" href="plan-robot-overall.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🤖</div>
-            <div class="card-title">扫地机器人长视频整体项目策划报告</div>
-          </div>
-          <div class="card-desc">2026年下半年扫地机器人整体项目策划，含赛道分析与内容节奏规划</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">扫地机·整体</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-fridge.html" target="_blank">
+        <div class="card-icon">🧊</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 冰箱长视频项目策划</h3>
+        <p>冰箱品类下半年内容项目策划报告</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="扫地机器人 长视频 策划">
-        <a class="card" href="plan-robot.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🏠</div>
-            <div class="card-title">扫地机器人长视频项目策划报告</div>
-          </div>
-          <div class="card-desc">扫地机器人品类长视频内容策划，含选题方向与数据预测</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">扫地机</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-tv.html" target="_blank">
+        <div class="card-icon">📺</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 电视长视频项目策划</h3>
+        <p>电视品类下半年长视频项目策划报告</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="家庭影院 长视频 策划 中国市场">
-        <a class="card" href="plan-hometheater.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🎬</div>
-            <div class="card-title">中国市场家庭影院长视频项目策划报告</div>
-          </div>
-          <div class="card-desc">家庭影院品类长视频项目整体规划，含受众分析与内容日历</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">家庭影院</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-robot.html" target="_blank">
+        <div class="card-icon">🤖</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 扫地机器人长视频项目策划</h3>
+        <p>扫地机器人品类下半年项目策划报告</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="冰箱 长视频 策划 中国市场">
-        <a class="card" href="plan-fridge.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🧊</div>
-            <div class="card-title">中国市场冰箱长视频项目策划报告</div>
-          </div>
-          <div class="card-desc">冰箱品类长视频策划，含市场规模分析、KOL 选择与推广策略</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">冰箱</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-robot-overall.html" target="_blank">
+        <div class="card-icon">🤖</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 扫地机器人长视频整体项目策划</h3>
+        <p>扫地机器人整体项目顶层设计与执行规划</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="空调 长视频 策划 中国市场">
-        <a class="card" href="plan-aircon.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">❄️</div>
-            <div class="card-title">中国市场空调长视频项目策划报告</div>
-          </div>
-          <div class="card-desc">空调品类长视频内容方案，含季节营销节奏与品牌合作预算</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">空调</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <a class="card plan" href="plan-tv-overall.html" target="_blank">
+        <div class="card-icon">📺</div>
+        <span class="card-tag">项目策划</span>
+        <h3>2026年下半年 · 电视长视频整体项目策划</h3>
+        <p>电视品类整体项目顶层设计与执行规划</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026 H2</span></div>
+    </a>
 
-      <div class="card-wrap" data-cat="plan" data-tags="蒸烤箱 长视频 策划 中国市场">
-        <a class="card" href="plan-oven.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">🍳</div>
-            <div class="card-title">中国市场蒸烤箱长视频项目策划报告</div>
-          </div>
-          <div class="card-desc">蒸烤箱品类内容方向、目标受众与长视频投放策略全面规划</div>
-          <div class="card-footer">
-            <span class="tag tag-plan">蒸烤箱</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
+    <!-- 行业报告（新增） -->
+    <a class="card report" href="report-social-ecommerce.html" target="_blank">
+        <div class="card-icon">📊</div>
+        <span class="card-tag">行业报告</span>
+        <h3>2025-2026年家电行业社交电商数据报告</h3>
+        <p>覆盖抖音电商、小红书、B站三大平台，带货GMV、商单投放、用户画像、品类表现与趋势洞察</p>
+        <div class="card-meta"><span>📄 HTML</span><span>📅 2026.06</span></div>
+    </a>
 
-    </div>
-  </div>
-
-  <!-- Section 3: 工作流 -->
-  <div class="section cat-workflow" data-section="workflow">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--green-glow);">⚡</div>
-      <span class="section-title">执行流程与工作流报告</span>
-      <span class="section-count" id="count-workflow">1 篇</span>
-    </div>
-    <div class="cards-grid" id="grid-workflow">
-
-      <div class="card-wrap" data-cat="workflow" data-tags="B站 数码 家电 博主 流程 执行">
-        <a class="card" href="bilibili-workflow.html" target="_blank">
-          <div class="card-top">
-            <div class="card-emoji">▶️</div>
-            <div class="card-title">B站数码家电博主标准执行流程报告</div>
-          </div>
-          <div class="card-desc">适用于 B站数码家电类 UP主的完整内容生产、发布与商务执行标准流程</div>
-          <div class="card-footer">
-            <span class="tag tag-workflow">B站</span>
-            <span class="arrow-link">查看 →</span>
-          </div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="no-results" id="no-results">
-    🔍 没有找到匹配的文档
-  </div>
-
-  <footer>
-    <p>赛博家电内容知识库 · 由 <a href="https://github.com/ZocaAir/laptop-review-sop" target="_blank">GitHub Pages</a> 托管 · 2026</p>
-  </footer>
+    <!-- 工作流 -->
+    <a class="card workflow" href="bilibili-workflow.html" target="_blank">
+        <div class="card-icon">▶️</div>
+        <span class="card-tag">工作流</span>
+        <h3>B站数码家电博主标准执行流程报告</h3>
+        <p>B站内容创作标准执行流程与规范</p>
+        <div class="card-meta"><span>📄 HTML</span></div>
+    </a>
 
 </div>
 
+<div class="footer">
+    <p>赛博家电 · 知识库 | 最后更新：2026年6月</p>
+    <p style="margin-top:0.4rem; font-size:0.68rem; color:#555;">Hosted on GitHub Pages & Cloudflare Pages · 全球可访问</p>
+</div>
+
 <script>
-  const searchInput = document.getElementById('search');
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const noResults = document.getElementById('no-results');
-  let activeFilter = 'all';
+    // Search
+    const searchInput = document.getElementById('search');
+    const grid = document.getElementById('grid');
+    const cards = grid.querySelectorAll('.card');
 
-  function updateCounts() {
-    ['sop','plan','workflow'].forEach(cat => {
-      const el = document.getElementById('count-' + cat);
-      if (!el) return;
-      const visible = document.querySelectorAll(`#grid-${cat} .card-wrap:not(.hidden)`).length;
-      el.textContent = visible + ' 篇';
-    });
-  }
-
-  function applyFilters() {
-    const q = searchInput.value.trim().toLowerCase();
-    const wraps = document.querySelectorAll('.card-wrap');
-    let anyVisible = false;
-
-    wraps.forEach(wrap => {
-      const cat = wrap.dataset.cat;
-      const tags = (wrap.dataset.tags || '').toLowerCase();
-      const title = wrap.querySelector('.card-title')?.textContent.toLowerCase() || '';
-      const desc = wrap.querySelector('.card-desc')?.textContent.toLowerCase() || '';
-
-      const matchFilter = activeFilter === 'all' || cat === activeFilter;
-      const matchSearch = !q || title.includes(q) || desc.includes(q) || tags.includes(q);
-
-      if (matchFilter && matchSearch) {
-        wrap.classList.remove('hidden');
-        anyVisible = true;
-      } else {
-        wrap.classList.add('hidden');
-      }
+    searchInput.addEventListener('input', function() {
+        const q = this.value.toLowerCase().trim();
+        cards.forEach(card => {
+            const text = (card.querySelector('h3')?.textContent + ' ' + card.querySelector('p')?.textContent).toLowerCase();
+            card.classList.toggle('hidden', q && !text.includes(q));
+        });
     });
 
-    // hide empty sections
-    ['sop','plan','workflow'].forEach(cat => {
-      const section = document.querySelector(`[data-section="${cat}"]`);
-      if (!section) return;
-      const visible = section.querySelectorAll('.card-wrap:not(.hidden)').length;
-      section.style.display = visible > 0 ? '' : 'none';
+    // Filters
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            cards.forEach(card => {
+                if (filter === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.toggle('hidden', !card.classList.contains(filter));
+                }
+            });
+        });
     });
-
-    noResults.classList.toggle('show', !anyVisible);
-    updateCounts();
-  }
-
-  searchInput.addEventListener('input', applyFilters);
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeFilter = btn.dataset.filter;
-      applyFilters();
-    });
-  });
-
-  updateCounts();
 </script>
 </body>
 </html>
