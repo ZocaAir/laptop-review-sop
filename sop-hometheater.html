@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家庭影院测评内容 SOP 与商务开发报告</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: #f1f1f8;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: 1220px;
+      margin: 34px auto;
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero {
+      padding: 58px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 14%, rgba(168,85,247,.44), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(59,130,246,.34), transparent 32%),
+        linear-gradient(135deg, #1e1b4b 0%, #0f172a 45%, #6d28d9 100%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #ede9fe;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+      max-width: 980px;
+      margin-top: 18px;
+      color: #ede9fe;
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .hero-card {
+      padding: 19px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .hero-card span {
+      font-size: 13px;
+      color: #ddd6fe;
+    }
+
+    .content {
+      padding: 46px 64px 64px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .num {
+      width: 37px;
+      height: 37px;
+      border-radius: 13px;
+      background: #7c3aed;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: #111827;
+      font-size: 18px;
+    }
+
+    p { margin: 8px 0; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15,23,42,.055);
+    }
+
+    .blue {
+      background: linear-gradient(180deg, #eff6ff 0%, #fff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .purple {
+      background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%);
+      border-color: #ddd6fe;
+    }
+
+    .green {
+      background: linear-gradient(180deg, #ecfdf5 0%, #fff 100%);
+      border-color: #bbf7d0;
+    }
+
+    .orange {
+      background: linear-gradient(180deg, #fff7ed 0%, #fff 100%);
+      border-color: #fed7aa;
+    }
+
+    .cyan {
+      background: linear-gradient(180deg, #ecfeff 0%, #fff 100%);
+      border-color: #a5f3fc;
+    }
+
+    .red {
+      background: linear-gradient(180deg, #fef2f2 0%, #fff 100%);
+      border-color: #fecaca;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li { margin: 7px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f172a;
+      color: #fff;
+      text-align: left;
+      padding: 14px 15px;
+      font-weight: 650;
+    }
+
+    td {
+      padding: 14px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    .score {
+      color: #7c3aed;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .danger {
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .success {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    .warning {
+      color: #ea580c;
+      font-weight: 800;
+    }
+
+    .quote {
+      padding: 22px 26px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border-left: 6px solid #7c3aed;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .alert {
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #7f1d1d;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #16a34a;
+      font-weight: 900;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+    }
+
+    .step {
+      padding: 17px 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .step b {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #7c3aed;
+      color: #fff;
+      margin-bottom: 9px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 13px;
+      color: #0f172a;
+    }
+
+    .step span {
+      display: block;
+      color: #64748b;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 26px 64px;
+      background: #0f172a;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="hero">
+      <div class="badge">🎬 家庭影院测评 · 影音系统 · 内容 SOP · 商务开发 · 安装调试红线</div>
+      <h1>中国市场家庭影院内容创作<br />测试体系与商务执行报告</h1>
+      <p class="subtitle">
+        适用于 B站 / YouTube 长视频博主、影音数码账号及家装影音内容团队。报告覆盖投影仪、激光电视、电视、回音壁、AV功放、无源音箱、低音炮、幕布、播放器、NAS、HDMI线材、声学处理和全屋智能影音场景，建立可复用的画质、音质、延迟、兼容性、安装调试、商务合作和红线体系。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <strong>7类</strong>
+          <span>影音测试场景</span>
+        </div>
+        <div class="hero-card">
+          <strong>50+</strong>
+          <span>画质 / 音质 / 兼容性项目</span>
+        </div>
+        <div class="hero-card">
+          <strong>8步</strong>
+          <span>内容生产 SOP</span>
+        </div>
+        <div class="hero-card">
+          <strong>5条</strong>
+          <span>核心红线：真实、调校、版权、参数、披露</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>家庭影院测评体系目标</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>对用户的价值</h3>
+            <ul>
+              <li>判断一套影院是否真的有“电影院感”，而不是只看参数堆料。</li>
+              <li>解释亮度、对比度、HDR、色准、音场、低频、声道、HDMI 2.1、eARC、杜比全景声等复杂概念。</li>
+              <li>帮助用户避坑：客厅光线、投影距离、幕布类型、低音扰民、线材预埋、功放匹配、版权片源。</li>
+              <li>给出预算分层：3000、5000、10000、30000、全屋定制影院方案。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>对内容团队的价值</h3>
+            <ul>
+              <li>形成可复用的画质、音质、延迟、兼容性和安装调试测试流程。</li>
+              <li>减少“好听”“震撼”“很清晰”的纯主观表达。</li>
+              <li>建立横评数据库，覆盖投影、回音壁、电视、功放音箱、低音炮和幕布。</li>
+              <li>提升影音赛道商单价值，拓展家装、智能家居和线下门店合作。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>对商务合作的价值</h3>
+            <ul>
+              <li>向品牌证明账号具备真实影音空间和标准调试能力。</li>
+              <li>提前明确样品、安装、调音、线材、片源、版权和结论边界。</li>
+              <li>把单品测评升级为方案测评、影音室改造、大促转化、门店探访和长期栏目。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote" style="margin-top:18px;">
+          家庭影院测评的核心不是展示一张漂亮画面，而是在真实客厅或影音室里回答：白天能不能看、晚上黑位够不够、声音有没有包围感、低频会不会糊、游戏延迟高不高、系统搭起来会不会踩坑。
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>测试场景搭建</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>场景 A：标准客厅影院测试</h3>
+            <ul>
+              <li><strong>用途：</strong>模拟中国家庭最常见的客厅观影环境。</li>
+              <li><strong>空间：</strong>建议 15-35㎡，记录层高、墙面颜色、窗户面积、遮光条件。</li>
+              <li><strong>设备：</strong>电视 / 投影 / 激光电视 + 回音壁 / 2.1 / 5.1 系统。</li>
+              <li><strong>测试重点：</strong>白天可看性、夜间观影、声音包围感、低频扰民、家人使用便利性。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>场景 B：暗室画质测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试投影、电视、激光电视在理想观影环境下的上限。</li>
+              <li><strong>条件：</strong>遮光窗帘、低反光墙面、关闭主要环境光。</li>
+              <li><strong>测试重点：</strong>黑位、对比度、HDR 高光、暗部细节、色彩准确度、运动补偿。</li>
+              <li><strong>注意：</strong>暗室结论不能直接代表白天客厅体验。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>场景 C：白天抗光测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试投影 / 激光电视 / 幕布在白天和开灯环境下的可用性。</li>
+              <li><strong>条件：</strong>自然光、顶灯、射灯、电视墙环境光分档测试。</li>
+              <li><strong>测试重点：</strong>亮度衰减、画面灰雾感、字幕可读性、肤色是否发白、抗光幕效果。</li>
+              <li><strong>注意：</strong>必须记录照度 lux，不能只说“白天也能看”。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>场景 D：多声道音频测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试回音壁、AV功放、卫星音箱、低音炮的声场表现。</li>
+              <li><strong>布局：</strong>2.0 / 2.1 / 3.1 / 5.1 / 5.1.2 / 7.1.4 分级测试。</li>
+              <li><strong>测试重点：</strong>对白清晰度、环绕定位、天空声道、低频下潜、动态范围、声像移动。</li>
+              <li><strong>注意：</strong>声学环境和摆位会极大影响结论。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>场景 E：游戏与低延迟测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试主机游戏、PC游戏、云游戏使用体验。</li>
+              <li><strong>设备：</strong>PS5、Xbox、Switch、游戏PC、HDMI 2.1 线材。</li>
+              <li><strong>测试重点：</strong>输入延迟、4K 120Hz、VRR、ALLM、HDR 游戏、eARC 回传稳定性。</li>
+              <li><strong>注意：</strong>电影模式和游戏模式延迟差异很大，必须分开测试。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>场景 F：家庭易用性测试</h3>
+            <ul>
+              <li><strong>用途：</strong>判断普通家庭成员是否能轻松使用。</li>
+              <li><strong>项目：</strong>开机速度、遥控器、系统广告、投屏、片源 App、语音、老人小孩使用。</li>
+              <li><strong>测试重点：</strong>从开机到播放电影需要几步，是否频繁断连、黑屏、无声。</li>
+              <li><strong>注意：</strong>家庭影院不能只服务发烧友，也要考虑家人接受度。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>场景 G：安装布线与装修测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试真实落地难度和后期维护成本。</li>
+              <li><strong>内容：</strong>投影吊装、幕布安装、音箱走线、低音炮摆位、HDMI预埋、散热、机柜。</li>
+              <li><strong>测试重点：</strong>安装成本、线材兼容、检修便利、家装美观、租房可行性。</li>
+              <li><strong>注意：</strong>影院方案推荐必须包含空间和装修前提。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>测试环境记录模板</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>记录项</th>
+              <th>填写要求</th>
+              <th>示例</th>
+              <th>为什么重要</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>空间信息</td>
+              <td>面积、层高、观影距离、墙面颜色、窗户面积。</td>
+              <td>客厅 25㎡ / 观影距离 3.2m / 白墙 / 南向窗</td>
+              <td>决定画面尺寸、亮度需求和声学效果。</td>
+            </tr>
+            <tr>
+              <td>环境光</td>
+              <td>暗室、白天、开灯，记录照度 lux。</td>
+              <td>白天窗边 380 lux / 观影位 120 lux</td>
+              <td>投影和激光电视结论高度依赖环境光。</td>
+            </tr>
+            <tr>
+              <td>显示设备</td>
+              <td>型号、尺寸、亮度模式、色彩模式、固件版本。</td>
+              <td>某品牌 4K 投影，电影模式，固件 V1.2.3</td>
+              <td>不同模式画质、亮度、延迟完全不同。</td>
+            </tr>
+            <tr>
+              <td>音频设备</td>
+              <td>声道配置、功放型号、音箱型号、低音炮位置、校准方式。</td>
+              <td>5.1.2 / AVR 自动校准 / 低音炮前墙右侧</td>
+              <td>声音表现受摆位和校准影响极大。</td>
+            </tr>
+            <tr>
+              <td>片源信息</td>
+              <td>流媒体、蓝光原盘、本地文件、码率、HDR格式、音轨。</td>
+              <td>UHD蓝光 / Dolby Vision / TrueHD Atmos</td>
+              <td>低码率流媒体不能代表设备画质上限。</td>
+            </tr>
+            <tr>
+              <td>连接链路</td>
+              <td>播放器、HDMI线、功放、电视 / 投影、eARC、分配器。</td>
+              <td>Apple TV 4K → AVR → OLED TV，HDMI 2.1</td>
+              <td>黑屏、无声、降规格常来自链路问题。</td>
+            </tr>
+            <tr>
+              <td>价格信息</td>
+              <td>设备价、安装费、线材费、幕布费、声学处理费、日期。</td>
+              <td>总预算 26800 元，记录于 2025-06-01</td>
+              <td>家庭影院推荐必须看整套系统成本。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>测试工具清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>工具类型</th>
+              <th>推荐工具 / 材料</th>
+              <th>用途</th>
+              <th>必要程度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>画质测试</td>
+              <td>照度计、色彩校准仪、测试图、灰阶图、HDR 测试片。</td>
+              <td>测试亮度、色准、灰阶、暗部、高光、均匀性。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>音频测试</td>
+              <td>分贝仪、测量麦克风、REW 软件、粉噪、扫频测试音。</td>
+              <td>测试声压、频响、低频驻波、声道电平、延迟。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>延迟测试</td>
+              <td>输入延迟测试仪、高速摄影、游戏主机。</td>
+              <td>测试游戏模式、电影模式、4K 120Hz 延迟。</td>
+              <td class="score">中高</td>
+            </tr>
+            <tr>
+              <td>兼容性测试</td>
+              <td>PS5、Xbox、Apple TV、蓝光机、NAS、不同 HDMI 线材。</td>
+              <td>测试 HDR、VRR、eARC、Atmos、DTS、CEC 稳定性。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>空间测量</td>
+              <td>卷尺、激光测距仪、水平尺、角度尺。</td>
+              <td>记录投射比、观影距离、幕布尺寸、音箱摆位。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>噪音 / 功耗</td>
+              <td>分贝仪、功耗计、智能插座。</td>
+              <td>测试投影风噪、功放功耗、低音炮待机、整套影院耗电。</td>
+              <td class="score">中高</td>
+            </tr>
+            <tr>
+              <td>拍摄设备</td>
+              <td>相机、三脚架、收音设备、补光灯、屏摄固定参数。</td>
+              <td>拍摄画质对比、安装过程、系统操作和声音讲解。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>数据记录</td>
+              <td>Excel、飞书表格、Notion、Google Sheet。</td>
+              <td>记录画质、声音、延迟、兼容性、安装和评分。</td>
+              <td class="score">高</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pill-list">
+          <span class="pill">基础必备：照度计</span>
+          <span class="pill">基础必备：分贝仪</span>
+          <span class="pill">基础必备：卷尺 / 激光测距</span>
+          <span class="pill">基础必备：功耗计</span>
+          <span class="pill">进阶必备：校色仪</span>
+          <span class="pill">进阶必备：测量麦克风</span>
+          <span class="pill">进阶必备：REW 软件</span>
+          <span class="pill">进阶必备：HDMI 2.1 测试链路</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>家庭影院测试项目总清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>一、显示画质测试</h3>
+            <ul>
+              <li>暗室亮度、白天亮度、开灯可看性。</li>
+              <li>黑位、对比度、暗部细节。</li>
+              <li>HDR 高光、色彩饱和度、肤色准确性。</li>
+              <li>运动补偿、拖影、24p 电影抖动。</li>
+              <li>画面均匀性、边角虚焦、色偏。</li>
+              <li>4K 清晰度、文字锐度、字幕可读性。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>二、音质与声场测试</h3>
+            <ul>
+              <li>对白清晰度：新闻、电影对白、低音背景下人声。</li>
+              <li>环绕定位：飞机、雨声、枪声、车辆移动。</li>
+              <li>天空声道：雨落、直升机、空间高度感。</li>
+              <li>低频下潜：爆炸、鼓点、电子乐、动作片。</li>
+              <li>动态范围：安静对白到大场面切换。</li>
+              <li>音量开大是否失真、刺耳、低频糊。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>三、低音炮与房间声学测试</h3>
+            <ul>
+              <li>低频下潜、量感、速度、拖尾。</li>
+              <li>不同座位低频是否忽大忽小。</li>
+              <li>墙角、前墙、沙发旁不同摆位差异。</li>
+              <li>低频是否扰民、是否引发家具共振。</li>
+              <li>分频点、相位、延迟调节效果。</li>
+              <li>是否需要低频陷阱、地毯、窗帘、吸音扩散。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>四、系统兼容性测试</h3>
+            <ul>
+              <li>Dolby Vision、HDR10、HDR10+、HLG 支持情况。</li>
+              <li>Dolby Atmos、DTS:X、TrueHD、DTS-HD 支持情况。</li>
+              <li>eARC 回传是否稳定，是否掉声。</li>
+              <li>HDMI CEC 一键开关机是否可靠。</li>
+              <li>4K 120Hz、VRR、ALLM、色度采样是否正常。</li>
+              <li>播放器、NAS、流媒体 App 兼容性。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>五、游戏体验测试</h3>
+            <ul>
+              <li>输入延迟：电影模式、游戏模式、低延迟模式。</li>
+              <li>4K 60Hz / 4K 120Hz 游戏表现。</li>
+              <li>HDR 游戏亮度和暗部可见度。</li>
+              <li>VRR 是否闪烁、黑屏、掉帧。</li>
+              <li>大屏游戏晕动感和拖影。</li>
+              <li>声音延迟和画音同步。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>六、安装调试测试</h3>
+            <ul>
+              <li>投影距离、吊装高度、梯形校正、镜头位移。</li>
+              <li>幕布平整度、抗光效果、增益、可视角。</li>
+              <li>音箱摆位、线材预埋、功放校准、低音炮调试。</li>
+              <li>机柜散热、插座数量、HDMI 线材长度。</li>
+              <li>安装收费、施工难度、后期检修。</li>
+              <li>租房、精装房、毛坯装修不同方案可行性。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>七、系统易用性测试</h3>
+            <ul>
+              <li>开机速度、切换片源速度。</li>
+              <li>遥控器、App、语音助手。</li>
+              <li>投屏稳定性：手机、电脑、平板。</li>
+              <li>系统广告、会员入口、片源生态。</li>
+              <li>老人、小孩、伴侣是否容易使用。</li>
+              <li>常见故障：黑屏、无声、信号丢失、音画不同步。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>八、长期体验测试</h3>
+            <ul>
+              <li>连续 7-30 天使用稳定性。</li>
+              <li>投影亮度衰减、风噪、灰尘、散热。</li>
+              <li>回音壁 / 功放固件稳定性。</li>
+              <li>HDMI 握手、eARC 掉线、App 崩溃。</li>
+              <li>家庭成员真实使用反馈。</li>
+              <li>维护成本：灯泡、滤网、线材、会员、维修。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">06</span>
+          <h2>家庭影院评分模型</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>权重</th>
+              <th>核心测试</th>
+              <th>结论表达</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>画质表现</td>
+              <td class="score">25%</td>
+              <td>亮度、对比度、HDR、色彩、运动、均匀性、白天可看性。</td>
+              <td>画面有没有影院感，白天和晚上分别能不能看。</td>
+            </tr>
+            <tr>
+              <td>音质与声场</td>
+              <td class="score">25%</td>
+              <td>对白、环绕、天空声道、低频、动态、定位。</td>
+              <td>声音是不是有包围感和沉浸感。</td>
+            </tr>
+            <tr>
+              <td>兼容性与稳定性</td>
+              <td class="score">15%</td>
+              <td>HDR、Atmos、eARC、HDMI 2.1、播放器、NAS、游戏主机。</td>
+              <td>高规格片源和设备链路是否稳定。</td>
+            </tr>
+            <tr>
+              <td>安装调试难度</td>
+              <td class="score">15%</td>
+              <td>投距、幕布、摆位、布线、校准、施工成本。</td>
+              <td>普通家庭能不能落地，装修阶段要不要提前规划。</td>
+            </tr>
+            <tr>
+              <td>游戏与低延迟</td>
+              <td class="score">8%</td>
+              <td>输入延迟、4K120、VRR、HDR游戏、音画同步。</td>
+              <td>适不适合主机和 PC 游戏玩家。</td>
+            </tr>
+            <tr>
+              <td>易用性</td>
+              <td class="score">7%</td>
+              <td>开机、投屏、遥控器、系统、语音、家庭成员上手难度。</td>
+              <td>是不是每天愿意打开用。</td>
+            </tr>
+            <tr>
+              <td>价格与长期成本</td>
+              <td class="score">5%</td>
+              <td>设备价、安装费、线材费、会员、维护和维修成本。</td>
+              <td>整套预算下是否值得买。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">07</span>
+          <h2>内容生产 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>选题立项</strong>
+            <span>单品/方案/横评</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>商务确认</strong>
+            <span>样品/安装/合同</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>样品入库</strong>
+            <span>型号/固件/配件</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>安装调试</strong>
+            <span>摆位/校准/链路</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>实测记录</strong>
+            <span>画质/音质/延迟</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>脚本拍摄</strong>
+            <span>证据/结论/建议</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>审核发布</strong>
+            <span>合规/链接/披露</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘归档</strong>
+            <span>播放/转化/反馈</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>SOP环节</th>
+              <th>具体动作</th>
+              <th>责任人</th>
+              <th>交付物</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>选题立项</td>
+              <td>确定单品测评、套装方案、横评、装修避坑、客厅改造或大促推荐。</td>
+              <td>主理人 / 选题编辑</td>
+              <td>选题单、预算分层、竞品清单。</td>
+            </tr>
+            <tr>
+              <td>样品确认</td>
+              <td>确认样品来源、固件版本、配件、线材、是否商单、是否寄回。</td>
+              <td>商务 / 运营</td>
+              <td>样品登记表、合作确认单。</td>
+            </tr>
+            <tr>
+              <td>安装调试</td>
+              <td>记录投距、幕布、吊装、音箱摆位、低音炮位置、功放校准。</td>
+              <td>测评编辑 / 安装人员</td>
+              <td>安装记录、调试截图、链路图。</td>
+            </tr>
+            <tr>
+              <td>测试准备</td>
+              <td>准备测试片源、游戏设备、测试图、音频测试文件和记录表。</td>
+              <td>测评编辑</td>
+              <td>测试计划表、片源清单。</td>
+            </tr>
+            <tr>
+              <td>执行测试</td>
+              <td>逐项测试画质、音质、兼容性、延迟、易用性和长期稳定性。</td>
+              <td>测评编辑</td>
+              <td>原始数据、屏摄、录音、测试视频。</td>
+            </tr>
+            <tr>
+              <td>结论评审</td>
+              <td>根据测试数据形成适合人群、不适合人群、预算建议和避坑点。</td>
+              <td>主理人 / 编辑</td>
+              <td>评分卡、购买建议。</td>
+            </tr>
+            <tr>
+              <td>脚本拍摄</td>
+              <td>先给结论，再展示真实观影、声音、布线、兼容性和缺点证据。</td>
+              <td>出镜博主 / 摄像</td>
+              <td>口播、B-roll、屏摄、空间画面。</td>
+            </tr>
+            <tr>
+              <td>发布复盘</td>
+              <td>维护价格、评论答疑、链接转化、用户故障反馈和商务数据。</td>
+              <td>运营 / 商务</td>
+              <td>复盘报告、商务案例。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">08</span>
+          <h2>单条家庭影院视频结构 SOP</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>标准长视频结构</h3>
+            <ul>
+              <li><strong>00:00 - 00:30：</strong>结论前置：适合谁、不适合谁、预算是否值。</li>
+              <li><strong>00:30 - 02:00：</strong>设备清单、总价、空间条件、样品来源。</li>
+              <li><strong>02:00 - 04:30：</strong>安装调试：投距、幕布、摆位、布线、功放校准。</li>
+              <li><strong>04:30 - 08:00：</strong>画质：暗室、白天、HDR、运动、色彩、字幕。</li>
+              <li><strong>08:00 - 11:00：</strong>声音：对白、环绕、天空声道、低音炮、声场。</li>
+              <li><strong>11:00 - 13:00：</strong>兼容性：eARC、Atmos、DTS、游戏、HDMI 2.1。</li>
+              <li><strong>13:00 - 15:00：</strong>易用性、噪音、功耗、维护、家人反馈。</li>
+              <li><strong>15:00 - 16:30：</strong>缺点、替代方案、预算建议、推荐等级。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>必须出现在视频里的信息</h3>
+            <ul>
+              <li>样品来源：自购 / 借测 / 送测 / 商业合作。</li>
+              <li>测试空间：面积、观影距离、环境光、遮光条件。</li>
+              <li>设备链路：片源 → 播放器 → 功放 / 回音壁 → 显示设备。</li>
+              <li>画质模式、音频模式、固件版本、校准状态。</li>
+              <li>至少 3 个明确优点和 3 个明确缺点。</li>
+              <li>适合人群和不适合人群。</li>
+              <li>如有带货链接，说明可能存在佣金。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pill-list">
+          <span class="pill">必拍：空间全景</span>
+          <span class="pill">必拍：设备链路</span>
+          <span class="pill">必拍：环境光照度</span>
+          <span class="pill">必拍：画质对比</span>
+          <span class="pill">必拍：音箱摆位</span>
+          <span class="pill">必拍：功放设置</span>
+          <span class="pill">必拍：游戏延迟</span>
+          <span class="pill">必拍：安装布线</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">09</span>
+          <h2>样品与安装管理规则</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>环节</th>
+              <th>规则</th>
+              <th>必须记录</th>
+              <th>风险点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品接收</td>
+              <td>开箱前拍包装、封条、配件、遥控器、线材、铭牌和序列号。</td>
+              <td>到货日期、快递单号、包装破损情况。</td>
+              <td>屏幕、镜头、音箱单元、功放接口运输损坏。</td>
+            </tr>
+            <tr>
+              <td>样品登记</td>
+              <td>登记型号、固件、版本、配件、样品来源、是否工程机。</td>
+              <td>样品登记表、系统截图、铭牌照片。</td>
+              <td>媒体机、工程机、特殊固件表现不能代表零售机。</td>
+            </tr>
+            <tr>
+              <td>安装确认</td>
+              <td>确认吊装、幕布、音箱架、支架、线材、打孔、走线责任。</td>
+              <td>安装方案、费用清单、现场照片。</td>
+              <td>墙体损伤、吊装安全、线材不兼容。</td>
+            </tr>
+            <tr>
+              <td>调试记录</td>
+              <td>记录画质模式、音频校准、声道电平、低音炮分频和延迟。</td>
+              <td>设置截图、功放校准报告、摆位图。</td>
+              <td>未调试状态直接测评导致结论失真。</td>
+            </tr>
+            <tr>
+              <td>版权片源</td>
+              <td>测试片源应合法获取，视频中展示片段需控制时长和用途。</td>
+              <td>片源清单、平台信息。</td>
+              <td>版权侵权、平台下架、商务风险。</td>
+            </tr>
+            <tr>
+              <td>样品寄回</td>
+              <td>寄回前拍照录像，恢复出厂设置，确认配件完整。</td>
+              <td>寄回日期、物流单号、打包视频。</td>
+              <td>二次运输损伤、配件遗失、账号信息残留。</td>
+            </tr>
+            <tr>
+              <td>样品留存</td>
+              <td>若样品不寄回，应明确归属、税务、二次使用和披露方式。</td>
+              <td>合同或邮件确认。</td>
+              <td>利益披露不清，影响用户信任。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">10</span>
+          <h2>测试红线与商单红线</h2>
+        </div>
+
+        <div class="alert">
+          <strong>核心原则：</strong>家庭影院测评必须说明空间、环境光、片源、设备链路和调试状态。不能用理想暗室画面冒充白天客厅体验，也不能因商单隐藏黑屏、无声、延迟、兼容性、低频扰民、安装成本等关键问题。
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card red">
+            <h3>测试红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 虚构亮度、色准、延迟、声压、频响、兼容性等数据。</li>
+              <li><span class="danger">禁止</span> 不说明空间、片源、模式和环境光就下画质结论。</li>
+              <li><span class="danger">禁止</span> 把屏摄照片当作用户实际观感的唯一依据。</li>
+              <li><span class="danger">禁止</span> 横评时使用不同模式、不同亮度、不同音量、不同片源直接对比。</li>
+              <li><span class="danger">禁止</span> 隐藏黑屏、无声、掉帧、eARC 掉线、低频扰民、安装困难。</li>
+              <li><span class="danger">禁止</span> 将工程机、特殊固件、品牌预调机表现当作零售机结论。</li>
+            </ul>
+          </div>
+
+          <div class="card red">
+            <h3>商单红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 接受“不能拍缺点、不能拍失败兼容性”的合作。</li>
+              <li><span class="danger">禁止</span> 接受品牌要求删除真实缺点或修改推荐等级。</li>
+              <li><span class="danger">禁止</span> 未披露商业合作、样品来源或佣金关系。</li>
+              <li><span class="danger">禁止</span> 恶意贬低竞品或使用无依据排名。</li>
+              <li><span class="danger">禁止</span> 使用“影院级吊打电影院、零延迟、全格式通吃、音质秒杀万元系统”等绝对化表述。</li>
+              <li><span class="danger">禁止</span> 使用未授权电影片段做大规模展示或商业传播。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card orange">
+            <h3>可以接受的品牌修改</h3>
+            <ul>
+              <li><span class="success">允许</span> 修改产品名称、型号、价格、参数等事实错误。</li>
+              <li><span class="success">允许</span> 补充官方功能说明、固件计划、保修政策。</li>
+              <li><span class="success">允许</span> 修改未上市信息、保密信息、发布时间。</li>
+              <li><span class="success">允许</span> 指出测试方法中的技术问题并要求复测。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>不能接受的品牌修改</h3>
+            <ul>
+              <li><span class="danger">不允许</span> 删除真实黑屏、无声、兼容失败、延迟过高、噪音问题。</li>
+              <li><span class="danger">不允许</span> 要求把“不推荐”改成“推荐”。</li>
+              <li><span class="danger">不允许</span> 隐藏安装成本、布线限制、声学问题和低频扰民。</li>
+              <li><span class="danger">不允许</span> 删除样品来源和商业合作披露。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">11</span>
+          <h2>商务开发需要的材料清单</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>账号基础资料</h3>
+            <ul>
+              <li>账号简介：定位、受众、平台。</li>
+              <li>B站 / YouTube 主页链接。</li>
+              <li>粉丝数、平均播放量、完播率、互动率。</li>
+              <li>用户画像：城市、年龄、消费力、装修阶段、影音兴趣。</li>
+              <li>内容栏目：单品测评、方案搭建、影音室改造、装修避坑、大促推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>专业能力证明</h3>
+            <ul>
+              <li>家庭影院测试 SOP 文档。</li>
+              <li>测试空间、工具、片源、链路图照片。</li>
+              <li>画质、音频、延迟、兼容性测试表样例。</li>
+              <li>历史测评案例链接。</li>
+              <li>安装调试记录和评分模型。</li>
+              <li>团队成员介绍：测评、拍摄、剪辑、安装 / 调音顾问。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业合作材料</h3>
+            <ul>
+              <li>商务报价单。</li>
+              <li>合作权益包。</li>
+              <li>发布排期表。</li>
+              <li>内容授权报价。</li>
+              <li>佣金合作说明。</li>
+              <li>合同模板、安装条款、版权和片源说明。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>材料名称</th>
+              <th>用途</th>
+              <th>建议格式</th>
+              <th>是否必备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>账号 Media Kit</td>
+              <td>商务初次开发展示账号价值。</td>
+              <td>PDF / 网页</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>家庭影院测评体系说明</td>
+              <td>证明账号具备真实影音空间、标准调试和测试能力。</td>
+              <td>PDF / 网页 / 飞书文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>历史案例合集</td>
+              <td>展示内容风格、播放表现和用户反馈。</td>
+              <td>链接表 / PDF</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>报价单</td>
+              <td>明确长视频、短视频、直播、授权价格。</td>
+              <td>PDF / 表格</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>安装执行说明</td>
+              <td>说明吊装、布线、打孔、调试、寄回和复原责任。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>数据复盘模板</td>
+              <td>展示合作后可交付播放、互动、点击、成交数据。</td>
+              <td>PDF / 表格</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>合规披露说明</td>
+              <td>提前说明商单、样品、佣金、版权片源披露方式。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">12</span>
+          <h2>商务开发 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>目标名单</strong>
+            <span>品牌/渠道/门店</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>资料发送</strong>
+            <span>Media Kit/案例</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>需求确认</strong>
+            <span>新品/方案/转化</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>产品初筛</strong>
+            <span>规格/空间/预算</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>方案报价</strong>
+            <span>视频/切片/授权</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>合同排期</strong>
+            <span>样品/安装/付款</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>执行发布</strong>
+            <span>调试/测试/上线</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘续约</strong>
+            <span>数据/ROI/节点</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>商务开发目标客户</h3>
+            <ul>
+              <li>显示设备：投影仪、激光电视、电视、Mini LED、OLED、幕布品牌。</li>
+              <li>音频设备：回音壁、AV功放、音箱、低音炮、耳放、播放器品牌。</li>
+              <li>影音生态：NAS、蓝光机、电视盒子、流媒体设备、HDMI线材、机柜。</li>
+              <li>家装相关：影音室设计、全屋智能、智能灯光、窗帘、声学处理、定制柜。</li>
+              <li>渠道商：京东、天猫、抖音、影音经销商、线下体验店、集成商。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>首次商务沟通要问清楚</h3>
+            <ul>
+              <li>推广目标：新品曝光、技术解释、方案教育还是大促转化？</li>
+              <li>合作产品：具体型号、版本、固件、套装配置。</li>
+              <li>样品属性：零售机、媒体机、工程机、特殊固件机。</li>
+              <li>安装需求：是否吊装、打孔、幕布安装、音箱支架、线材预埋。</li>
+              <li>测试边界：是否允许拍摄兼容失败、调试难点和缺点。</li>
+              <li>合作形式：单品测评、方案搭建、横评、直播、门店探访。</li>
+              <li>授权范围：是否需要切片、二次投流、详情页使用。</li>
+              <li>付款节点：预付比例、尾款时间、发票和安装费用承担。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">13</span>
+          <h2>商务权益包建议</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>合作包</th>
+              <th>适合场景</th>
+              <th>交付内容</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="score">基础单品测评包</td>
+              <td>投影、电视、回音壁、播放器等单品种草。</td>
+              <td>1 条 8-15 分钟长视频 + 简介区链接 + 评论置顶。</td>
+              <td>适合品牌首次合作。</td>
+            </tr>
+            <tr>
+              <td class="score">深度影音实测包</td>
+              <td>旗舰投影、旗舰电视、全景声回音壁、AV功放。</td>
+              <td>1 条 15-25 分钟深度视频 + 画质 / 音质 / 兼容性测试 + 3-5 条切片。</td>
+              <td>需充分调试和测试周期。</td>
+            </tr>
+            <tr>
+              <td class="score">家庭影院方案包</td>
+              <td>整套影院、客厅改造、影音室搭建。</td>
+              <td>设备清单 + 安装过程 + 调试过程 + 实测体验 + 预算表。</td>
+              <td>适合高客单价合作。</td>
+            </tr>
+            <tr>
+              <td class="score">横评赞助包</td>
+              <td>品牌希望与竞品对比证明实力。</td>
+              <td>多机横评 + 品牌赞助鸣谢 + 客观数据展示。</td>
+              <td>必须提前约定结论不可干预。</td>
+            </tr>
+            <tr>
+              <td class="score">大促转化包</td>
+              <td>618、双11、年货节、装修季。</td>
+              <td>推荐攻略 + 多平台分发 + 购买清单 + 评论价格更新。</td>
+              <td>适合商单费 + 佣金模式。</td>
+            </tr>
+            <tr>
+              <td class="score">内容授权包</td>
+              <td>品牌用于官方号、详情页、门店播放、广告投放。</td>
+              <td>视频片段授权、口播授权、图表授权、投流白名单。</td>
+              <td>需明确授权范围、平台、期限和版权片源限制。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">14</span>
+          <h2>合同与合作条款检查清单</h2>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 明确合作性质：商单、送测、借测、纯佣、授权、门店探访。</div>
+          <div class="check-item"><span class="check">✓</span> 明确样品归属：寄回、留存、买断或折价购买。</div>
+          <div class="check-item"><span class="check">✓</span> 明确安装责任：吊装、打孔、走线、幕布、支架、机柜。</div>
+          <div class="check-item"><span class="check">✓</span> 明确安装费用：人工、辅材、线材、墙体修复、寄回拆卸。</div>
+          <div class="check-item"><span class="check">✓</span> 明确测试条件：空间、片源、模式、固件、调试状态。</div>
+          <div class="check-item"><span class="check">✓</span> 明确内容形式：长视频、短视频、直播、图文、社群。</div>
+          <div class="check-item"><span class="check">✓</span> 明确发布平台：B站、YouTube、抖音、小红书、视频号。</div>
+          <div class="check-item"><span class="check">✓</span> 明确审核范围：仅限事实错误、品牌信息、保密信息。</div>
+          <div class="check-item"><span class="check">✓</span> 明确结论自主权：品牌不得要求修改真实测评结论。</div>
+          <div class="check-item"><span class="check">✓</span> 明确排他条款：竞品范围、排他周期、额外费用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确版权条款：电影片段、音乐、游戏画面、平台素材使用限制。</div>
+          <div class="check-item"><span class="check">✓</span> 明确异常处理：兼容失败、机器故障、安装失败、测试翻车如何处理。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">15</span>
+          <h2>带货转化 SOP</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>发布前</h3>
+            <ul>
+              <li>确认主推产品、套装配置、适合空间和预算区间。</li>
+              <li>确认京东 / 天猫 / 抖音等链接和佣金比例。</li>
+              <li>记录当前价格、历史低价、大促预估价。</li>
+              <li>准备不同预算清单：租房、客厅、卧室、游戏、发烧、装修预埋。</li>
+              <li>确认是否可叠加平台券、店铺券、国补、以旧换新。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>发布中</h3>
+            <ul>
+              <li>简介区放购买链接、价格记录时间和安装条件提醒。</li>
+              <li>评论区置顶推荐型号、适合空间、预算说明。</li>
+              <li>章节标注“安装避坑”和“购买建议”。</li>
+              <li>视频中提醒价格、兼容性和安装费用会变化，以下单页面为准。</li>
+              <li>避免“全网最低”“永不掉线”“全格式无脑通吃”等不可控表述。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>发布后</h3>
+            <ul>
+              <li>每日更新价格、优惠券、库存和套装变化。</li>
+              <li>回复用户投距、幕布、线材、功放、音箱摆位问题。</li>
+              <li>统计链接点击、成交、佣金、退货。</li>
+              <li>收集兼容性、安装、售后反馈并补充说明。</li>
+              <li>大促后复盘哪些预算方案转化最好。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">16</span>
+          <h2>对外披露模板</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>视频开头 / 简介披露</h3>
+            <p>
+              本期测试产品由品牌提供样机，视频包含商业合作内容。我们的测试结论基于实际安装、画质测试、音频测试、兼容性测试和长期体验，品牌不干预最终评价。视频简介中的部分购买链接可能产生佣金，但不会影响我们的推荐标准。
+            </p>
+          </div>
+
+          <div class="card purple">
+            <h3>非商单送测披露</h3>
+            <p>
+              本期产品为品牌送测 / 借测样机，未收取视频制作费用。测试内容和结论由我们独立完成。样品来源不影响我们对画质、音质、兼容性、安装难度和购买建议的判断。
+            </p>
+          </div>
+
+          <div class="card orange">
+            <h3>价格 / 安装披露</h3>
+            <p>
+              视频中提到的价格为录制 / 发布时参考价格，家庭影院总成本会受设备价格、线材、支架、幕布、安装、装修和平台活动影响，请以下单页面和当地安装服务报价为准。
+            </p>
+          </div>
+
+          <div class="card cyan">
+            <h3>横评 / 方案披露</h3>
+            <p>
+              本期横评涉及的产品型号、固件版本、画质模式、音频模式、片源、连接链路、测试空间和价格均已记录。不同空间、环境光、摆位、声学处理和片源质量可能导致体验差异，购买前请结合自家情况判断。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">17</span>
+          <h2>最终文件归档清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>归档类别</th>
+              <th>文件内容</th>
+              <th>命名建议</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品资料</td>
+              <td>型号、序列号、固件、样品来源、配件、价格、物流信息。</td>
+              <td>品牌_型号_样品登记</td>
+              <td>后续复查和商务对账。</td>
+            </tr>
+            <tr>
+              <td>安装资料</td>
+              <td>空间尺寸、投距、幕布、吊装、支架、线材、摆位、费用。</td>
+              <td>品牌_型号_安装调试记录</td>
+              <td>验证测试条件和落地成本。</td>
+            </tr>
+            <tr>
+              <td>测试数据</td>
+              <td>亮度、照度、色彩、噪音、声压、频响、延迟、兼容性。</td>
+              <td>品牌_型号_测试数据</td>
+              <td>生成图表和结论依据。</td>
+            </tr>
+            <tr>
+              <td>视频素材</td>
+              <td>口播、B-roll、屏摄、安装、线材、音箱摆位、系统设置。</td>
+              <td>日期_型号_素材类型</td>
+              <td>剪辑和二次切片。</td>
+            </tr>
+            <tr>
+              <td>脚本文件</td>
+              <td>选题、口播、章节、标题、简介、评论置顶。</td>
+              <td>型号_视频脚本_V1</td>
+              <td>发布和复盘。</td>
+            </tr>
+            <tr>
+              <td>商务文件</td>
+              <td>合同、报价、需求单、发票、付款记录、授权文件。</td>
+              <td>客户_项目_商务文件</td>
+              <td>项目管理和财务归档。</td>
+            </tr>
+            <tr>
+              <td>复盘报告</td>
+              <td>播放、完播、互动、链接点击、成交、退货、用户反馈。</td>
+              <td>项目_发布后7天复盘</td>
+              <td>商务续约和选题优化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© 家庭影院测评内容 SOP 与商务开发报告 · 适用于 B站 / YouTube 影音数码长视频团队</div>
+      <div>版本：V1.0</div>
+    </footer>
+  </div>
+</body>
+</html>

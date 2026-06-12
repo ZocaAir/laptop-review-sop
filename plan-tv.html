@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026年下半年中国市场电视长视频项目策划报告</title>
+  <style>
+    :root {
+      --bg:#f4f7fb;
+      --surface:#fff;
+      --surface-2:#f8fafc;
+      --text:#101828;
+      --text-2:#344054;
+      --muted:#667085;
+      --line:#dbe4f0;
+
+      --primary:#2563eb;
+      --primary-2:#0ea5e9;
+      --green:#16a34a;
+      --orange:#ea580c;
+      --purple:#7c3aed;
+      --red:#dc2626;
+      --cyan:#0891b2;
+
+      --primary-soft:#eff6ff;
+      --green-soft:#ecfdf3;
+      --orange-soft:#fff7ed;
+      --purple-soft:#f5f3ff;
+      --red-soft:#fef2f2;
+      --cyan-soft:#ecfeff;
+
+      --shadow:0 16px 42px rgba(15,23,42,.08);
+      --radius-xl:26px;
+      --radius-lg:18px;
+      --max:1260px;
+    }
+
+    html[data-theme="dark"] {
+      --bg:#080d1b;
+      --surface:#121a2b;
+      --surface-2:#182235;
+      --text:#f8fafc;
+      --text-2:#d1d5db;
+      --muted:#9ca3af;
+      --line:#2a3a55;
+
+      --primary:#60a5fa;
+      --primary-2:#38bdf8;
+      --green:#4ade80;
+      --orange:#fb923c;
+      --purple:#a78bfa;
+      --red:#f87171;
+      --cyan:#22d3ee;
+
+      --primary-soft:#10233f;
+      --green-soft:#10291d;
+      --orange-soft:#321d12;
+      --purple-soft:#21183b;
+      --red-soft:#351616;
+      --cyan-soft:#0d2a34;
+
+      --shadow:0 16px 42px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 0% 0%,rgba(37,99,235,.16),transparent 28%),
+        radial-gradient(circle at 100% 0%,rgba(14,165,233,.14),transparent 30%),
+        radial-gradient(circle at 60% 10%,rgba(124,58,237,.08),transparent 24%),
+        linear-gradient(180deg,var(--bg),var(--bg));
+      line-height:1.6;
+    }
+
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+
+    .page {
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .hero {
+      padding:28px 0 18px;
+    }
+
+    .hero-card,
+    .footer-card {
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius-xl);
+      color:#fff;
+      background:
+        linear-gradient(135deg,rgba(8,13,27,.98),rgba(30,64,175,.94)),
+        radial-gradient(circle at 78% 18%,rgba(56,189,248,.38),transparent 36%),
+        radial-gradient(circle at 20% 80%,rgba(124,58,237,.28),transparent 34%);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card { padding:36px; }
+    .footer-card { padding:22px 24px; margin-bottom:24px; }
+
+    .hero-card::after,
+    .footer-card::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+      background-size:36px 36px;
+      opacity:.52;
+      pointer-events:none;
+    }
+
+    .hero-main,
+    .hero-kpis,
+    .footer-inner {
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-main {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:26px;
+      align-items:end;
+    }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.22);
+      color:rgba(255,255,255,.9);
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(31px,4.6vw,58px);
+      line-height:1.06;
+      letter-spacing:-1.2px;
+    }
+
+    .hero-desc {
+      max-width:920px;
+      margin:16px 0 0;
+      color:rgba(255,255,255,.83);
+      font-size:16px;
+    }
+
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    .btn {
+      cursor:pointer;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:900;
+      color:#fff;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(8px);
+    }
+
+    .hero-kpis {
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:10px;
+      margin-top:24px;
+    }
+
+    .hero-kpi {
+      padding:13px;
+      border-radius:16px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    .hero-kpi strong {
+      display:block;
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .hero-kpi span {
+      color:rgba(255,255,255,.76);
+      font-size:12px;
+    }
+
+    .nav-wrap {
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(244,247,251,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    html[data-theme="dark"] .nav-wrap {
+      background:rgba(8,13,27,.9);
+    }
+
+    .nav {
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:10px 0;
+      scrollbar-width:none;
+    }
+
+    .nav::-webkit-scrollbar { display:none; }
+
+    .nav a {
+      flex:0 0 auto;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-2);
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .nav a:hover {
+      color:#fff;
+      background:var(--primary);
+      border-color:var(--primary);
+    }
+
+    main { padding:18px 0; }
+
+    section {
+      margin-bottom:16px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .section-inner { padding:22px; }
+
+    .section-head {
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:start;
+      margin-bottom:16px;
+    }
+
+    h2 {
+      margin:0;
+      font-size:clamp(22px,2.5vw,30px);
+      line-height:1.25;
+    }
+
+    h3 {
+      margin:0 0 8px;
+      line-height:1.35;
+    }
+
+    .sub {
+      margin:7px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      max-width:980px;
+    }
+
+    .tag {
+      white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:6px 11px;
+      color:var(--primary);
+      background:var(--primary-soft);
+      border:1px solid var(--line);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .tag.green { color:var(--green); background:var(--green-soft); }
+    .tag.orange { color:var(--orange); background:var(--orange-soft); }
+    .tag.purple { color:var(--purple); background:var(--purple-soft); }
+    .tag.red { color:var(--red); background:var(--red-soft); }
+    .tag.cyan { color:var(--cyan); background:var(--cyan-soft); }
+
+    .grid-12 {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+    }
+
+    .span-3 { grid-column:span 3; }
+    .span-4 { grid-column:span 4; }
+    .span-5 { grid-column:span 5; }
+    .span-6 { grid-column:span 6; }
+    .span-7 { grid-column:span 7; }
+    .span-8 { grid-column:span 8; }
+    .span-12 { grid-column:span 12; }
+
+    .card {
+      min-width:0;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:16px;
+    }
+
+    .card.soft { background:var(--surface-2); }
+
+    .card p,
+    .card li {
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .metric strong {
+      display:block;
+      color:var(--primary);
+      font-size:25px;
+      line-height:1.1;
+      margin-bottom:5px;
+    }
+
+    .metric span {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .mini-list {
+      margin:8px 0 0;
+      padding-left:18px;
+    }
+
+    .mini-list li { margin:4px 0; }
+
+    .table-wrap {
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:var(--surface);
+    }
+
+    table {
+      width:100%;
+      min-width:1040px;
+      border-collapse:collapse;
+    }
+
+    th,
+    td {
+      padding:10px 12px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:13.5px;
+      text-align:left;
+    }
+
+    th:last-child,
+    td:last-child { border-right:0; }
+
+    tr:last-child td { border-bottom:0; }
+
+    th {
+      color:var(--text);
+      background:var(--primary-soft);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    td { color:var(--text-2); }
+
+    .note {
+      margin-top:12px;
+      padding:13px 15px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:var(--primary-soft);
+      color:var(--text-2);
+      font-size:14px;
+    }
+
+    .brand-grid,
+    .persona-grid,
+    .pillar-grid,
+    .score-grid {
+      display:grid;
+      gap:10px;
+    }
+
+    .brand-grid {
+      grid-template-columns:repeat(6,minmax(0,1fr));
+    }
+
+    .persona-grid {
+      grid-template-columns:repeat(5,minmax(0,1fr));
+    }
+
+    .pillar-grid,
+    .score-grid {
+      grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+
+    .brand,
+    .persona,
+    .pillar,
+    .score-card {
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:17px;
+      padding:14px;
+      background:var(--surface-2);
+    }
+
+    .brand b,
+    .persona h3,
+    .pillar h3,
+    .score-card h3 {
+      display:block;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .brand span,
+    .persona p,
+    .pillar p,
+    .score-card p {
+      display:block;
+      margin:0;
+      color:var(--muted);
+      font-size:12.8px;
+    }
+
+    .brand-logo,
+    .persona-icon,
+    .pillar-num {
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .pillar-num {
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    }
+
+    .timeline {
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .month {
+      min-width:0;
+      padding:14px;
+      border-radius:17px;
+      border:1px solid var(--line);
+      background:var(--surface-2);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .month::before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-2));
+    }
+
+    .month b {
+      display:block;
+      color:var(--primary);
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .month span {
+      display:block;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.5;
+    }
+
+    .score {
+      display:inline-block;
+      min-width:42px;
+      text-align:center;
+      padding:2px 7px;
+      border-radius:999px;
+      color:var(--primary);
+      background:var(--primary-soft);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    .priority-high { color:var(--green); background:var(--green-soft); }
+    .priority-mid { color:var(--orange); background:var(--orange-soft); }
+    .priority-low { color:var(--muted); background:var(--surface-2); }
+
+    .episode-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .episode {
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface-2);
+      overflow:hidden;
+    }
+
+    .episode-head {
+      padding:12px 14px;
+      background:var(--primary-soft);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+
+    .episode-head b { font-size:15px; }
+
+    .episode-body { padding:13px 14px; }
+
+    .episode-body p {
+      margin:0 0 8px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .chips {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .chip {
+      padding:4px 8px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      color:var(--text-2);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .workbench {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+    }
+
+    .wb-card {
+      min-width:0;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+    }
+
+    .wb-card.span-4 { grid-column:span 4; }
+    .wb-card.span-6 { grid-column:span 6; }
+    .wb-card.span-12 { grid-column:span 12; }
+
+    .wb-head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      background:var(--primary-soft);
+      border-bottom:1px solid var(--line);
+    }
+
+    .wb-head h3 {
+      margin:0;
+      font-size:15px;
+    }
+
+    .wb-mark {
+      flex:0 0 auto;
+      font-size:11px;
+      font-weight:900;
+      color:var(--primary);
+      padding:3px 8px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+    }
+
+    .wb-body { padding:12px 14px 14px; }
+
+    .score-row {
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:8px;
+      align-items:center;
+      padding:7px 0;
+      border-bottom:1px dashed var(--line);
+      font-size:13px;
+      color:var(--text-2);
+    }
+
+    .score-row:last-child { border-bottom:0; }
+
+    .score-badge {
+      min-width:48px;
+      text-align:center;
+      color:var(--primary);
+      font-weight:900;
+      border-radius:999px;
+      padding:2px 8px;
+      background:var(--primary-soft);
+      font-size:12px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .field {
+      min-width:0;
+      padding:8px 10px;
+      border-radius:11px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+    }
+
+    .field b {
+      display:block;
+      color:var(--text);
+      font-size:12px;
+      margin-bottom:2px;
+    }
+
+    .field span {
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .footer-inner {
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-card h2 {
+      margin:0;
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .footer-card p {
+      margin:6px 0 0;
+      color:rgba(255,255,255,.76);
+      font-size:13px;
+    }
+
+    .footer-mini {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .footer-mini span {
+      padding:6px 9px;
+      border-radius:999px;
+      color:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    @media (max-width:1180px) {
+      .hero-kpis,
+      .timeline { grid-template-columns:repeat(3,1fr); }
+
+      .brand-grid,
+      .persona-grid { grid-template-columns:repeat(3,1fr); }
+
+      .pillar-grid,
+      .score-grid { grid-template-columns:repeat(2,1fr); }
+
+      .episode-grid { grid-template-columns:repeat(2,1fr); }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8 { grid-column:span 6; }
+
+      .wb-card.span-4,
+      .wb-card.span-6 { grid-column:span 6; }
+    }
+
+    @media (max-width:760px) {
+      .page,
+      .nav { width:min(100% - 22px,var(--max)); }
+
+      .hero-card { padding:24px; }
+
+      .hero-main { grid-template-columns:1fr; }
+
+      .hero-actions { justify-content:flex-start; }
+
+      .hero-kpis,
+      .timeline,
+      .brand-grid,
+      .persona-grid,
+      .pillar-grid,
+      .score-grid,
+      .episode-grid,
+      .field-grid { grid-template-columns:1fr; }
+
+      .section-head { grid-template-columns:1fr; }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8,
+      .span-12,
+      .wb-card.span-4,
+      .wb-card.span-6,
+      .wb-card.span-12 { grid-column:span 12; }
+
+      .section-inner { padding:16px; }
+
+      table { min-width:860px; }
+
+      .footer-inner { grid-template-columns:1fr; }
+
+      .footer-mini { justify-content:flex-start; }
+    }
+
+    @media print {
+      .nav-wrap,
+      .hero-actions { display:none; }
+
+      body { background:#fff; }
+
+      section,
+      .hero-card,
+      .footer-card { box-shadow:none; }
+
+      section { break-inside:avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="hero-card">
+        <div class="hero-main">
+          <div>
+            <div class="badge">📺 2026 H2 China TV Long Video Project</div>
+            <h1>2026年下半年<br />中国市场电视长视频项目策划报告</h1>
+            <p class="hero-desc">
+              面向B站家电、数码、影音类内容，聚焦中国电视市场主流品牌与消费节点，围绕海信、TCL、小米、雷鸟、Vidda、创维、华为智慧屏、长虹、康佳、索尼、三星、LG等品牌，建立从选题库、评分模型、科学测试到双11转化的完整长视频项目系统。
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn" id="themeBtn" type="button">🌙 深色模式</button>
+            <button class="btn" type="button" onclick="window.print()">🖨️ 打印 / PDF</button>
+          </div>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="hero-kpi"><strong>6个月</strong><span>2026年7-12月周期</span></div>
+          <div class="hero-kpi"><strong>12期</strong><span>核心长视频规划</span></div>
+          <div class="hero-kpi"><strong>30+</strong><span>中国市场选题库</span></div>
+          <div class="hero-kpi"><strong>100分</strong><span>选题评分模型</span></div>
+          <div class="hero-kpi"><strong>10维</strong><span>电视科学测试体系</span></div>
+          <div class="hero-kpi"><strong>闭环</strong><span>测评/搜索/大促/商单</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-wrap">
+    <div class="nav">
+      <a href="#overview">总览</a>
+      <a href="#brands">品牌格局</a>
+      <a href="#timing">时事节点</a>
+      <a href="#persona">用户画像</a>
+      <a href="#strategy">内容主线</a>
+      <a href="#topic-library">选题库</a>
+      <a href="#score-model">评分模型</a>
+      <a href="#calendar">半年排期</a>
+      <a href="#episodes">12期规划</a>
+      <a href="#testing">测试体系</a>
+      <a href="#operation">运营转化</a>
+      <a href="#dashboard">工作台</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="overview">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>01｜项目总览：建立“中国电视选购决策型内容资产”</h2>
+            <p class="sub">
+              中国电视市场已经从“尺寸、价格、参数”竞争，进入“Mini LED、OLED、AI画质、大屏客厅、游戏低延迟、系统体验、品牌生态和大促价格”的综合竞争。项目目标不是做单条新品测评，而是建立持续服务用户购买决策的内容系统。
+            </p>
+          </div>
+          <span class="tag">Overview</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-3 metric">
+            <strong>内容目标</strong>
+            <span>覆盖电视选购、品牌对比、横评、避坑、赛事观影、大促推荐。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>市场目标</strong>
+            <span>聚焦中国用户高频购买品牌和主流价格段。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>平台目标</strong>
+            <span>沉淀B站搜索资产、合集、评论答疑和测试标准。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>商业目标</strong>
+            <span>形成品牌测评、双11榜单、带货转化、商单案例。</span>
+          </div>
+
+          <div class="card span-6">
+            <h3>2026下半年中国电视市场判断</h3>
+            <ul class="mini-list">
+              <li><b>Mini LED继续普及：</b>国产品牌在高分区、高亮度、大尺寸和价格下探上竞争激烈。</li>
+              <li><b>大尺寸成为主战场：</b>75、85、98、100英寸电视继续进入普通家庭客厅。</li>
+              <li><b>AI电视概念升级：</b>AI画质、AI音效、AI推荐、AI语音和全屋智能联动成为传播点。</li>
+              <li><b>系统体验影响决策：</b>开机广告、会员入口、投屏、遥控器、系统流畅度和生态绑定成为用户痛点。</li>
+              <li><b>双11转化强：</b>电视客单价高，用户会提前1-2个月搜索型号、价格和真实测评。</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <h3>栏目建议</h3>
+            <ul class="mini-list">
+              <li><b>栏目名：</b>《中国电视选购实验室》或《客厅大屏研究所》。</li>
+              <li><b>核心标签：</b>中国品牌横评、真实画质测试、Mini LED避坑、双11电视推荐。</li>
+              <li><b>内容节奏：</b>7-9月建立专业信任，10月承接装修和大尺寸，11月集中转化，12月沉淀年度榜单。</li>
+              <li><b>长期资产：</b>品牌库、型号库、价格库、测试协议库、评论问题库、商单案例库。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>02｜中国市场电视品牌格局</h2>
+            <p class="sub">
+              内容策划需要紧贴中国用户真实购买品牌。建议将国产主流品牌作为核心测试对象，国际品牌作为高端画质参照或差异化对比。
+            </p>
+          </div>
+          <span class="tag cyan">China Market Brands</span>
+        </div>
+
+        <div class="brand-grid">
+          <div class="brand">
+            <div class="brand-logo">海</div>
+            <b>海信 / Vidda</b>
+            <span>Mini LED、ULED、大屏、体育营销、性价比副牌。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">T</div>
+            <b>TCL / 雷鸟</b>
+            <span>Mini LED、QD-Mini LED、大尺寸、高亮度、电竞电视。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">米</div>
+            <b>小米 / Redmi</b>
+            <span>生态、系统、价格、智能家居、年轻用户。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">创</div>
+            <b>创维 / 酷开</b>
+            <span>OLED、Mini LED、老牌电视、家庭影音。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">华</div>
+            <b>华为智慧屏</b>
+            <span>鸿蒙生态、智慧家庭、视频通话、跨设备联动。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">外</div>
+            <b>索尼 / 三星 / LG</b>
+            <span>高端画质参照、OLED/QD-OLED、影像调校、品牌溢价。</span>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>品牌/阵营</th>
+                <th>内容定位</th>
+                <th>适合选题</th>
+                <th>重点测试</th>
+                <th>用户关注点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>海信 / Vidda</td>
+                <td>国产主流高销量，大屏和Mini LED重要样本。</td>
+                <td>世界杯/亚运观赛、Mini LED横评、双11推荐。</td>
+                <td>亮度、控光、运动补偿、系统、体育画质。</td>
+                <td>大屏体验、价格、品牌可信度、售后。</td>
+              </tr>
+              <tr>
+                <td>TCL / 雷鸟</td>
+                <td>Mini LED技术竞争核心品牌，适合高参数对比。</td>
+                <td>Mini LED谁更强、游戏电视、大尺寸横评。</td>
+                <td>分区、峰值亮度、HDR、输入延迟、刷新率。</td>
+                <td>参数真实性、游戏体验、同价位画质。</td>
+              </tr>
+              <tr>
+                <td>小米 / Redmi</td>
+                <td>年轻用户、智能生态、价格敏感用户重点品牌。</td>
+                <td>3000-5000元档、系统体验、智能家居联动。</td>
+                <td>系统广告、投屏、语音、生态、基础画质。</td>
+                <td>便宜是否够用、广告多不多、生态好不好用。</td>
+              </tr>
+              <tr>
+                <td>创维 / 酷开</td>
+                <td>传统电视品牌和OLED重要参与者。</td>
+                <td>OLED vs Mini LED、家庭影院、年度榜单。</td>
+                <td>暗场、色彩、HDR、系统、音质。</td>
+                <td>老牌质量、OLED是否值得买、售后。</td>
+              </tr>
+              <tr>
+                <td>华为智慧屏</td>
+                <td>生态和智能交互差异化品牌。</td>
+                <td>智慧屏是不是电视、全屋智能电视、家庭协同。</td>
+                <td>系统、跨设备、视频通话、语音、画质。</td>
+                <td>生态价值、价格溢价、是否适合华为用户。</td>
+              </tr>
+              <tr>
+                <td>索尼 / 三星 / LG</td>
+                <td>高端画质参照和国际品牌对照组。</td>
+                <td>国产旗舰能否挑战国际高端、OLED/QD-OLED对比。</td>
+                <td>画质调校、暗场、HDR、色准、电影感。</td>
+                <td>品牌溢价值不值、国产旗舰是否可替代。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>品牌策略：</b>
+          选题中建议以“国产主流品牌横评”为主体，以“国际品牌参照”为辅助，避免内容脱离中国用户真实购买环境。
+        </div>
+      </div>
+    </section>
+
+    <section id="timing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>03｜2026年下半年时事节点与内容机会</h2>
+            <p class="sub">
+              电视消费由体育赛事、装修入住、客厅升级、大促降价和年终换新触发。内容要抓住用户当下购买理由。
+            </p>
+          </div>
+          <span class="tag cyan">Market Timing</span>
+        </div>
+
+        <div class="timeline">
+          <div class="month">
+            <b>7月｜世界杯决赛余热</b>
+            <span>2026世界杯在6-7月举行，适合做看球电视、运动画面、大屏观赛体验。</span>
+          </div>
+          <div class="month">
+            <b>8月｜暑期影音 / 开学季</b>
+            <span>家庭娱乐、租房、卧室电视需求增加，适合做低预算电视和小户型方案。</span>
+          </div>
+          <div class="month">
+            <b>9月｜IFA / 亚运会</b>
+            <span>IFA新品窗口叠加2026爱知·名古屋亚运会，适合做趋势解读和赛事观影。</span>
+          </div>
+          <div class="month">
+            <b>10月｜国庆装修入住</b>
+            <span>装修收尾、新房入住、大屏客厅升级，适合做尺寸、预埋线、壁挂和客厅方案。</span>
+          </div>
+          <div class="month">
+            <b>11月｜双11大促</b>
+            <span>全年电视购买高峰，适合做价格监测、品牌横评、预算分层推荐。</span>
+          </div>
+          <div class="month">
+            <b>12月｜年终换新</b>
+            <span>年终奖、春节前置家和年度复盘，适合做红黑榜和2027购买建议。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="persona">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>04｜中国电视消费用户画像</h2>
+            <p class="sub">
+              电视购买是家庭型决策，涉及预算、品牌、尺寸、装修、系统、片源、游戏和老人小孩使用体验。
+            </p>
+          </div>
+          <span class="tag purple">User Persona</span>
+        </div>
+
+        <div class="persona-grid">
+          <div class="persona">
+            <div class="persona-icon">赛</div>
+            <h3>赛事观影用户</h3>
+            <p>关注大尺寸、高亮度、运动补偿、可视角度和体育画质。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">装</div>
+            <h3>装修置家用户</h3>
+            <p>关注电视尺寸、壁挂、预埋线、电视柜、插座和客厅距离。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">省</div>
+            <h3>性价比用户</h3>
+            <p>关注3000-8000元档，国产品牌和副牌是否值得买。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">玩</div>
+            <h3>游戏用户</h3>
+            <p>关注4K120/144Hz、HDMI 2.1、VRR、输入延迟和HDR游戏。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">影</div>
+            <h3>家庭影院用户</h3>
+            <p>关注Mini LED、OLED、暗场、HDR、杜比视界和回音壁搭配。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>05｜四条内容主线</h2>
+            <p class="sub">
+              围绕中国品牌和真实购买场景，建议用四条主线覆盖传播、搜索、信任和转化。
+            </p>
+          </div>
+          <span class="tag green">Content Strategy</span>
+        </div>
+
+        <div class="pillar-grid">
+          <div class="pillar">
+            <div class="pillar-num">1</div>
+            <h3>中国品牌横评线</h3>
+            <p>海信、TCL、小米、雷鸟、Vidda、创维、华为等品牌同价位对比。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">2</div>
+            <h3>Mini LED / OLED技术线</h3>
+            <p>测试分区、亮度、光晕、暗场、HDR和真实观感，拆解参数营销。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">3</div>
+            <h3>装修大屏场景线</h3>
+            <p>75、85、98、100英寸怎么选，壁挂、预埋线、电视柜和客厅距离。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">4</div>
+            <h3>双11导购转化线</h3>
+            <p>价格监测、型号池、预算分层、红黑榜和带货答疑。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topic-library">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>06｜中国市场电视长视频选题库</h2>
+            <p class="sub">
+              选题库用于半年内容储备和团队评审。高优先级选题进入长视频，中优先级可做短切片、动态或长视频章节。
+            </p>
+          </div>
+          <span class="tag orange">Topic Library</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>选题方向</th>
+                <th>标题参考</th>
+                <th>核心品牌/对象</th>
+                <th>服务用户</th>
+                <th>测试/内容点</th>
+                <th>适合月份</th>
+                <th>优先级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>赛事观影</td>
+                <td>看世界杯才发现，好电视和普通电视差距在哪？</td>
+                <td>海信、TCL、雷鸟、Vidda</td>
+                <td>赛事观影用户</td>
+                <td>运动补偿、拖影、亮度、可视角度、音响。</td>
+                <td>7月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>国产Mini LED横评</td>
+                <td>国产Mini LED电视横评：海信、TCL、小米谁更值得买？</td>
+                <td>海信、TCL、小米、创维</td>
+                <td>中高预算用户</td>
+                <td>分区、峰值亮度、光晕、HDR、暗场。</td>
+                <td>7-9月 / 11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>低预算电视</td>
+                <td>3000元国产电视怎么选？小米、Vidda、雷鸟谁更稳？</td>
+                <td>小米、Redmi、Vidda、雷鸟、酷开</td>
+                <td>性价比用户</td>
+                <td>画质、系统广告、接口、流畅度、售后。</td>
+                <td>8月 / 11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>大尺寸选择</td>
+                <td>75、85、98、100英寸怎么选？中国家庭别盲目买大</td>
+                <td>海信、TCL、雷鸟、Vidda</td>
+                <td>装修置家用户</td>
+                <td>观看距离、运输安装、壁挂、亮度、预算。</td>
+                <td>8月 / 10月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>IFA趋势</td>
+                <td>2026电视趋势：AI电视、Mini LED和OLED谁是真升级？</td>
+                <td>海信、TCL、三星、LG、索尼</td>
+                <td>技术关注用户</td>
+                <td>AI画质、QD-Mini LED、OLED、Micro LED、生态。</td>
+                <td>9月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>亚运观赛</td>
+                <td>亚运会观赛电视推荐：体育画面到底看什么参数？</td>
+                <td>海信、TCL、创维、小米</td>
+                <td>体育用户</td>
+                <td>高速运动、色彩、亮度、音响、多人观看。</td>
+                <td>9月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>装修避坑</td>
+                <td>装修买电视最容易踩的10个坑：尺寸、预埋线、壁挂全讲清</td>
+                <td>全品牌</td>
+                <td>装修用户</td>
+                <td>插座、线管、电视柜、壁挂高度、回音壁。</td>
+                <td>10月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>游戏电视</td>
+                <td>国产游戏电视横评：4K144Hz、HDMI 2.1到底谁靠谱？</td>
+                <td>TCL、雷鸟、小米、海信</td>
+                <td>主机/PC玩家</td>
+                <td>4K120/144、VRR、ALLM、输入延迟、HDR游戏。</td>
+                <td>10月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11价格监测</td>
+                <td>双11电视价格监测：哪些是真降价，哪些是套路？</td>
+                <td>全品牌</td>
+                <td>购买用户</td>
+                <td>历史低价、预售、补贴、赠品、型号马甲。</td>
+                <td>11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11终极推荐</td>
+                <td>2026双11电视推荐：3000到15000元中国市场怎么买？</td>
+                <td>全品牌</td>
+                <td>全体用户</td>
+                <td>预算分层、型号推荐、适合/不适合人群。</td>
+                <td>11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>国产旗舰 vs 国际旗舰</td>
+                <td>国产旗舰电视能不能挑战索尼、三星、LG？</td>
+                <td>海信、TCL、创维、索尼、三星、LG</td>
+                <td>高端用户</td>
+                <td>画质调校、HDR、暗场、色准、运动、系统。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>年度红黑榜</td>
+                <td>2026中国电视红黑榜：这些型号值得买，这些别碰</td>
+                <td>全品牌</td>
+                <td>全体用户</td>
+                <td>值得买、别买、等降价、2027趋势。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>系统体验</td>
+                <td>国产电视系统横评：广告、投屏、会员入口谁最烦？</td>
+                <td>小米、海信、TCL、创维、华为</td>
+                <td>家庭用户</td>
+                <td>开机广告、投屏、遥控器、语音、流畅度。</td>
+                <td>8月 / 12月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>华为智慧屏</td>
+                <td>华为智慧屏到底是不是更适合华为全家桶？</td>
+                <td>华为智慧屏</td>
+                <td>生态用户</td>
+                <td>鸿蒙生态、跨设备、视频通话、语音、价格。</td>
+                <td>9月 / 10月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>老人家庭</td>
+                <td>给爸妈买电视，国产品牌怎么选才不踩坑？</td>
+                <td>海信、TCL、小米、创维、长虹、康佳</td>
+                <td>老人家庭</td>
+                <td>遥控器、广告、语音、音量、人声、售后。</td>
+                <td>12月 / 春节前</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>选题库使用原则：</b>
+          国产主流品牌负责真实购买价值，国际品牌负责画质参照；不要只做参数对比，要把“同价位谁适合谁”讲清。
+        </div>
+      </div>
+    </section>
+
+    <section id="score-model">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>07｜选题评分模型：100分制立项判断</h2>
+            <p class="sub">
+              建议所有长视频选题统一评分。80分以上进入核心长视频；70-79分进入备选；低于70分适合做短内容或暂缓。
+            </p>
+          </div>
+          <span class="tag red">Scoring Model</span>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-card">
+            <h3>用户需求强度｜25分</h3>
+            <p>是否有明确搜索、购买、评论和电商咨询需求。</p>
+          </div>
+          <div class="score-card">
+            <h3>测试可展示性｜20分</h3>
+            <p>是否能拍出清晰可见的画质、运动、系统和游戏差异。</p>
+          </div>
+          <div class="score-card">
+            <h3>品牌关注度｜15分</h3>
+            <p>是否覆盖中国市场高关注品牌和高销量价格段。</p>
+          </div>
+          <div class="score-card">
+            <h3>搜索长尾价值｜15分</h3>
+            <p>是否能长期被搜索、收藏和用于购买决策。</p>
+          </div>
+          <div class="score-card">
+            <h3>节点匹配度｜10分</h3>
+            <p>是否绑定世界杯、亚运、IFA、国庆、双11、年终。</p>
+          </div>
+          <div class="score-card">
+            <h3>商业转化潜力｜10分</h3>
+            <p>是否能承接品牌合作、带货、榜单或直播答疑。</p>
+          </div>
+          <div class="score-card">
+            <h3>制作可行性｜5分</h3>
+            <p>样机、场地、测试片源、拍摄周期和人力是否可控。</p>
+          </div>
+          <div class="score-card">
+            <h3>评分结论</h3>
+            <p>80+核心长视频；70-79备选；60-69短内容；60以下暂缓。</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>示例选题</th>
+                <th>需求 25</th>
+                <th>展示 20</th>
+                <th>品牌 15</th>
+                <th>长尾 15</th>
+                <th>节点 10</th>
+                <th>商业 10</th>
+                <th>可行 5</th>
+                <th>总分</th>
+                <th>结论</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>国产Mini LED横评</td>
+                <td>24</td>
+                <td>19</td>
+                <td>15</td>
+                <td>14</td>
+                <td>8</td>
+                <td>9</td>
+                <td>4</td>
+                <td><span class="score priority-high">93</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>双11电视终极推荐</td>
+                <td>25</td>
+                <td>15</td>
+                <td>15</td>
+                <td>15</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td><span class="score priority-high">95</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>装修电视避坑指南</td>
+                <td>22</td>
+                <td>14</td>
+                <td>10</td>
+                <td>15</td>
+                <td>9</td>
+                <td>7</td>
+                <td>5</td>
+                <td><span class="score priority-high">82</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>电视系统广告横评</td>
+                <td>18</td>
+                <td>12</td>
+                <td>14</td>
+                <td>10</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td><span class="score priority-mid">69</span></td>
+                <td>适合短内容或章节</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>08｜2026年7-12月内容排期</h2>
+            <p class="sub">
+              推荐每月2期核心长视频，配合3-5条短切片和1-2条动态答疑。10-11月为全年转化重点。
+            </p>
+          </div>
+          <span class="tag cyan">Calendar</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>月份</th>
+                <th>节点</th>
+                <th>内容目标</th>
+                <th>核心长视频</th>
+                <th>配套运营</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7月</td>
+                <td>世界杯决赛余热</td>
+                <td>建立赛事观影和国产电视测试标签</td>
+                <td>看球电视实测 / 国产Mini LED横评</td>
+                <td>征集客厅尺寸和看球需求，发布运动画面切片。</td>
+              </tr>
+              <tr>
+                <td>8月</td>
+                <td>暑期影音、开学季</td>
+                <td>覆盖低预算和卧室/租房用户</td>
+                <td>3000元国产电视推荐 / 75-100英寸怎么选</td>
+                <td>短切片讲系统广告、尺寸、预算坑点。</td>
+              </tr>
+              <tr>
+                <td>9月</td>
+                <td>IFA、亚运会</td>
+                <td>建立趋势解读和赛事观影权威</td>
+                <td>IFA电视趋势 / 亚运观赛电视推荐</td>
+                <td>做新品速评、AI电视投票、体育画质图解。</td>
+              </tr>
+              <tr>
+                <td>10月</td>
+                <td>国庆装修、双11预热</td>
+                <td>承接装修入住和游戏用户</td>
+                <td>装修电视避坑 / 国产游戏电视横评</td>
+                <td>发布预埋线清单、价格关注池。</td>
+              </tr>
+              <tr>
+                <td>11月</td>
+                <td>双11大促</td>
+                <td>集中转化</td>
+                <td>双11价格监测 / 双11电视终极推荐</td>
+                <td>置顶价格更新，橱窗、直播和评论答疑联动。</td>
+              </tr>
+              <tr>
+                <td>12月</td>
+                <td>年终换新、春节前置家</td>
+                <td>沉淀年度内容资产</td>
+                <td>国产旗舰 vs 国际旗舰 / 年度红黑榜</td>
+                <td>整理合集，发布年度电视购买报告。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="episodes">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>09｜12期核心长视频规划</h2>
+            <p class="sub">
+              单期建议12-25分钟，横评和榜单可到30分钟。每期必须包含：适合谁、不适合谁、测试依据、购买建议。
+            </p>
+          </div>
+          <span class="tag purple">Episodes</span>
+        </div>
+
+        <div class="episode-grid">
+          <div class="episode">
+            <div class="episode-head"><b>EP01｜世界杯看球电视实测</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>测试运动补偿、拖影、亮度、可视角度和多人观看体验。</p>
+              <div class="chips"><span class="chip">赛事</span><span class="chip">海信/TCL</span><span class="chip">运动画面</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP02｜国产Mini LED横评</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>海信、TCL、小米、创维同价位Mini LED真实画质对比。</p>
+              <div class="chips"><span class="chip">Mini LED</span><span class="chip">国产横评</span><span class="chip">画质</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP03｜3000元国产电视推荐</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>小米、Redmi、Vidda、雷鸟、酷开低预算电视怎么选。</p>
+              <div class="chips"><span class="chip">低预算</span><span class="chip">系统</span><span class="chip">性价比</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP04｜75/85/98/100英寸怎么选</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>结合中国家庭客厅距离、运输安装、壁挂和预算讲清大尺寸。</p>
+              <div class="chips"><span class="chip">大尺寸</span><span class="chip">客厅</span><span class="chip">装修</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP05｜IFA 2026电视趋势</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>解读AI电视、Mini LED、OLED、QD-OLED、Micro LED趋势。</p>
+              <div class="chips"><span class="chip">IFA</span><span class="chip">AI电视</span><span class="chip">趋势</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP06｜亚运观赛电视推荐</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>结合亚运会项目，测试高速运动、体育画质和多人观看。</p>
+              <div class="chips"><span class="chip">亚运</span><span class="chip">体育</span><span class="chip">观赛</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP07｜装修电视避坑指南</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>讲清预埋线、壁挂高度、电视柜、插座、回音壁和后期维护。</p>
+              <div class="chips"><span class="chip">装修</span><span class="chip">预埋</span><span class="chip">安装</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP08｜国产游戏电视横评</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>TCL、雷鸟、小米、海信等4K144Hz游戏电视实测。</p>
+              <div class="chips"><span class="chip">游戏</span><span class="chip">HDMI 2.1</span><span class="chip">低延迟</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP09｜双11电视价格监测</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>分析历史低价、预售价、平台补贴、赠品和型号马甲。</p>
+              <div class="chips"><span class="chip">双11</span><span class="chip">价格</span><span class="chip">避坑</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP10｜双11电视终极推荐</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>按3000、5000、8000、10000、15000元以上分层推荐。</p>
+              <div class="chips"><span class="chip">榜单</span><span class="chip">预算</span><span class="chip">转化</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP11｜国产旗舰 vs 国际旗舰</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>国产高端电视与索尼、三星、LG在画质、系统和价格上对比。</p>
+              <div class="chips"><span class="chip">高端</span><span class="chip">国产</span><span class="chip">国际参照</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP12｜中国电视年度红黑榜</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>总结值得买、不建议买、适合等降价和2027值得关注的技术。</p>
+              <div class="chips"><span class="chip">年终</span><span class="chip">红黑榜</span><span class="chip">搜索资产</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>10｜电视科学测试体系</h2>
+            <p class="sub">
+              电视测评不能只读参数。中国市场尤其需要验证“标称亮度、分区数量、系统广告、投屏、游戏接口和真实观感”。
+            </p>
+          </div>
+          <span class="tag orange">Testing Protocol</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>测试维度</th>
+                <th>关键指标</th>
+                <th>测试方法</th>
+                <th>结论重点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>画质基础</td>
+                <td>亮度、对比度、色彩、清晰度、色准</td>
+                <td>标准片源、HDR片段、电影/综艺/体育节目实拍对比。</td>
+                <td>区分客厅强光、夜间观影和普通电视节目。</td>
+              </tr>
+              <tr>
+                <td>Mini LED控光</td>
+                <td>分区、峰值亮度、光晕、暗场细节</td>
+                <td>星空、字幕、烟花、高反差HDR片段。</td>
+                <td>不只看分区数量，要看算法和实际观感。</td>
+              </tr>
+              <tr>
+                <td>运动画面</td>
+                <td>拖影、MEMC、刷新率、运动清晰度</td>
+                <td>足球、篮球、赛车、电竞和横移镜头。</td>
+                <td>赛事观影和电影观看需求不同。</td>
+              </tr>
+              <tr>
+                <td>游戏性能</td>
+                <td>HDMI 2.1、4K120/144、VRR、ALLM、输入延迟</td>
+                <td>连接PS5、Xbox、PC，测试游戏模式和HDR游戏。</td>
+                <td>明确适合主机、PC还是轻度游戏用户。</td>
+              </tr>
+              <tr>
+                <td>系统体验</td>
+                <td>广告、开机速度、投屏、会员入口、遥控器、语音</td>
+                <td>冷启动、应用切换、投屏、语音搜索、老人使用测试。</td>
+                <td>中国市场用户强关注系统干扰和长期卡顿。</td>
+              </tr>
+              <tr>
+                <td>安装与接口</td>
+                <td>HDMI数量、USB、网口、壁挂、厚度、线缆管理</td>
+                <td>实拍背部接口、壁挂空间、预埋线和电视柜适配。</td>
+                <td>装修用户需要购买前明确安装边界。</td>
+              </tr>
+              <tr>
+                <td>长期成本</td>
+                <td>会员、广告、售后、保修、维修、能耗</td>
+                <td>查询售后政策、电商差评、系统更新和保修条款。</td>
+                <td>电视不只看买入价，还要看长期使用体验。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>测试声明模板：</b>
+          本期测试基于固定片源、固定画面模式、固定环境光和当前系统版本，结论适用于类似家庭场景，不代表所有固件和个体差异。
+        </div>
+      </div>
+    </section>
+
+    <section id="operation">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>11｜发布运营与商业转化</h2>
+            <p class="sub">
+              电视长视频有强搜索和强购买决策属性。赛事、大尺寸和横评负责传播；双11榜单、价格监测和评论答疑负责转化。
+            </p>
+          </div>
+          <span class="tag green">Operation & Business</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-4">
+            <h3>发布前</h3>
+            <ul class="mini-list">
+              <li>动态征集预算、品牌、尺寸、客厅距离、用途。</li>
+              <li>提前发布投票：海信/TCL/小米/雷鸟/Vidda谁更想看。</li>
+              <li>预埋关键词：电视怎么选、Mini LED、双11电视推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>发布后</h3>
+            <ul class="mini-list">
+              <li>置顶评论写清适合谁、不适合谁、价格更新时间。</li>
+              <li>剪3-5条短切片：画质、光晕、系统广告、游戏、价格。</li>
+              <li>评论区按预算、尺寸、品牌、用途进行答疑。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>商业化</h3>
+            <ul class="mini-list">
+              <li>品牌新品测评、Mini LED技术专项、双11榜单合作。</li>
+              <li>橱窗带货、直播答疑、大促价格监测。</li>
+              <li>年度红黑榜、电视选购报告、商单案例沉淀。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>12｜项目执行工作台</h2>
+            <p class="sub">
+              用于团队执行、选题评审、测试记录、发布质检和复盘沉淀。
+            </p>
+          </div>
+          <span class="tag">Dashboard</span>
+        </div>
+
+        <div class="workbench">
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>单期项目评分卡</h3>
+              <span class="wb-mark">100分</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>用户需求强度</span><span class="score-badge">/25</span></div>
+              <div class="score-row"><span>测试可展示性</span><span class="score-badge">/20</span></div>
+              <div class="score-row"><span>品牌关注度</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>搜索长尾价值</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>节点匹配度</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>商业转化潜力</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>制作可行性</span><span class="score-badge">/5</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>项目立项卡</h3>
+              <span class="wb-mark">Brief</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>选题名称</b><span>如：国产Mini LED电视横评</span></div>
+                <div class="field"><b>目标用户</b><span>赛事 / 装修 / 性价比 / 游戏 / 影院</span></div>
+                <div class="field"><b>核心品牌</b><span>海信 / TCL / 小米 / 雷鸟 / Vidda / 创维等</span></div>
+                <div class="field"><b>测试清单</b><span>亮度、控光、运动、系统、游戏、安装</span></div>
+                <div class="field"><b>商业目标</b><span>播放 / 收藏 / 带货 / 商单 / 搜索</span></div>
+                <div class="field"><b>发布节点</b><span>世界杯 / 亚运 / IFA / 双11 / 年终</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>发布质检</h3>
+              <span class="wb-mark">QA</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>标题包含品牌、预算、场景或冲突</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>封面有型号/品牌/画面对比</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>简介说明样机来源和测试条件</span><span class="score-badge">必备</span></div>
+              <div class="score-row"><span>置顶评论含适合/不适合人群</span><span class="score-badge">必备</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>评论答疑模板</h3>
+              <span class="wb-mark">Comment</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>预算 + 尺寸 + 客厅距离</span><span class="score-badge">推荐</span></div>
+              <div class="score-row"><span>主要用途：看球/电影/游戏/老人</span><span class="score-badge">场景</span></div>
+              <div class="score-row"><span>是否装修，是否需要壁挂</span><span class="score-badge">安装</span></div>
+              <div class="score-row"><span>是否在意广告、系统和投屏</span><span class="score-badge">体验</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>复盘指标</h3>
+              <span class="wb-mark">Review</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>点击率与封面转化</span><span class="score-badge">点击</span></div>
+              <div class="score-row"><span>前30秒留存与章节留存</span><span class="score-badge">留存</span></div>
+              <div class="score-row"><span>收藏率、评论质量、搜索来源</span><span class="score-badge">价值</span></div>
+              <div class="score-row"><span>带货点击、商单咨询、品牌线索</span><span class="score-badge">商业</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <div class="footer-card">
+      <div class="footer-inner">
+        <div>
+          <h2>2026 H2 中国市场电视长视频项目策划</h2>
+          <p>中国品牌横评 × Mini LED测试 × 大尺寸客厅 × 双11转化 × 年度红黑榜</p>
+        </div>
+        <div class="footer-mini">
+          <span>海信</span>
+          <span>TCL</span>
+          <span>小米</span>
+          <span>雷鸟</span>
+          <span>Vidda</span>
+          <span>创维</span>
+          <span>华为智慧屏</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById("themeBtn");
+      var key = "tv-china-market-project-v2-theme";
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem(key, theme);
+        } catch (e) {}
+        if (btn) {
+          btn.textContent = theme === "dark" ? "☀️ 浅色模式" : "🌙 深色模式";
+        }
+      }
+
+      var saved = null;
+      try {
+        saved = localStorage.getItem(key);
+      } catch (e) {}
+
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      } else {
+        var prefersDark = false;
+        try {
+          prefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+        } catch (e) {}
+        applyTheme(prefersDark ? "dark" : "light");
+      }
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var current = html.getAttribute("data-theme");
+          applyTheme(current === "dark" ? "light" : "dark");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

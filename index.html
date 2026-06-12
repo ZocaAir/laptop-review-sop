@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大学生轻薄本测评 SOP 指南</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: rgba(255, 255, 255, 0.82);
+      --text: #172033;
+      --muted: #667085;
+      --primary: #6c5ce7;
+      --primary-2: #00cec9;
+      --danger: #ff7675;
+      --warning: #fdcb6e;
+      --success: #00b894;
+      --line: rgba(23, 32, 51, 0.1);
+      --shadow: 0 20px 50px rgba(30, 41, 59, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(108, 92, 231, 0.22), transparent 30%),
+        radial-gradient(circle at 85% 5%, rgba(0, 206, 201, 0.2), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 45%, #eef2ff 100%);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 32px 0 80px;
+    }
+
+    .hero {
+      min-height: 360px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 36px;
+      padding: 56px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,255,255,0.55)),
+        url("data:image/svg+xml,%3Csvg width='260' height='260' viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%236c5ce7' stroke-opacity='0.13'%3E%3Cpath d='M0 40h260M0 100h260M0 160h260M0 220h260M40 0v260M100 0v260M160 0v260M220 0v260'/%3E%3C/g%3E%3C/svg%3E");
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -60px;
+      bottom: -70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      opacity: 0.18;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(108, 92, 231, 0.1);
+      color: #5145cd;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    h1 {
+      margin: 24px 0 16px;
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      transition: 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--primary), #8e7cff);
+      color: white;
+      box-shadow: 0 12px 24px rgba(108, 92, 231, 0.25);
+    }
+
+    .btn.ghost {
+      background: rgba(255,255,255,0.72);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+      margin-top: 38px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(30, 41, 59, 0.08);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: rgba(108, 92, 231, 0.1);
+      color: #5145cd;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .step-no {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 12px 24px rgba(108, 92, 231, 0.2);
+    }
+
+    .mission {
+      border-left: 5px solid var(--primary);
+    }
+
+    .mission ul,
+    .checklist ul,
+    .risk ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .score-board {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      font-size: 15px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      padding: 14px 12px;
+      vertical-align: top;
+    }
+
+    th {
+      color: #344054;
+      background: rgba(108, 92, 231, 0.08);
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .green {
+      background: rgba(0, 184, 148, 0.12);
+      color: #008f72;
+    }
+
+    .yellow {
+      background: rgba(253, 203, 110, 0.2);
+      color: #9a6900;
+    }
+
+    .red {
+      background: rgba(255, 118, 117, 0.15);
+      color: #c0392b;
+    }
+
+    .score-box {
+      display: grid;
+      gap: 14px;
+    }
+
+    .score-item {
+      display: grid;
+      grid-template-columns: 130px 1fr 42px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .bar {
+      height: 12px;
+      background: rgba(108, 92, 231, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      border-radius: 999px;
+    }
+
+    .interactive {
+      display: grid;
+      gap: 14px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--line);
+    }
+
+    .check input {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+      accent-color: var(--primary);
+    }
+
+    .check strong {
+      display: block;
+    }
+
+    .check span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 20px;
+      font-weight: 900;
+      background: linear-gradient(135deg, rgba(108,92,231,0.12), rgba(0,206,201,0.12));
+      border: 1px solid rgba(108,92,231,0.16);
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding: 26px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .quote {
+      font-size: 24px;
+      line-height: 1.45;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #172033, #6c5ce7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        padding: 34px 26px;
+      }
+
+      .grid-3,
+      .grid-2,
+      .score-board {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .step {
+        grid-template-columns: 52px 1fr;
+      }
+
+      .step-no {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+      }
+
+      .score-item {
+        grid-template-columns: 105px 1fr 36px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .hero,
+      .card {
+        box-shadow: none;
+        background: white;
+      }
+
+      .btn,
+      .interactive {
+        display: none;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">Campus Laptop Lab · SOP 1.0</div>
+      <h1>大学生轻薄本测评 SOP 指南</h1>
+      <p>
+        不用传统“参数表 + 跑分截图”的测评模式，而是用真实校园场景验证：
+        一台轻薄本是否真的适合上课、写论文、做汇报、跑专业软件、图书馆续航和宿舍娱乐。
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#sop">开始测评流程</a>
+        <a class="btn ghost" href="#score">查看评分模型</a>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-head">
+        <h2>一、测评理念：从“看参数”改成“过一天”</h2>
+        <p>
+          大学生买轻薄本，核心不是极限性能，而是能否稳定完成学习生活任务。
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <span class="tag">核心原则 01</span>
+          <h3>场景优先</h3>
+          <p>
+            不先问 CPU 型号，而是先问：这台电脑能不能撑过一整天校园生活？
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="tag">核心原则 02</span>
+          <h3>体验优先</h3>
+          <p>
+            键盘、屏幕、噪音、续航、重量、接口，都是每天真实影响学习效率的因素。
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="tag">核心原则 03</span>
+          <h3>风险优先</h3>
+          <p>
+            测评不仅要说优点，更要明确：哪些专业不适合？哪些场景会掉链子？
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sop">
+      <div class="section-head">
+        <h2>二、SOP 总流程</h2>
+        <p>
+          建议每台笔记本至少完成 6 个阶段，形成统一、可复现的测评结论。
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="step">
+          <div class="step-no">01</div>
+          <div class="card">
+            <h3>建立学生画像</h3>
+            <p>
+              先定义目标用户，而不是直接测机器。每台轻薄本至少匹配 3 类大学生画像。
+            </p>
+            <ul>
+              <li>文科 / 经管：Office、网页资料、论文、网课、轻度修图。</li>
+              <li>理工 / 计算机：编程、轻量虚拟机、Matlab、数据分析。</li>
+              <li>设计 / 传媒：PS、PR 剪辑、AI、轻量建模。</li>
+              <li>通勤 / 图书馆党：安静、续航、便携、快充优先。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">02</div>
+          <div class="card">
+            <h3>开箱与第一印象记录</h3>
+            <p>
+              从普通学生视角记录，而不是只拍外观图。
+            </p>
+            <ul>
+              <li>单手拿起是否轻松？放进普通双肩包是否突兀？</li>
+              <li>充电器体积是否影响通勤？</li>
+              <li>机身是否易沾指纹？边缘是否硌手？</li>
+              <li>开盖阻尼、屏幕晃动、转轴稳定性如何？</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">03</div>
+          <div class="card">
+            <h3>校园 24 小时任务剧本</h3>
+            <p>
+              按真实一天使用节奏测试，记录电量、温度、噪音和卡顿情况。
+            </p>
+            <ul>
+              <li>08:00 教室：打开课件、记笔记、浏览网页。</li>
+              <li>10:00 图书馆：多标签页查资料、Word 写论文。</li>
+              <li>14:00 小组讨论：腾讯会议 / Zoom + 文档协作。</li>
+              <li>16:00 专业软件：编程 / 修图 / 数据处理。</li>
+              <li>20:00 宿舍：视频、音乐、轻度游戏或剪辑。</li>
+              <li>22:30 充电：记录从 20% 到 80% 所需时间。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">04</div>
+          <div class="card">
+            <h3>五个“翻车点”压力测试</h3>
+            <p>
+              轻薄本最容易在这些地方暴露问题。
+            </p>
+            <ul>
+              <li>多任务：20 个网页标签 + Word + 微信 + 音乐。</li>
+              <li>会议：1 小时视频会议，观察发热、风扇、麦克风效果。</li>
+              <li>户外屏幕：中午室外或强光环境下看清程度。</li>
+              <li>宿舍安静环境：夜间低负载风扇是否明显。</li>
+              <li>接口：U 盘、HDMI、鼠标、拓展坞是否需要额外购买。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">05</div>
+          <div class="card">
+            <h3>数据记录与横向对比</h3>
+            <p>
+              不只记录跑分，要记录学生真正关心的数据。
+            </p>
+            <ul>
+              <li>实测重量：裸机重量、充电器重量、总携带重量。</li>
+              <li>实测续航：轻办公、视频播放、会议、混合场景。</li>
+              <li>噪音：安静教室 / 图书馆是否打扰他人。</li>
+              <li>屏幕：亮度、色彩、护眼、比例、反光情况。</li>
+              <li>性能：常用软件打开速度、导出速度、编译速度。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">06</div>
+          <div class="card">
+            <h3>输出“买 / 不买 / 谁适合买”结论</h3>
+            <p>
+              结论必须具体到人群，避免“性价比不错”这种模糊表达。
+            </p>
+            <ul>
+              <li>适合：明确专业、预算、使用场景。</li>
+              <li>不适合：明确短板和风险。</li>
+              <li>替代建议：如果不推荐，应给出更合适的方向。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>三、校园任务卡</h2>
+        <p>
+          用任务卡替代传统参数表，让测评更贴近大学生。
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card mission">
+          <span class="tag">任务卡 A</span>
+          <h3>图书馆生存测试</h3>
+          <p>目标：验证续航、噪音、键盘舒适度和屏幕观感。</p>
+          <ul>
+            <li>亮度设为 70%，连接 Wi-Fi。</li>
+            <li>连续使用 4 小时：网页 + PDF + Word。</li>
+            <li>记录剩余电量、机身温度、风扇存在感。</li>
+            <li>判断：能否不带充电器安心出门半天？</li>
+          </ul>
+        </div>
+
+        <div class="card mission">
+          <span class="tag">任务卡 B</span>
+          <h3>小组汇报测试</h3>
+          <p>目标：验证接口、投屏、摄像头、麦克风和稳定性。</p>
+          <ul>
+            <li>打开 PPT、浏览器、微信、会议软件。</li>
+            <li>外接投影或显示器。</li>
+            <li>进行 30 分钟线上会议。</li>
+            <li>判断：汇报现场是否需要额外拓展坞？</li>
+          </ul>
+        </div>
+
+        <div class="card mission">
+          <span class="tag">任务卡 C</span>
+          <h3>期末赶论文测试</h3>
+          <p>目标：验证多任务、键盘、屏幕比例和系统稳定性。</p>
+          <ul>
+            <li>同时打开 20 个网页、3 个 PDF、Word 和 Zotero。</li>
+            <li>持续编辑 90 分钟。</li>
+            <li>记录输入手感、卡顿、误触、眼睛疲劳感。</li>
+            <li>判断：长时间写作是否舒服？</li>
+          </ul>
+        </div>
+
+        <div class="card mission">
+          <span class="tag">任务卡 D</span>
+          <h3>专业软件快测</h3>
+          <p>目标：判断是否适合特定专业。</p>
+          <ul>
+            <li>计算机：VS Code / IDE 启动、项目编译。</li>
+            <li>设计：PS 打开大图、PR 剪 1080P 素材。</li>
+            <li>理工：Matlab / Python 数据处理。</li>
+            <li>判断：是“能用”，还是“用得舒服”？</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="score">
+      <div class="section-head">
+        <h2>四、评分模型</h2>
+        <p>
+          总分 100 分，建议给出原始分、加权分和一句话解释。
+        </p>
+      </div>
+
+      <div class="score-board">
+        <div class="card">
+          <h3>评分维度表</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>权重</th>
+                <th>测评重点</th>
+                <th>红线</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>便携性</td>
+                <td>15%</td>
+                <td>裸机重量、充电器重量、机身厚度、背包负担</td>
+                <td><span class="pill red">总携带重量过高</span></td>
+              </tr>
+              <tr>
+                <td>续航与快充</td>
+                <td>20%</td>
+                <td>混合办公续航、会议续航、充电速度</td>
+                <td><span class="pill red">半天难撑</span></td>
+              </tr>
+              <tr>
+                <td>屏幕体验</td>
+                <td>15%</td>
+                <td>亮度、色彩、比例、护眼、反光</td>
+                <td><span class="pill yellow">强光不可用</span></td>
+              </tr>
+              <tr>
+                <td>学习性能</td>
+                <td>20%</td>
+                <td>Office、多任务、专业软件、系统响应</td>
+                <td><span class="pill red">常用任务卡顿</span></td>
+              </tr>
+              <tr>
+                <td>键盘触控板</td>
+                <td>10%</td>
+                <td>长文输入、误触、快捷键、触控板面积</td>
+                <td><span class="pill yellow">长写作疲劳</span></td>
+              </tr>
+              <tr>
+                <td>安静与温控</td>
+                <td>10%</td>
+                <td>图书馆噪音、键盘温度、掌托温度</td>
+                <td><span class="pill yellow">风扇扰人</span></td>
+              </tr>
+              <tr>
+                <td>接口与生态</td>
+                <td>10%</td>
+                <td>USB、HDMI、Type-C、拓展坞、售后</td>
+                <td><span class="pill yellow">必须额外花钱</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>推荐权重可视化</h3>
+          <div class="score-box">
+            <div class="score-item">
+              <strong>续航快充</strong>
+              <div class="bar"><span style="width: 100%;"></span></div>
+              <b>20</b>
+            </div>
+            <div class="score-item">
+              <strong>学习性能</strong>
+              <div class="bar"><span style="width: 100%;"></span></div>
+              <b>20</b>
+            </div>
+            <div class="score-item">
+              <strong>便携性</strong>
+              <div class="bar"><span style="width: 75%;"></span></div>
+              <b>15</b>
+            </div>
+            <div class="score-item">
+              <strong>屏幕体验</strong>
+              <div class="bar"><span style="width: 75%;"></span></div>
+              <b>15</b>
+            </div>
+            <div class="score-item">
+              <strong>键盘触控</strong>
+              <div class="bar"><span style="width: 50%;"></span></div>
+              <b>10</b>
+            </div>
+            <div class="score-item">
+              <strong>安静温控</strong>
+              <div class="bar"><span style="width: 50%;"></span></div>
+              <b>10</b>
+            </div>
+            <div class="score-item">
+              <strong>接口生态</strong>
+              <div class="bar"><span style="width: 50%;"></span></div>
+              <b>10</b>
+            </div>
+          </div>
+          <p style="margin-top:16px;">
+            建议结论分级：90+ 强烈推荐，80-89 推荐，70-79 有条件推荐，70 以下谨慎购买。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>五、风险雷达：必须写清楚的坑</h2>
+        <p>
+          测评不能只讲好话，下面这些风险必须单独列出。
+        </p>
+      </div>
+
+      <div class="grid grid-3 risk">
+        <div class="card">
+          <span class="pill red">高风险</span>
+          <h3>性能错配</h3>
+          <ul>
+            <li>设计、剪辑、建模专业买到低功耗轻薄本。</li>
+            <li>内存不可扩展且容量偏小。</li>
+            <li>硬盘容量不足，后期成本高。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="pill yellow">中风险</span>
+          <h3>接口贫瘠</h3>
+          <ul>
+            <li>没有 HDMI，汇报必须带拓展坞。</li>
+            <li>USB-A 太少，鼠标和 U 盘冲突。</li>
+            <li>充电口与数据口占用冲突。</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="pill yellow">中风险</span>
+          <h3>隐性体验差</h3>
+          <ul>
+            <li>风扇声在图书馆明显。</li>
+            <li>屏幕反光重，户外难用。</li>
+            <li>键盘键程短，长时间写作累。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>六、交互式测评前检查</h2>
+        <p>
+          勾选完成项，快速判断一篇测评是否达标。
+        </p>
+      </div>
+
+      <div class="card interactive">
+        <label class="check">
+          <input type="checkbox" />
+          <div>
+            <strong>已完成真实校园 24 小时任务剧本</strong>
+            <span>不能只用跑分替代真实使用。</span>
+          </div>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <div>
+            <strong>已测试混合续航和快充</strong>
+            <span>至少包含办公、会议、视频三类场景。</span>
+          </div>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <div>
+            <strong>已记录噪音、温度和键盘手感</strong>
+            <span>特别关注图书馆和宿舍夜间场景。</span>
+          </div>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <div>
+            <strong>已按专业人群给出推荐边界</strong>
+            <span>必须说明适合谁、不适合谁。</span>
+          </div>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" />
+          <div>
+            <strong>已列出购买风险和替代建议</strong>
+            <span>避免只给“值得买”这种空泛结论。</span>
+          </div>
+        </label>
+
+        <div class="result" id="result">完成度：0 / 5，请开始勾选。</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>七、最终结论模板</h2>
+        <p>
+          测评文章或视频最后可以直接套用这个模板。
+        </p>
+      </div>
+
+      <div class="card">
+        <p class="quote">
+          这台轻薄本不是单纯看配置决定值不值，而是看它能否稳定陪你完成一整天校园任务。
+        </p>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>一句话结论</th>
+              <td>适合预算在 ____ 元、主要用于 ____ 的大学生。</td>
+            </tr>
+            <tr>
+              <th>推荐人群</th>
+              <td>文科 / 经管 / 轻办公 / 图书馆党 / 编程入门 / 轻创作等。</td>
+            </tr>
+            <tr>
+              <th>不推荐人群</th>
+              <td>重度剪辑、3D 建模、大型游戏、深度 AI 训练等用户。</td>
+            </tr>
+            <tr>
+              <th>最大优点</th>
+              <td>例如：续航强、屏幕好、重量轻、键盘舒服、安静。</td>
+            </tr>
+            <tr>
+              <th>最大短板</th>
+              <td>例如：接口少、性能释放保守、屏幕亮度一般、扩展性弱。</td>
+            </tr>
+            <tr>
+              <th>购买建议</th>
+              <td>推荐选择 ____GB 内存 + ____GB 硬盘版本，避免后期不够用。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      大学生轻薄本测评 SOP 网页版 · 适用于图文、视频、直播选购和横评项目
+    </footer>
+  </main>
+
+  <script>
+    const checks = document.querySelectorAll(".check input");
+    const result = document.getElementById("result");
+
+    function updateProgress() {
+      const total = checks.length;
+      const done = Array.from(checks).filter(item => item.checked).length;
+      let text = `完成度：${done} / ${total}，`;
+
+      if (done === 0) text += "请开始勾选。";
+      else if (done <= 2) text += "测评还不完整，容易变成参数罗列。";
+      else if (done <= 4) text += "基本达标，建议补充风险说明。";
+      else text += "SOP 完成，可以输出正式测评结论。";
+
+      result.textContent = text;
+    }
+
+    checks.forEach(item => item.addEventListener("change", updateProgress));
+  </script>
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数码与家电产品测评体系清单</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: #f3f6fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 1180px;
+      margin: 32px auto;
+      background: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    .hero {
+      padding: 48px 56px;
+      background:
+        radial-gradient(circle at top right, rgba(59,130,246,.35), transparent 35%),
+        linear-gradient(135deg, #0f172a 0%, #1e3a8a 48%, #2563eb 100%);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      max-width: 820px;
+      margin-top: 18px;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .meta-card {
+      padding: 18px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .meta-card span {
+      font-size: 13px;
+      color: #dbeafe;
+    }
+
+    .content {
+      padding: 42px 56px 56px;
+    }
+
+    .section {
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .num {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: #2563eb;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 26px;
+      color: #0f172a;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .card.blue {
+      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .card.green {
+      background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+      border-color: #bbf7d0;
+    }
+
+    .card.orange {
+      background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+      border-color: #fed7aa;
+    }
+
+    .card.purple {
+      background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%);
+      border-color: #ddd6fe;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      text-align: left;
+      padding: 14px;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .score {
+      font-weight: 700;
+      color: #2563eb;
+      white-space: nowrap;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .step {
+      padding: 18px 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .step b {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .step span {
+      display: block;
+      font-size: 13px;
+      color: #475569;
+    }
+
+    .quote {
+      padding: 22px 26px;
+      background: #f8fafc;
+      border-left: 6px solid #2563eb;
+      border-radius: 16px;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 26px 56px;
+      background: #0f172a;
+      color: #cbd5e1;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="badge">📋 长视频博主专用 · 数码 / 家电测评体系</div>
+      <h1>产品科普测评与推荐攻略<br />标准化清单报告</h1>
+      <p class="subtitle">
+        适用于 B站 / YouTube 长视频内容生产，覆盖选题、测试、评分、内容呈现、商单合规与带货转化。目标是在保证客观可信的基础上，提高内容复用效率与商业变现能力。
+      </p>
+
+      <div class="meta">
+        <div class="meta-card">
+          <strong>8</strong>
+          <span>核心测评维度</span>
+        </div>
+        <div class="meta-card">
+          <strong>100分</strong>
+          <span>标准化评分模型</span>
+        </div>
+        <div class="meta-card">
+          <strong>6步</strong>
+          <span>完整内容生产流程</span>
+        </div>
+        <div class="meta-card">
+          <strong>双平台</strong>
+          <span>B站 / YouTube 适配</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>测评定位与内容原则</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>内容定位</h3>
+            <ul>
+              <li>面向中国市场消费者，强调购买决策价值。</li>
+              <li>兼顾科普、实测、推荐、避坑和选购攻略。</li>
+              <li>用用户听得懂的话解释复杂参数。</li>
+              <li>避免只复述官方卖点，要输出真实体验判断。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>测评原则</h3>
+            <ul>
+              <li>测试条件公开，结论可复现。</li>
+              <li>优点、缺点、适合人群同时呈现。</li>
+              <li>参数不等于体验，体验也要有数据支撑。</li>
+              <li>商单与非商单标准一致。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业原则</h3>
+            <ul>
+              <li>明确标注赞助、样机、佣金链接。</li>
+              <li>不因商单隐藏关键缺点。</li>
+              <li>推荐逻辑优先于单品转化。</li>
+              <li>建立长期信任，而不是一次性成交。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>标准内容生产流程</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>选题立项</strong>
+            <span>需求分析 / 热度判断</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>样机准备</strong>
+            <span>渠道记录 / 批次确认</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>测试设计</strong>
+            <span>场景 / 工具 / 对照组</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>数据采集</strong>
+            <span>性能 / 体验 / 稳定性</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>结论输出</strong>
+            <span>评分 / 人群 / 替代品</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>内容发布</strong>
+            <span>标题 / 封面 / 带货链路</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>通用评分模型</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>测评维度</th>
+              <th>权重</th>
+              <th>核心检查项</th>
+              <th>输出结论</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>产品定位与配置</strong></td>
+              <td class="score">10%</td>
+              <td>价格段、目标人群、核心配置、同价位竞争力、版本差异。</td>
+              <td>这款产品到底卖给谁？</td>
+            </tr>
+            <tr>
+              <td><strong>设计与做工</strong></td>
+              <td class="score">10%</td>
+              <td>外观、材质、结构、接口、易清洁性、安装便利性。</td>
+              <td>是否好看、好用、耐用？</td>
+            </tr>
+            <tr>
+              <td><strong>核心性能</strong></td>
+              <td class="score">20%</td>
+              <td>跑分、速度、制冷/制热、清洁能力、画质、音质等品类关键指标。</td>
+              <td>硬实力是否达标？</td>
+            </tr>
+            <tr>
+              <td><strong>真实场景体验</strong></td>
+              <td class="score">20%</td>
+              <td>日常使用、重度使用、家庭场景、老人/儿童友好度。</td>
+              <td>实际用起来爽不爽？</td>
+            </tr>
+            <tr>
+              <td><strong>稳定性与可靠性</strong></td>
+              <td class="score">10%</td>
+              <td>长时间运行、发热、卡顿、故障率、软件更新、售后反馈。</td>
+              <td>能不能长期放心用？</td>
+            </tr>
+            <tr>
+              <td><strong>能耗 / 噪音 / 安全</strong></td>
+              <td class="score">10%</td>
+              <td>功耗、电费、噪音、温控、用电安全、儿童安全。</td>
+              <td>使用成本和安全性如何？</td>
+            </tr>
+            <tr>
+              <td><strong>生态与售后</strong></td>
+              <td class="score">10%</td>
+              <td>App、智能家居联动、耗材、保修、安装、维修价格。</td>
+              <td>买完之后省不省心？</td>
+            </tr>
+            <tr>
+              <td><strong>价格与购买建议</strong></td>
+              <td class="score">10%</td>
+              <td>历史价格、优惠节点、竞品对比、推荐等级、避坑提示。</td>
+              <td>现在值不值得买？</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>基础信息采集清单</h2>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 产品名称、型号、版本、颜色、容量、规格。</div>
+          <div class="check-item"><span class="check">✓</span> 入手渠道：自购 / 借测 / 品牌送测 / 商单。</div>
+          <div class="check-item"><span class="check">✓</span> 到手价格、官方价、历史低价、促销补贴价。</div>
+          <div class="check-item"><span class="check">✓</span> 生产日期、批次、固件版本、系统版本。</div>
+          <div class="check-item"><span class="check">✓</span> 包装清单、配件完整性、安装服务情况。</div>
+          <div class="check-item"><span class="check">✓</span> 测试环境：温度、湿度、网络、电压、房间面积。</div>
+          <div class="check-item"><span class="check">✓</span> 对照产品：上一代、竞品、同价位热门款。</div>
+          <div class="check-item"><span class="check">✓</span> 测试周期：开箱、短测、长测、复测时间。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>数码产品专项测评清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>手机 / 平板</h3>
+            <span class="tag">性能</span>
+            <span class="tag">影像</span>
+            <span class="tag">续航</span>
+            <ul>
+              <li>屏幕：亮度、色准、护眼、刷新率、户外可视性。</li>
+              <li>性能：跑分、游戏帧率、温控、后台保活。</li>
+              <li>影像：白天、夜景、人像、视频防抖、变焦。</li>
+              <li>续航：轻度、中度、重度使用，充电速度。</li>
+              <li>系统：广告、流畅度、隐私、生态互联。</li>
+              <li>购买建议：标准版 / Pro / Max 哪个更值。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>笔记本 / 台式机</h3>
+            <span class="tag">生产力</span>
+            <span class="tag">游戏</span>
+            <span class="tag">扩展</span>
+            <ul>
+              <li>CPU / GPU 性能，单核、多核、生产力软件测试。</li>
+              <li>散热与噪音：烤机、键盘温度、风扇策略。</li>
+              <li>屏幕：分辨率、色域、亮度、比例、观感。</li>
+              <li>接口：雷电、USB、HDMI、网口、读卡器。</li>
+              <li>续航：办公、视频、移动剪辑场景。</li>
+              <li>可维护性：内存、硬盘扩展、清灰难度。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>耳机 / 音箱</h3>
+            <span class="tag">音质</span>
+            <span class="tag">降噪</span>
+            <span class="tag">佩戴</span>
+            <ul>
+              <li>声音：低频、中频、高频、声场、人声表现。</li>
+              <li>降噪：低频噪音、人声噪音、风噪、通透模式。</li>
+              <li>通话：室内、街边、地铁、风噪环境。</li>
+              <li>延迟：游戏、视频、双设备切换。</li>
+              <li>佩戴：重量、夹头、耳压、长时间舒适度。</li>
+              <li>续航：单次续航、盒子总续航、快充。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>电视 / 投影 / 显示器</h3>
+            <span class="tag">画质</span>
+            <span class="tag">亮度</span>
+            <span class="tag">系统</span>
+            <ul>
+              <li>画质：亮度、对比度、色彩、HDR、暗场细节。</li>
+              <li>动态：运动补偿、拖影、游戏延迟、VRR。</li>
+              <li>音质：低频、人声、声场、外接音响必要性。</li>
+              <li>系统：广告、开机速度、会员体系、投屏体验。</li>
+              <li>安装：桌面 / 壁挂 / 投影距离 / 幕布适配。</li>
+              <li>使用场景：客厅观影、游戏、办公、副屏。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">06</span>
+          <h2>家电产品专项测评清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>冰箱</h3>
+            <ul>
+              <li>容量布局：冷藏、冷冻、变温区是否合理。</li>
+              <li>保鲜能力：蔬菜、水果、肉类、干湿分储。</li>
+              <li>温控稳定性：不同层温差、开门后恢复速度。</li>
+              <li>噪音与能耗：夜间噪音、日耗电量。</li>
+              <li>除味抗菌：串味、净味模块、耗材成本。</li>
+              <li>适合人群：单人、情侣、三口之家、多代同堂。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>洗衣机 / 烘干机</h3>
+            <ul>
+              <li>洗净能力：污渍去除、残留、漂洗效果。</li>
+              <li>护衣能力：磨损、缠绕、缩水、羊毛/真丝模式。</li>
+              <li>烘干效果：均匀度、褶皱、含水率、绒毛收集。</li>
+              <li>噪音震动：脱水、烘干、高速运行。</li>
+              <li>清洁维护：筒自洁、滤网、冷凝器、排水。</li>
+              <li>安装限制：尺寸、排水、电源、叠放方案。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>空调 / 新风 / 净化器</h3>
+            <ul>
+              <li>制冷制热速度：不同面积房间实测。</li>
+              <li>温控舒适度：直吹、温差、湿度控制。</li>
+              <li>能耗：不同模式耗电量、长期电费估算。</li>
+              <li>噪音：低风、高风、睡眠模式。</li>
+              <li>空气质量：颗粒物、甲醛、CO₂、换气效率。</li>
+              <li>安装售后：打孔、铜管、支架、额外收费。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>扫地机器人 / 洗地机</h3>
+            <ul>
+              <li>清扫能力：灰尘、毛发、颗粒物、边角覆盖。</li>
+              <li>拖地能力：顽固污渍、回洗、热风烘干。</li>
+              <li>导航避障：桌椅、线材、宠物、地毯。</li>
+              <li>基站体验：集尘、补水、排水、清洗维护。</li>
+              <li>App：地图、禁区、分区、多楼层、远程控制。</li>
+              <li>耗材成本：尘袋、滤芯、清洁液、滚刷。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>厨房小家电</h3>
+            <ul>
+              <li>核心功能：破壁、空气炸、蒸烤、咖啡萃取等。</li>
+              <li>实际出品：口感、熟度、均匀度、稳定性。</li>
+              <li>操作难度：菜单、预设、老人友好度。</li>
+              <li>清洗维护：拆洗、油污、异味、死角。</li>
+              <li>安全：防烫、防溢、断电保护、材质安全。</li>
+              <li>占地与收纳：厨房空间适配度。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>智能门锁 / 安防设备</h3>
+            <ul>
+              <li>解锁方式：指纹、人脸、密码、NFC、钥匙。</li>
+              <li>识别速度与成功率：老人、儿童、湿手场景。</li>
+              <li>安全性：锁芯等级、防撬报警、虚位密码。</li>
+              <li>续航：电池容量、低电提醒、应急供电。</li>
+              <li>App：远程提醒、临时密码、家庭成员管理。</li>
+              <li>安装适配：门体、天地钩、售后覆盖。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">07</span>
+          <h2>推荐结论模板</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>推荐等级</th>
+              <th>定义</th>
+              <th>适合表达</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="score">S级 强烈推荐</td>
+              <td>同价位综合体验突出，缺点不影响核心体验。</td>
+              <td>闭眼买 / 同价位首选 / 大多数人都适合。</td>
+              <td>必须明确价格前提，避免绝对化。</td>
+            </tr>
+            <tr>
+              <td class="score">A级 值得买</td>
+              <td>整体表现优秀，但有少量短板或适合特定人群。</td>
+              <td>如果你重视某项体验，这款很适合。</td>
+              <td>说明短板和替代选择。</td>
+            </tr>
+            <tr>
+              <td class="score">B级 可考虑</td>
+              <td>有优势也有明显妥协，需看价格和需求。</td>
+              <td>降价后可以考虑 / 适合预算有限用户。</td>
+              <td>不要强推，强调前提条件。</td>
+            </tr>
+            <tr>
+              <td class="score">C级 谨慎购买</td>
+              <td>核心体验存在明显不足，或价格竞争力弱。</td>
+              <td>除非特别喜欢这个卖点，否则不建议优先选。</td>
+              <td>给出更合理替代品。</td>
+            </tr>
+            <tr>
+              <td class="score">D级 不推荐</td>
+              <td>体验、质量、售后或价格存在严重问题。</td>
+              <td>不建议买 / 建议避开。</td>
+              <td>结论要有证据，避免情绪化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">08</span>
+          <h2>长视频脚本结构模板</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>标准单品测评结构</h3>
+            <ul>
+              <li><strong>00:00 - 00:30</strong> 结论前置：适合谁，不适合谁。</li>
+              <li><strong>00:30 - 02:00</strong> 产品定位、价格、版本区别。</li>
+              <li><strong>02:00 - 06:00</strong> 核心卖点逐项实测。</li>
+              <li><strong>06:00 - 10:00</strong> 真实使用场景体验。</li>
+              <li><strong>10:00 - 13:00</strong> 缺点、槽点、注意事项。</li>
+              <li><strong>13:00 - 15:00</strong> 竞品对比与购买建议。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>推荐攻略视频结构</h3>
+            <ul>
+              <li><strong>痛点开场：</strong>为什么很多人买错？</li>
+              <li><strong>科普解释：</strong>哪些参数真重要，哪些是营销？</li>
+              <li><strong>预算分层：</strong>入门、中端、高端分别怎么选。</li>
+              <li><strong>人群分层：</strong>学生、家庭、租房、宠物、老人。</li>
+              <li><strong>避坑清单：</strong>不建议买的配置和场景。</li>
+              <li><strong>购买节点：</strong>618、双11、以旧换新、补贴。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">09</span>
+          <h2>商单与带货合规清单</h2>
+        </div>
+
+        <div class="quote">
+          商业内容的核心不是“说好话”，而是“在真实前提下帮用户做选择”。长期信任是数码和家电内容账号最重要的资产。
+        </div>
+
+        <div style="height: 18px;"></div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 视频中明确说明：自购、送测、借测或商业合作。</div>
+          <div class="check-item"><span class="check">✓</span> 带货链接价格、优惠券、佣金性质不误导用户。</div>
+          <div class="check-item"><span class="check">✓</span> 商单前确认品牌是否接受真实缺点呈现。</div>
+          <div class="check-item"><span class="check">✓</span> 禁止虚构测试数据、虚构用户反馈。</div>
+          <div class="check-item"><span class="check">✓</span> 竞品对比要基于事实，避免恶意贬低。</div>
+          <div class="check-item"><span class="check">✓</span> 医疗、除菌、净化、节能等功效需谨慎表述。</div>
+          <div class="check-item"><span class="check">✓</span> 推荐语避免“最好、第一、绝对、永久”等极限词。</div>
+          <div class="check-item"><span class="check">✓</span> 评论区置顶补充价格变化、售后反馈、翻车信息。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">10</span>
+          <h2>最终交付物清单</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>视频内容资产</h3>
+            <ul>
+              <li>完整长视频</li>
+              <li>章节切片</li>
+              <li>封面图</li>
+              <li>标题关键词</li>
+              <li>简介区购买链接</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>测评数据资产</h3>
+            <ul>
+              <li>原始测试表格</li>
+              <li>实拍素材</li>
+              <li>对比图表</li>
+              <li>评分卡</li>
+              <li>测试环境说明</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业转化资产</h3>
+            <ul>
+              <li>产品推荐卡</li>
+              <li>价格监控表</li>
+              <li>优惠信息</li>
+              <li>人群推荐话术</li>
+              <li>评论区答疑模板</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© 数码与家电测评体系清单 · 适用于 B站 / YouTube 长视频内容团队</div>
+      <div>版本：V1.0</div>
+    </footer>
+  </div>
+</body>
+</html>

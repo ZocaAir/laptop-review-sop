@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026年下半年中国市场空调长视频项目策划报告</title>
+  <style>
+    :root {
+      --bg:#f4f8fb;
+      --surface:#fff;
+      --surface-2:#f8fafc;
+      --text:#101828;
+      --text-2:#344054;
+      --muted:#667085;
+      --line:#dbe6ef;
+
+      --primary:#0284c7;
+      --primary-2:#22d3ee;
+      --green:#16a34a;
+      --blue:#2563eb;
+      --orange:#ea580c;
+      --purple:#7c3aed;
+      --red:#dc2626;
+
+      --primary-soft:#ecfeff;
+      --green-soft:#ecfdf3;
+      --blue-soft:#eff6ff;
+      --orange-soft:#fff7ed;
+      --purple-soft:#f5f3ff;
+      --red-soft:#fef2f2;
+
+      --shadow:0 16px 42px rgba(15,23,42,.08);
+      --radius-xl:26px;
+      --radius-lg:18px;
+      --max:1260px;
+    }
+
+    html[data-theme="dark"] {
+      --bg:#06111a;
+      --surface:#101b24;
+      --surface-2:#172532;
+      --text:#f8fafc;
+      --text-2:#d1d5db;
+      --muted:#9ca3af;
+      --line:#293d4c;
+
+      --primary:#38bdf8;
+      --primary-2:#67e8f9;
+      --green:#4ade80;
+      --blue:#60a5fa;
+      --orange:#fb923c;
+      --purple:#a78bfa;
+      --red:#f87171;
+
+      --primary-soft:#0d2a3a;
+      --green-soft:#10291d;
+      --blue-soft:#10233f;
+      --orange-soft:#321d12;
+      --purple-soft:#21183b;
+      --red-soft:#351616;
+
+      --shadow:0 16px 42px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 0% 0%,rgba(2,132,199,.16),transparent 28%),
+        radial-gradient(circle at 100% 0%,rgba(34,211,238,.16),transparent 30%),
+        radial-gradient(circle at 55% 8%,rgba(22,163,74,.08),transparent 24%),
+        linear-gradient(180deg,var(--bg),var(--bg));
+      line-height:1.6;
+    }
+
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+
+    .page {
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .hero { padding:28px 0 18px; }
+
+    .hero-card,
+    .footer-card {
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius-xl);
+      color:#fff;
+      background:
+        linear-gradient(135deg,rgba(6,18,30,.98),rgba(2,132,199,.94)),
+        radial-gradient(circle at 78% 18%,rgba(103,232,249,.42),transparent 36%),
+        radial-gradient(circle at 18% 82%,rgba(34,197,94,.22),transparent 34%);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card { padding:36px; }
+    .footer-card { padding:22px 24px; margin-bottom:24px; }
+
+    .hero-card::after,
+    .footer-card::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+      background-size:36px 36px;
+      opacity:.5;
+      pointer-events:none;
+    }
+
+    .hero-main,
+    .hero-kpis,
+    .footer-inner {
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-main {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:26px;
+      align-items:end;
+    }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.22);
+      color:rgba(255,255,255,.9);
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(31px,4.6vw,58px);
+      line-height:1.06;
+      letter-spacing:-1.2px;
+    }
+
+    .hero-desc {
+      max-width:920px;
+      margin:16px 0 0;
+      color:rgba(255,255,255,.83);
+      font-size:16px;
+    }
+
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    .btn {
+      cursor:pointer;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:900;
+      color:#fff;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(8px);
+    }
+
+    .hero-kpis {
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:10px;
+      margin-top:24px;
+    }
+
+    .hero-kpi {
+      padding:13px;
+      border-radius:16px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    .hero-kpi strong {
+      display:block;
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .hero-kpi span {
+      color:rgba(255,255,255,.76);
+      font-size:12px;
+    }
+
+    .nav-wrap {
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(244,248,251,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    html[data-theme="dark"] .nav-wrap {
+      background:rgba(6,17,26,.9);
+    }
+
+    .nav {
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:10px 0;
+      scrollbar-width:none;
+    }
+
+    .nav::-webkit-scrollbar { display:none; }
+
+    .nav a {
+      flex:0 0 auto;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-2);
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .nav a:hover {
+      color:#fff;
+      background:var(--primary);
+      border-color:var(--primary);
+    }
+
+    main { padding:18px 0; }
+
+    section {
+      margin-bottom:16px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .section-inner { padding:22px; }
+
+    .section-head {
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:start;
+      margin-bottom:16px;
+    }
+
+    h2 {
+      margin:0;
+      font-size:clamp(22px,2.5vw,30px);
+      line-height:1.25;
+    }
+
+    h3 { margin:0 0 8px; line-height:1.35; }
+
+    .sub {
+      margin:7px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      max-width:980px;
+    }
+
+    .tag {
+      white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:6px 11px;
+      color:var(--primary);
+      background:var(--primary-soft);
+      border:1px solid var(--line);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .tag.green { color:var(--green); background:var(--green-soft); }
+    .tag.blue { color:var(--blue); background:var(--blue-soft); }
+    .tag.orange { color:var(--orange); background:var(--orange-soft); }
+    .tag.purple { color:var(--purple); background:var(--purple-soft); }
+    .tag.red { color:var(--red); background:var(--red-soft); }
+
+    .grid-12 {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+    }
+
+    .span-3 { grid-column:span 3; }
+    .span-4 { grid-column:span 4; }
+    .span-6 { grid-column:span 6; }
+    .span-12 { grid-column:span 12; }
+
+    .card {
+      min-width:0;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:16px;
+    }
+
+    .card.soft { background:var(--surface-2); }
+
+    .card p,
+    .card li {
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .metric strong {
+      display:block;
+      color:var(--primary);
+      font-size:25px;
+      line-height:1.1;
+      margin-bottom:5px;
+    }
+
+    .metric span {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .mini-list {
+      margin:8px 0 0;
+      padding-left:18px;
+    }
+
+    .mini-list li { margin:4px 0; }
+
+    .table-wrap {
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:var(--surface);
+    }
+
+    table {
+      width:100%;
+      min-width:1040px;
+      border-collapse:collapse;
+    }
+
+    th,
+    td {
+      padding:10px 12px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:13.5px;
+      text-align:left;
+    }
+
+    th:last-child,
+    td:last-child { border-right:0; }
+
+    tr:last-child td { border-bottom:0; }
+
+    th {
+      color:var(--text);
+      background:var(--primary-soft);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    td { color:var(--text-2); }
+
+    .note {
+      margin-top:12px;
+      padding:13px 15px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:var(--primary-soft);
+      color:var(--text-2);
+      font-size:14px;
+    }
+
+    .brand-grid,
+    .persona-grid,
+    .pillar-grid,
+    .score-grid {
+      display:grid;
+      gap:10px;
+    }
+
+    .brand-grid {
+      grid-template-columns:repeat(6,minmax(0,1fr));
+    }
+
+    .persona-grid {
+      grid-template-columns:repeat(5,minmax(0,1fr));
+    }
+
+    .pillar-grid,
+    .score-grid {
+      grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+
+    .brand,
+    .persona,
+    .pillar,
+    .score-card {
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:17px;
+      padding:14px;
+      background:var(--surface-2);
+    }
+
+    .brand b,
+    .persona h3,
+    .pillar h3,
+    .score-card h3 {
+      display:block;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .brand span,
+    .persona p,
+    .pillar p,
+    .score-card p {
+      display:block;
+      margin:0;
+      color:var(--muted);
+      font-size:12.8px;
+    }
+
+    .brand-logo,
+    .persona-icon,
+    .pillar-num {
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .pillar-num {
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    }
+
+    .timeline {
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .month {
+      min-width:0;
+      padding:14px;
+      border-radius:17px;
+      border:1px solid var(--line);
+      background:var(--surface-2);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .month::before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-2));
+    }
+
+    .month b {
+      display:block;
+      color:var(--primary);
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .month span {
+      display:block;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.5;
+    }
+
+    .score {
+      display:inline-block;
+      min-width:42px;
+      text-align:center;
+      padding:2px 7px;
+      border-radius:999px;
+      color:var(--primary);
+      background:var(--primary-soft);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    .priority-high { color:var(--green); background:var(--green-soft); }
+    .priority-mid { color:var(--orange); background:var(--orange-soft); }
+    .priority-low { color:var(--muted); background:var(--surface-2); }
+
+    .episode-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .episode {
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface-2);
+      overflow:hidden;
+    }
+
+    .episode-head {
+      padding:12px 14px;
+      background:var(--primary-soft);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+
+    .episode-head b { font-size:15px; }
+    .episode-body { padding:13px 14px; }
+
+    .episode-body p {
+      margin:0 0 8px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .chips {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .chip {
+      padding:4px 8px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      color:var(--text-2);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .workbench {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+    }
+
+    .wb-card {
+      min-width:0;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+    }
+
+    .wb-card.span-4 { grid-column:span 4; }
+    .wb-card.span-6 { grid-column:span 6; }
+
+    .wb-head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      background:var(--primary-soft);
+      border-bottom:1px solid var(--line);
+    }
+
+    .wb-head h3 { margin:0; font-size:15px; }
+
+    .wb-mark {
+      flex:0 0 auto;
+      font-size:11px;
+      font-weight:900;
+      color:var(--primary);
+      padding:3px 8px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+    }
+
+    .wb-body { padding:12px 14px 14px; }
+
+    .score-row {
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:8px;
+      align-items:center;
+      padding:7px 0;
+      border-bottom:1px dashed var(--line);
+      font-size:13px;
+      color:var(--text-2);
+    }
+
+    .score-row:last-child { border-bottom:0; }
+
+    .score-badge {
+      min-width:48px;
+      text-align:center;
+      color:var(--primary);
+      font-weight:900;
+      border-radius:999px;
+      padding:2px 8px;
+      background:var(--primary-soft);
+      font-size:12px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .field {
+      min-width:0;
+      padding:8px 10px;
+      border-radius:11px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+    }
+
+    .field b {
+      display:block;
+      color:var(--text);
+      font-size:12px;
+      margin-bottom:2px;
+    }
+
+    .field span {
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .footer-inner {
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-card h2 {
+      margin:0;
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .footer-card p {
+      margin:6px 0 0;
+      color:rgba(255,255,255,.76);
+      font-size:13px;
+    }
+
+    .footer-mini {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .footer-mini span {
+      padding:6px 9px;
+      border-radius:999px;
+      color:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    @media (max-width:1180px) {
+      .hero-kpis,
+      .timeline { grid-template-columns:repeat(3,1fr); }
+
+      .brand-grid,
+      .persona-grid { grid-template-columns:repeat(3,1fr); }
+
+      .pillar-grid,
+      .score-grid { grid-template-columns:repeat(2,1fr); }
+
+      .episode-grid { grid-template-columns:repeat(2,1fr); }
+
+      .span-3,
+      .span-4,
+      .span-6 { grid-column:span 6; }
+
+      .wb-card.span-4,
+      .wb-card.span-6 { grid-column:span 6; }
+    }
+
+    @media (max-width:760px) {
+      .page,
+      .nav { width:min(100% - 22px,var(--max)); }
+
+      .hero-card { padding:24px; }
+      .hero-main { grid-template-columns:1fr; }
+      .hero-actions { justify-content:flex-start; }
+
+      .hero-kpis,
+      .timeline,
+      .brand-grid,
+      .persona-grid,
+      .pillar-grid,
+      .score-grid,
+      .episode-grid,
+      .field-grid { grid-template-columns:1fr; }
+
+      .section-head { grid-template-columns:1fr; }
+
+      .span-3,
+      .span-4,
+      .span-6,
+      .span-12,
+      .wb-card.span-4,
+      .wb-card.span-6 {
+        grid-column:span 12;
+      }
+
+      .section-inner { padding:16px; }
+      table { min-width:860px; }
+
+      .footer-inner { grid-template-columns:1fr; }
+      .footer-mini { justify-content:flex-start; }
+    }
+
+    @media print {
+      .nav-wrap,
+      .hero-actions { display:none; }
+
+      body { background:#fff; }
+
+      section,
+      .hero-card,
+      .footer-card { box-shadow:none; }
+
+      section { break-inside:avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="hero-card">
+        <div class="hero-main">
+          <div>
+            <div class="badge">❄️ 2026 H2 China Air Conditioner Long Video Project</div>
+            <h1>2026年下半年<br />中国市场空调长视频项目策划报告</h1>
+            <p class="hero-desc">
+              面向B站家电、装修、生活方式和节能消费类内容，聚焦中国空调市场主流品牌与家庭使用场景，围绕格力、美的、海尔、海信、TCL、奥克斯、小米、华凌、统帅、长虹、科龙、松下、大金、三菱电机等品牌，建立从选题库、评分模型、科学测试到双11转化的完整项目系统。
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn" id="themeBtn" type="button">🌙 深色模式</button>
+            <button class="btn" type="button" onclick="window.print()">🖨️ 打印 / PDF</button>
+          </div>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="hero-kpi"><strong>6个月</strong><span>2026年7-12月周期</span></div>
+          <div class="hero-kpi"><strong>12期</strong><span>核心长视频规划</span></div>
+          <div class="hero-kpi"><strong>30+</strong><span>空调选题库</span></div>
+          <div class="hero-kpi"><strong>100分</strong><span>选题评分模型</span></div>
+          <div class="hero-kpi"><strong>10维</strong><span>科学测试体系</span></div>
+          <div class="hero-kpi"><strong>闭环</strong><span>测评/安装/节能/大促</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-wrap">
+    <div class="nav">
+      <a href="#overview">总览</a>
+      <a href="#brands">品牌格局</a>
+      <a href="#timing">节点</a>
+      <a href="#persona">用户画像</a>
+      <a href="#strategy">内容主线</a>
+      <a href="#topic-library">选题库</a>
+      <a href="#score-model">评分模型</a>
+      <a href="#calendar">半年排期</a>
+      <a href="#episodes">12期规划</a>
+      <a href="#testing">测试体系</a>
+      <a href="#operation">运营转化</a>
+      <a href="#dashboard">工作台</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="overview">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>01｜项目总览：建立“中国家庭空调选购与安装决策内容资产”</h2>
+            <p class="sub">
+              空调购买决策不只看匹数和价格，还涉及制冷制热、能耗、噪音、风感、除湿、新风、安装质量、售后和长期电费。本项目目标是把空调内容从“参数推荐”升级为“选购 + 安装 + 使用成本”的家庭顾问。
+            </p>
+          </div>
+          <span class="tag">Overview</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-3 metric">
+            <strong>内容目标</strong>
+            <span>覆盖空调选购、品牌对比、节能测试、安装避坑、大促推荐。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>市场目标</strong>
+            <span>聚焦中国用户高频购买品牌、价格段、房间面积和装修场景。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>平台目标</strong>
+            <span>沉淀B站搜索资产、合集、评论答疑和测试标准。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>商业目标</strong>
+            <span>形成品牌测评、双11榜单、安装服务合作、带货转化。</span>
+          </div>
+
+          <div class="card span-6">
+            <h3>2026下半年中国空调市场判断</h3>
+            <ul class="mini-list">
+              <li><b>高温常态化推动换新：</b>夏季极端高温让制冷速度、稳定性和电费成为强痛点。</li>
+              <li><b>一级能效成为主流：</b>用户开始关心APF、变频能力和真实电费，不再只看能效标识。</li>
+              <li><b>舒适风感竞争加剧：</b>无风感、柔风、防直吹、导风板设计成为母婴和卧室场景重点。</li>
+              <li><b>新风空调继续扩散：</b>新风量、噪音、滤网成本、是否真有用需要实测验证。</li>
+              <li><b>安装质量影响体验：</b>抽真空、铜管、排水、外机位、支架和收费透明度决定长期使用。</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <h3>栏目建议</h3>
+            <ul class="mini-list">
+              <li><b>栏目名：</b>《中国空调选购实验室》或《家用冷暖研究所》。</li>
+              <li><b>核心标签：</b>真实制冷测试、安装避坑、节能电费、卧室空调、双11推荐。</li>
+              <li><b>内容节奏：</b>7-8月抓高温制冷，9月做新品趋势，10月承接装修安装，11月集中转化，12月做制热与年终榜单。</li>
+              <li><b>长期资产：</b>品牌库、型号库、匹数面积表、安装避坑清单、价格库、测试协议库。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>02｜中国市场空调品牌格局</h2>
+            <p class="sub">
+              空调内容必须贴近中国市场真实购买品牌。国产品牌作为主线，日系品牌作为高端冷暖、静音和长期稳定性参照。
+            </p>
+          </div>
+          <span class="tag blue">China Market Brands</span>
+        </div>
+
+        <div class="brand-grid">
+          <div class="brand">
+            <div class="brand-logo">格</div>
+            <b>格力</b>
+            <span>中国空调核心品牌，制冷、耐用、线下渠道、品牌心智强。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">美</div>
+            <b>美的 / 华凌 / COLMO</b>
+            <span>覆盖入门到高端，性价比、智能化、无风感、新风。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">海</div>
+            <b>海尔 / 统帅</b>
+            <span>售后服务、健康空气、家庭场景、全屋家电联动。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">海</div>
+            <b>海信 / 科龙</b>
+            <span>高性价比、变频、节能、双11价位段关注高。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">新</div>
+            <b>TCL / 奥克斯 / 小米</b>
+            <span>价格竞争、年轻用户、智能家居和互联网品牌。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">日</div>
+            <b>大金 / 三菱电机 / 松下</b>
+            <span>高端冷暖、静音、制热、中央空调和长期稳定性。</span>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>品牌/阵营</th>
+                <th>内容定位</th>
+                <th>适合选题</th>
+                <th>重点测试</th>
+                <th>用户关注点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>格力</td>
+                <td>强品牌心智和传统空调标杆。</td>
+                <td>国产旗舰横评、制冷能力、耐用性讨论。</td>
+                <td>制冷速度、温控、噪音、能耗、售后。</td>
+                <td>贵不贵、值不值、是否比竞品更稳。</td>
+              </tr>
+              <tr>
+                <td>美的 / 华凌 / COLMO</td>
+                <td>从性价比到高端舒适风覆盖完整。</td>
+                <td>卧室空调、无风感、低预算、智能空调。</td>
+                <td>风感、噪音、App、耗电、制冷。</td>
+                <td>华凌能不能买、美的无风感是否有用。</td>
+              </tr>
+              <tr>
+                <td>海尔 / 统帅</td>
+                <td>服务、健康空气和家庭场景。</td>
+                <td>母婴家庭、新风健康、售后体验。</td>
+                <td>空气健康、除湿、噪音、安装、服务。</td>
+                <td>售后、健康功能、适不适合老人小孩。</td>
+              </tr>
+              <tr>
+                <td>海信 / 科龙</td>
+                <td>中低价位和高性价比重要阵营。</td>
+                <td>3000元价位横评、双11推荐。</td>
+                <td>制冷、耗电、噪音、用料、售后。</td>
+                <td>便宜是否靠谱、长期电费高不高。</td>
+              </tr>
+              <tr>
+                <td>TCL / 奥克斯 / 小米</td>
+                <td>价格敏感和智能生态用户。</td>
+                <td>年轻人第一台空调、出租房空调、智能联动。</td>
+                <td>价格、App、制冷、安装、噪音。</td>
+                <td>能不能买、售后如何、智能功能是否实用。</td>
+              </tr>
+              <tr>
+                <td>大金 / 三菱电机 / 松下</td>
+                <td>高端参照，适合制热、静音和中央空调话题。</td>
+                <td>日系高端空调、中央空调、冬季制热。</td>
+                <td>制热、静音、温控、做工、长期稳定性。</td>
+                <td>贵在哪、国产旗舰能否替代。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="timing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>03｜2026年下半年时事节点与内容机会</h2>
+            <p class="sub">空调购买主要由夏季高温、租房入住、装修安装、双11大促和冬季制热触发。</p>
+          </div>
+          <span class="tag blue">Market Timing</span>
+        </div>
+
+        <div class="timeline">
+          <div class="month">
+            <b>7月｜高温爆发</b>
+            <span>制冷速度、耗电、夜间睡眠、老空调换新是高需求话题。</span>
+          </div>
+          <div class="month">
+            <b>8月｜租房 / 开学 / 卧室</b>
+            <span>卧室空调、静音、柔风、出租房低预算选购。</span>
+          </div>
+          <div class="month">
+            <b>9月｜IFA / 秋季新品</b>
+            <span>新风、AI节能、健康空气、舒适风技术趋势。</span>
+          </div>
+          <div class="month">
+            <b>10月｜国庆装修安装</b>
+            <span>空调安装、外机位、中央空调、风管机、挂机柜机选择。</span>
+          </div>
+          <div class="month">
+            <b>11月｜双11大促</b>
+            <span>全年换新和囤货主节点，适合价格监测和终极推荐。</span>
+          </div>
+          <div class="month">
+            <b>12月｜冬季制热</b>
+            <span>南方制热、除霜、低温启动、电辅热和年度红黑榜。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="persona">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>04｜中国空调消费用户画像</h2>
+            <p class="sub">空调内容需要明确房间面积、安装条件、使用时长、家庭成员和气候区域。</p>
+          </div>
+          <span class="tag purple">User Persona</span>
+        </div>
+
+        <div class="persona-grid">
+          <div class="persona">
+            <div class="persona-icon">热</div>
+            <h3>高温刚需用户</h3>
+            <p>关注制冷速度、稳定性、电费和老空调换新。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">睡</div>
+            <h3>卧室睡眠用户</h3>
+            <p>关注静音、柔风、防直吹、夜间温控和除湿。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">装</div>
+            <h3>装修置家用户</h3>
+            <p>关注挂机、柜机、风管机、中央空调和安装预留。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">省</div>
+            <h3>性价比用户</h3>
+            <p>关注2000-4000元档，一级能效和真实电费。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">暖</div>
+            <h3>南方制热用户</h3>
+            <p>关注冬季制热、除霜、电辅热、低温启动和耗电。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>05｜四条内容主线</h2>
+            <p class="sub">空调内容要同时服务夏季刚需、装修安装、节能电费和大促转化。</p>
+          </div>
+          <span class="tag green">Content Strategy</span>
+        </div>
+
+        <div class="pillar-grid">
+          <div class="pillar">
+            <div class="pillar-num">1</div>
+            <h3>中国品牌横评线</h3>
+            <p>格力、美的、海尔、海信、TCL、奥克斯、小米等同价位对比。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">2</div>
+            <h3>制冷制热实测线</h3>
+            <p>高温制冷、冬季制热、除湿、温控稳定和舒适风感。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">3</div>
+            <h3>装修安装避坑线</h3>
+            <p>抽真空、铜管、外机位、排水、支架收费、中央空调和风管机。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">4</div>
+            <h3>双11导购转化线</h3>
+            <p>价格监测、预算分层、匹数面积、型号推荐和评论答疑。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topic-library">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>06｜中国市场空调长视频选题库</h2>
+            <p class="sub">高优先级进入长视频，中优先级可做短切片、动态答疑或长视频章节。</p>
+          </div>
+          <span class="tag orange">Topic Library</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>选题方向</th>
+                <th>标题参考</th>
+                <th>核心品牌/对象</th>
+                <th>服务用户</th>
+                <th>测试/内容点</th>
+                <th>适合月份</th>
+                <th>优先级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>高温制冷</td>
+                <td>40℃高温天，空调制冷差距到底有多大？</td>
+                <td>格力、美的、海尔、海信</td>
+                <td>高温刚需用户</td>
+                <td>降温速度、温控、电费、噪音、出风温度。</td>
+                <td>7月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>国产横评</td>
+                <td>国产空调横评：格力、美的、海尔谁更值得买？</td>
+                <td>格力、美的、海尔、海信、TCL</td>
+                <td>主流购买用户</td>
+                <td>制冷、能耗、噪音、风感、安装、售后。</td>
+                <td>7-9月 / 11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>低预算推荐</td>
+                <td>2000元空调怎么选？华凌、奥克斯、小米能不能买？</td>
+                <td>华凌、奥克斯、小米、TCL、科龙</td>
+                <td>性价比用户</td>
+                <td>一级能效、制冷、噪音、安装费、售后。</td>
+                <td>8月 / 11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>卧室睡眠</td>
+                <td>卧室空调怎么选？别再被“无风感”忽悠了</td>
+                <td>美的、海尔、格力、松下</td>
+                <td>睡眠/母婴用户</td>
+                <td>噪音、风感、防直吹、夜间温控、除湿。</td>
+                <td>8月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>新风空调</td>
+                <td>新风空调是真有用，还是智商税？</td>
+                <td>海尔、美的、格力、小米</td>
+                <td>健康空气用户</td>
+                <td>新风量、噪音、CO2变化、滤网成本。</td>
+                <td>9月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>安装避坑</td>
+                <td>空调安装最容易踩的10个坑：抽真空、铜管、收费全讲清</td>
+                <td>全品牌</td>
+                <td>装修/换新用户</td>
+                <td>抽真空、打孔、排水、外机位、支架、加管。</td>
+                <td>10月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>中央空调</td>
+                <td>中央空调、风管机、挂机到底怎么选？装修前必看</td>
+                <td>大金、三菱、美的、海尔、格力</td>
+                <td>装修用户</td>
+                <td>预算、吊顶、检修、能耗、舒适性、后期维护。</td>
+                <td>10月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11价格</td>
+                <td>双11空调价格监测：哪些是真降价，哪些是安装套路？</td>
+                <td>全品牌</td>
+                <td>购买用户</td>
+                <td>历史低价、安装费、赠品、型号马甲、补贴。</td>
+                <td>11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11推荐</td>
+                <td>2026双11空调推荐：卧室、客厅、租房、制热怎么买？</td>
+                <td>全品牌</td>
+                <td>全体用户</td>
+                <td>预算分层、匹数面积、适合人群、不适合人群。</td>
+                <td>11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>冬季制热</td>
+                <td>南方冬天靠空调取暖，哪些型号真的暖？</td>
+                <td>格力、美的、海尔、大金、三菱</td>
+                <td>南方制热用户</td>
+                <td>制热速度、除霜、电辅热、低温启动、电费。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>长期体验</td>
+                <td>空调用了一个夏天后，真正影响体验的是这些</td>
+                <td>全品牌</td>
+                <td>谨慎购买用户</td>
+                <td>电费、噪音、异味、漏水、售后、清洗。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>年度红黑榜</td>
+                <td>2026中国空调红黑榜：这些值得买，这些别碰</td>
+                <td>全品牌</td>
+                <td>全体用户</td>
+                <td>值得买、慎买、等降价、2027趋势。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>除湿专项</td>
+                <td>南方回南天，空调除湿到底有没有用？</td>
+                <td>美的、海尔、格力、松下</td>
+                <td>南方潮湿用户</td>
+                <td>湿度下降、体感、温度波动、耗电。</td>
+                <td>8月 / 12月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>智能空调</td>
+                <td>智能空调到底有没有用？App、AI节能、全屋联动实测</td>
+                <td>小米、美的、海尔、华凌</td>
+                <td>年轻/智能家居用户</td>
+                <td>App、语音、自动节能、场景联动、稳定性。</td>
+                <td>9月 / 10月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>清洗维护</td>
+                <td>空调不清洗到底有多脏？一年维护成本讲清楚</td>
+                <td>全品牌</td>
+                <td>健康家庭</td>
+                <td>滤网、蒸发器、异味、清洗费用、动手难度。</td>
+                <td>12月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>选题库使用原则：</b>
+          空调内容不要只讲“几匹、几级能效”，必须把房间面积、使用时长、噪音、电费、安装和售后一起讲清。
+        </div>
+      </div>
+    </section>
+
+    <section id="score-model">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>07｜选题评分模型：100分制立项判断</h2>
+            <p class="sub">80分以上进入核心长视频；70-79分进入备选；低于70分适合短内容或暂缓。</p>
+          </div>
+          <span class="tag red">Scoring Model</span>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-card">
+            <h3>用户需求强度｜25分</h3>
+            <p>是否有高温、装修、换新、制热、节能和购买搜索需求。</p>
+          </div>
+          <div class="score-card">
+            <h3>测试可展示性｜20分</h3>
+            <p>是否能拍出降温、噪音、风感、耗电和安装差异。</p>
+          </div>
+          <div class="score-card">
+            <h3>品牌关注度｜15分</h3>
+            <p>是否覆盖中国市场高关注品牌和主流价格段。</p>
+          </div>
+          <div class="score-card">
+            <h3>搜索长尾价值｜15分</h3>
+            <p>是否适合长期被搜索、收藏和用于购买决策。</p>
+          </div>
+          <div class="score-card">
+            <h3>节点匹配度｜10分</h3>
+            <p>是否绑定高温、开学、IFA、国庆装修、双11、冬季制热。</p>
+          </div>
+          <div class="score-card">
+            <h3>商业转化潜力｜10分</h3>
+            <p>是否能承接品牌合作、安装服务、带货和榜单。</p>
+          </div>
+          <div class="score-card">
+            <h3>制作可行性｜5分</h3>
+            <p>样机、房间、温湿度工具、功率计、安装拍摄是否可控。</p>
+          </div>
+          <div class="score-card">
+            <h3>评分结论</h3>
+            <p>80+核心长视频；70-79备选；60-69短内容；60以下暂缓。</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>示例选题</th>
+                <th>需求 25</th>
+                <th>展示 20</th>
+                <th>品牌 15</th>
+                <th>长尾 15</th>
+                <th>节点 10</th>
+                <th>商业 10</th>
+                <th>可行 5</th>
+                <th>总分</th>
+                <th>结论</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>国产空调横评</td>
+                <td>24</td>
+                <td>18</td>
+                <td>15</td>
+                <td>14</td>
+                <td>8</td>
+                <td>9</td>
+                <td>4</td>
+                <td><span class="score priority-high">92</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>双11空调终极推荐</td>
+                <td>25</td>
+                <td>14</td>
+                <td>15</td>
+                <td>15</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td><span class="score priority-high">94</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>空调安装避坑指南</td>
+                <td>23</td>
+                <td>16</td>
+                <td>12</td>
+                <td>15</td>
+                <td>9</td>
+                <td>8</td>
+                <td>5</td>
+                <td><span class="score priority-high">88</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>智能空调是不是噱头</td>
+                <td>16</td>
+                <td>12</td>
+                <td>10</td>
+                <td>9</td>
+                <td>6</td>
+                <td>5</td>
+                <td>5</td>
+                <td><span class="score priority-mid">63</span></td>
+                <td>短内容或章节</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>08｜2026年7-12月内容排期</h2>
+            <p class="sub">推荐每月2期核心长视频，配合3-5条短切片和1-2条动态答疑。</p>
+          </div>
+          <span class="tag blue">Calendar</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>月份</th>
+                <th>节点</th>
+                <th>内容目标</th>
+                <th>核心长视频</th>
+                <th>配套运营</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7月</td>
+                <td>高温爆发</td>
+                <td>建立制冷和国产品牌测试标签</td>
+                <td>40℃高温制冷实测 / 国产空调横评</td>
+                <td>征集房间面积、电费、老空调换新问题。</td>
+              </tr>
+              <tr>
+                <td>8月</td>
+                <td>卧室睡眠、租房开学</td>
+                <td>覆盖低预算和睡眠场景</td>
+                <td>2000元空调怎么选 / 卧室空调避坑</td>
+                <td>短切片讲静音、防直吹、电费、安装费。</td>
+              </tr>
+              <tr>
+                <td>9月</td>
+                <td>IFA、新品发布</td>
+                <td>建立新风与智能节能话题</td>
+                <td>新风空调是不是智商税 / 2026空调趋势</td>
+                <td>新品速评、新风投票、AI节能图解。</td>
+              </tr>
+              <tr>
+                <td>10月</td>
+                <td>国庆装修安装</td>
+                <td>承接装修和安装需求</td>
+                <td>空调安装避坑 / 中央空调风管机怎么选</td>
+                <td>发布安装检查清单和价格关注池。</td>
+              </tr>
+              <tr>
+                <td>11月</td>
+                <td>双11大促</td>
+                <td>集中转化</td>
+                <td>双11价格监测 / 双11空调终极推荐</td>
+                <td>置顶价格更新，橱窗、直播和评论答疑联动。</td>
+              </tr>
+              <tr>
+                <td>12月</td>
+                <td>冬季制热、年终换新</td>
+                <td>沉淀年度内容资产</td>
+                <td>南方冬季制热实测 / 年度红黑榜</td>
+                <td>整理合集，发布年度空调购买报告。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="episodes">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>09｜12期核心长视频规划</h2>
+            <p class="sub">单期建议12-25分钟，横评和榜单可到30分钟。</p>
+          </div>
+          <span class="tag purple">Episodes</span>
+        </div>
+
+        <div class="episode-grid">
+          <div class="episode">
+            <div class="episode-head"><b>EP01｜40℃高温制冷实测</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>测试降温速度、出风温度、温控稳定、耗电和噪音。</p>
+              <div class="chips"><span class="chip">高温</span><span class="chip">制冷</span><span class="chip">电费</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP02｜国产空调横评</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>格力、美的、海尔、海信、TCL同价位真实对比。</p>
+              <div class="chips"><span class="chip">国产品牌</span><span class="chip">横评</span><span class="chip">选购</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP03｜2000元空调怎么选</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>面向租房和低预算用户，讲清一级能效、安装费和售后。</p>
+              <div class="chips"><span class="chip">低预算</span><span class="chip">租房</span><span class="chip">避坑</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP04｜卧室空调避坑</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>测试夜间噪音、防直吹、柔风、除湿和温度波动。</p>
+              <div class="chips"><span class="chip">卧室</span><span class="chip">睡眠</span><span class="chip">静音</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP05｜新风空调是不是智商税</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>测试新风量、CO2变化、噪音、滤网和实际舒适度。</p>
+              <div class="chips"><span class="chip">新风</span><span class="chip">健康</span><span class="chip">实测</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP06｜2026空调趋势</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>解读AI节能、健康空气、无风感、新风和全屋联动趋势。</p>
+              <div class="chips"><span class="chip">IFA</span><span class="chip">趋势</span><span class="chip">新品</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP07｜空调安装避坑</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>讲清抽真空、铜管、打孔、排水、支架和收费套路。</p>
+              <div class="chips"><span class="chip">安装</span><span class="chip">装修</span><span class="chip">避坑</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP08｜中央空调/风管机怎么选</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>面向装修用户，比较预算、吊顶、检修、舒适度和维护。</p>
+              <div class="chips"><span class="chip">中央空调</span><span class="chip">风管机</span><span class="chip">装修</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP09｜双11价格监测</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>分析历史低价、预售、补贴、安装费和型号马甲。</p>
+              <div class="chips"><span class="chip">双11</span><span class="chip">价格</span><span class="chip">避坑</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP10｜双11终极推荐</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>按卧室、客厅、租房、制热、新风、中央空调分场景推荐。</p>
+              <div class="chips"><span class="chip">榜单</span><span class="chip">预算</span><span class="chip">转化</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP11｜南方冬季制热实测</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>测试制热速度、除霜、电辅热、低温启动和耗电。</p>
+              <div class="chips"><span class="chip">制热</span><span class="chip">南方</span><span class="chip">冬季</span></div>
+            </div>
+          </div>
+          <div class="episode">
+            <div class="episode-head"><b>EP12｜年度红黑榜</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>总结值得买、慎买、等降价和2027值得关注的技术。</p>
+              <div class="chips"><span class="chip">年终</span><span class="chip">红黑榜</span><span class="chip">搜索资产</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>10｜空调科学测试体系</h2>
+            <p class="sub">
+              空调测评不能只读匹数、能效和宣传词。需要用固定房间、固定环境、温湿度记录仪、功率计和噪音仪做可复用测试。
+            </p>
+          </div>
+          <span class="tag orange">Testing Protocol</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>测试维度</th>
+                <th>关键指标</th>
+                <th>测试方法</th>
+                <th>结论重点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>制冷能力</td>
+                <td>降温速度、出风温度、室温稳定性</td>
+                <td>固定房间面积和初始温度，记录30/60/120分钟温度变化。</td>
+                <td>看能不能快速降温，也看稳定后是否舒适。</td>
+              </tr>
+              <tr>
+                <td>制热能力</td>
+                <td>升温速度、低温启动、除霜、电辅热</td>
+                <td>冬季低温环境测试，记录出风温度、耗电和除霜频率。</td>
+                <td>南方用户不能只看制冷，要重点看制热。</td>
+              </tr>
+              <tr>
+                <td>能耗表现</td>
+                <td>瞬时功率、日耗电、夜间耗电、APF参考</td>
+                <td>功率计连续记录2-8小时，模拟白天和夜间使用。</td>
+                <td>真实电费比标称能效更有购买价值。</td>
+              </tr>
+              <tr>
+                <td>噪音体验</td>
+                <td>内机噪音、外机噪音、压缩机启停声</td>
+                <td>固定距离用噪音仪测试睡眠档、自动档、强力档。</td>
+                <td>卧室空调必须重点看夜间噪音。</td>
+              </tr>
+              <tr>
+                <td>风感舒适</td>
+                <td>直吹感、风速、导风范围、温差感</td>
+                <td>用风速计和人体体验记录不同导风模式。</td>
+                <td>无风感/柔风不能只看名字，要看体感。</td>
+              </tr>
+              <tr>
+                <td>除湿能力</td>
+                <td>湿度下降、温度波动、体感、耗电</td>
+                <td>固定湿度环境运行除湿模式，记录湿度和温度变化。</td>
+                <td>南方用户需要区分除湿和制冷体验。</td>
+              </tr>
+              <tr>
+                <td>新风能力</td>
+                <td>新风量、CO2变化、噪音、滤网成本</td>
+                <td>封闭房间多人模拟，记录CO2下降和噪音变化。</td>
+                <td>新风空调要验证是否真正改善空气。</td>
+              </tr>
+              <tr>
+                <td>安装质量</td>
+                <td>抽真空、铜管、排水、外机位、支架、收费</td>
+                <td>实拍安装过程，核对标准动作和费用明细。</td>
+                <td>安装决定长期体验，甚至比型号更重要。</td>
+              </tr>
+              <tr>
+                <td>智能体验</td>
+                <td>App、语音、AI节能、场景联动、稳定性</td>
+                <td>测试远程开关、温度自动调节和全屋智能联动。</td>
+                <td>智能功能要看高频使用价值。</td>
+              </tr>
+              <tr>
+                <td>长期维护</td>
+                <td>滤网清洁、异味、漏水、售后、保修</td>
+                <td>连续使用30天，记录清洗难度和异常问题。</td>
+                <td>空调是长周期产品，售后和维护要纳入结论。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>测试声明模板：</b>
+          本期测试基于固定房间、固定环境温湿度、固定运行模式和当前样机状态，结论适用于类似家庭场景，不代表所有地区气候、安装条件和长期极端使用环境。
+        </div>
+      </div>
+    </section>
+
+    <section id="operation">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>11｜发布运营与商业转化</h2>
+            <p class="sub">
+              空调长视频具有强搜索、强收藏和强购买决策属性。制冷、制热、安装和电费负责信任；价格监测和榜单负责转化。
+            </p>
+          </div>
+          <span class="tag green">Operation & Business</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-4">
+            <h3>发布前</h3>
+            <ul class="mini-list">
+              <li>动态征集预算、房间面积、所在城市、是否装修、主要用途。</li>
+              <li>提前投票：格力/美的/海尔/华凌/奥克斯/小米谁更想看。</li>
+              <li>预埋关键词：空调怎么选、空调安装避坑、双11空调推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>发布后</h3>
+            <ul class="mini-list">
+              <li>置顶评论写清适合谁、不适合谁、价格和安装注意事项。</li>
+              <li>剪3-5条短切片：制冷、耗电、噪音、安装、新风、价格。</li>
+              <li>评论区按面积、预算、城市、卧室/客厅、制冷/制热进行答疑。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>商业化</h3>
+            <ul class="mini-list">
+              <li>品牌新品测评、技术专项、安装服务合作、双11榜单合作。</li>
+              <li>橱窗带货、直播答疑、大促价格监测。</li>
+              <li>年度红黑榜、空调选购报告、装修清单合作。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>12｜项目执行工作台</h2>
+            <p class="sub">用于团队执行、选题评审、测试记录、发布质检和复盘沉淀。</p>
+          </div>
+          <span class="tag">Dashboard</span>
+        </div>
+
+        <div class="workbench">
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>单期项目评分卡</h3>
+              <span class="wb-mark">100分</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>用户需求强度</span><span class="score-badge">/25</span></div>
+              <div class="score-row"><span>测试可展示性</span><span class="score-badge">/20</span></div>
+              <div class="score-row"><span>品牌关注度</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>搜索长尾价值</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>节点匹配度</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>商业转化潜力</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>制作可行性</span><span class="score-badge">/5</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>项目立项卡</h3>
+              <span class="wb-mark">Brief</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>选题名称</b><span>如：国产空调横评</span></div>
+                <div class="field"><b>目标用户</b><span>高温 / 卧室 / 装修 / 性价比 / 制热</span></div>
+                <div class="field"><b>核心品牌</b><span>格力 / 美的 / 海尔 / 华凌 / 小米等</span></div>
+                <div class="field"><b>测试清单</b><span>制冷、耗电、噪音、风感、安装、制热</span></div>
+                <div class="field"><b>商业目标</b><span>播放 / 收藏 / 带货 / 商单 / 搜索</span></div>
+                <div class="field"><b>发布节点</b><span>高温 / 国庆装修 / 双11 / 冬季制热</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>发布质检</h3>
+              <span class="wb-mark">QA</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>标题包含品牌、预算、场景或冲突</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>封面有空调、温度、电费或安装对比</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>简介说明样机来源和测试条件</span><span class="score-badge">必备</span></div>
+              <div class="score-row"><span>置顶评论含适合/不适合人群</span><span class="score-badge">必备</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>评论答疑模板</h3>
+              <span class="wb-mark">Comment</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>预算 + 房间面积 + 城市气候</span><span class="score-badge">推荐</span></div>
+              <div class="score-row"><span>卧室/客厅/租房/装修</span><span class="score-badge">场景</span></div>
+              <div class="score-row"><span>是否需要制热、新风、无风感</span><span class="score-badge">功能</span></div>
+              <div class="score-row"><span>是否已有外机位和安装限制</span><span class="score-badge">安装</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>复盘指标</h3>
+              <span class="wb-mark">Review</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>点击率与封面转化</span><span class="score-badge">点击</span></div>
+              <div class="score-row"><span>前30秒留存与章节留存</span><span class="score-badge">留存</span></div>
+              <div class="score-row"><span>收藏率、评论质量、搜索来源</span><span class="score-badge">价值</span></div>
+              <div class="score-row"><span>带货点击、商单咨询、安装线索</span><span class="score-badge">商业</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <div class="footer-card">
+      <div class="footer-inner">
+        <div>
+          <h2>2026 H2 中国市场空调长视频项目策划</h2>
+          <p>中国品牌横评 × 制冷制热实测 × 安装避坑 × 双11转化 × 年度红黑榜</p>
+        </div>
+        <div class="footer-mini">
+          <span>格力</span>
+          <span>美的</span>
+          <span>海尔</span>
+          <span>华凌</span>
+          <span>海信</span>
+          <span>TCL</span>
+          <span>小米</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById("themeBtn");
+      var key = "ac-china-market-project-theme";
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem(key, theme);
+        } catch (e) {}
+        if (btn) {
+          btn.textContent = theme === "dark" ? "☀️ 浅色模式" : "🌙 深色模式";
+        }
+      }
+
+      var saved = null;
+      try {
+        saved = localStorage.getItem(key);
+      } catch (e) {}
+
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      } else {
+        var prefersDark = false;
+        try {
+          prefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+        } catch (e) {}
+        applyTheme(prefersDark ? "dark" : "light");
+      }
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var current = html.getAttribute("data-theme");
+          applyTheme(current === "dark" ? "light" : "dark");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

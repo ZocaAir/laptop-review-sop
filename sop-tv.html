@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>电视机测评内容 SOP 与商务开发材料清单</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: #edf2f7;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: 1220px;
+      margin: 34px auto;
+      background: #ffffff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero {
+      padding: 58px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(59,130,246,.45), transparent 28%),
+        radial-gradient(circle at 8% 88%, rgba(168,85,247,.35), transparent 32%),
+        linear-gradient(135deg, #020617 0%, #0f172a 45%, #1d4ed8 100%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #dbeafe;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+      max-width: 920px;
+      margin-top: 18px;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .hero-card {
+      padding: 19px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .hero-card span {
+      font-size: 13px;
+      color: #bfdbfe;
+    }
+
+    .content {
+      padding: 46px 64px 64px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .num {
+      width: 37px;
+      height: 37px;
+      border-radius: 13px;
+      background: #2563eb;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: #111827;
+      font-size: 18px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15,23,42,.055);
+    }
+
+    .blue {
+      background: linear-gradient(180deg, #eff6ff 0%, #fff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .green {
+      background: linear-gradient(180deg, #ecfdf5 0%, #fff 100%);
+      border-color: #bbf7d0;
+    }
+
+    .orange {
+      background: linear-gradient(180deg, #fff7ed 0%, #fff 100%);
+      border-color: #fed7aa;
+    }
+
+    .purple {
+      background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%);
+      border-color: #ddd6fe;
+    }
+
+    .red {
+      background: linear-gradient(180deg, #fef2f2 0%, #fff 100%);
+      border-color: #fecaca;
+    }
+
+    .gray {
+      background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+      border-color: #e2e8f0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f172a;
+      color: #fff;
+      text-align: left;
+      padding: 14px 15px;
+      font-weight: 650;
+    }
+
+    td {
+      padding: 14px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .score {
+      color: #2563eb;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .danger {
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .success {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    .warning {
+      color: #ea580c;
+      font-weight: 800;
+    }
+
+    .quote {
+      padding: 22px 26px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border-left: 6px solid #2563eb;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .alert {
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #7f1d1d;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #16a34a;
+      font-weight: 900;
+    }
+
+    .cross {
+      color: #dc2626;
+      font-weight: 900;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 6px 6px 0;
+      padding: 4px 9px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+    }
+
+    .step {
+      padding: 17px 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .step b {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #2563eb;
+      color: #fff;
+      margin-bottom: 9px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 13px;
+      color: #0f172a;
+    }
+
+    .step span {
+      display: block;
+      color: #64748b;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 26px 64px;
+      background: #0f172a;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="hero">
+      <div class="badge">📺 电视机测评 · 内容 SOP · 商务开发 · 样品红线</div>
+      <h1>中国市场电视机内容创作<br />测试体系与商务执行报告</h1>
+      <p class="subtitle">
+        适用于 B站 / YouTube 长视频博主及数码家电内容团队。报告聚焦电视机测评的标准化测试场景、工具、项目清单、拍摄 SOP、样品管理、商务开发材料和商单红线，帮助账号建立可信、可复制、可商业化的电视内容体系。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <strong>4类</strong>
+          <span>标准测试场景</span>
+        </div>
+        <div class="hero-card">
+          <strong>30+</strong>
+          <span>电视实测项目</span>
+        </div>
+        <div class="hero-card">
+          <strong>8步</strong>
+          <span>内容生产 SOP</span>
+        </div>
+        <div class="hero-card">
+          <strong>3条</strong>
+          <span>核心红线：真实、可复现、可披露</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>电视机测评体系目标</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>对用户的价值</h3>
+            <ul>
+              <li>把复杂电视参数转化成真实购买建议。</li>
+              <li>解决尺寸、画质、游戏、系统广告、价格等决策问题。</li>
+              <li>告诉用户：适合谁、不适合谁、什么时候买。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>对内容团队的价值</h3>
+            <ul>
+              <li>让每期电视测评有统一流程和统一口径。</li>
+              <li>提高拍摄效率，减少临时补测、返工和争议。</li>
+              <li>积累长期可复用的数据表、图表和选题资产。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>对商务合作的价值</h3>
+            <ul>
+              <li>向品牌证明账号具备专业测试能力。</li>
+              <li>明确合作边界，避免“只说好话”的低质量商单。</li>
+              <li>提升报价依据，形成测评栏目和年度合作方案。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote" style="margin-top:18px;">
+          电视机内容的核心不是复述详情页，而是在固定测试条件下，用可复现的方法解释：这台电视在中国家庭客厅里，到底好不好用，值不值得买。
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>测试场景搭建</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>场景 A：标准客厅观影环境</h3>
+            <ul>
+              <li><strong>用途：</strong>模拟中国家庭最常见的客厅观看场景。</li>
+              <li><strong>空间：</strong>建议 15-30㎡，观看距离 2.5-4 米。</li>
+              <li><strong>光线：</strong>白天自然光、夜间灯光、全黑环境都要拍。</li>
+              <li><strong>摆放：</strong>电视居中，镜头与屏幕尽量平行，减少反光。</li>
+              <li><strong>测试重点：</strong>亮度、反光、HDR、字幕光晕、家庭观感。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>场景 B：暗室画质测试环境</h3>
+            <ul>
+              <li><strong>用途：</strong>观察黑位、漏光、光晕、暗场细节。</li>
+              <li><strong>要求：</strong>关闭主灯，遮光窗帘，避免镜头侧面光源。</li>
+              <li><strong>片源：</strong>星空、夜景、黑底字幕、暗场电影片段。</li>
+              <li><strong>测试重点：</strong>Mini LED 分区控光、OLED 黑位、字幕光晕。</li>
+              <li><strong>注意：</strong>相机曝光需锁定，否则画面对比不可信。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>场景 C：游戏测试环境</h3>
+            <ul>
+              <li><strong>用途：</strong>验证游戏电视能力。</li>
+              <li><strong>设备：</strong>PS5 / Xbox / 高性能 PC 至少其一。</li>
+              <li><strong>连接：</strong>使用支持 4K 120Hz 的 HDMI 线和对应 HDMI 接口。</li>
+              <li><strong>测试重点：</strong>4K 120Hz、VRR、ALLM、输入延迟、拖影。</li>
+              <li><strong>注意：</strong>必须确认电视系统显示当前信号规格。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>场景 D：系统与日常使用环境</h3>
+            <ul>
+              <li><strong>用途：</strong>测试家庭用户每天都会遇到的体验。</li>
+              <li><strong>内容：</strong>开机、遥控器、语音、投屏、App、会员、广告。</li>
+              <li><strong>网络：</strong>建议固定 Wi-Fi 和有线网络分别测试。</li>
+              <li><strong>人群：</strong>老人、小孩、非数码用户也应模拟操作。</li>
+              <li><strong>测试重点：</strong>是否顺手、是否有广告、是否限制投屏。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>测试环境记录模板</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>记录项</th>
+              <th>填写要求</th>
+              <th>示例</th>
+              <th>为什么重要</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>电视型号</td>
+              <td>完整型号、尺寸、版本。</td>
+              <td>TCL XX 75英寸 / 2025款</td>
+              <td>防止线上线下款、不同尺寸混淆。</td>
+            </tr>
+            <tr>
+              <td>固件版本</td>
+              <td>测试前截图记录系统版本。</td>
+              <td>V8.XX.XX</td>
+              <td>系统广告、画质调校、游戏兼容可能随固件变化。</td>
+            </tr>
+            <tr>
+              <td>测试模式</td>
+              <td>记录图像模式和是否开启动态增强。</td>
+              <td>电影模式 / 游戏模式 / 标准模式</td>
+              <td>不同模式亮度、色彩、延迟差异很大。</td>
+            </tr>
+            <tr>
+              <td>观看距离</td>
+              <td>用卷尺测量屏幕到观看位距离。</td>
+              <td>约 3.2 米</td>
+              <td>影响尺寸建议和沉浸感判断。</td>
+            </tr>
+            <tr>
+              <td>环境光</td>
+              <td>记录白天、开灯、全黑三种情况。</td>
+              <td>白天客厅 / 夜间暖灯 / 暗室</td>
+              <td>影响亮度、反光和 HDR 观感。</td>
+            </tr>
+            <tr>
+              <td>片源</td>
+              <td>注明平台、清晰度、HDR 格式。</td>
+              <td>4K HDR / Dolby Vision / 本地片源</td>
+              <td>避免用低码率片源误判电视能力。</td>
+            </tr>
+            <tr>
+              <td>价格</td>
+              <td>记录官方价、到手价、补贴价和日期。</td>
+              <td>到手价 5999 元，记录于 2025-06-01</td>
+              <td>推荐结论必须基于价格前提。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>测试工具清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>工具类型</th>
+              <th>推荐工具</th>
+              <th>用途</th>
+              <th>必要程度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>亮度 / 色彩测试</td>
+              <td>亮度计、色度计、校色仪、测试图卡。</td>
+              <td>测试 SDR / HDR 亮度、色彩、白平衡、色准。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>画质片源</td>
+              <td>4K HDR 测试片、本地高码率片源、暗场片段、运动片段。</td>
+              <td>观察暗场、HDR、运动补偿、色彩层次。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>游戏设备</td>
+              <td>PS5、Xbox Series X、游戏 PC、支持 4K120 的 HDMI 线。</td>
+              <td>测试 4K 120Hz、VRR、ALLM、输入延迟和兼容性。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>延迟测试</td>
+              <td>输入延迟测试仪、高帧率相机、游戏场景对比。</td>
+              <td>测量或观察游戏延迟。</td>
+              <td class="score">中高</td>
+            </tr>
+            <tr>
+              <td>噪音 / 功耗</td>
+              <td>分贝仪、功耗计、智能插座。</td>
+              <td>测试运行噪音、待机功耗、不同亮度功耗。</td>
+              <td class="score">中</td>
+            </tr>
+            <tr>
+              <td>拍摄设备</td>
+              <td>相机、三脚架、稳定器、偏振镜、补光灯、收音设备。</td>
+              <td>拍摄屏幕、客厅场景、口播和细节特写。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>辅助工具</td>
+              <td>卷尺、水平仪、标签纸、螺丝刀、HDMI 切换器、移动硬盘。</td>
+              <td>记录距离、安装检查、片源播放和设备连接。</td>
+              <td class="score">中</td>
+            </tr>
+            <tr>
+              <td>数据记录</td>
+              <td>Excel / Notion / 飞书表格 / Google Sheet。</td>
+              <td>记录每台电视测试结果和评分。</td>
+              <td class="score">高</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pill-list">
+          <span class="pill">基础必备：卷尺</span>
+          <span class="pill">基础必备：三脚架</span>
+          <span class="pill">基础必备：4K HDR 片源</span>
+          <span class="pill">基础必备：PS5 / 游戏设备</span>
+          <span class="pill">进阶必备：亮度计</span>
+          <span class="pill">进阶必备：功耗计</span>
+          <span class="pill">进阶必备：分贝仪</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>电视机测试项目总清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>一、画质测试</h3>
+            <ul>
+              <li>SDR 亮度：标准模式、电影模式、护眼模式。</li>
+              <li>HDR 峰值亮度：小窗口、真实影片场景。</li>
+              <li>对比度与黑位：黑场、暗部层次、灰阶过渡。</li>
+              <li>控光分区：分区数量、光晕、字幕溢光。</li>
+              <li>色彩表现：肤色、饱和度、色彩偏移、色准。</li>
+              <li>可视角度：正面、侧面 30°、侧面 45°。</li>
+              <li>屏幕反光：白天、开灯、窗边环境。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>二、动态与运动测试</h3>
+            <ul>
+              <li>刷新率：60Hz、120Hz、144Hz 是否真实支持。</li>
+              <li>运动补偿：足球、篮球、赛车、快速横移镜头。</li>
+              <li>拖影表现：暗部拖影、人物边缘拖影。</li>
+              <li>24fps 电影播放：是否有抖动、插帧痕迹。</li>
+              <li>高速字幕滚动：清晰度和残影。</li>
+              <li>低帧率内容优化：老剧、综艺、网络视频。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>三、游戏测试</h3>
+            <ul>
+              <li>HDMI 2.1 接口数量和带宽。</li>
+              <li>4K 120Hz 输入是否正常。</li>
+              <li>VRR 可变刷新率是否可开启。</li>
+              <li>ALLM 自动低延迟模式是否触发。</li>
+              <li>游戏模式下画质是否明显下降。</li>
+              <li>输入延迟：主观操作 + 工具测试。</li>
+              <li>游戏 HDR：亮部、暗部、UI 高光显示。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>四、系统体验测试</h3>
+            <ul>
+              <li>首次开机流程是否复杂。</li>
+              <li>开机广告是否存在、是否可关闭。</li>
+              <li>系统首页是否有强运营内容。</li>
+              <li>App 安装自由度和兼容性。</li>
+              <li>投屏体验：手机、电脑、视频平台。</li>
+              <li>语音助手识别速度和准确率。</li>
+              <li>遥控器按键、手感、老人友好度。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>五、音质与接口测试</h3>
+            <ul>
+              <li>人声清晰度：新闻、综艺、电视剧。</li>
+              <li>低频表现：电影爆炸、音乐鼓点。</li>
+              <li>声场宽度：左右声道、环绕感。</li>
+              <li>最大音量是否破音。</li>
+              <li>HDMI、USB、网口、光纤、eARC 数量。</li>
+              <li>外接回音壁兼容性。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>六、安装与售后测试</h3>
+            <ul>
+              <li>底座安装难度和稳定性。</li>
+              <li>壁挂费用、挂架费用、上门收费项目。</li>
+              <li>送装一体体验。</li>
+              <li>售后响应方式和保修期限。</li>
+              <li>大尺寸入户风险：电梯、楼道、门宽。</li>
+              <li>坏点、漏光、屏幕损伤验收规则。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">06</span>
+          <h2>电视机测评评分模型</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>权重</th>
+              <th>核心测试</th>
+              <th>结论表达</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>画质表现</td>
+              <td class="score">30%</td>
+              <td>亮度、HDR、黑位、控光、色彩、反光。</td>
+              <td>电影、电视剧、综艺看起来是否舒服。</td>
+            </tr>
+            <tr>
+              <td>动态与游戏</td>
+              <td class="score">15%</td>
+              <td>刷新率、拖影、运动补偿、4K120、VRR、延迟。</td>
+              <td>看球、打游戏是否值得买。</td>
+            </tr>
+            <tr>
+              <td>系统与广告</td>
+              <td class="score">15%</td>
+              <td>开机广告、首页、会员、App、投屏、遥控器。</td>
+              <td>日常用起来是否省心。</td>
+            </tr>
+            <tr>
+              <td>尺寸与场景适配</td>
+              <td class="score">10%</td>
+              <td>观看距离、客厅大小、支架、入户安装。</td>
+              <td>适合多大客厅和什么家庭。</td>
+            </tr>
+            <tr>
+              <td>音质与接口</td>
+              <td class="score">10%</td>
+              <td>人声、低频、声场、HDMI、eARC、USB。</td>
+              <td>是否需要额外买回音壁。</td>
+            </tr>
+            <tr>
+              <td>做工与安装售后</td>
+              <td class="score">10%</td>
+              <td>边框、底座、壁挂、保修、送装服务。</td>
+              <td>买回家是否省心。</td>
+            </tr>
+            <tr>
+              <td>价格与竞品竞争力</td>
+              <td class="score">10%</td>
+              <td>官方价、到手价、历史低价、竞品对比。</td>
+              <td>当前价格是否值得买。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">07</span>
+          <h2>内容生产 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>选题立项</strong>
+            <span>需求/关键词/预算段</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>商务确认</strong>
+            <span>是否商单/样品来源</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>样品入库</strong>
+            <span>型号/价格/批次</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>测试计划</strong>
+            <span>场景/工具/片源</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>实测记录</strong>
+            <span>数据/照片/视频</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>脚本拍摄</strong>
+            <span>观点/证据/结论</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>审核发布</strong>
+            <span>合规/链接/披露</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘归档</strong>
+            <span>数据/转化/反馈</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>SOP环节</th>
+              <th>具体动作</th>
+              <th>责任人</th>
+              <th>交付物</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>选题立项</td>
+              <td>确定单品测评、横评、攻略、节点推荐或品牌合作。</td>
+              <td>主理人 / 选题编辑</td>
+              <td>选题单、标题方向、竞品清单。</td>
+            </tr>
+            <tr>
+              <td>样品确认</td>
+              <td>确认样品来源、是否寄回、是否商单、是否可拆封测试。</td>
+              <td>商务 / 运营</td>
+              <td>样品登记表、合作确认单。</td>
+            </tr>
+            <tr>
+              <td>测试准备</td>
+              <td>确认测试场景、工具、片源、拍摄机位、对照产品。</td>
+              <td>测评编辑 / 摄像</td>
+              <td>测试计划表、拍摄清单。</td>
+            </tr>
+            <tr>
+              <td>执行测试</td>
+              <td>按照项目清单逐项测试，不临时跳项。</td>
+              <td>测评编辑</td>
+              <td>原始数据、实拍素材、问题记录。</td>
+            </tr>
+            <tr>
+              <td>结论评审</td>
+              <td>根据数据和体验形成优缺点、推荐人群和避坑点。</td>
+              <td>主理人 / 编辑</td>
+              <td>评分卡、结论表。</td>
+            </tr>
+            <tr>
+              <td>脚本拍摄</td>
+              <td>先讲结论，再展示证据，最后给购买建议。</td>
+              <td>出镜博主 / 摄像</td>
+              <td>口播视频、产品 B-roll、测试画面。</td>
+            </tr>
+            <tr>
+              <td>发布运营</td>
+              <td>标题封面、简介、章节、带货链接、评论区置顶。</td>
+              <td>运营</td>
+              <td>发布包、链接表、评论话术。</td>
+            </tr>
+            <tr>
+              <td>复盘归档</td>
+              <td>统计播放、互动、转化、品牌反馈和用户问题。</td>
+              <td>运营 / 商务</td>
+              <td>数据复盘、商务案例、素材归档。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">08</span>
+          <h2>单条电视测评视频结构 SOP</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>标准长视频结构</h3>
+            <ul>
+              <li><strong>00:00 - 00:30：</strong>结论前置：适合谁、不适合谁。</li>
+              <li><strong>00:30 - 02:00：</strong>型号、尺寸、价格、样品来源说明。</li>
+              <li><strong>02:00 - 06:00：</strong>画质实测：亮度、HDR、黑位、控光。</li>
+              <li><strong>06:00 - 08:30：</strong>动态和游戏表现。</li>
+              <li><strong>08:30 - 10:30：</strong>系统广告、投屏、遥控器、App。</li>
+              <li><strong>10:30 - 12:00：</strong>音质、接口、安装、售后。</li>
+              <li><strong>12:00 - 14:00：</strong>缺点、翻车点、购买前注意事项。</li>
+              <li><strong>14:00 - 15:00：</strong>价格建议、竞品替代、最终推荐等级。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>必须出现在视频里的信息</h3>
+            <ul>
+              <li>样品来源：自购 / 借测 / 送测 / 商业合作。</li>
+              <li>测试时间、固件版本和价格记录时间。</li>
+              <li>测试片源和主要测试场景。</li>
+              <li>至少 3 个明确优点和 3 个明确缺点。</li>
+              <li>适合人群和不适合人群。</li>
+              <li>当前价格下的推荐等级，而不是永久推荐。</li>
+              <li>如有带货链接，说明可能存在佣金。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">09</span>
+          <h2>样品管理规则</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>环节</th>
+              <th>规则</th>
+              <th>必须记录</th>
+              <th>风险点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品接收</td>
+              <td>开箱前拍摄外包装、物流面单、封条、屏幕状态。</td>
+              <td>到货日期、快递单号、包装破损情况。</td>
+              <td>大尺寸电视运输损伤责任不清。</td>
+            </tr>
+            <tr>
+              <td>样品登记</td>
+              <td>登记型号、尺寸、序列号、固件版本、样品来源。</td>
+              <td>样品登记表、照片、系统截图。</td>
+              <td>品牌送测版本和零售版本不一致。</td>
+            </tr>
+            <tr>
+              <td>样品状态</td>
+              <td>确认是量产零售机、工程机、媒体机还是特殊调校机。</td>
+              <td>品牌书面说明。</td>
+              <td>工程机测试结果不能代表量产机。</td>
+            </tr>
+            <tr>
+              <td>测试使用</td>
+              <td>不得私自拆机、刷机、改系统，除非合同明确允许。</td>
+              <td>测试日志。</td>
+              <td>损坏赔偿、保修争议。</td>
+            </tr>
+            <tr>
+              <td>样品寄回</td>
+              <td>寄回前拍照录像，确认配件完整。</td>
+              <td>寄回日期、物流单号、打包视频。</td>
+              <td>运输二次损伤。</td>
+            </tr>
+            <tr>
+              <td>样品留存</td>
+              <td>若样品不寄回，应明确归属、税务和后续使用权限。</td>
+              <td>合同或邮件确认。</td>
+              <td>利益披露不清，影响信任。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">10</span>
+          <h2>测试红线与商单红线</h2>
+        </div>
+
+        <div class="alert">
+          <strong>核心原则：</strong>电视测评可以商业化，但不能牺牲测试真实性。任何影响用户购买决策的关键缺点，都不能因为商单被删除。
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card red">
+            <h3>测试红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 虚构亮度、色准、输入延迟、分区数量等测试数据。</li>
+              <li><span class="danger">禁止</span> 用品牌提供的特殊素材替代真实用户片源。</li>
+              <li><span class="danger">禁止</span> 在不同电视对比中使用不同图像模式误导结果。</li>
+              <li><span class="danger">禁止</span> 删除对购买决策有重大影响的缺点。</li>
+              <li><span class="danger">禁止</span> 将工程机、调校机的表现当作零售机结论。</li>
+              <li><span class="danger">禁止</span> 未说明价格时间点就长期推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card red">
+            <h3>商单红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 接受“只能说优点，不能说缺点”的合作。</li>
+              <li><span class="danger">禁止</span> 接受品牌要求篡改测试结论。</li>
+              <li><span class="danger">禁止</span> 未披露商业合作、样品来源或佣金关系。</li>
+              <li><span class="danger">禁止</span> 恶意贬低竞品或使用无法证实的行业排名。</li>
+              <li><span class="danger">禁止</span> 使用“最强、第一、绝对、永久不踩坑”等极限表述。</li>
+              <li><span class="danger">禁止</span> 品牌未授权却声称官方合作。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card orange">
+            <h3>可以接受的品牌修改</h3>
+            <ul>
+              <li><span class="success">允许</span> 修改产品名称、型号、价格、参数等事实错误。</li>
+              <li><span class="success">允许</span> 补充官方功能解释和售后政策。</li>
+              <li><span class="success">允许</span> 修改未上市信息、保密信息、发布时间。</li>
+              <li><span class="success">允许</span> 调整视频中不准确的技术表述。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>不能接受的品牌修改</h3>
+            <ul>
+              <li><span class="danger">不允许</span> 删除真实存在的系统广告、投屏限制、光晕等问题。</li>
+              <li><span class="danger">不允许</span> 要求把“不推荐”改成“推荐”。</li>
+              <li><span class="danger">不允许</span> 要求替换竞品结论或隐藏竞品优势。</li>
+              <li><span class="danger">不允许</span> 要求删掉样品来源和商业合作披露。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">11</span>
+          <h2>商务开发需要的材料清单</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>账号基础资料</h3>
+            <ul>
+              <li>账号简介：定位、受众、平台。</li>
+              <li>B站 / YouTube 主页链接。</li>
+              <li>粉丝数、平均播放量、播放时长、互动率。</li>
+              <li>用户画像：性别、年龄、城市、消费能力。</li>
+              <li>内容栏目介绍：测评、横评、攻略、直播。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>专业能力证明</h3>
+            <ul>
+              <li>电视机测试 SOP 文档。</li>
+              <li>测试工具和测试场景照片。</li>
+              <li>历史测评案例链接。</li>
+              <li>测试数据表样例。</li>
+              <li>评分模型和推荐等级说明。</li>
+              <li>团队成员介绍和分工。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业合作材料</h3>
+            <ul>
+              <li>商务报价单。</li>
+              <li>合作权益包。</li>
+              <li>发布排期表。</li>
+              <li>内容授权报价。</li>
+              <li>佣金合作说明。</li>
+              <li>合同模板和付款条款。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>材料名称</th>
+              <th>用途</th>
+              <th>建议格式</th>
+              <th>是否必备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>账号 Media Kit</td>
+              <td>商务初次开发时展示账号价值。</td>
+              <td>PDF / 网页</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>测评体系说明</td>
+              <td>证明不是简单口播，而是有真实测试能力。</td>
+              <td>PDF / 网页 / 飞书文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>历史案例合集</td>
+              <td>让品牌看到内容风格和真实播放表现。</td>
+              <td>链接表 / PDF</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>报价单</td>
+              <td>明确视频、切片、直播、授权等价格。</td>
+              <td>PDF / 表格</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>合作流程图</td>
+              <td>降低品牌沟通成本。</td>
+              <td>PDF / 图片</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>数据复盘模板</td>
+              <td>向品牌展示合作后可交付数据。</td>
+              <td>PDF / 表格</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>合规披露说明</td>
+              <td>提前说明商单、样品、佣金的披露方式。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">12</span>
+          <h2>商务开发 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>目标名单</strong>
+            <span>品牌/渠道/平台</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>资料发送</strong>
+            <span>Media Kit/案例</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>需求确认</strong>
+            <span>曝光/转化/新品</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>产品初筛</strong>
+            <span>是否适合测评</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>方案报价</strong>
+            <span>视频/切片/授权</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>合同排期</strong>
+            <span>付款/样品/审核</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>执行发布</strong>
+            <span>测试/拍摄/发布</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘续约</strong>
+            <span>数据/ROI/节点</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>商务开发目标客户</h3>
+            <ul>
+              <li>电视品牌：TCL、海信、小米、创维、索尼、三星、LG、长虹、康佳等。</li>
+              <li>电商平台：京东、天猫、抖音电商、拼多多、苏宁易购。</li>
+              <li>渠道商：品牌旗舰店、区域家电卖场、线上授权店。</li>
+              <li>配件品牌：回音壁、电视挂架、HDMI 线、电视盒子。</li>
+              <li>家装 / 全屋智能品牌：客厅影音、智能中控、家庭影院。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>首次商务沟通要问清楚</h3>
+            <ul>
+              <li>推广目标：新品曝光、口碑建设、技术解释，还是销售转化？</li>
+              <li>合作产品：具体型号、尺寸、版本、上市时间。</li>
+              <li>样品属性：零售机、媒体机、工程机、是否需要寄回。</li>
+              <li>合作形式：单品测评、横评、攻略植入、直播、切片。</li>
+              <li>审核范围：品牌能否只审核事实错误，不干预结论。</li>
+              <li>是否需要竞品排他、内容授权、二次投流。</li>
+              <li>付款节点：预付比例、尾款时间、发票要求。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">13</span>
+          <h2>商务权益包建议</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>合作包</th>
+              <th>适合场景</th>
+              <th>交付内容</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="score">基础单品测评包</td>
+              <td>新品上市、单品种草。</td>
+              <td>1 条 8-15 分钟长视频 + 简介区链接 + 评论置顶。</td>
+              <td>适合品牌首次合作。</td>
+            </tr>
+            <tr>
+              <td class="score">深度测评包</td>
+              <td>旗舰电视、Mini LED / OLED 高端产品。</td>
+              <td>1 条 15-25 分钟深度视频 + 测试图表 + 3 条切片。</td>
+              <td>需充分测试周期。</td>
+            </tr>
+            <tr>
+              <td class="score">横评赞助包</td>
+              <td>品牌希望与竞品对比证明实力。</td>
+              <td>多机横评 + 品牌赞助鸣谢 + 客观数据展示。</td>
+              <td>必须提前约定结论不可干预。</td>
+            </tr>
+            <tr>
+              <td class="score">大促转化包</td>
+              <td>618、双11、年货节、国补。</td>
+              <td>推荐攻略 + 多平台分发 + 购买清单 + 评论价格更新。</td>
+              <td>适合商单费 + 佣金模式。</td>
+            </tr>
+            <tr>
+              <td class="score">年度栏目合作</td>
+              <td>长期品牌合作或平台合作。</td>
+              <td>季度新品测评 + 大促攻略 + 直播答疑 + 数据复盘。</td>
+              <td>建议设置竞品排他价格。</td>
+            </tr>
+            <tr>
+              <td class="score">内容授权包</td>
+              <td>品牌需要把视频用于官方号、详情页、广告投放。</td>
+              <td>视频片段授权、口播授权、图表授权、投流白名单。</td>
+              <td>需明确授权范围、平台、期限。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">14</span>
+          <h2>合同与合作条款检查清单</h2>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 明确合作性质：商单、送测、借测、纯佣、授权。</div>
+          <div class="check-item"><span class="check">✓</span> 明确样品归属：寄回、留存、买断或折价购买。</div>
+          <div class="check-item"><span class="check">✓</span> 明确内容形式：长视频、短视频、直播、图文、社群。</div>
+          <div class="check-item"><span class="check">✓</span> 明确发布平台：B站、YouTube、抖音、小红书、视频号。</div>
+          <div class="check-item"><span class="check">✓</span> 明确审核范围：仅限事实错误、品牌信息、保密信息。</div>
+          <div class="check-item"><span class="check">✓</span> 明确结论自主权：品牌不得要求修改真实测评结论。</div>
+          <div class="check-item"><span class="check">✓</span> 明确排他条款：竞品范围、排他周期、额外费用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确付款条款：预付款、尾款、发票、逾期责任。</div>
+          <div class="check-item"><span class="check">✓</span> 明确授权条款：是否允许二次剪辑、投流、详情页使用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确数据交付：播放量、互动、点击、转化、复盘报告。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">15</span>
+          <h2>带货转化 SOP</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>发布前</h3>
+            <ul>
+              <li>确认主推型号和备选型号。</li>
+              <li>确认京东 / 天猫 / 抖音等链接和佣金比例。</li>
+              <li>记录当前价格和历史低价。</li>
+              <li>准备不同预算购买清单。</li>
+              <li>确认是否可叠加国补、平台券、店铺券。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>发布中</h3>
+            <ul>
+              <li>简介区放购买链接和价格时间。</li>
+              <li>评论区置顶推荐型号、适合人群和优惠说明。</li>
+              <li>章节中标注购买建议位置。</li>
+              <li>视频中提醒价格会变化，以下单时价格为准。</li>
+              <li>避免“全网最低”“永久保价”等不可控表述。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>发布后</h3>
+            <ul>
+              <li>每日更新价格变化和优惠券状态。</li>
+              <li>回复用户尺寸、距离、预算问题。</li>
+              <li>统计链接点击、成交、佣金和退货情况。</li>
+              <li>发现售后或质量反馈集中时，及时补充说明。</li>
+              <li>大促后复盘哪些型号转化最好。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">16</span>
+          <h2>对外披露模板</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>视频开头 / 简介披露</h3>
+            <p>
+              本期测试产品由品牌提供样机，视频包含商业合作内容。我们的测试结论基于实际测试和真实体验，品牌不干预最终评价。视频简介中的部分购买链接可能产生佣金，但不会影响我们的推荐标准。
+            </p>
+          </div>
+
+          <div class="card green">
+            <h3>非商单送测披露</h3>
+            <p>
+              本期产品为品牌送测 / 借测样机，未收取视频制作费用。测试内容和结论由我们独立完成。样品来源不影响我们对优点、缺点和购买建议的判断。
+            </p>
+          </div>
+
+          <div class="card orange">
+            <h3>价格披露</h3>
+            <p>
+              视频中提到的价格为录制 / 发布时参考价格，电视价格会随平台活动、补贴和优惠券变化，请以下单时页面价格为准。我会在评论区尽量更新关键价格变化。
+            </p>
+          </div>
+
+          <div class="card purple">
+            <h3>横评披露</h3>
+            <p>
+              本期横评涉及的产品型号、固件版本、测试模式和价格均已记录在视频中。不同尺寸和不同渠道版本可能存在配置差异，购买前请核对完整型号。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">17</span>
+          <h2>最终文件归档清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>归档类别</th>
+              <th>文件内容</th>
+              <th>命名建议</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品资料</td>
+              <td>型号、序列号、固件、来源、价格、物流信息。</td>
+              <td>品牌_型号_尺寸_样品登记</td>
+              <td>后续复查和商务对账。</td>
+            </tr>
+            <tr>
+              <td>测试数据</td>
+              <td>亮度、延迟、功耗、模式、片源、场景记录。</td>
+              <td>品牌_型号_测试数据</td>
+              <td>生成图表和结论依据。</td>
+            </tr>
+            <tr>
+              <td>视频素材</td>
+              <td>口播、B-roll、屏幕画面、开箱、接口、安装。</td>
+              <td>日期_型号_素材类型</td>
+              <td>剪辑和二次切片。</td>
+            </tr>
+            <tr>
+              <td>脚本文件</td>
+              <td>选题、口播、章节、标题、简介、评论置顶。</td>
+              <td>型号_视频脚本_V1</td>
+              <td>发布和复盘。</td>
+            </tr>
+            <tr>
+              <td>商务文件</td>
+              <td>合同、报价、需求单、发票、付款记录。</td>
+              <td>客户_项目_商务文件</td>
+              <td>项目管理和财务归档。</td>
+            </tr>
+            <tr>
+              <td>复盘报告</td>
+              <td>播放、完播、互动、链接点击、成交、用户反馈。</td>
+              <td>项目_发布后7天复盘</td>
+              <td>商务续约和选题优化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© 电视机测评内容 SOP 与商务开发报告 · 适用于 B站 / YouTube 数码家电长视频团队</div>
+      <div>版本：V2.0</div>
+    </footer>
+  </div>
+</body>
+</html>

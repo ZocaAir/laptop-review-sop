@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026年下半年扫地机器人长视频项目策划报告</title>
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --surface-3: #eefaf8;
+      --text: #101828;
+      --text-2: #344054;
+      --muted: #667085;
+      --line: #dbe6ea;
+
+      --primary: #0f766e;
+      --primary-2: #06b6d4;
+      --green: #16a34a;
+      --blue: #2563eb;
+      --orange: #ea580c;
+      --purple: #7c3aed;
+      --red: #dc2626;
+      --yellow: #ca8a04;
+
+      --primary-soft: #ecfdf5;
+      --blue-soft: #eff6ff;
+      --green-soft: #ecfdf3;
+      --orange-soft: #fff7ed;
+      --purple-soft: #f5f3ff;
+      --red-soft: #fef2f2;
+      --yellow-soft: #fefce8;
+
+      --shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --max: 1260px;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #071313;
+      --surface: #111c1f;
+      --surface-2: #172529;
+      --surface-3: #123033;
+      --text: #f8fafc;
+      --text-2: #d1d5db;
+      --muted: #9ca3af;
+      --line: #294044;
+
+      --primary: #5eead4;
+      --primary-2: #22d3ee;
+      --green: #4ade80;
+      --blue: #60a5fa;
+      --orange: #fb923c;
+      --purple: #a78bfa;
+      --red: #f87171;
+      --yellow: #facc15;
+
+      --primary-soft: #0d2f2b;
+      --blue-soft: #10233f;
+      --green-soft: #10291d;
+      --orange-soft: #321d12;
+      --purple-soft: #21183b;
+      --red-soft: #351616;
+      --yellow-soft: #302b10;
+
+      --shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.16), transparent 28%),
+        radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.14), transparent 30%),
+        radial-gradient(circle at 55% 8%, rgba(124, 58, 237, 0.08), transparent 24%),
+        linear-gradient(180deg, var(--bg), var(--bg));
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 28px 0 18px;
+    }
+
+    .hero-card,
+    .footer-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(5, 31, 32, 0.98), rgba(15, 118, 110, 0.94)),
+        radial-gradient(circle at 78% 18%, rgba(34, 211, 238, 0.38), transparent 36%),
+        radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.24), transparent 34%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 36px;
+    }
+
+    .footer-card {
+      padding: 22px 24px;
+      margin-bottom: 24px;
+    }
+
+    .hero-card::after,
+    .footer-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero-main,
+    .hero-kpis,
+    .footer-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+      align-items: end;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(31px, 4.6vw, 58px);
+      line-height: 1.06;
+      letter-spacing: -1.2px;
+    }
+
+    .hero-desc {
+      max-width: 900px;
+      margin: 16px 0 0;
+      color: rgba(255,255,255,0.83);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 900;
+      color: #ffffff;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.24);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-kpis {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .hero-kpi {
+      padding: 13px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .hero-kpi strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .hero-kpi span {
+      color: rgba(255,255,255,0.76);
+      font-size: 12px;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(244,248,251,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    html[data-theme="dark"] .nav-wrap {
+      background: rgba(7,19,19,0.9);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text-2);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    main {
+      padding: 18px 0 18px;
+    }
+
+    section {
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-inner {
+      padding: 22px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(22px, 2.5vw, 30px);
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      line-height: 1.35;
+    }
+
+    .sub {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 980px;
+    }
+
+    .tag {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .tag.blue { color: var(--blue); background: var(--blue-soft); }
+    .tag.green { color: var(--green); background: var(--green-soft); }
+    .tag.orange { color: var(--orange); background: var(--orange-soft); }
+    .tag.purple { color: var(--purple); background: var(--purple-soft); }
+    .tag.red { color: var(--red); background: var(--red-soft); }
+
+    .grid-12 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .card {
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+    }
+
+    .card.soft {
+      background: var(--surface-2);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--primary);
+      font-size: 25px;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mini-list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .mini-list li {
+      margin: 4px 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 13.5px;
+      text-align: left;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th {
+      color: var(--text);
+      background: var(--primary-soft);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    td {
+      color: var(--text-2);
+    }
+
+    .note {
+      margin-top: 12px;
+      padding: 13px 15px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--primary-soft);
+      color: var(--text-2);
+      font-size: 14px;
+    }
+
+    .note.green { background: var(--green-soft); }
+    .note.orange { background: var(--orange-soft); }
+    .note.purple { background: var(--purple-soft); }
+
+    .persona-grid,
+    .pillar-grid,
+    .score-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .persona-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .pillar-grid,
+    .score-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .persona,
+    .pillar,
+    .score-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 14px;
+      background: var(--surface-2);
+    }
+
+    .persona-icon,
+    .pillar-num {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .pillar-num {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    }
+
+    .persona h3,
+    .pillar h3,
+    .score-card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .persona p,
+    .pillar p,
+    .score-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.8px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .month {
+      min-width: 0;
+      padding: 14px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .month::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+    }
+
+    .month b {
+      display: block;
+      color: var(--primary);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .month span {
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .score {
+      display: inline-block;
+      min-width: 42px;
+      text-align: center;
+      padding: 2px 7px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .priority-high {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .priority-mid {
+      color: var(--orange);
+      background: var(--orange-soft);
+    }
+
+    .priority-low {
+      color: var(--muted);
+      background: var(--surface-2);
+    }
+
+    .episode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .episode {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface-2);
+      overflow: hidden;
+    }
+
+    .episode-head {
+      padding: 12px 14px;
+      background: var(--primary-soft);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .episode-head b {
+      font-size: 15px;
+    }
+
+    .episode-body {
+      padding: 13px 14px;
+    }
+
+    .episode-body p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text-2);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .workbench {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .wb-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .wb-card.span-4 { grid-column: span 4; }
+    .wb-card.span-6 { grid-column: span 6; }
+    .wb-card.span-8 { grid-column: span 8; }
+    .wb-card.span-12 { grid-column: span 12; }
+
+    .wb-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--primary-soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wb-head h3 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .wb-mark {
+      flex: 0 0 auto;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .wb-body {
+      padding: 12px 14px 14px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+      color: var(--text-2);
+    }
+
+    .score-row:last-child {
+      border-bottom: 0;
+    }
+
+    .score-badge {
+      min-width: 48px;
+      text-align: center;
+      color: var(--primary);
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--primary-soft);
+      font-size: 12px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .field {
+      min-width: 0;
+      padding: 8px 10px;
+      border-radius: 11px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    .field b {
+      display: block;
+      color: var(--text);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .field span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .footer-card h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .footer-card p {
+      margin: 6px 0 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 13px;
+    }
+
+    .footer-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .footer-mini span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-kpis,
+      .timeline {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .persona-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .pillar-grid,
+      .score-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .episode-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8 {
+        grid-column: span 6;
+      }
+
+      .wb-card.span-4,
+      .wb-card.span-6,
+      .wb-card.span-8 {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page,
+      .nav {
+        width: min(100% - 22px, var(--max));
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-kpis,
+      .timeline,
+      .persona-grid,
+      .pillar-grid,
+      .score-grid,
+      .episode-grid,
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8,
+      .span-12,
+      .wb-card.span-4,
+      .wb-card.span-6,
+      .wb-card.span-8,
+      .wb-card.span-12 {
+        grid-column: span 12;
+      }
+
+      .section-inner {
+        padding: 16px;
+      }
+
+      table {
+        min-width: 820px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-mini {
+        justify-content: flex-start;
+      }
+    }
+
+    @media print {
+      .nav-wrap,
+      .hero-actions {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      section,
+      .hero-card,
+      .footer-card {
+        box-shadow: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="hero-card">
+        <div class="hero-main">
+          <div>
+            <div class="badge">🤖 2026 H2 Robot Vacuum Long Video Project</div>
+            <h1>2026年下半年<br />扫地机器人长视频项目策划报告</h1>
+            <p class="hero-desc">
+              面向B站家电、智能家居、清洁电器类内容，围绕扫地机器人新品趋势、宠物家庭、全能基站、自动上下水、双11大促和年终清洁需求，建立从选题库、评分模型、科学测试到商业转化的完整项目系统。
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn" id="themeBtn" type="button">🌙 深色模式</button>
+            <button class="btn" type="button" onclick="window.print()">🖨️ 打印 / PDF</button>
+          </div>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="hero-kpi"><strong>6个月</strong><span>7-12月项目周期</span></div>
+          <div class="hero-kpi"><strong>12期</strong><span>核心长视频规划</span></div>
+          <div class="hero-kpi"><strong>30+</strong><span>备选选题库</span></div>
+          <div class="hero-kpi"><strong>100分</strong><span>选题评分模型</span></div>
+          <div class="hero-kpi"><strong>10维</strong><span>科学测试体系</span></div>
+          <div class="hero-kpi"><strong>闭环</strong><span>内容/带货/商单</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-wrap">
+    <div class="nav">
+      <a href="#overview">总览</a>
+      <a href="#timing">时事节点</a>
+      <a href="#persona">用户画像</a>
+      <a href="#strategy">内容主线</a>
+      <a href="#topic-library">选题库</a>
+      <a href="#score-model">评分模型</a>
+      <a href="#calendar">半年排期</a>
+      <a href="#episodes">12期规划</a>
+      <a href="#testing">测试体系</a>
+      <a href="#operation">运营转化</a>
+      <a href="#dashboard">工作台</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="overview">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>01｜项目总览：从单条测评升级为“智能清洁内容资产系统”</h2>
+            <p class="sub">
+              扫地机器人内容的核心价值，不是告诉用户“这台机器参数有多强”，而是回答“它适合谁、能不能真正省心、会不会翻车、长期维护麻不麻烦、双11到底值不值得买”。
+            </p>
+          </div>
+          <span class="tag">Overview</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-3 metric">
+            <strong>内容目标</strong>
+            <span>建立扫地机器人选购、横评、避坑、长期体验和大促转化体系。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>用户目标</strong>
+            <span>服务养宠、装修、懒人、母婴、性价比等核心购买人群。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>平台目标</strong>
+            <span>沉淀B站搜索关键词、合集资产、评论答疑和复用测试协议。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>商业目标</strong>
+            <span>形成品牌测评、双11榜单、橱窗带货、直播答疑和年度报告。</span>
+          </div>
+
+          <div class="card span-6">
+            <h3>2026下半年品类趋势判断</h3>
+            <ul class="mini-list">
+              <li><b>全能基站继续下探：</b>自动集尘、热水洗拖布、热风烘干、自动上下水成为中高端标配。</li>
+              <li><b>AI避障进入体验竞争：</b>不再只比“能识别”，而是比“识别后是否漏扫、误判、缠线、撞宠物用品”。</li>
+              <li><b>宠物家庭需求放大：</b>毛发防缠绕、猫砂清理、宠物粪便避障和异味控制成为高传播话题。</li>
+              <li><b>长期维护成本受关注：</b>耗材价格、基站异味、污水箱清洁、管路维护和售后体验影响购买决策。</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <h3>账号栏目建议</h3>
+            <ul class="mini-list">
+              <li><b>栏目名：</b>《智能清洁实验室》或《扫地机实测研究所》。</li>
+              <li><b>核心标签：</b>真实家庭场景、脏污实测、宠物家庭、双11导购、长期复盘。</li>
+              <li><b>内容节奏：</b>7-9月建立测试可信度，10月承接装修入住，11月集中转化，12月沉淀年度榜单。</li>
+              <li><b>长期资产：</b>选题库、关键词库、测试协议库、价格监测库、评论问题库、商单案例库。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>02｜2026年下半年时事节点与内容机会</h2>
+            <p class="sub">
+              扫地机器人购买动机通常来自搬家、装修、养宠、家务疲劳、大促降价、新品发布和年终大扫除。内容要抓住“用户为什么现在要看、现在要买”。
+            </p>
+          </div>
+          <span class="tag blue">Market Timing</span>
+        </div>
+
+        <div class="timeline">
+          <div class="month">
+            <b>7月｜暑期租房 / 宠物掉毛</b>
+            <span>毕业租房、夏季灰尘、宠物掉毛。适合做养宠家庭、小户型和入门款选题。</span>
+          </div>
+          <div class="month">
+            <b>8月｜开学季 / 家务减负</b>
+            <span>年轻用户租房、家长开学后家务压力增加。适合做懒人清洁和低预算避坑。</span>
+          </div>
+          <div class="month">
+            <b>9月｜IFA / 秋季新品</b>
+            <span>消费电子展和品牌新品窗口。适合做AI避障、滚筒拖、全能基站趋势解读。</span>
+          </div>
+          <div class="month">
+            <b>10月｜国庆大扫除 / 装修入住</b>
+            <span>装修收尾、新家入住、国庆清洁。适合做上下水预留和基站安装避坑。</span>
+          </div>
+          <div class="month">
+            <b>11月｜双11购买高峰</b>
+            <span>全年清洁电器转化主战场。适合做价格监测、横评榜单和预算分层推荐。</span>
+          </div>
+          <div class="month">
+            <b>12月｜年终大扫除 / 春节前置家</b>
+            <span>年终清洁和春节置家。适合做年度红黑榜、长期体验和2027购买建议。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="persona">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>03｜用户画像与内容切入方式</h2>
+            <p class="sub">
+              不同用户购买扫地机器人的原因不同，测试维度也应不同。每期视频立项时必须明确主服务人群，否则容易出现测试发散、结论模糊、标题不聚焦。
+            </p>
+          </div>
+          <span class="tag purple">User Persona</span>
+        </div>
+
+        <div class="persona-grid">
+          <div class="persona">
+            <div class="persona-icon">宠</div>
+            <h3>养宠家庭</h3>
+            <p>关注毛发防缠绕、猫砂、宠物用品避障、异味和噪音。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">懒</div>
+            <h3>家务减负用户</h3>
+            <p>关注是否真正省心，包括自动集尘、洗拖布、烘干和上下水。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">装</div>
+            <h3>装修入住用户</h3>
+            <p>关注基站位置、上下水、电源、门槛、家具离地和全屋智能。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">省</div>
+            <h3>性价比用户</h3>
+            <p>关注3000-5000元档是否够用，旗舰功能是否值得加钱。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">洁</div>
+            <h3>洁癖/母婴用户</h3>
+            <p>关注湿污拖地、除菌、边角覆盖、噪音、维护卫生和长期干净程度。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>04｜四条内容主线</h2>
+            <p class="sub">
+              项目不应只追新品，而应围绕真实家庭问题建立连续栏目。四条主线分别承担传播、搜索、转化和信任沉淀。
+            </p>
+          </div>
+          <span class="tag green">Content Strategy</span>
+        </div>
+
+        <div class="pillar-grid">
+          <div class="pillar">
+            <div class="pillar-num">1</div>
+            <h3>宠物家庭线</h3>
+            <p>毛发、猫砂、宠物碗、玩具、粪便模型避障，适合传播和评论互动。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">2</div>
+            <h3>全能基站线</h3>
+            <p>集尘、洗拖布、热水洗、烘干、上下水和基站异味，适合建立专业信任。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">3</div>
+            <h3>装修入住线</h3>
+            <p>基站预留、上下水、电源、门槛、家具高度和地毯，适合长尾搜索。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">4</div>
+            <h3>双11导购线</h3>
+            <p>价格监测、预算分层、横评榜单和购买建议，适合商业转化。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topic-library">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>05｜扫地机器人长视频选题库</h2>
+            <p class="sub">
+              选题库用于半年内容储备和团队评审。建议所有选题先入库，再根据评分模型筛选。优先级高的选题进入长视频，优先级中的选题可做短切片、动态或专栏。
+            </p>
+          </div>
+          <span class="tag orange">Topic Library</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>选题方向</th>
+                <th>标题参考</th>
+                <th>服务用户</th>
+                <th>核心测试/内容点</th>
+                <th>适合月份</th>
+                <th>内容形态</th>
+                <th>优先级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>宠物专项</td>
+                <td>养宠家庭买扫地机器人，别只看吸力</td>
+                <td>养宠家庭</td>
+                <td>毛发、猫砂、宠物碗、玩具、粪便模型避障。</td>
+                <td>7月 / 11月</td>
+                <td>长视频横评</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>参数避坑</td>
+                <td>扫地机器人吸力越大越好吗？我实测后发现不是</td>
+                <td>性价比用户</td>
+                <td>吸力、风道、滚刷、边角残留、颗粒清理。</td>
+                <td>7月 / 8月</td>
+                <td>科普测评</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>入门横评</td>
+                <td>3000元扫地机器人够用吗？租房党别乱买</td>
+                <td>租房/小户型</td>
+                <td>基础清扫、拖地、导航、噪音、维护成本。</td>
+                <td>8月</td>
+                <td>横评</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>全能基站</td>
+                <td>全能基站真省心，还是更麻烦？</td>
+                <td>家务减负用户</td>
+                <td>集尘、洗拖布、烘干、污水箱、基站异味。</td>
+                <td>8月 / 10月</td>
+                <td>深度体验</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>新品趋势</td>
+                <td>2026扫地机器人趋势：AI避障、滚筒拖、机械臂谁有用？</td>
+                <td>高端用户/品牌合作</td>
+                <td>IFA新品、AI视觉、滚筒拖、机械臂贴边、Matter。</td>
+                <td>9月</td>
+                <td>趋势解读</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>拖地专项</td>
+                <td>扫地机器人拖地真的干净吗？厨房污渍实测</td>
+                <td>洁癖/母婴用户</td>
+                <td>酱油、咖啡、脚印、油污、干涸污渍、复拖。</td>
+                <td>9月</td>
+                <td>专项测试</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>装修预留</td>
+                <td>装修前不预留这个，扫地机器人可能白买</td>
+                <td>装修入住用户</td>
+                <td>上下水、电源、基站柜、排水、门槛、家具高度。</td>
+                <td>10月</td>
+                <td>避坑指南</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>旗舰横评</td>
+                <td>5000元旗舰扫地机器人横评，双11前先看这个</td>
+                <td>中高预算用户</td>
+                <td>清洁、拖地、避障、基站、毛发、噪音、售后。</td>
+                <td>10月 / 11月</td>
+                <td>横评</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11价格</td>
+                <td>双11扫地机器人价格监测：哪些是真降价？</td>
+                <td>全体购买用户</td>
+                <td>历史低价、预售价、赠品、耗材、平台补贴。</td>
+                <td>11月</td>
+                <td>导购</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11榜单</td>
+                <td>2026双11扫地机器人推荐：3000到8000元怎么买？</td>
+                <td>全体购买用户</td>
+                <td>预算分层、适合人群、不适合人群、价格锚点。</td>
+                <td>11月</td>
+                <td>榜单推荐</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>长期复盘</td>
+                <td>扫地机器人用了30天后，真正麻烦的是这些</td>
+                <td>谨慎购买用户</td>
+                <td>耗材、异味、地图漂移、拖布、毛发缠绕、维护频率。</td>
+                <td>12月</td>
+                <td>长期体验</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>年度红黑榜</td>
+                <td>2026扫地机器人红黑榜：这些功能真有用，这些别被忽悠</td>
+                <td>全体用户</td>
+                <td>年度技术、值得买型号、避坑功能、2027趋势。</td>
+                <td>12月</td>
+                <td>年终榜单</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>噪音专项</td>
+                <td>家里有宝宝/宠物，扫地机器人噪音到底能不能接受？</td>
+                <td>母婴/养宠家庭</td>
+                <td>清扫噪音、集尘噪音、烘干噪音、夜间使用边界。</td>
+                <td>8月 / 12月</td>
+                <td>专项测试</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>地毯专项</td>
+                <td>有地毯的家庭，扫地机器人怎么选？</td>
+                <td>地毯家庭</td>
+                <td>地毯识别、拖布抬升、吸力、毛发、地垫卡困。</td>
+                <td>10月</td>
+                <td>场景测评</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>智能家居</td>
+                <td>扫地机器人接入全屋智能，是真的好用还是噱头？</td>
+                <td>智能家居用户</td>
+                <td>语音、App、Matter、自动化场景、地图联动。</td>
+                <td>9月 / 12月</td>
+                <td>方案内容</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note orange">
+          <b>选题库使用原则：</b>
+          高优先级选题进入长视频主线；中优先级选题适合做短视频切片、动态答疑或作为长视频中的章节；低优先级选题暂存，等待外部热点或品牌合作触发。
+        </div>
+      </div>
+    </section>
+
+    <section id="score-model">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>06｜选题评分模型：100分制立项判断</h2>
+            <p class="sub">
+              建议所有长视频选题使用统一评分。80分以上进入核心长视频；70-79分可进入备选；低于70分不建议投入高成本制作。
+            </p>
+          </div>
+          <span class="tag red">Scoring Model</span>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-card">
+            <h3>用户需求强度｜25分</h3>
+            <p>是否有搜索需求、评论需求、电商差评和真实购买场景。</p>
+          </div>
+          <div class="score-card">
+            <h3>测试可展示性｜20分</h3>
+            <p>是否能拍出清晰、可信、有视觉冲击力的测试过程。</p>
+          </div>
+          <div class="score-card">
+            <h3>差异化程度｜15分</h3>
+            <p>是否区别于参数搬运、官方宣传和已有竞品视频。</p>
+          </div>
+          <div class="score-card">
+            <h3>搜索长尾价值｜15分</h3>
+            <p>是否适合长期被搜索、收藏和反复引用。</p>
+          </div>
+          <div class="score-card">
+            <h3>节点匹配度｜10分</h3>
+            <p>是否绑定开学、装修、IFA、双11、年终清洁等节点。</p>
+          </div>
+          <div class="score-card">
+            <h3>商业转化潜力｜10分</h3>
+            <p>是否能承接品牌合作、带货、榜单或直播导购。</p>
+          </div>
+          <div class="score-card">
+            <h3>制作可行性｜5分</h3>
+            <p>样机、场地、污渍、工具、拍摄周期和人力是否可控。</p>
+          </div>
+          <div class="score-card">
+            <h3>评分结论</h3>
+            <p>80+：核心长视频；70-79：备选；60-69：短内容；60以下：暂缓。</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>示例选题</th>
+                <th>需求强度 25</th>
+                <th>测试展示 20</th>
+                <th>差异化 15</th>
+                <th>长尾价值 15</th>
+                <th>节点匹配 10</th>
+                <th>商业潜力 10</th>
+                <th>可行性 5</th>
+                <th>总分</th>
+                <th>结论</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>养宠家庭扫地机横评</td>
+                <td>24</td>
+                <td>19</td>
+                <td>14</td>
+                <td>14</td>
+                <td>8</td>
+                <td>9</td>
+                <td>4</td>
+                <td><span class="score priority-high">92</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>双11扫地机器人终极推荐</td>
+                <td>25</td>
+                <td>15</td>
+                <td>12</td>
+                <td>15</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td><span class="score priority-high">92</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>装修前扫地机上下水预留</td>
+                <td>21</td>
+                <td>15</td>
+                <td>13</td>
+                <td>15</td>
+                <td>9</td>
+                <td>7</td>
+                <td>5</td>
+                <td><span class="score priority-high">85</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>扫地机噪音专项测试</td>
+                <td>16</td>
+                <td>13</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td><span class="score priority-mid">64</span></td>
+                <td>适合短内容或章节</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>评分建议：</b>
+          不要只按播放潜力评分。扫地机内容还要看测试成本、商业潜力、搜索长尾和账号信任价值。
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>07｜2026年7-12月内容排期</h2>
+            <p class="sub">
+              推荐每月2期核心长视频，配合3-5条短切片和1-2条动态答疑。10-11月为全年转化重点。
+            </p>
+          </div>
+          <span class="tag blue">Calendar</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>月份</th>
+                <th>节点</th>
+                <th>内容目标</th>
+                <th>核心长视频</th>
+                <th>配套运营</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7月</td>
+                <td>暑期租房、宠物掉毛</td>
+                <td>建立宠物和清洁力测试标签</td>
+                <td>养宠家庭专项测试 / 吸力参数避坑</td>
+                <td>征集宠物家庭痛点，发布毛发测试切片。</td>
+              </tr>
+              <tr>
+                <td>8月</td>
+                <td>开学季、家务减负</td>
+                <td>覆盖入门用户和懒人用户</td>
+                <td>3000元档横评 / 全能基站真省心吗</td>
+                <td>短切片讲低价坑点和基站维护。</td>
+              </tr>
+              <tr>
+                <td>9月</td>
+                <td>IFA、新品发布</td>
+                <td>建立技术趋势解读能力</td>
+                <td>2026扫地机趋势 / 拖地能力极限测试</td>
+                <td>做新品速评、AI避障投票、趋势图解。</td>
+              </tr>
+              <tr>
+                <td>10月</td>
+                <td>国庆大扫除、装修入住</td>
+                <td>承接装修和双11预热</td>
+                <td>装修预留指南 / 5000元旗舰横评</td>
+                <td>发布上下水清单、价格关注池。</td>
+              </tr>
+              <tr>
+                <td>11月</td>
+                <td>双11大促</td>
+                <td>集中转化</td>
+                <td>双11价格监测 / 双11终极推荐</td>
+                <td>置顶价格更新，橱窗、直播和评论答疑联动。</td>
+              </tr>
+              <tr>
+                <td>12月</td>
+                <td>年终大扫除、春节前置家</td>
+                <td>沉淀年度内容资产</td>
+                <td>30天长期体验 / 年度红黑榜</td>
+                <td>整理合集，发布年度清洁电器报告。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="episodes">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>08｜12期核心长视频规划</h2>
+            <p class="sub">
+              单期建议12-25分钟，横评和榜单可到30分钟。每期必须包含：适合谁、不适合谁、测试依据、购买建议。
+            </p>
+          </div>
+          <span class="tag purple">Episodes</span>
+        </div>
+
+        <div class="episode-grid">
+          <div class="episode">
+            <div class="episode-head"><b>EP01｜养宠家庭专项测试</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>测试猫毛、狗毛、猫砂、宠物玩具、宠物碗和粪便模型避障。</p>
+              <div class="chips"><span class="chip">宠物</span><span class="chip">毛发</span><span class="chip">避障</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP02｜吸力参数避坑</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>解释吸力、滚刷、风道、贴边和颗粒清理之间的真实关系。</p>
+              <div class="chips"><span class="chip">参数</span><span class="chip">清洁力</span><span class="chip">避坑</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP03｜3000元档横评</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>面向租房、小户型和首次购买用户，测试基础清扫、拖地和维护成本。</p>
+              <div class="chips"><span class="chip">入门</span><span class="chip">租房</span><span class="chip">横评</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP04｜全能基站真省心吗</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>实测集尘、洗拖布、烘干、污水箱、基站异味和维护频率。</p>
+              <div class="chips"><span class="chip">基站</span><span class="chip">省心</span><span class="chip">维护</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP05｜2026新品趋势解读</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>追踪AI避障、滚筒拖、机械臂贴边、自动上下水和智能家居联动。</p>
+              <div class="chips"><span class="chip">IFA</span><span class="chip">趋势</span><span class="chip">新品</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP06｜拖地能力极限测试</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>测试咖啡、酱油、脚印、厨房油污和干涸污渍。</p>
+              <div class="chips"><span class="chip">湿污</span><span class="chip">拖地</span><span class="chip">厨房</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP07｜装修预留指南</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>讲清基站位置、上下水、电源、排水、柜体、门槛和家具高度。</p>
+              <div class="chips"><span class="chip">装修</span><span class="chip">上下水</span><span class="chip">安装</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP08｜5000元旗舰横评</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>双11前重点横评，覆盖清洁、拖地、避障、基站、噪音和售后。</p>
+              <div class="chips"><span class="chip">旗舰</span><span class="chip">横评</span><span class="chip">预热</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP09｜双11价格监测</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>分析预售价、到手价、历史低价、赠品、耗材和真假降价。</p>
+              <div class="chips"><span class="chip">双11</span><span class="chip">价格</span><span class="chip">转化</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP10｜双11终极推荐</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>按3000、4000、5000、6000、8000元以上分层推荐。</p>
+              <div class="chips"><span class="chip">榜单</span><span class="chip">预算</span><span class="chip">推荐</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP11｜30天长期体验</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>复盘耗材、异味、地图稳定、拖布清洁、毛发缠绕和维护频率。</p>
+              <div class="chips"><span class="chip">长期</span><span class="chip">复盘</span><span class="chip">信任</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP12｜年度红黑榜</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>总结值得买、不建议买、适合等降价和2027值得关注的技术。</p>
+              <div class="chips"><span class="chip">年终</span><span class="chip">红黑榜</span><span class="chip">搜索</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>09｜科学测试体系</h2>
+            <p class="sub">
+              扫地机测评必须避免“只扫干净地面”“只看官方参数”“只测一次”。推荐采用统一测试协议，所有横评和榜单都复用。
+            </p>
+          </div>
+          <span class="tag orange">Testing Protocol</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>测试维度</th>
+                <th>关键指标</th>
+                <th>测试方法</th>
+                <th>结论重点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>干垃圾清扫</td>
+                <td>灰尘、米粒、猫砂、咖啡渣、边角残留</td>
+                <td>固定克重、固定地面、固定路线，清扫前后称重和拍照。</td>
+                <td>不只看吸力，看滚刷、风道、贴边和残留。</td>
+              </tr>
+              <tr>
+                <td>毛发防缠绕</td>
+                <td>长发、宠物毛、滚刷缠绕、边刷缠绕</td>
+                <td>定量毛发反复测试，记录清理难度和拆洗频率。</td>
+                <td>养宠家庭必须看长期缠绕表现。</td>
+              </tr>
+              <tr>
+                <td>湿污拖地</td>
+                <td>酱油、咖啡、脚印、厨房油污、干涸污渍</td>
+                <td>设置新鲜污渍和干涸污渍，比较一次拖净率和复拖效果。</td>
+                <td>区分日常维持清洁和深度清洁。</td>
+              </tr>
+              <tr>
+                <td>AI避障</td>
+                <td>线缆、拖鞋、袜子、宠物碗、玩具、粪便模型</td>
+                <td>布置典型家庭障碍物，记录误撞、漏扫、缠绕和绕行。</td>
+                <td>识别成功不等于体验好，还要看漏扫。</td>
+              </tr>
+              <tr>
+                <td>基站能力</td>
+                <td>集尘、洗拖布、烘干、自清洁、上下水</td>
+                <td>连续运行7-30天，记录异味、残水、污水箱和维护频率。</td>
+                <td>核心是省心程度，不是功能数量。</td>
+              </tr>
+              <tr>
+                <td>长期成本</td>
+                <td>尘袋、滤芯、滚刷、拖布、清洁液、售后</td>
+                <td>统计半年/一年耗材价格和更换频率。</td>
+                <td>给出买得起和养得起的完整判断。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>测试声明模板：</b>
+          本期测试基于固定地面、固定污渍克重、固定清洁模式和当前固件版本，结果适用于类似家庭场景，不代表所有复杂户型和长期极端环境。
+        </div>
+      </div>
+    </section>
+
+    <section id="operation">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>10｜发布运营与商业转化</h2>
+            <p class="sub">
+              扫地机器人长视频既有传播属性，也有购买决策属性。宠物、湿污、避障适合传播；价格监测、榜单和预算推荐适合转化。
+            </p>
+          </div>
+          <span class="tag green">Operation & Business</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-4">
+            <h3>发布前</h3>
+            <ul class="mini-list">
+              <li>动态征集预算、户型、宠物、地面材质、是否上下水。</li>
+              <li>提前发布投票，筛选用户最关心的型号和功能。</li>
+              <li>准备关键词：扫地机器人怎么选、宠物家庭、双11推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>发布后</h3>
+            <ul class="mini-list">
+              <li>置顶评论写清适合谁、不适合谁、价格更新时间。</li>
+              <li>剪3-5条短切片：毛发、避障、湿污、基站、价格。</li>
+              <li>评论区按预算、面积、宠物、上下水进行答疑。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>商业化</h3>
+            <ul class="mini-list">
+              <li>品牌新品测评、技术专项、双11榜单合作。</li>
+              <li>橱窗带货、直播答疑、大促价格监测。</li>
+              <li>年度红黑榜、智能清洁报告、商单案例沉淀。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>11｜项目执行工作台</h2>
+            <p class="sub">
+              用于团队执行、选题评审、测试记录、发布质检和复盘沉淀。
+            </p>
+          </div>
+          <span class="tag">Dashboard</span>
+        </div>
+
+        <div class="workbench">
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>单期项目评分卡</h3>
+              <span class="wb-mark">100分</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>用户需求强度</span><span class="score-badge">/25</span></div>
+              <div class="score-row"><span>测试可展示性</span><span class="score-badge">/20</span></div>
+              <div class="score-row"><span>内容差异化</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>搜索长尾价值</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>节点匹配度</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>商业转化潜力</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>制作可行性</span><span class="score-badge">/5</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>项目立项卡</h3>
+              <span class="wb-mark">Brief</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>选题名称</b><span>如：养宠家庭扫地机横评</span></div>
+                <div class="field"><b>目标用户</b><span>养宠 / 装修 / 懒人 / 母婴 / 性价比</span></div>
+                <div class="field"><b>核心问题</b><span>用户看完后能解决什么购买问题？</span></div>
+                <div class="field"><b>测试清单</b><span>毛发、猫砂、湿污、避障、基站等</span></div>
+                <div class="field"><b>商业目标</b><span>播放 / 收藏 / 带货 / 商单 / 搜索</span></div>
+                <div class="field"><b>发布节点</b><span>IFA / 国庆 / 双11 / 年终</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>发布质检</h3>
+              <span class="wb-mark">QA</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>标题包含品类、场景、冲突或预算</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>封面有测试画面或明确结论</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>简介说明样机来源和测试条件</span><span class="score-badge">必备</span></div>
+              <div class="score-row"><span>置顶评论含适合/不适合人群</span><span class="score-badge">必备</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>评论答疑模板</h3>
+              <span class="wb-mark">Comment</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>预算 + 面积 + 户型</span><span class="score-badge">推荐</span></div>
+              <div class="score-row"><span>是否养宠，毛发多不多</span><span class="score-badge">宠物</span></div>
+              <div class="score-row"><span>是否需要自动上下水</span><span class="score-badge">安装</span></div>
+              <div class="score-row"><span>是否有地毯、门槛和复杂家具</span><span class="score-badge">场景</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>复盘指标</h3>
+              <span class="wb-mark">Review</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>点击率与封面转化</span><span class="score-badge">点击</span></div>
+              <div class="score-row"><span>前30秒留存与章节留存</span><span class="score-badge">留存</span></div>
+              <div class="score-row"><span>收藏率、评论质量、搜索来源</span><span class="score-badge">价值</span></div>
+              <div class="score-row"><span>带货点击、商单咨询、复购线索</span><span class="score-badge">商业</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <div class="footer-card">
+      <div class="footer-inner">
+        <div>
+          <h2>2026 H2 扫地机器人长视频项目策划</h2>
+          <p>选题库 × 评分模型 × 科学测试 × 双11转化 × 年终资产沉淀</p>
+        </div>
+        <div class="footer-mini">
+          <span>宠物家庭</span>
+          <span>全能基站</span>
+          <span>AI避障</span>
+          <span>双11导购</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById("themeBtn");
+      var key = "robot-vacuum-project-v2-theme";
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem(key, theme);
+        } catch (e) {}
+        if (btn) {
+          btn.textContent = theme === "dark" ? "☀️ 浅色模式" : "🌙 深色模式";
+        }
+      }
+
+      var saved = null;
+      try {
+        saved = localStorage.getItem(key);
+      } catch (e) {}
+
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      } else {
+        var prefersDark = false;
+        try {
+          prefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+        } catch (e) {}
+        applyTheme(prefersDark ? "dark" : "light");
+      }
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var current = html.getAttribute("data-theme");
+          applyTheme(current === "dark" ? "light" : "dark");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

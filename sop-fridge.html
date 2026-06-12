@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>冰箱测评内容 SOP 与商务开发报告</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: #eef4f8;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: 1220px;
+      margin: 34px auto;
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero {
+      padding: 58px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 86% 14%, rgba(45,212,191,.38), transparent 30%),
+        radial-gradient(circle at 12% 88%, rgba(96,165,250,.36), transparent 32%),
+        linear-gradient(135deg, #042f2e 0%, #0f172a 46%, #0e7490 100%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #ccfbf1;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+      max-width: 960px;
+      margin-top: 18px;
+      color: #ccfbf1;
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .hero-card {
+      padding: 19px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .hero-card span {
+      font-size: 13px;
+      color: #99f6e4;
+    }
+
+    .content {
+      padding: 46px 64px 64px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .num {
+      width: 37px;
+      height: 37px;
+      border-radius: 13px;
+      background: #0891b2;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: #111827;
+      font-size: 18px;
+    }
+
+    p { margin: 8px 0; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15,23,42,.055);
+    }
+
+    .blue {
+      background: linear-gradient(180deg, #eff6ff 0%, #fff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .cyan {
+      background: linear-gradient(180deg, #ecfeff 0%, #fff 100%);
+      border-color: #a5f3fc;
+    }
+
+    .green {
+      background: linear-gradient(180deg, #ecfdf5 0%, #fff 100%);
+      border-color: #bbf7d0;
+    }
+
+    .orange {
+      background: linear-gradient(180deg, #fff7ed 0%, #fff 100%);
+      border-color: #fed7aa;
+    }
+
+    .purple {
+      background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%);
+      border-color: #ddd6fe;
+    }
+
+    .red {
+      background: linear-gradient(180deg, #fef2f2 0%, #fff 100%);
+      border-color: #fecaca;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li { margin: 7px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f172a;
+      color: #fff;
+      text-align: left;
+      padding: 14px 15px;
+      font-weight: 650;
+    }
+
+    td {
+      padding: 14px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    .score {
+      color: #0891b2;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .danger {
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .success {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    .warning {
+      color: #ea580c;
+      font-weight: 800;
+    }
+
+    .quote {
+      padding: 22px 26px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border-left: 6px solid #0891b2;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .alert {
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #7f1d1d;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #16a34a;
+      font-weight: 900;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+    }
+
+    .step {
+      padding: 17px 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .step b {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0891b2;
+      color: #fff;
+      margin-bottom: 9px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 13px;
+      color: #0f172a;
+    }
+
+    .step span {
+      display: block;
+      color: #64748b;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 26px 64px;
+      background: #0f172a;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="hero">
+      <div class="badge">🧊 冰箱测评 · 内容 SOP · 商务开发 · 样品与测试红线</div>
+      <h1>中国市场冰箱内容创作<br />测试体系与商务执行报告</h1>
+      <p class="subtitle">
+        适用于 B站 / YouTube 长视频博主及数码家电内容团队。报告聚焦多门冰箱、十字对开门、法式冰箱、嵌入式冰箱、母婴冰箱、零嵌冰箱等品类的标准化测试场景、工具、测试项目清单、内容生产 SOP、商务开发材料、样品管理与商单红线。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <strong>6类</strong>
+          <span>真实家庭测试场景</span>
+        </div>
+        <div class="hero-card">
+          <strong>40+</strong>
+          <span>冰箱实测项目</span>
+        </div>
+        <div class="hero-card">
+          <strong>8步</strong>
+          <span>内容生产 SOP</span>
+        </div>
+        <div class="hero-card">
+          <strong>5条</strong>
+          <span>核心红线：温控、保鲜、噪音、能耗、披露</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>冰箱测评体系目标</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>对用户的价值</h3>
+            <ul>
+              <li>帮用户判断：这台冰箱是否保鲜稳定、空间好用、噪音低、省电。</li>
+              <li>解释容量、分区、制冷方式、双循环、零度保鲜、净味除菌、嵌入尺寸等复杂卖点。</li>
+              <li>解决中国家庭真实问题：囤菜、母婴、熟食、生鲜、冷冻、厨房空间、开门半径。</li>
+              <li>明确适合人群：三口之家、老人家庭、母婴家庭、宠物家庭、大户型、精装房。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>对内容团队的价值</h3>
+            <ul>
+              <li>建立可复用的温度、湿度、能耗、噪音、保鲜测试方法。</li>
+              <li>减少“看起来能装”“感觉很安静”的主观判断。</li>
+              <li>沉淀长期横评数据库，服务大促推荐、装修选购、嵌入式避坑内容。</li>
+              <li>提升冰箱赛道商单报价和长期合作能力。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>对商务合作的价值</h3>
+            <ul>
+              <li>向品牌证明账号具备真实长期保鲜测试能力。</li>
+              <li>提前明确样品、入户、安装、耗材、数据披露和缺点呈现边界。</li>
+              <li>把单品测评升级为新品发布、横评、装修专题、大促转化和年度合作。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote" style="margin-top:18px;">
+          冰箱测评的核心不是复述容量和外观，而是在真实家庭存储场景下回答：温度稳不稳、食材放得久不久、串味严重不严重、噪音吵不吵、空间到底好不好用。
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>测试场景搭建</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>场景 A：标准厨房摆放测试</h3>
+            <ul>
+              <li><strong>用途：</strong>模拟中国家庭最常见的厨房 / 餐厅冰箱摆放场景。</li>
+              <li><strong>空间：</strong>记录厨房面积、冰箱位宽度、深度、上方空间、左右散热距离。</li>
+              <li><strong>测试重点：</strong>门体开合、抽屉拉出、开门半径、动线阻挡、散热空间。</li>
+              <li><strong>注意：</strong>零嵌 / 平嵌 / 嵌入式冰箱必须记录柜体预留尺寸。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>场景 B：冷藏温控与保鲜测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试冷藏室温度稳定性和食材保鲜能力。</li>
+              <li><strong>材料：</strong>绿叶菜、草莓、蓝莓、黄瓜、鸡蛋、牛奶、熟食。</li>
+              <li><strong>测试周期：</strong>建议 24小时、72小时、7天分阶段观察。</li>
+              <li><strong>测试重点：</strong>温度波动、湿度保持、蔬果失水、结露、异味。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>场景 C：冷冻与速冻测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试冷冻能力、速冻效率和温度恢复速度。</li>
+              <li><strong>材料：</strong>水瓶、冰格、肉类模拟包、速冻食品。</li>
+              <li><strong>测试重点：</strong>从常温到冷冻所需时间、开门后温度恢复、霜冻、串味。</li>
+              <li><strong>注意：</strong>冷冻测试必须记录初始温度和环境温度。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>场景 D：满载囤货测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试真实家庭囤菜和大促采购后的空间效率。</li>
+              <li><strong>材料：</strong>饮料、蔬菜、肉类、火锅食材、外卖盒、锅具、蛋糕盒。</li>
+              <li><strong>测试重点：</strong>有效容积、抽屉顺手程度、层板调节、门架承重。</li>
+              <li><strong>注意：</strong>不能只看标称容量，必须展示实际能放什么。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>场景 E：噪音与夜间环境测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试压缩机、风机、化霜、制冰等声音是否影响生活。</li>
+              <li><strong>条件：</strong>夜间安静环境，关闭电视、油烟机、空调等噪音源。</li>
+              <li><strong>测点：</strong>冰箱正前方 1 米、侧面 1 米、卧室门口或客餐厅休息位。</li>
+              <li><strong>测试重点：</strong>稳定运行噪音、启停声音、异响、共振。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>场景 F：净味 / 除菌 / 制冰 / 饮水测试</h3>
+            <ul>
+              <li><strong>用途：</strong>验证高端功能是否有实际价值。</li>
+              <li><strong>净味：</strong>用洋葱、榴莲、熟食等做可控异味测试。</li>
+              <li><strong>制冰：</strong>测试制冰速度、冰块质量、维护难度。</li>
+              <li><strong>饮水：</strong>测试水箱 / 管线、滤芯成本、清洁便利性。</li>
+              <li><strong>注意：</strong>除菌效果不建议无实验室条件下做医学化结论。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>测试环境记录模板</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>记录项</th>
+              <th>填写要求</th>
+              <th>示例</th>
+              <th>为什么重要</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>产品型号</td>
+              <td>完整型号、容量、门型、颜色、版本。</td>
+              <td>某品牌 501L 法式多门零嵌版</td>
+              <td>同系列不同容量、不同门型配置差异明显。</td>
+            </tr>
+            <tr>
+              <td>摆放环境</td>
+              <td>厨房 / 餐厅 / 客厅，记录左右和背部散热空间。</td>
+              <td>餐边柜位，左右各 2cm，背部 5cm</td>
+              <td>散热空间影响能耗、噪音和寿命。</td>
+            </tr>
+            <tr>
+              <td>环境温度</td>
+              <td>记录测试期间室温和湿度。</td>
+              <td>室温 26℃ / 湿度 60%</td>
+              <td>冰箱耗电和温度恢复受室温影响。</td>
+            </tr>
+            <tr>
+              <td>设定温度</td>
+              <td>记录冷藏、冷冻、变温区设定。</td>
+              <td>冷藏 4℃ / 冷冻 -18℃ / 变温 -3℃</td>
+              <td>不同设定下保鲜和能耗差异明显。</td>
+            </tr>
+            <tr>
+              <td>测试负载</td>
+              <td>记录空载、半载、满载，食材种类和数量。</td>
+              <td>半载，约 30kg 食材</td>
+              <td>空载和满载的温度稳定性不同。</td>
+            </tr>
+            <tr>
+              <td>开门频率</td>
+              <td>记录开门次数、单次开门时长。</td>
+              <td>每小时开门 4 次，每次 10 秒</td>
+              <td>影响温度恢复、能耗和结露。</td>
+            </tr>
+            <tr>
+              <td>价格信息</td>
+              <td>记录官方价、到手价、补贴价、安装 / 入户费用和日期。</td>
+              <td>到手价 5999 元，记录于 2025-06-01</td>
+              <td>推荐结论必须基于价格前提。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>测试工具清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>工具类型</th>
+              <th>推荐工具 / 材料</th>
+              <th>用途</th>
+              <th>必要程度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>温度测试</td>
+              <td>多点温度计、温度记录仪、探针温度计、红外测温仪。</td>
+              <td>记录冷藏、冷冻、变温区温度曲线和波动。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>湿度测试</td>
+              <td>湿度计、温湿度记录仪。</td>
+              <td>测试冷藏室、果蔬室湿度保持能力。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>能耗测试</td>
+              <td>功耗计、智能插座、电量统计插座。</td>
+              <td>测试 24 小时耗电、满载耗电、环境温度变化下耗电。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>噪音测试</td>
+              <td>分贝仪、录音设备。</td>
+              <td>测试压缩机、风机、化霜、制冰、异响和共振。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>保鲜材料</td>
+              <td>绿叶菜、草莓、黄瓜、牛奶、熟食、肉类、鸡蛋。</td>
+              <td>测试保鲜、失水、结露、串味、冷冻效果。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>空间测试</td>
+              <td>标准购物袋、饮料箱、锅具、蛋糕盒、外卖盒、卷尺。</td>
+              <td>测试实际装载能力和空间利用率。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>异味测试</td>
+              <td>洋葱、榴莲、熟食、密封盒、气味记录表。</td>
+              <td>测试净味、串味和分区隔离效果。</td>
+              <td class="score">中</td>
+            </tr>
+            <tr>
+              <td>拍摄设备</td>
+              <td>相机、三脚架、延时摄影、补光灯、收音设备。</td>
+              <td>拍摄空间、食材变化、温度曲线、噪音和细节。</td>
+              <td class="score">高</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pill-list">
+          <span class="pill">基础必备：温度记录仪 × 3</span>
+          <span class="pill">基础必备：湿度计</span>
+          <span class="pill">基础必备：功耗计</span>
+          <span class="pill">基础必备：分贝仪</span>
+          <span class="pill">基础必备：卷尺</span>
+          <span class="pill">进阶必备：探针温度计</span>
+          <span class="pill">进阶必备：延时摄影</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>冰箱测试项目总清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>一、温控稳定性测试</h3>
+            <ul>
+              <li>冷藏室 24 小时温度曲线。</li>
+              <li>冷冻室 24 小时温度曲线。</li>
+              <li>变温区不同档位温度表现。</li>
+              <li>开门后温度恢复速度。</li>
+              <li>满载和半载状态下温度波动。</li>
+              <li>不同层位温差：上层、中层、下层、门架。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>二、保鲜能力测试</h3>
+            <ul>
+              <li>绿叶菜 24小时 / 72小时 / 7天失水和蔫萎程度。</li>
+              <li>草莓、蓝莓等娇嫩水果霉变和失水。</li>
+              <li>果蔬室湿度保持。</li>
+              <li>熟食存放异味和串味。</li>
+              <li>肉类微冻 / 零度保鲜状态。</li>
+              <li>牛奶、鸡蛋、饮料门架温度稳定性。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>三、冷冻与速冻测试</h3>
+            <ul>
+              <li>常温水降至 0℃ / -18℃所需时间。</li>
+              <li>肉类模拟包中心温度下降速度。</li>
+              <li>速冻模式前后差异。</li>
+              <li>冷冻室开门后温度恢复。</li>
+              <li>冷冻食材表面结霜、冻干情况。</li>
+              <li>冰格制冰速度和冰块质量。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>四、空间与结构测试</h3>
+            <ul>
+              <li>实际可用空间和标称容量差异。</li>
+              <li>层板高度调节范围。</li>
+              <li>门架是否能放大瓶饮料、鸡蛋、调料。</li>
+              <li>抽屉顺滑度、承重、拉出角度。</li>
+              <li>锅具、蛋糕盒、外卖盒能否直接放入。</li>
+              <li>大容量囤货是否好拿取。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>五、噪音与使用体验测试</h3>
+            <ul>
+              <li>环境底噪记录。</li>
+              <li>压缩机运行噪音。</li>
+              <li>风机噪音、化霜噪音、制冰噪音。</li>
+              <li>门体开合手感、吸力、回弹。</li>
+              <li>抽屉、层板、门架异响。</li>
+              <li>夜间客餐厅 / 卧室附近是否扰人。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>六、能耗测试</h3>
+            <ul>
+              <li>空载 24 小时耗电。</li>
+              <li>半载 24 小时耗电。</li>
+              <li>满载 24 小时耗电。</li>
+              <li>高频开门场景耗电。</li>
+              <li>速冻、制冰、新风 / 净味功能耗电。</li>
+              <li>标称能效和实际使用差异。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>七、净味 / 除菌 / 健康功能测试</h3>
+            <ul>
+              <li>熟食、洋葱、榴莲异味扩散。</li>
+              <li>冷藏和冷冻之间是否串味。</li>
+              <li>净味模块工作噪音和维护成本。</li>
+              <li>除菌功能官方依据核查。</li>
+              <li>母婴空间、干湿分储、珍品区体验。</li>
+              <li>滤芯、耗材是否需要定期更换。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>八、入户安装与售后测试</h3>
+            <ul>
+              <li>电梯、楼道、入户门宽度是否匹配。</li>
+              <li>拆门入户、吊装、搬运收费。</li>
+              <li>静置时间和首次通电说明。</li>
+              <li>嵌入式预留尺寸和散热要求。</li>
+              <li>售后响应、保修政策、压缩机保修。</li>
+              <li>退换货条件、外观瑕疵处理。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">06</span>
+          <h2>冰箱测评评分模型</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>权重</th>
+              <th>核心测试</th>
+              <th>结论表达</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>温控与制冷能力</td>
+              <td class="score">25%</td>
+              <td>冷藏、冷冻、变温、温度波动、恢复速度。</td>
+              <td>温度稳不稳，食材是不是安全存放。</td>
+            </tr>
+            <tr>
+              <td>保鲜与分区能力</td>
+              <td class="score">20%</td>
+              <td>蔬果失水、湿度、零度保鲜、干湿分储、串味。</td>
+              <td>能不能让食材放得更久、更好吃。</td>
+            </tr>
+            <tr>
+              <td>空间与结构设计</td>
+              <td class="score">15%</td>
+              <td>有效容量、层板、抽屉、门架、大件收纳。</td>
+              <td>标称大不等于真的好装。</td>
+            </tr>
+            <tr>
+              <td>能耗表现</td>
+              <td class="score">15%</td>
+              <td>24小时耗电、满载耗电、高频开门耗电。</td>
+              <td>长期用下来电费压力大不大。</td>
+            </tr>
+            <tr>
+              <td>噪音与日常体验</td>
+              <td class="score">10%</td>
+              <td>压缩机、风机、异响、门体、抽屉手感。</td>
+              <td>放在客餐厅会不会吵。</td>
+            </tr>
+            <tr>
+              <td>入户安装与售后</td>
+              <td class="score">10%</td>
+              <td>入户、嵌入尺寸、散热、保修、售后响应。</td>
+              <td>买得回家、放得进去、用得省心。</td>
+            </tr>
+            <tr>
+              <td>价格与长期成本</td>
+              <td class="score">5%</td>
+              <td>到手价、耗材、滤芯、制冰模块、维修成本。</td>
+              <td>当前价格下是否值得买。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">07</span>
+          <h2>内容生产 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>选题立项</strong>
+            <span>单品/横评/攻略</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>商务确认</strong>
+            <span>样机/入户/合同</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>样品入库</strong>
+            <span>型号/容量/状态</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>测试计划</strong>
+            <span>食材/测点/周期</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>实测记录</strong>
+            <span>温度/能耗/噪音</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>脚本拍摄</strong>
+            <span>证据/结论/建议</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>审核发布</strong>
+            <span>合规/链接/披露</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘归档</strong>
+            <span>播放/转化/反馈</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>SOP环节</th>
+              <th>具体动作</th>
+              <th>责任人</th>
+              <th>交付物</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>选题立项</td>
+              <td>确定单品测评、横评、嵌入式避坑、母婴专题、大促推荐或新品商单。</td>
+              <td>主理人 / 选题编辑</td>
+              <td>选题单、竞品清单、标题方向。</td>
+            </tr>
+            <tr>
+              <td>样品确认</td>
+              <td>确认样品来源、是否商单、是否寄回、是否支持长期测试。</td>
+              <td>商务 / 运营</td>
+              <td>样品登记表、合作确认单。</td>
+            </tr>
+            <tr>
+              <td>入户安装</td>
+              <td>记录物流、搬运、入户、摆放、静置、通电和收费。</td>
+              <td>运营 / 摄像</td>
+              <td>入户记录表、过程素材。</td>
+            </tr>
+            <tr>
+              <td>测试准备</td>
+              <td>确认食材、温度测点、能耗记录、噪音测试和拍摄机位。</td>
+              <td>测评编辑</td>
+              <td>测试计划表、食材清单。</td>
+            </tr>
+            <tr>
+              <td>执行测试</td>
+              <td>按 24小时、72小时、7天记录温度、湿度、能耗、食材状态。</td>
+              <td>测评编辑</td>
+              <td>原始数据、食材照片、曲线图。</td>
+            </tr>
+            <tr>
+              <td>结论评审</td>
+              <td>根据数据形成优缺点、适合家庭、安装避坑和购买建议。</td>
+              <td>主理人 / 编辑</td>
+              <td>评分卡、购买建议。</td>
+            </tr>
+            <tr>
+              <td>脚本拍摄</td>
+              <td>先给结论，再展示温控、保鲜、空间、能耗、噪音和入户证据。</td>
+              <td>出镜博主 / 摄像</td>
+              <td>口播、B-roll、测试画面。</td>
+            </tr>
+            <tr>
+              <td>发布复盘</td>
+              <td>维护价格、评论答疑、转化数据和用户售后反馈。</td>
+              <td>运营 / 商务</td>
+              <td>复盘报告、商务案例。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">08</span>
+          <h2>单条冰箱测评视频结构 SOP</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>标准长视频结构</h3>
+            <ul>
+              <li><strong>00:00 - 00:30：</strong>结论前置：适合谁、不适合谁。</li>
+              <li><strong>00:30 - 02:00：</strong>型号、容量、价格、门型、样品来源说明。</li>
+              <li><strong>02:00 - 04:00：</strong>入户、尺寸、嵌入、门体开合和厨房动线。</li>
+              <li><strong>04:00 - 07:00：</strong>温控实测：冷藏、冷冻、变温、开门恢复。</li>
+              <li><strong>07:00 - 10:00：</strong>保鲜实测：蔬果、熟食、零度、串味。</li>
+              <li><strong>10:00 - 12:00：</strong>空间结构：层板、抽屉、门架、满载囤货。</li>
+              <li><strong>12:00 - 14:00：</strong>能耗、噪音、净味、制冰、智能功能。</li>
+              <li><strong>14:00 - 15:30：</strong>缺点、竞品替代、价格建议、推荐等级。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>必须出现在视频里的信息</h3>
+            <ul>
+              <li>样品来源：自购 / 借测 / 送测 / 商业合作。</li>
+              <li>测试环境：室温、摆放空间、散热距离、设定温度。</li>
+              <li>测试周期：至少记录 24 小时数据，保鲜建议 72小时以上。</li>
+              <li>食材清单：蔬果、熟食、肉类、饮料、大件收纳物。</li>
+              <li>至少 3 个明确优点和 3 个明确缺点。</li>
+              <li>适合家庭和不适合家庭。</li>
+              <li>如有带货链接，说明可能存在佣金。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pill-list">
+          <span class="pill">必拍：入户尺寸</span>
+          <span class="pill">必拍：开门半径</span>
+          <span class="pill">必拍：温度曲线</span>
+          <span class="pill">必拍：食材前后对比</span>
+          <span class="pill">必拍：满载囤货</span>
+          <span class="pill">必拍：分贝仪实测</span>
+          <span class="pill">必拍：24h耗电</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">09</span>
+          <h2>样品与入户管理规则</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>环节</th>
+              <th>规则</th>
+              <th>必须记录</th>
+              <th>风险点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品接收</td>
+              <td>拍摄包装、型号、外观、铭牌、配件、门体和玻璃面板。</td>
+              <td>到货日期、快递单号、包装破损情况。</td>
+              <td>运输损伤、门体变形、面板划痕。</td>
+            </tr>
+            <tr>
+              <td>样品登记</td>
+              <td>登记型号、容量、序列号、版本、样品来源。</td>
+              <td>样品登记表、铭牌照片。</td>
+              <td>媒体机、工程机与零售机不一致。</td>
+            </tr>
+            <tr>
+              <td>入户检查</td>
+              <td>测量电梯、楼道、入户门、厨房门、冰箱位尺寸。</td>
+              <td>尺寸表、搬运视频。</td>
+              <td>大容量冰箱进不了门、需拆门或吊装。</td>
+            </tr>
+            <tr>
+              <td>摆放通电</td>
+              <td>按说明书静置后通电，记录散热距离和首次降温时间。</td>
+              <td>静置时间、通电时间、设定温度。</td>
+              <td>未静置直接通电影响压缩机。</td>
+            </tr>
+            <tr>
+              <td>测试使用</td>
+              <td>不得私自拆机、改线路、拆除制冷系统，除非合同允许。</td>
+              <td>测试日志、异常记录。</td>
+              <td>损坏赔偿、保修争议、安全风险。</td>
+            </tr>
+            <tr>
+              <td>样品寄回</td>
+              <td>寄回前清洁、除味、拍照录像，确认配件完整。</td>
+              <td>寄回日期、物流单号、打包视频。</td>
+              <td>二次运输损伤、异味、配件缺失。</td>
+            </tr>
+            <tr>
+              <td>样品留存</td>
+              <td>若样品不寄回，应明确归属、税务和后续使用权限。</td>
+              <td>合同或邮件确认。</td>
+              <td>利益披露不清，影响信任。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">10</span>
+          <h2>测试红线与商单红线</h2>
+        </div>
+
+        <div class="alert">
+          <strong>核心原则：</strong>冰箱测评必须有真实温控、保鲜、能耗和噪音记录。不能只拍外观和容量，更不能因商单隐藏温度波动、串味、噪音、入户困难、空间鸡肋等关键问题。
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card red">
+            <h3>测试红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 虚构温度、湿度、能耗、噪音、保鲜天数等测试数据。</li>
+              <li><span class="danger">禁止</span> 不说明室温、设定温度、负载状态就下结论。</li>
+              <li><span class="danger">禁止</span> 用空载数据代表满载家庭使用体验。</li>
+              <li><span class="danger">禁止</span> 把短时间摆拍当作长期保鲜测试。</li>
+              <li><span class="danger">禁止</span> 隐藏串味、结露、噪音、入户困难、抽屉不好用等问题。</li>
+              <li><span class="danger">禁止</span> 将工程机、特殊调校机表现当作零售机结论。</li>
+            </ul>
+          </div>
+
+          <div class="card red">
+            <h3>商单红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 接受“不能拍缺点、不能拍噪音、不能拍入户问题”的合作。</li>
+              <li><span class="danger">禁止</span> 接受品牌要求删除真实缺点或修改推荐等级。</li>
+              <li><span class="danger">禁止</span> 未披露商业合作、样品来源或佣金关系。</li>
+              <li><span class="danger">禁止</span> 恶意贬低竞品或使用无依据行业排名。</li>
+              <li><span class="danger">禁止</span> 使用“永不串味、永久保鲜、零噪音、全网第一”等绝对表述。</li>
+              <li><span class="danger">禁止</span> 未经授权声称官方合作或官方推荐。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card orange">
+            <h3>可以接受的品牌修改</h3>
+            <ul>
+              <li><span class="success">允许</span> 修改产品名称、型号、价格、参数等事实错误。</li>
+              <li><span class="success">允许</span> 补充官方保鲜技术、净味技术、保修政策和入户政策。</li>
+              <li><span class="success">允许</span> 修改未上市信息、保密信息、发布时间。</li>
+              <li><span class="success">允许</span> 指出测试方法中的技术问题并要求复测。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>不能接受的品牌修改</h3>
+            <ul>
+              <li><span class="danger">不允许</span> 删除真实温度波动、串味、噪音、空间不好用等问题。</li>
+              <li><span class="danger">不允许</span> 要求把“不推荐”改成“推荐”。</li>
+              <li><span class="danger">不允许</span> 隐藏入户费用、搬运问题和安装限制。</li>
+              <li><span class="danger">不允许</span> 删除样品来源和商业合作披露。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">11</span>
+          <h2>商务开发需要的材料清单</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>账号基础资料</h3>
+            <ul>
+              <li>账号简介：定位、受众、平台。</li>
+              <li>B站 / YouTube 主页链接。</li>
+              <li>粉丝数、平均播放量、完播率、互动率。</li>
+              <li>用户画像：城市、年龄、消费力、家庭结构、装修阶段。</li>
+              <li>内容栏目：单品测评、横评、装修避坑、选购攻略、大促推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>专业能力证明</h3>
+            <ul>
+              <li>冰箱测试 SOP 文档。</li>
+              <li>测试工具、温度记录仪、功耗计、分贝仪照片。</li>
+              <li>保鲜测试食材和标准记录表。</li>
+              <li>历史测评案例链接。</li>
+              <li>温度 / 湿度 / 能耗 / 噪音数据表样例。</li>
+              <li>评分模型和推荐等级说明。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业合作材料</h3>
+            <ul>
+              <li>商务报价单。</li>
+              <li>合作权益包。</li>
+              <li>发布排期表。</li>
+              <li>内容授权报价。</li>
+              <li>佣金合作说明。</li>
+              <li>合同模板、付款条款、样品入户条款。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>材料名称</th>
+              <th>用途</th>
+              <th>建议格式</th>
+              <th>是否必备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>账号 Media Kit</td>
+              <td>商务初次开发展示账号价值。</td>
+              <td>PDF / 网页</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>冰箱测评体系说明</td>
+              <td>证明账号具备真实温控、保鲜、能耗和长期测试能力。</td>
+              <td>PDF / 网页 / 飞书文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>历史案例合集</td>
+              <td>展示内容风格、播放表现和用户反馈。</td>
+              <td>链接表 / PDF</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>报价单</td>
+              <td>明确长视频、切片、直播、授权价格。</td>
+              <td>PDF / 表格</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>样品入户说明</td>
+              <td>提前说明物流、搬运、入户、摆放、寄回要求。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>数据复盘模板</td>
+              <td>展示合作后可交付播放、互动、点击、成交数据。</td>
+              <td>PDF / 表格</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>合规披露说明</td>
+              <td>提前说明商单、样品、佣金披露方式。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">12</span>
+          <h2>商务开发 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>目标名单</strong>
+            <span>品牌/平台/渠道</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>资料发送</strong>
+            <span>Media Kit/案例</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>需求确认</strong>
+            <span>新品/装修/转化</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>产品初筛</strong>
+            <span>容量/门型/卖点</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>方案报价</strong>
+            <span>视频/切片/授权</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>合同排期</strong>
+            <span>样品/入户/付款</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>执行发布</strong>
+            <span>测试/拍摄/上线</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘续约</strong>
+            <span>数据/ROI/节点</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>商务开发目标客户</h3>
+            <ul>
+              <li>冰箱品牌：海尔、卡萨帝、美的、容声、海信、美菱、TCL、西门子、博世、松下、三星、LG 等。</li>
+              <li>电商平台：京东、天猫、抖音电商、拼多多、苏宁易购。</li>
+              <li>渠道商：品牌旗舰店、区域家电卖场、线上授权店。</li>
+              <li>装修 / 家居：橱柜定制、全屋定制、嵌入式家电、厨房改造。</li>
+              <li>食品 / 母婴相关：生鲜、母婴储存、宠物鲜食、健康饮食品牌。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>首次商务沟通要问清楚</h3>
+            <ul>
+              <li>推广目标：新品曝光、技术解释、口碑建设还是大促转化？</li>
+              <li>合作产品：具体型号、容量、门型、是否零嵌 / 平嵌。</li>
+              <li>样机属性：零售机、媒体机、工程机、特殊调校机。</li>
+              <li>物流入户：是否品牌安排、是否包搬运、是否可拆门。</li>
+              <li>合作形式：单品测评、横评、攻略植入、直播、切片。</li>
+              <li>测试周期：是否允许 7 天以上保鲜和能耗测试。</li>
+              <li>审核范围：是否只审核事实错误，不干预结论。</li>
+              <li>是否需要竞品排他、内容授权、二次投流。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">13</span>
+          <h2>商务权益包建议</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>合作包</th>
+              <th>适合场景</th>
+              <th>交付内容</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="score">基础单品测评包</td>
+              <td>新品上市、单品种草。</td>
+              <td>1 条 8-15 分钟长视频 + 简介区链接 + 评论置顶。</td>
+              <td>适合品牌首次合作。</td>
+            </tr>
+            <tr>
+              <td class="score">深度保鲜实测包</td>
+              <td>旗舰冰箱、母婴冰箱、零嵌高端机型。</td>
+              <td>1 条 15-25 分钟深度视频 + 温度曲线 + 食材保鲜对比 + 3-5 条切片。</td>
+              <td>需 7 天以上测试周期。</td>
+            </tr>
+            <tr>
+              <td class="score">嵌入式避坑包</td>
+              <td>零嵌、平嵌、厨房装修用户。</td>
+              <td>尺寸讲解 + 入户摆放 + 散热空间 + 橱柜预留建议。</td>
+              <td>适合家装场景合作。</td>
+            </tr>
+            <tr>
+              <td class="score">横评赞助包</td>
+              <td>品牌希望与竞品对比证明实力。</td>
+              <td>多机横评 + 品牌赞助鸣谢 + 客观数据展示。</td>
+              <td>必须提前约定结论不可干预。</td>
+            </tr>
+            <tr>
+              <td class="score">大促转化包</td>
+              <td>618、双11、年货节、国补。</td>
+              <td>推荐攻略 + 多平台分发 + 购买清单 + 评论价格更新。</td>
+              <td>适合商单费 + 佣金模式。</td>
+            </tr>
+            <tr>
+              <td class="score">内容授权包</td>
+              <td>品牌用于官方号、详情页、广告投放。</td>
+              <td>视频片段授权、口播授权、图表授权、投流白名单。</td>
+              <td>需明确授权范围、平台、期限。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">14</span>
+          <h2>合同与合作条款检查清单</h2>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 明确合作性质：商单、送测、借测、纯佣、授权。</div>
+          <div class="check-item"><span class="check">✓</span> 明确样品归属：寄回、留存、买断或折价购买。</div>
+          <div class="check-item"><span class="check">✓</span> 明确物流入户：搬运、拆门、吊装、上楼费用由谁承担。</div>
+          <div class="check-item"><span class="check">✓</span> 明确测试周期：是否允许 72 小时 / 7 天保鲜和能耗测试。</div>
+          <div class="check-item"><span class="check">✓</span> 明确内容形式：长视频、短视频、直播、图文、社群。</div>
+          <div class="check-item"><span class="check">✓</span> 明确发布平台：B站、YouTube、抖音、小红书、视频号。</div>
+          <div class="check-item"><span class="check">✓</span> 明确审核范围：仅限事实错误、品牌信息、保密信息。</div>
+          <div class="check-item"><span class="check">✓</span> 明确结论自主权：品牌不得要求修改真实测评结论。</div>
+          <div class="check-item"><span class="check">✓</span> 明确排他条款：竞品范围、排他周期、额外费用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确付款条款：预付款、尾款、发票、逾期责任。</div>
+          <div class="check-item"><span class="check">✓</span> 明确授权条款：是否允许二次剪辑、投流、详情页使用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确异常处理：入户失败、机器故障、测试严重翻车如何处理。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">15</span>
+          <h2>带货转化 SOP</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>发布前</h3>
+            <ul>
+              <li>确认主推型号、容量、门型、颜色、是否零嵌 / 平嵌。</li>
+              <li>确认京东 / 天猫 / 抖音等链接和佣金比例。</li>
+              <li>记录当前价格、历史低价、大促预估价。</li>
+              <li>准备不同家庭清单：三口之家、母婴、大容量囤货、小厨房、装修嵌入。</li>
+              <li>确认是否可叠加国补、平台券、店铺券、以旧换新。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>发布中</h3>
+            <ul>
+              <li>简介区放购买链接、价格记录时间和入户尺寸提醒。</li>
+              <li>评论区置顶推荐型号、适合人群、优惠说明。</li>
+              <li>章节标注“尺寸避坑”和“购买建议”。</li>
+              <li>视频中提醒价格、补贴和入户政策会变化，以下单页面为准。</li>
+              <li>避免“全网最低”“永久保鲜”“零噪音”等不可控表述。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>发布后</h3>
+            <ul>
+              <li>每日更新价格变化、优惠券、库存和国补政策。</li>
+              <li>回复用户容量、尺寸、散热、嵌入、入户问题。</li>
+              <li>统计链接点击、成交、佣金、退货。</li>
+              <li>收集售后、噪音、入户、串味反馈并补充说明。</li>
+              <li>大促后复盘哪些型号转化最好。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">16</span>
+          <h2>对外披露模板</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>视频开头 / 简介披露</h3>
+            <p>
+              本期测试产品由品牌提供样机，视频包含商业合作内容。我们的测试结论基于实际入户、温控记录、保鲜测试、能耗测试和使用体验，品牌不干预最终评价。视频简介中的部分购买链接可能产生佣金，但不会影响我们的推荐标准。
+            </p>
+          </div>
+
+          <div class="card cyan">
+            <h3>非商单送测披露</h3>
+            <p>
+              本期产品为品牌送测 / 借测样机，未收取视频制作费用。测试内容和结论由我们独立完成。样品来源不影响我们对温控、保鲜、噪音、能耗、空间和购买建议的判断。
+            </p>
+          </div>
+
+          <div class="card orange">
+            <h3>价格 / 入户披露</h3>
+            <p>
+              视频中提到的价格为录制 / 发布时参考价格，冰箱价格、入户费用、拆门费用、补贴和以旧换新政策会随平台、地区和活动变化，请以下单页面和当地服务政策为准。
+            </p>
+          </div>
+
+          <div class="card purple">
+            <h3>横评披露</h3>
+            <p>
+              本期横评涉及的产品型号、容量、设定温度、室温、测试负载、测试周期和价格均已记录。不同摆放环境、散热空间、使用习惯和食材负载可能导致结果差异，购买前请结合自家情况判断。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">17</span>
+          <h2>最终文件归档清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>归档类别</th>
+              <th>文件内容</th>
+              <th>命名建议</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品资料</td>
+              <td>型号、序列号、容量、样品来源、价格、物流信息。</td>
+              <td>品牌_型号_样品登记</td>
+              <td>后续复查和商务对账。</td>
+            </tr>
+            <tr>
+              <td>入户资料</td>
+              <td>电梯、楼道、入户门、冰箱位尺寸、搬运和收费记录。</td>
+              <td>品牌_型号_入户记录</td>
+              <td>验证真实入户成本和风险。</td>
+            </tr>
+            <tr>
+              <td>测试数据</td>
+              <td>温度、湿度、能耗、噪音、保鲜、冷冻、开门恢复。</td>
+              <td>品牌_型号_测试数据</td>
+              <td>生成图表和结论依据。</td>
+            </tr>
+            <tr>
+              <td>视频素材</td>
+              <td>口播、B-roll、食材前后、温度曲线、空间装载、噪音。</td>
+              <td>日期_型号_素材类型</td>
+              <td>剪辑和二次切片。</td>
+            </tr>
+            <tr>
+              <td>脚本文件</td>
+              <td>选题、口播、章节、标题、简介、评论置顶。</td>
+              <td>型号_视频脚本_V1</td>
+              <td>发布和复盘。</td>
+            </tr>
+            <tr>
+              <td>商务文件</td>
+              <td>合同、报价、需求单、发票、付款记录、授权文件。</td>
+              <td>客户_项目_商务文件</td>
+              <td>项目管理和财务归档。</td>
+            </tr>
+            <tr>
+              <td>复盘报告</td>
+              <td>播放、完播、互动、链接点击、成交、退货、用户反馈。</td>
+              <td>项目_发布后7天复盘</td>
+              <td>商务续约和选题优化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© 冰箱测评内容 SOP 与商务开发报告 · 适用于 B站 / YouTube 数码家电长视频团队</div>
+      <div>版本：V1.0</div>
+    </footer>
+  </div>
+</body>
+</html>

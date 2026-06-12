@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>家电数码长视频 SOP｜YouTube / B站</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --primary: #2563eb;
+      --primary-soft: #e8f0ff;
+      --border: #e5e7eb;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #dc2626;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --code: #f1f5f9;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1020;
+      --card: #121a2f;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --primary-soft: #13284f;
+      --border: #26334f;
+      --success: #22c55e;
+      --warning: #fbbf24;
+      --danger: #f87171;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --code: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      min-height: 100vh;
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 24px 18px;
+      border-right: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    main {
+      padding: 32px;
+      max-width: 1180px;
+    }
+
+    .brand {
+      margin-bottom: 24px;
+    }
+
+    .brand h1 {
+      font-size: 20px;
+      line-height: 1.35;
+      margin: 0 0 8px;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav {
+      display: grid;
+      gap: 6px;
+      margin-top: 18px;
+    }
+
+    .nav a {
+      display: block;
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary-soft), transparent);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .card h4 {
+      margin: 20px 0 8px;
+      font-size: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 13px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--primary-soft);
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 9px 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(127, 127, 127, 0.03);
+    }
+
+    .check-item input {
+      margin-top: 5px;
+    }
+
+    .phase-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+
+    .phase-title span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .notice {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-soft);
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+
+    .warning {
+      border-left-color: var(--warning);
+    }
+
+    .danger {
+      border-left-color: var(--danger);
+    }
+
+    code, pre {
+      background: var(--code);
+      border-radius: 10px;
+    }
+
+    pre {
+      padding: 14px;
+      overflow-x: auto;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 40px 0 20px;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: relative;
+        height: auto;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      aside, .topbar, .btn {
+        display: none !important;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      main {
+        max-width: none;
+        padding: 0;
+      }
+
+      .card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <h1>家电数码长视频 SOP</h1>
+        <p>YouTube / B站通用版</p>
+      </div>
+
+      <button class="btn" onclick="toggleTheme()">切换浅色 / 深色</button>
+      <button class="btn" onclick="window.print()" style="margin-top:8px;">打印 / 导出 PDF</button>
+
+      <nav class="nav">
+        <a href="#overview">0. 总览</a>
+        <a href="#project">1. 立项 SOP</a>
+        <a href="#planning">2. 策划 SOP</a>
+        <a href="#script">3. 脚本 SOP</a>
+        <a href="#shooting">4. 拍摄 SOP</a>
+        <a href="#editing">5. 剪辑 SOP</a>
+        <a href="#publish">6. 发布 SOP</a>
+        <a href="#operation">7. 运营 SOP</a>
+        <a href="#ads">8. 投流 SOP</a>
+        <a href="#review">9. 复盘 SOP</a>
+        <a href="#templates">常用模板</a>
+        <a href="#checklist">总检查清单</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div>
+          <span class="tag">长视频</span>
+          <span class="tag">家电</span>
+          <span class="tag">数码</span>
+          <span class="tag">B站</span>
+          <span class="tag">YouTube</span>
+        </div>
+        <button class="btn btn-primary" onclick="resetChecks()">重置所有勾选</button>
+      </div>
+
+      <section class="hero" id="overview">
+        <h2>家电数码领域长视频全流程 SOP</h2>
+        <p>
+          适用于家电测评、数码评测、横评、购买指南、体验报告、教程类、避坑类、品牌合作类长视频。
+          核心目标是：选题可验证、内容可信、拍摄高效、剪辑标准化、发布可搜索、运营可复盘、投流可优化。
+        </p>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h3>核心指标</h3>
+          <ul>
+            <li>点击率 CTR</li>
+            <li>平均观看时长 AVD</li>
+            <li>完播率 / 留存曲线</li>
+            <li>互动率：赞评藏投币 / 评论</li>
+            <li>转粉率 / 订阅率</li>
+            <li>商业转化：询单、成交、佣金</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>内容原则</h3>
+          <ul>
+            <li>先讲用户痛点，再讲产品参数</li>
+            <li>结论前置，过程支撑</li>
+            <li>测评标准公开，可复现</li>
+            <li>避免过度恰饭感</li>
+            <li>数据、场景、体验三者结合</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>标准周期</h3>
+          <ul>
+            <li>轻量单品评测：3-5 天</li>
+            <li>深度体验：7-14 天</li>
+            <li>横评专题：10-21 天</li>
+            <li>大促购买指南：5-10 天</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>全流程节点与交付物</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>阶段</th>
+                <th>负责人</th>
+                <th>核心动作</th>
+                <th>交付物</th>
+                <th>通过标准</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>立项</td>
+                <td>主理人 / 制片</td>
+                <td>确定选题、目标、平台、预算、风险</td>
+                <td>立项表</td>
+                <td>选题价值清晰，可执行，可评估</td>
+              </tr>
+              <tr>
+                <td>策划</td>
+                <td>编导 / 内容策划</td>
+                <td>确定用户画像、卖点、结构、测试方案</td>
+                <td>策划案</td>
+                <td>有明确观点、差异化和内容钩子</td>
+              </tr>
+              <tr>
+                <td>脚本</td>
+                <td>编导 / 博主</td>
+                <td>写口播、分镜、测试流程、镜头需求</td>
+                <td>完整脚本</td>
+                <td>可拍、可剪、可控时长</td>
+              </tr>
+              <tr>
+                <td>拍摄</td>
+                <td>摄影 / 灯光 / 博主</td>
+                <td>口播、产品、场景、测试、补镜</td>
+                <td>素材包</td>
+                <td>画面稳定、声音清楚、素材完整</td>
+              </tr>
+              <tr>
+                <td>剪辑</td>
+                <td>剪辑 / 包装</td>
+                <td>粗剪、精剪、调色、字幕、音效、封面</td>
+                <td>成片、封面、切片</td>
+                <td>节奏流畅，信息准确，无版权风险</td>
+              </tr>
+              <tr>
+                <td>发布</td>
+                <td>运营</td>
+                <td>标题、简介、标签、分区、定时发布</td>
+                <td>发布链接</td>
+                <td>SEO 完整，封面标题匹配</td>
+              </tr>
+              <tr>
+                <td>运营</td>
+                <td>运营 / 博主</td>
+                <td>评论维护、二次分发、数据观察</td>
+                <td>运营记录</td>
+                <td>及时互动，数据异常可响应</td>
+              </tr>
+              <tr>
+                <td>投流</td>
+                <td>投放 / 运营</td>
+                <td>人群、预算、素材、测试、优化</td>
+                <td>投放报表</td>
+                <td>成本可控，目标明确</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 1 立项 -->
+      <section class="card" id="project">
+        <div class="phase-title">
+          <h3>1. 立项 SOP</h3>
+          <span>目标：判断这个选题值不值得做</span>
+        </div>
+
+        <h4>1.1 立项输入</h4>
+        <ul>
+          <li>产品来源：自购、品牌寄样、商务合作、粉丝推荐、热点新品。</li>
+          <li>内容类型：单品评测、横评、深度体验、购买指南、教程、避坑、拆解。</li>
+          <li>平台目标：B站涨粉 / YouTube 搜索流量 / 商单转化 / 大促导购。</li>
+          <li>商业目标：品牌曝光、带货、私域引流、联盟佣金、口碑沉淀。</li>
+        </ul>
+
+        <h4>1.2 选题评分模型</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>评分标准</th>
+                <th>建议权重</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>用户需求</td>
+                <td>是否解决购买、使用、避坑、对比等真实问题</td>
+                <td>25%</td>
+              </tr>
+              <tr>
+                <td>搜索价值</td>
+                <td>关键词是否有稳定搜索，如“XX 值不值得买”</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>差异化</td>
+                <td>能否做出别人没有的测试、观点、场景</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>制作成本</td>
+                <td>样机、场地、拍摄、测试、剪辑成本是否可控</td>
+                <td>15%</td>
+              </tr>
+              <tr>
+                <td>商业潜力</td>
+                <td>是否能承接商单、带货、长期内容资产</td>
+                <td>10%</td>
+              </tr>
+              <tr>
+                <td>风险程度</td>
+                <td>是否存在版权、品牌纠纷、数据争议、夸大宣传</td>
+                <td>10%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notice">
+          <strong>立项建议：</strong>总分低于 70 分不建议启动；70-85 分可做常规内容；85 分以上可作为重点内容投入更多资源。
+        </div>
+
+        <h4>1.3 立项检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 已明确视频目标：涨粉 / 搜索 / 转化 / 品牌合作 / 大促节点</label>
+          <label class="check-item"><input type="checkbox"> 已确定目标平台：B站 / YouTube / 双平台</label>
+          <label class="check-item"><input type="checkbox"> 已分析同类视频 5-10 条，包括标题、封面、播放量、评论痛点</label>
+          <label class="check-item"><input type="checkbox"> 已确定核心受众：新手、进阶玩家、家庭用户、租房党、学生党、母婴家庭等</label>
+          <label class="check-item"><input type="checkbox"> 已确认产品来源与使用权限</label>
+          <label class="check-item"><input type="checkbox"> 已确认预算、周期、人员、场地、道具</label>
+          <label class="check-item"><input type="checkbox"> 已识别潜在风险：虚假宣传、对比争议、品牌审核、版权素材</label>
+        </div>
+      </section>
+
+      <!-- 2 策划 -->
+      <section class="card" id="planning">
+        <div class="phase-title">
+          <h3>2. 策划 SOP</h3>
+          <span>目标：确定视频为什么值得看</span>
+        </div>
+
+        <h4>2.1 策划核心结构</h4>
+        <ol>
+          <li><strong>用户痛点：</strong>用户为什么关心这个产品或问题？</li>
+          <li><strong>视频承诺：</strong>看完后用户能获得什么确定性答案？</li>
+          <li><strong>核心观点：</strong>这期视频的主结论是什么？</li>
+          <li><strong>内容证据：</strong>用哪些测试、场景、数据、体验支撑观点？</li>
+          <li><strong>反差钩子：</strong>有没有颠覆认知、避坑、真香、翻车、横评排名？</li>
+          <li><strong>转化路径：</strong>引导关注、收藏、评论、购买、跳转链接。</li>
+        </ol>
+
+        <h4>2.2 家电数码常用选题方向</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>示例标题方向</th>
+                <th>适合平台</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>单品深度评测</td>
+                <td>用了 30 天后，我发现 XX 空调最真实的优缺点</td>
+                <td>B站 / YouTube</td>
+              </tr>
+              <tr>
+                <td>横评对比</td>
+                <td>5 款热门扫地机器人横评，谁才是真正省心？</td>
+                <td>B站</td>
+              </tr>
+              <tr>
+                <td>购买指南</td>
+                <td>2025 年电视怎么选？这 6 个参数别被忽悠</td>
+                <td>YouTube / B站</td>
+              </tr>
+              <tr>
+                <td>避坑科普</td>
+                <td>买洗烘套装前一定要知道的 8 个坑</td>
+                <td>B站</td>
+              </tr>
+              <tr>
+                <td>场景体验</td>
+                <td>小户型用了这台洗碗机，生活真的变轻松了吗？</td>
+                <td>B站 / YouTube</td>
+              </tr>
+              <tr>
+                <td>教程类</td>
+                <td>NAS 新手入门：从选购到配置一次讲清楚</td>
+                <td>YouTube</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>2.3 视频结构推荐</h4>
+        <pre>0:00 - 0:20 结果钩子 / 痛点 / 反差结论
+0:20 - 1:00 说明测试背景和评价标准
+1:00 - 4:00 核心功能 / 参数解释 / 场景体验
+4:00 - 8:00 实测环节 / 对比数据 / 问题暴露
+8:00 - 11:00 优缺点总结 / 适合人群
+11:00 - 12:00 购买建议 / 替代方案 / 互动引导</pre>
+
+        <h4>2.4 策划检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 已写出一句话选题：这期视频帮谁解决什么问题</label>
+          <label class="check-item"><input type="checkbox"> 已明确视频核心结论，避免只堆参数</label>
+          <label class="check-item"><input type="checkbox"> 已设计前 30 秒钩子</label>
+          <label class="check-item"><input type="checkbox"> 已确定评测维度和打分标准</label>
+          <label class="check-item"><input type="checkbox"> 已确定场景化测试方案</label>
+          <label class="check-item"><input type="checkbox"> 已准备竞品或替代方案</label>
+          <label class="check-item"><input type="checkbox"> 已规划标题、封面初稿和关键词</label>
+          <label class="check-item"><input type="checkbox"> 已确认是否需要品牌审核以及审核边界</label>
+        </div>
+      </section>
+
+      <!-- 3 脚本 -->
+      <section class="card" id="script">
+        <div class="phase-title">
+          <h3>3. 脚本 SOP</h3>
+          <span>目标：让内容可拍、可剪、可控节奏</span>
+        </div>
+
+        <h4>3.1 脚本格式</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>时间段</th>
+                <th>画面</th>
+                <th>口播 / 字幕</th>
+                <th>素材需求</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0:00-0:20</td>
+                <td>产品特写 + 测试结果</td>
+                <td>“这台机器我用了 30 天，最意外的是……”</td>
+                <td>高光画面、数据图</td>
+                <td>强钩子</td>
+              </tr>
+              <tr>
+                <td>0:20-1:00</td>
+                <td>博主出镜</td>
+                <td>说明购买背景和测试标准</td>
+                <td>A-roll</td>
+                <td>建立可信度</td>
+              </tr>
+              <tr>
+                <td>1:00-4:00</td>
+                <td>产品细节</td>
+                <td>讲功能、参数、体验</td>
+                <td>B-roll、参数图</td>
+                <td>减少说明书式表达</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>3.2 口播写法原则</h4>
+        <ul>
+          <li>少用品牌宣传语，多用用户语言。</li>
+          <li>参数必须翻译成体验，例如“120Hz”对应“滑动、游戏、运动画面更顺”。</li>
+          <li>每 30-60 秒安排一次信息变化：测试、反差、总结、问题、对比。</li>
+          <li>观点要有证据，证据要有镜头。</li>
+          <li>结尾必须给明确购买建议：适合谁、不适合谁、替代选择。</li>
+        </ul>
+
+        <h4>3.3 家电数码评测常用维度</h4>
+        <ul>
+          <li>外观设计：尺寸、材质、安装、接口、收纳。</li>
+          <li>核心性能：速度、噪音、功耗、画质、清洁力、制冷制热、续航。</li>
+          <li>智能体验：App、语音、联动、固件、稳定性。</li>
+          <li>使用成本：耗材、电费、水费、维修、保修。</li>
+          <li>适用人群：户型、预算、家庭成员、使用频次。</li>
+          <li>缺点风险：噪音、占地、学习成本、售后、兼容性。</li>
+        </ul>
+
+        <h4>3.4 脚本检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 前 30 秒有明确冲突、结果或用户痛点</label>
+          <label class="check-item"><input type="checkbox"> 脚本中每个观点都有画面或数据支撑</label>
+          <label class="check-item"><input type="checkbox"> 已标注 A-roll、B-roll、产品特写、测试镜头</label>
+          <label class="check-item"><input type="checkbox"> 已设置章节结构，方便 YouTube / B站分 P 或章节</label>
+          <label class="check-item"><input type="checkbox"> 已写清楚优点、缺点、适合人群、不适合人群</label>
+          <label class="check-item"><input type="checkbox"> 已避免绝对化用语：最好、第一、唯一、治愈、永久等</label>
+          <label class="check-item"><input type="checkbox"> 已控制预估时长，建议 8-18 分钟，深度横评可 20-40 分钟</label>
+        </div>
+      </section>
+
+      <!-- 4 拍摄 -->
+      <section class="card" id="shooting">
+        <div class="phase-title">
+          <h3>4. 拍摄 SOP</h3>
+          <span>目标：一次拍齐，减少返工</span>
+        </div>
+
+        <h4>4.1 拍摄前准备</h4>
+        <ul>
+          <li>确认脚本终稿、分镜表、测试流程、产品状态。</li>
+          <li>检查设备：相机、镜头、灯光、麦克风、三脚架、稳定器、存储卡、电池。</li>
+          <li>确认产品：外观清洁、功能正常、包装配件完整。</li>
+          <li>确认场景：客厅、厨房、卧室、书桌、卫生间、阳台等真实使用场景。</li>
+          <li>确认测试道具：功率计、噪音计、温湿度计、色卡、测速工具、清洁测试物。</li>
+        </ul>
+
+        <h4>4.2 必拍镜头清单</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>镜头类型</th>
+                <th>内容</th>
+                <th>用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>开箱镜头</td>
+                <td>包装、配件、安装过程</td>
+                <td>展示完整性和第一印象</td>
+              </tr>
+              <tr>
+                <td>产品特写</td>
+                <td>按键、接口、屏幕、材质、细节</td>
+                <td>辅助讲解参数和设计</td>
+              </tr>
+              <tr>
+                <td>使用场景</td>
+                <td>真实空间中的操作过程</td>
+                <td>建立代入感</td>
+              </tr>
+              <tr>
+                <td>测试镜头</td>
+                <td>噪音、功耗、速度、清洁、画质等</td>
+                <td>提供可信证据</td>
+              </tr>
+              <tr>
+                <td>问题镜头</td>
+                <td>卡顿、误触、噪声、安装困难</td>
+                <td>增强真实感</td>
+              </tr>
+              <tr>
+                <td>博主口播</td>
+                <td>观点总结、购买建议</td>
+                <td>建立人设与信任</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>4.3 拍摄规范</h4>
+        <ul>
+          <li>视频格式建议：4K 25/30fps；运动镜头可 50/60fps。</li>
+          <li>收音优先级高于画质，口播必须单独监听。</li>
+          <li>产品表面提前清洁，避免灰尘、指纹、杂物。</li>
+          <li>同一产品的光线、色温、位置尽量保持一致。</li>
+          <li>测试镜头必须保留完整过程，避免被质疑摆拍。</li>
+          <li>每个关键镜头至少拍 2 条，重要口播至少备份 1 条。</li>
+        </ul>
+
+        <h4>4.4 拍摄检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 相机、电池、存储卡、麦克风、灯光已检查</label>
+          <label class="check-item"><input type="checkbox"> 产品、配件、包装、说明书已备齐</label>
+          <label class="check-item"><input type="checkbox"> 场景已整理，背景无敏感信息</label>
+          <label class="check-item"><input type="checkbox"> 口播音频无爆音、底噪、断录</label>
+          <label class="check-item"><input type="checkbox"> 核心测试镜头已拍完整过程</label>
+          <label class="check-item"><input type="checkbox"> 产品特写、操作手部、使用场景已覆盖</label>
+          <label class="check-item"><input type="checkbox"> 缺点、问题、翻车镜头已真实记录</label>
+          <label class="check-item"><input type="checkbox"> 拍完后立即备份素材到至少两个位置</label>
+        </div>
+      </section>
+
+      <!-- 5 剪辑 -->
+      <section class="card" id="editing">
+        <div class="phase-title">
+          <h3>5. 剪辑 SOP</h3>
+          <span>目标：提升信息密度、节奏和可信度</span>
+        </div>
+
+        <h4>5.1 剪辑流程</h4>
+        <ol>
+          <li><strong>素材整理：</strong>按日期、机位、产品、测试、口播分类。</li>
+          <li><strong>粗剪：</strong>根据脚本搭建完整结构，删除废话和重复表达。</li>
+          <li><strong>精剪：</strong>调整节奏、补充 B-roll、加入图表和参数说明。</li>
+          <li><strong>包装：</strong>字幕、标题条、数据图、音效、转场、章节提示。</li>
+          <li><strong>调色混音：</strong>统一色温、音量、人声清晰、音乐不压口播。</li>
+          <li><strong>质检导出：</strong>检查错别字、参数、品牌名、画面穿帮、版权。</li>
+        </ol>
+
+        <h4>5.2 节奏标准</h4>
+        <ul>
+          <li>前 15 秒必须出现高价值信息，避免冗长开场。</li>
+          <li>口播每 5-8 秒尽量切换一次画面或插入补充素材。</li>
+          <li>参数讲解必须配图或实际画面，不建议纯口播硬讲。</li>
+          <li>复杂测试用图表呈现，减少观众理解成本。</li>
+          <li>横评类视频建议用统一评分表和排名总结。</li>
+        </ul>
+
+        <h4>5.3 字幕与包装规范</h4>
+        <ul>
+          <li>字幕必须准确，产品型号、参数、单位不可错。</li>
+          <li>关键信息用大字卡：结论、价格、适合人群、缺点。</li>
+          <li>B站观众喜欢信息密度，可适当增加弹幕式提示。</li>
+          <li>YouTube 建议保留干净画面，字幕简洁，支持多语言字幕更佳。</li>
+          <li>所有音乐、图片、视频素材必须确认版权。</li>
+        </ul>
+
+        <h4>5.4 剪辑检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 前 30 秒无废话，有明确钩子和看点</label>
+          <label class="check-item"><input type="checkbox"> 视频结构完整：痛点、测试、结论、建议</label>
+          <label class="check-item"><input type="checkbox"> 所有参数、型号、价格、单位已核对</label>
+          <label class="check-item"><input type="checkbox"> 字幕无错别字、漏字、遮挡重要画面</label>
+          <label class="check-item"><input type="checkbox"> 人声音量稳定，背景音乐不压口播</label>
+          <label class="check-item"><input type="checkbox"> 已加入章节提示、图表、对比画面</label>
+          <label class="check-item"><input type="checkbox"> 已检查版权素材、Logo、商标、第三方截图使用风险</label>
+          <label class="check-item"><input type="checkbox"> 已导出横版主视频，并按需导出竖版切片</label>
+        </div>
+      </section>
+
+      <!-- 6 发布 -->
+      <section class="card" id="publish">
+        <div class="phase-title">
+          <h3>6. 发布 SOP</h3>
+          <span>目标：让内容更容易被点击和搜索</span>
+        </div>
+
+        <h4>6.1 标题公式</h4>
+        <ul>
+          <li>结果型：用了 30 天后，我不建议所有人买 XX</li>
+          <li>问题型：XX 到底是不是智商税？实测后答案很明显</li>
+          <li>对比型：XX vs XX，差价 2000 元到底差在哪？</li>
+          <li>指南型：2025 年买电视，先看懂这 7 个参数</li>
+          <li>避坑型：买洗碗机前，这 5 个坑一定要避开</li>
+        </ul>
+
+        <h4>6.2 封面规范</h4>
+        <ul>
+          <li>一个主视觉：产品、人物表情、对比结果三选一。</li>
+          <li>一句强文案：不超过 8-12 个字。</li>
+          <li>强对比：真香 / 翻车、贵 / 值、第一 / 垫底。</li>
+          <li>移动端可读，缩略图状态下文字仍清晰。</li>
+          <li>封面表达必须和视频内容一致，避免标题党过度。</li>
+        </ul>
+
+        <h4>6.3 B站发布要点</h4>
+        <ul>
+          <li>分区：数码、家居房产、生活、科技等按内容选择。</li>
+          <li>标题兼顾情绪和关键词。</li>
+          <li>简介放产品型号、测试条件、利益声明、购买链接。</li>
+          <li>标签：品牌、型号、品类、场景、大促节点。</li>
+          <li>善用合集、充电、评论置顶、弹幕引导。</li>
+        </ul>
+
+        <h4>6.4 YouTube 发布要点</h4>
+        <ul>
+          <li>标题包含核心英文 / 中文关键词，视频道定位选择语言。</li>
+          <li>Description 前两行放核心结论和关键词。</li>
+          <li>添加 Chapters：时间戳有助于搜索和观看体验。</li>
+          <li>Tags 放品牌、型号、品类、同义词。</li>
+          <li>上传字幕文件，增加可访问性和搜索理解。</li>
+          <li>设置 End Screen、Cards、Playlist。</li>
+        </ul>
+
+        <h4>6.5 发布检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 标题包含核心关键词和点击理由</label>
+          <label class="check-item"><input type="checkbox"> 封面在手机小图状态下清晰可读</label>
+          <label class="check-item"><input type="checkbox"> 简介包含产品型号、测试条件、利益声明</label>
+          <label class="check-item"><input type="checkbox"> 已添加标签、分区、合集 / 播放列表</label>
+          <label class="check-item"><input type="checkbox"> 已添加章节时间戳</label>
+          <label class="check-item"><input type="checkbox"> 已检查公开视频播放、声音、清晰度是否正常</label>
+          <label class="check-item"><input type="checkbox"> 已准备置顶评论和互动问题</label>
+          <label class="check-item"><input type="checkbox"> 已设置发布时间，避开低活跃时段</label>
+        </div>
+      </section>
+
+      <!-- 7 运营 -->
+      <section class="card" id="operation">
+        <div class="phase-title">
+          <h3>7. 运营 SOP</h3>
+          <span>目标：放大发布后的自然流量</span>
+        </div>
+
+        <h4>7.1 发布后 24 小时</h4>
+        <ul>
+          <li>前 1 小时检查播放、评论、封面标题表现。</li>
+          <li>回复高质量评论，优先回复提问、质疑、补充信息。</li>
+          <li>置顶评论引导：购买建议、补充资料、互动问题。</li>
+          <li>如 CTR 明显偏低，优先 A/B 测试封面和标题。</li>
+          <li>发布短切片到动态、短视频平台、社群。</li>
+        </ul>
+
+        <h4>7.2 发布后 7 天</h4>
+        <ul>
+          <li>观察留存曲线，定位跳出点。</li>
+          <li>收集评论中的新选题、误解、争议点。</li>
+          <li>将视频加入合集或播放列表。</li>
+          <li>在旧视频简介、置顶评论中互链相关新视频。</li>
+          <li>根据表现判断是否投流或二次包装。</li>
+        </ul>
+
+        <h4>7.3 评论区维护原则</h4>
+        <ul>
+          <li>质疑类评论不要删除，优先用数据和测试条件回应。</li>
+          <li>品牌合作视频必须透明披露，避免信任损耗。</li>
+          <li>对参数错误要及时更正并置顶说明。</li>
+          <li>把用户问题转化为下期选题。</li>
+        </ul>
+
+        <h4>7.4 运营检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 发布后 1 小时内完成首轮评论回复</label>
+          <label class="check-item"><input type="checkbox"> 已设置置顶评论，引导互动或补充资料</label>
+          <label class="check-item"><input type="checkbox"> 已同步到动态、社群、公众号、小红书、微博等渠道</label>
+          <label class="check-item"><input type="checkbox"> 已监控 CTR、留存、互动率、转粉率</label>
+          <label class="check-item"><input type="checkbox"> 已记录高赞评论、争议点、选题反馈</label>
+          <label class="check-item"><input type="checkbox"> 已关联合集、播放列表、旧视频互链</label>
+          <label class="check-item"><input type="checkbox"> 已判断是否需要更换封面或标题</label>
+        </div>
+      </section>
+
+      <!-- 8 投流 -->
+      <section class="card" id="ads">
+        <div class="phase-title">
+          <h3>8. 投流 SOP</h3>
+          <span>目标：用预算验证和放大有效内容</span>
+        </div>
+
+        <h4>8.1 投流前判断</h4>
+        <div class="notice warning">
+          不建议对自然数据很差的视频盲目投流。优先选择点击率、留存、互动率至少有一项表现较好的视频。
+        </div>
+
+        <ul>
+          <li>品牌曝光型：看播放量、完播率、互动率、评论质量。</li>
+          <li>带货转化型：看点击成本、商品点击率、成交 ROI。</li>
+          <li>涨粉型：看关注成本、转粉率、相似人群扩展效果。</li>
+          <li>搜索占位型：看关键词排名、搜索流量占比。</li>
+        </ul>
+
+        <h4>8.2 投流流程</h4>
+        <ol>
+          <li><strong>确定目标：</strong>播放、涨粉、互动、商品点击、成交。</li>
+          <li><strong>确定受众：</strong>品类兴趣、竞品兴趣、年龄、地区、设备、消费能力。</li>
+          <li><strong>准备素材：</strong>主视频、30-60 秒预告、封面、短切片。</li>
+          <li><strong>小预算测试：</strong>先用 10%-20% 预算测试不同人群和素材。</li>
+          <li><strong>观察数据：</strong>CTR、CPV、CPC、关注成本、互动成本、转化率。</li>
+          <li><strong>放量优化：</strong>保留优质组合，暂停低效组合。</li>
+          <li><strong>复盘沉淀：</strong>记录人群、创意、预算、效果。</li>
+        </ol>
+
+        <h4>8.3 投流检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 已明确投放目标和核心 KPI</label>
+          <label class="check-item"><input type="checkbox"> 已确认视频本身数据具备放大价值</label>
+          <label class="check-item"><input type="checkbox"> 已准备至少 2 个封面 / 标题 / 素材版本</label>
+          <label class="check-item"><input type="checkbox"> 已设置测试预算和止损线</label>
+          <label class="check-item"><input type="checkbox"> 已区分冷启动人群、兴趣人群、再营销人群</label>
+          <label class="check-item"><input type="checkbox"> 已每日记录消耗、点击、播放、转粉、转化</label>
+          <label class="check-item"><input type="checkbox"> 已暂停低效计划，放量高效计划</label>
+          <label class="check-item"><input type="checkbox"> 已输出投放复盘和下一轮优化建议</label>
+        </div>
+      </section>
+
+      <!-- 9 复盘 -->
+      <section class="card" id="review">
+        <div class="phase-title">
+          <h3>9. 复盘 SOP</h3>
+          <span>目标：把单条视频经验变成可复制方法</span>
+        </div>
+
+        <h4>9.1 复盘时间点</h4>
+        <ul>
+          <li>发布后 24 小时：初始点击和评论反馈。</li>
+          <li>发布后 7 天：自然推荐和搜索表现。</li>
+          <li>发布后 30 天：长尾流量、转化、选题资产价值。</li>
+        </ul>
+
+        <h4>9.2 复盘维度</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>维度</th>
+                <th>需要回答的问题</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>选题</td>
+                <td>这个选题是否击中了真实需求？评论是否验证？</td>
+              </tr>
+              <tr>
+                <td>标题封面</td>
+                <td>CTR 是否达标？用户点击理由是否明确？</td>
+              </tr>
+              <tr>
+                <td>内容结构</td>
+                <td>前 30 秒是否留住人？中段是否有明显跳出？</td>
+              </tr>
+              <tr>
+                <td>信任度</td>
+                <td>测试是否被认可？有没有争议或质疑？</td>
+              </tr>
+              <tr>
+                <td>转化</td>
+                <td>是否带来关注、收藏、购买、咨询？</td>
+              </tr>
+              <tr>
+                <td>可复制性</td>
+                <td>哪些结构、选题、镜头、标题可以复用？</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>9.3 复盘检查清单</h4>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 已记录播放、CTR、平均观看时长、完播率、互动率、转粉率</label>
+          <label class="check-item"><input type="checkbox"> 已截图关键留存曲线并标注掉点原因</label>
+          <label class="check-item"><input type="checkbox"> 已整理评论区高频问题和下一期选题</label>
+          <label class="check-item"><input type="checkbox"> 已判断标题封面是否需要二次优化</label>
+          <label class="check-item"><input type="checkbox"> 已总结本期最有效的内容钩子</label>
+          <label class="check-item"><input type="checkbox"> 已沉淀为选题库、脚本模板或拍摄模板</label>
+        </div>
+      </section>
+
+      <!-- Templates -->
+      <section class="card" id="templates">
+        <h3>常用模板</h3>
+
+        <h4>模板 A：立项表</h4>
+        <pre>选题名称：
+产品 / 品类：
+视频类型：
+目标平台：
+目标用户：
+核心痛点：
+核心结论：
+竞品 / 对标视频：
+预计时长：
+预计周期：
+预算：
+商业合作情况：
+风险点：
+是否立项：是 / 否</pre>
+
+        <h4>模板 B：策划案</h4>
+        <pre>一、用户是谁？
+二、用户为什么要看？
+三、这期视频的核心结论是什么？
+四、前 30 秒钩子是什么？
+五、评测 / 测试维度：
+六、重点镜头：
+七、标题方向：
+八、封面文案：
+九、互动问题：
+十、转化路径：</pre>
+
+        <h4>模板 C：视频发布简介</h4>
+        <pre>本期我们实测了【产品名称 / 型号】，从【性能 / 体验 / 噪音 / 功耗 / 价格】等维度聊聊它到底值不值得买。
+
+00:00 开场结论
+00:30 产品背景
+01:20 外观与安装
+03:10 核心功能实测
+06:40 优缺点总结
+09:20 适合谁买
+10:30 购买建议
+
+利益声明：
+本视频产品来源为【自购 / 品牌寄样 / 商务合作】，测试观点基于实际体验。
+
+相关链接：
+购买链接：
+同类视频：
+社群 / 联系方式：</pre>
+
+        <h4>模板 D：置顶评论</h4>
+        <pre>大家最关心的几个问题我补充一下：
+1. 本期测试环境：
+2. 价格参考：
+3. 适合人群：
+4. 不建议购买的人群：
+5. 如果想看 XX 和 XX 横评，可以在评论区告诉我。</pre>
+      </section>
+
+      <!-- Total Checklist -->
+      <section class="card" id="checklist">
+        <h3>总检查清单</h3>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> 选题已通过评分和风险评估</label>
+          <label class="check-item"><input type="checkbox"> 策划案已明确用户、痛点、结论、测试方案</label>
+          <label class="check-item"><input type="checkbox"> 脚本已完成口播、画面、素材需求、时间结构</label>
+          <label class="check-item"><input type="checkbox"> 拍摄已完成口播、产品、场景、测试、补镜</label>
+          <label class="check-item"><input type="checkbox"> 剪辑已完成粗剪、精剪、字幕、包装、调色、混音</label>
+          <label class="check-item"><input type="checkbox"> 成片已完成内容、参数、版权、音画质检</label>
+          <label class="check-item"><input type="checkbox"> 标题、封面、简介、标签、章节已准备</label>
+          <label class="check-item"><input type="checkbox"> 发布后已完成评论维护和多渠道分发</label>
+          <label class="check-item"><input type="checkbox"> 投流已设置目标、预算、素材、止损线</label>
+          <label class="check-item"><input type="checkbox"> 复盘已沉淀数据、问题、经验和下期选题</label>
+        </div>
+      </section>
+
+      <p class="footer">
+        版本：v1.0 ｜ 适用场景：家电、数码、智能家居、消费电子长视频内容团队。
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+
+    function toggleTheme() {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("sop-theme", next);
+    }
+
+    function saveChecks() {
+      const checks = Array.from(document.querySelectorAll('input[type="checkbox"]')).map(cb => cb.checked);
+      localStorage.setItem("sop-checks", JSON.stringify(checks));
+    }
+
+    function loadChecks() {
+      const saved = JSON.parse(localStorage.getItem("sop-checks") || "[]");
+      document.querySelectorAll('input[type="checkbox"]').forEach((cb, index) => {
+        cb.checked = !!saved[index];
+        cb.addEventListener("change", saveChecks);
+      });
+    }
+
+    function resetChecks() {
+      if (!confirm("确定要重置所有检查项吗？")) return;
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      saveChecks();
+    }
+
+    const savedTheme = localStorage.getItem("sop-theme");
+    if (savedTheme) {
+      root.setAttribute("data-theme", savedTheme);
+    } else {
+      root.setAttribute("data-theme", "light");
+    }
+
+    loadChecks();
+  </script>
+</body>
+</html>

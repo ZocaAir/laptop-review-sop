@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B站数码/家电博主标准执行流程报告</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --surface-3: #eef4ff;
+      --text: #111827;
+      --text-2: #374151;
+      --muted: #667085;
+      --line: #dbe3ef;
+
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --cyan: #0891b2;
+      --green: #16a34a;
+      --orange: #ea580c;
+      --purple: #7c3aed;
+      --red: #dc2626;
+
+      --primary-soft: #eff6ff;
+      --green-soft: #ecfdf3;
+      --orange-soft: #fff7ed;
+      --purple-soft: #f5f3ff;
+      --red-soft: #fef2f2;
+
+      --shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --max: 1240px;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #0b1020;
+      --surface: #141b2d;
+      --surface-2: #1b2538;
+      --surface-3: #17233a;
+      --text: #f8fafc;
+      --text-2: #d1d5db;
+      --muted: #9ca3af;
+      --line: #2b3a55;
+
+      --primary: #60a5fa;
+      --primary-dark: #3b82f6;
+      --cyan: #22d3ee;
+      --green: #4ade80;
+      --orange: #fb923c;
+      --purple: #a78bfa;
+      --red: #f87171;
+
+      --primary-soft: #12233f;
+      --green-soft: #10291d;
+      --orange-soft: #321d12;
+      --purple-soft: #21183b;
+      --red-soft: #351616;
+
+      --shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.14), transparent 28%),
+        radial-gradient(circle at 100% 0%, rgba(8, 145, 178, 0.13), transparent 30%),
+        linear-gradient(180deg, var(--bg), var(--bg));
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 26px 0 18px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(37, 99, 235, 0.92)),
+        radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.38), transparent 34%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero-main,
+    .hero-kpis {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+      align-items: end;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 4.3vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+
+    .hero-desc {
+      max-width: 820px;
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 900;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-kpis {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .hero-kpi {
+      padding: 13px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-kpi strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .hero-kpi span {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 12px;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(243, 246, 251, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    html[data-theme="dark"] .nav-wrap {
+      background: rgba(11, 16, 32, 0.9);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text-2);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    main {
+      padding: 18px 0 48px;
+    }
+
+    section {
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-inner {
+      padding: 22px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(22px, 2.5vw, 29px);
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      line-height: 1.35;
+    }
+
+    .sub {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 940px;
+    }
+
+    .tag {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .tag.green {
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .tag.orange {
+      color: var(--orange);
+      background: var(--orange-soft);
+    }
+
+    .tag.purple {
+      color: var(--purple);
+      background: var(--purple-soft);
+    }
+
+    .grid-12 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+    }
+
+    .card.soft {
+      background: var(--surface-2);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-6 { grid-column: span 6; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .metric strong {
+      display: block;
+      color: var(--primary);
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mini-list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .mini-list li {
+      margin: 4px 0;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(105px, 1fr));
+      gap: 8px;
+    }
+
+    .flow-item {
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .num {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 11px;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      margin-bottom: 8px;
+    }
+
+    .flow-item h3 {
+      font-size: 15px;
+      margin: 0 0 5px;
+    }
+
+    .flow-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.55;
+    }
+
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .persona {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: var(--surface-2);
+    }
+
+    .persona-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .persona h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .persona p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.8px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      min-width: 880px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 13.5px;
+      text-align: left;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th {
+      color: var(--text);
+      background: var(--primary-soft);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    td {
+      color: var(--text-2);
+    }
+
+    .score {
+      display: inline-block;
+      min-width: 42px;
+      text-align: center;
+      padding: 2px 7px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      font-weight: 900;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .matrix-card {
+      padding: 13px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+
+    .matrix-card b {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .matrix-card span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note {
+      margin-top: 12px;
+      padding: 13px 15px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--primary-soft);
+      color: var(--text-2);
+      font-size: 14px;
+    }
+
+    .note.orange {
+      background: var(--orange-soft);
+    }
+
+    .note.green {
+      background: var(--green-soft);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .check {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-2);
+      color: var(--text-2);
+      font-size: 13.5px;
+    }
+
+    .check input {
+      margin-top: 4px;
+      accent-color: var(--primary);
+    }
+
+    .workbench {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+
+    .wb-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .wb-card.span-4 { grid-column: span 4; }
+    .wb-card.span-6 { grid-column: span 6; }
+    .wb-card.span-8 { grid-column: span 8; }
+    .wb-card.span-12 { grid-column: span 12; }
+
+    .wb-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--primary-soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wb-head h3 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .wb-mark {
+      flex: 0 0 auto;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .wb-body {
+      padding: 12px 14px 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .field {
+      min-width: 0;
+      padding: 8px 10px;
+      border-radius: 11px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    .field b {
+      display: block;
+      color: var(--text);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .field span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+      color: var(--text-2);
+    }
+
+    .score-row:last-child {
+      border-bottom: 0;
+    }
+
+    .score-badge {
+      min-width: 46px;
+      text-align: center;
+      color: var(--primary);
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: var(--primary-soft);
+    }
+
+    .dense-checks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .dense-check {
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      padding: 8px 9px;
+      border-radius: 11px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--text-2);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .dense-check input {
+      margin-top: 3px;
+      accent-color: var(--primary);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .day {
+      min-width: 0;
+      padding: 10px;
+      border-radius: 13px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    .day b {
+      display: block;
+      font-size: 13px;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .day span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .asset {
+      min-width: 0;
+      padding: 10px;
+      border-radius: 13px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    .asset b {
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .asset span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .summary-strip {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .strip-item {
+      padding: 10px;
+      border-radius: 13px;
+      background: var(--primary-soft);
+      border: 1px solid var(--line);
+    }
+
+    .strip-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .strip-item span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .final-footer {
+      margin-top: 4px;
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .footer-title {
+      margin: 0 0 7px;
+      font-size: 20px;
+      line-height: 1.25;
+      color: var(--text);
+    }
+
+    .footer-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 760px;
+    }
+
+    .footer-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .footer-tags span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: var(--text-2);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding: 12px 0 18px;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1180px) {
+      .workflow {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .hero-kpis {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .persona-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8 {
+        grid-column: span 6;
+      }
+
+      .matrix {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .wb-card.span-4,
+      .wb-card.span-6,
+      .wb-card.span-8 {
+        grid-column: span 6;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .asset-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-tags {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page,
+      .nav,
+      .footer-inner,
+      .footer-bottom {
+        width: min(100% - 22px, var(--max));
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .hero-actions {
+        justify-content: flex-start;
+      }
+
+      .hero-kpis {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow,
+      .persona-grid,
+      .matrix,
+      .check-grid,
+      .field-grid,
+      .dense-checks,
+      .timeline,
+      .asset-grid,
+      .summary-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .span-3,
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8,
+      .span-12,
+      .wb-card.span-4,
+      .wb-card.span-6,
+      .wb-card.span-8,
+      .wb-card.span-12 {
+        grid-column: span 12;
+      }
+
+      .section-inner {
+        padding: 16px;
+      }
+
+      table {
+        min-width: 760px;
+      }
+    }
+
+    @media print {
+      .nav-wrap,
+      .hero-actions {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      section,
+      .hero-card {
+        box-shadow: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="hero-card">
+        <div class="hero-main">
+          <div>
+            <div class="badge">📺 B站数码 / 家电博主标准执行流程</div>
+            <h1>从用户画像、科学测评<br />到内容运营与复盘闭环</h1>
+            <p class="hero-desc">
+              面向B站数码、家电、智能家居、测评、横评和选购指南类创作者，建立一套从用户研究、选题立项、测试设计、脚本拍摄、发布运营到数据复盘的标准化内容生产系统。
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn" id="themeBtn" type="button">🌙 深色模式</button>
+            <button class="btn" type="button" onclick="window.print()">🖨️ 打印 / PDF</button>
+          </div>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="hero-kpi"><strong>12</strong><span>核心执行模块</span></div>
+          <div class="hero-kpi"><strong>5类</strong><span>核心用户画像</span></div>
+          <div class="hero-kpi"><strong>4</strong><span>项目门禁节点</span></div>
+          <div class="hero-kpi"><strong>6类</strong><span>数据复盘指标</span></div>
+          <div class="hero-kpi"><strong>闭环</strong><span>内容资产沉淀</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-wrap">
+    <div class="nav">
+      <a href="#overview">总览</a>
+      <a href="#persona">用户画像</a>
+      <a href="#workflow">流程</a>
+      <a href="#gates">门禁</a>
+      <a href="#research">调研</a>
+      <a href="#planning">策划</a>
+      <a href="#testing">测试</a>
+      <a href="#creation">创作</a>
+      <a href="#publish">发布</a>
+      <a href="#operation">运营</a>
+      <a href="#review">复盘</a>
+      <a href="#business">商业化</a>
+      <a href="#templates">工作台</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="overview">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>01｜科学化内容生产总览</h2>
+            <p class="sub">
+              数码/家电内容的本质是帮助用户降低消费决策成本。一个成熟账号不应只回答“这个产品好不好”，而应回答“这个产品适合谁、解决什么问题、有什么代价、怎么买不后悔”。
+            </p>
+          </div>
+          <span class="tag">Overview</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-3 metric">
+            <strong>需求真实</strong>
+            <span>验证用户是否真的有购买、使用、安装、升级或避坑需求。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>测试可信</strong>
+            <span>控制变量、展示过程、说明条件、限定结论边界。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>表达清晰</strong>
+            <span>用结构、画面、字幕和总结降低理解成本。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>运营闭环</strong>
+            <span>通过评论、搜索、收藏、转化和复盘沉淀长期资产。</span>
+          </div>
+
+          <div class="card span-6">
+            <h3>内容定位原则</h3>
+            <ul class="mini-list">
+              <li><b>问题导向：</b>先定义用户问题，再选择产品和测试方法。</li>
+              <li><b>场景导向：</b>把参数转译成用户能理解的真实体验。</li>
+              <li><b>证据导向：</b>重要结论必须有测试、对比或长期体验支撑。</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <h3>账号护城河</h3>
+            <ul class="mini-list">
+              <li><b>可信：</b>样机来源、合作关系、测试条件透明。</li>
+              <li><b>可比：</b>同价位、同场景、同条件对比。</li>
+              <li><b>可沉淀：</b>每期视频都进入选题库、测试库、关键词库和案例库。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="persona">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>02｜用户画像与需求分层分析</h2>
+            <p class="sub">
+              数码/家电用户不是单一群体。不同用户的预算、知识水平、风险偏好和购买阶段不同，因此内容切入角度、测试维度和结论表达也应不同。
+            </p>
+          </div>
+          <span class="tag purple">User Persona</span>
+        </div>
+
+        <div class="persona-grid">
+          <div class="persona">
+            <div class="persona-icon">装</div>
+            <h3>装修置家用户</h3>
+            <p>关注尺寸、安装、成套方案、售后、耐用性和预算控制。适合家电清单、装修避坑、智能家居方案。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">省</div>
+            <h3>性价比决策用户</h3>
+            <p>预算敏感，追求“少花冤枉钱”。关注同价位横评、活动价、平替型号、隐藏成本。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">玩</div>
+            <h3>数码性能用户</h3>
+            <p>关注参数、性能、跑分、系统、生态、游戏、影像和升级价值。适合深度测评和横评。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">懒</div>
+            <h3>效率生活用户</h3>
+            <p>关注省时、省力、清洁、自动化、维护难度。适合扫地机、洗地机、洗碗机、智能家居内容。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">坑</div>
+            <h3>风险规避用户</h3>
+            <p>害怕翻车、售后差、噪音大、耗材贵、安装麻烦。适合避坑科普、差评分析和长期体验。</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>用户类型</th>
+                <th>典型问题</th>
+                <th>重点测试维度</th>
+                <th>适合内容形态</th>
+                <th>转化策略</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>装修置家用户</td>
+                <td>新家该买哪些家电？尺寸、安装和预算怎么安排？</td>
+                <td>空间适配、安装成本、售后、长期耐用性。</td>
+                <td>装修家电清单、智能家居方案、预算分层推荐。</td>
+                <td>提供清单、预算表、购买顺序和避坑提醒。</td>
+              </tr>
+              <tr>
+                <td>性价比用户</td>
+                <td>同价位哪个更值得？有没有平替？大促该不该买？</td>
+                <td>价格、核心性能、隐藏成本、活动价。</td>
+                <td>横评、选购指南、618/双11专题。</td>
+                <td>给出明确预算档位和推荐/不推荐理由。</td>
+              </tr>
+              <tr>
+                <td>数码性能用户</td>
+                <td>性能够不够？升级值不值？和上一代差多少？</td>
+                <td>跑分、散热、续航、屏幕、影像、系统生态。</td>
+                <td>深度测评、性能横评、新旧对比。</td>
+                <td>展示数据、场景体验和升级建议。</td>
+              </tr>
+              <tr>
+                <td>效率生活用户</td>
+                <td>这个产品能不能真的省时间？维护麻烦吗？</td>
+                <td>自动化程度、清洁效果、噪音、维护、耗材。</td>
+                <td>长期体验、真实场景测试、清洁电器横评。</td>
+                <td>强调使用前后变化和维护成本。</td>
+              </tr>
+              <tr>
+                <td>风险规避用户</td>
+                <td>会不会翻车？差评是真的吗？售后和耗材坑不坑？</td>
+                <td>差评验证、售后流程、耗材价格、故障风险。</td>
+                <td>避坑科普、差评复测、长期体验。</td>
+                <td>明确不适合人群、风险边界和替代选择。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>用户画像使用方法：</b>
+          每期视频立项时，必须先选择主要服务人群。不要试图一条视频同时满足所有用户，否则容易导致标题不聚焦、测试维度混乱、结论不清晰。
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>03｜10阶段标准执行流程</h2>
+            <p class="sub">
+              推荐将每期视频作为一个小型项目管理，用阶段交付物控制质量，避免调研、测试、拍摄、发布彼此脱节。
+            </p>
+          </div>
+          <span class="tag green">Workflow</span>
+        </div>
+
+        <div class="workflow">
+          <div class="flow-item"><div class="num">1</div><h3>立项判断</h3><p>明确目标用户、内容价值、预算、周期和预期收益。</p></div>
+          <div class="flow-item"><div class="num">2</div><h3>用户画像</h3><p>确定服务人群、购买阶段、痛点和内容策略。</p></div>
+          <div class="flow-item"><div class="num">3</div><h3>市场调研</h3><p>验证搜索需求、评论问题、电商差评和平台机会。</p></div>
+          <div class="flow-item"><div class="num">4</div><h3>竞品拆解</h3><p>拆标题、封面、结构、爆点、缺口和用户反馈。</p></div>
+          <div class="flow-item"><div class="num">5</div><h3>选题策划</h3><p>确定内容形态、核心冲突、标题方向和视频结构。</p></div>
+          <div class="flow-item"><div class="num">6</div><h3>测试设计</h3><p>定义指标、工具、变量、记录方式和结论边界。</p></div>
+          <div class="flow-item"><div class="num">7</div><h3>脚本创作</h3><p>完成开头钩子、测试解释、优缺点和购买建议。</p></div>
+          <div class="flow-item"><div class="num">8</div><h3>拍摄剪辑</h3><p>拍口播、产品、场景、测试过程，完成剪辑包装。</p></div>
+          <div class="flow-item"><div class="num">9</div><h3>发布运营</h3><p>优化标题、封面、标签、合集、动态和评论区。</p></div>
+          <div class="flow-item"><div class="num">10</div><h3>复盘沉淀</h3><p>分析点击、留存、收藏、评论、搜索和商业转化。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gates">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>04｜项目门禁机制</h2>
+            <p class="sub">
+              科学化流程的核心不是把步骤写多，而是在关键节点判断“是否值得继续做、是否可以进入下一阶段”。
+            </p>
+          </div>
+          <span class="tag orange">Quality Gates</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card soft span-3">
+            <h3>Gate 1：立项门禁</h3>
+            <p>用户需求、搜索价值、差异化、测试可行性任一明显不足时，暂停立项。</p>
+          </div>
+          <div class="card soft span-3">
+            <h3>Gate 2：策划门禁</h3>
+            <p>标题方向、核心结论、视频结构、测试清单未明确前，不进入拍摄。</p>
+          </div>
+          <div class="card soft span-3">
+            <h3>Gate 3：测试门禁</h3>
+            <p>测试方法、变量控制、工具、记录方式不清晰时，不输出测评结论。</p>
+          </div>
+          <div class="card soft span-3">
+            <h3>Gate 4：发布门禁</h3>
+            <p>标题封面、字幕音量、简介声明、时间轴、置顶评论未完成，不发布。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>05｜调研体系：三层交叉验证</h2>
+            <p class="sub">
+              调研目标是验证“这期内容是否有真实需求”。建议从平台、用户和产品三个层面同步验证，避免凭感觉选题。
+            </p>
+          </div>
+          <span class="tag">Research</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>调研对象</th>
+                <th>信息来源</th>
+                <th>要提取的问题</th>
+                <th>输出物</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>B站平台</td>
+                <td>搜索词、热门视频、评论区、弹幕</td>
+                <td>用户用什么词搜？什么标题更容易被点击？评论区争议点是什么？</td>
+                <td>关键词库、竞品内容拆解表</td>
+              </tr>
+              <tr>
+                <td>电商平台</td>
+                <td>京东/天猫评价、问答、追评、差评</td>
+                <td>用户买后后悔什么？真实痛点和售后问题是什么？</td>
+                <td>差评痛点表、风险提醒清单</td>
+              </tr>
+              <tr>
+                <td>社媒社区</td>
+                <td>小红书、知乎、贴吧、装修群</td>
+                <td>用户在哪些场景下需要这个产品？有哪些误区？</td>
+                <td>场景画像、用户问题库</td>
+              </tr>
+              <tr>
+                <td>品牌资料</td>
+                <td>官网、发布会、说明书、客服问答</td>
+                <td>官方卖点是否可验证？参数是否有解释空间？</td>
+                <td>参数解释表、测试假设</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="planning">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>06｜选题策划：评分模型与内容形态</h2>
+            <p class="sub">
+              选题需要同时判断用户需求、平台机会、测试价值和账号匹配度。建议低于70分不进入制作阶段。
+            </p>
+          </div>
+          <span class="tag purple">Planning</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>评分项</th>
+                <th>评分标准</th>
+                <th>低分风险</th>
+                <th>建议权重</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>用户需求强度</td>
+                <td>搜索量、评论问题、电商评价是否证明用户真实关心。</td>
+                <td>播放低，互动少，缺乏收藏价值。</td>
+                <td><span class="score">25%</span></td>
+              </tr>
+              <tr>
+                <td>内容差异化</td>
+                <td>是否有不同于官方宣传和竞品视频的新角度。</td>
+                <td>内容同质化，被用户认为“念参数”。</td>
+                <td><span class="score">20%</span></td>
+              </tr>
+              <tr>
+                <td>测试可行性</td>
+                <td>是否能设计可展示、可复现、可解释的测试。</td>
+                <td>结论主观，可信度不足。</td>
+                <td><span class="score">20%</span></td>
+              </tr>
+              <tr>
+                <td>搜索长尾价值</td>
+                <td>是否适合长期被搜索，例如选购指南、横评、避坑。</td>
+                <td>只吃短期热点，生命周期短。</td>
+                <td><span class="score">15%</span></td>
+              </tr>
+              <tr>
+                <td>账号匹配度</td>
+                <td>是否符合现有粉丝画像、栏目方向和专业能力。</td>
+                <td>涨粉弱，账号标签混乱。</td>
+                <td><span class="score">10%</span></td>
+              </tr>
+              <tr>
+                <td>商业潜力</td>
+                <td>是否可能带来商单、带货、品牌背书或栏目沉淀。</td>
+                <td>投入高但无法形成收益闭环。</td>
+                <td><span class="score">10%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="matrix" style="margin-top:12px;">
+          <div class="matrix-card"><b>单品测评</b><span>适合新品、爆品、品牌合作；重点是测试可信和结论边界。</span></div>
+          <div class="matrix-card"><b>横评对比</b><span>适合大促、同价位、多品牌；重点是维度公平和结论清晰。</span></div>
+          <div class="matrix-card"><b>选购指南</b><span>适合长期搜索；重点是预算分层、适合人群和避坑清单。</span></div>
+          <div class="matrix-card"><b>避坑科普</b><span>适合传播；重点是揭示误区、隐藏成本和错误购买逻辑。</span></div>
+          <div class="matrix-card"><b>长期体验</b><span>适合建立信任；重点是耐用性、维护、售后、真实变化。</span></div>
+          <div class="matrix-card"><b>方案型内容</b><span>适合智能家居/装修家电；重点是系统搭配和场景解决方案。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>07｜测试设计：可信、可解释、可复盘</h2>
+            <p class="sub">
+              测评最容易失去信任的地方，是测试条件不清、变量不一致、结论过度外推。因此测试必须标准化。
+            </p>
+          </div>
+          <span class="tag orange">Testing</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>测试原则</th>
+                <th>执行方法</th>
+                <th>示例</th>
+                <th>风险规避</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>变量控制</td>
+                <td>同环境、同时间、同设置、同样本条件对比。</td>
+                <td>扫地机器人统一地面、灰尘量、路线；手机统一亮度和游戏设置。</td>
+                <td>避免不同条件下得出不公平结论。</td>
+              </tr>
+              <tr>
+                <td>过程可见</td>
+                <td>展示测试工具、过程、原始数据和失败结果。</td>
+                <td>噪音仪、功耗仪、温枪、测速仪、清洁前后对比。</td>
+                <td>避免用户认为是主观感受。</td>
+              </tr>
+              <tr>
+                <td>指标分层</td>
+                <td>区分核心指标、体验指标、成本指标、风险指标。</td>
+                <td>电视：画质/亮度/系统/接口/售后；洗地机：清洁/噪音/自清洁/耗材。</td>
+                <td>避免只测单一卖点。</td>
+              </tr>
+              <tr>
+                <td>结论边界</td>
+                <td>说明测试场景和结论适用范围。</td>
+                <td>“本结论适合90㎡以内家庭，不代表大户型使用情况。”</td>
+                <td>避免绝对化、夸大化表达。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note orange">
+          <b>测试表达公式：</b>测试目的 → 测试方法 → 测试条件 → 测试结果 → 结果解释 → 购买建议。
+        </div>
+      </div>
+    </section>
+
+    <section id="creation">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>08｜创作执行：脚本、拍摄、剪辑</h2>
+            <p class="sub">
+              专业负责信任，结构负责留存，画面负责理解，结论负责收藏和转发。
+            </p>
+          </div>
+          <span class="tag green">Creation</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-4">
+            <h3>脚本结构</h3>
+            <ul class="mini-list">
+              <li>前15秒给出痛点、悬念或核心结论。</li>
+              <li>中段按测试维度分章节，避免流水账。</li>
+              <li>结尾给出适合谁、不适合谁、怎么买。</li>
+            </ul>
+          </div>
+          <div class="card span-4">
+            <h3>拍摄清单</h3>
+            <ul class="mini-list">
+              <li>口播、产品特写、安装过程、真实使用场景。</li>
+              <li>测试工具、过程、数据、前后对比。</li>
+              <li>缺点镜头、失败镜头、维护/耗材镜头。</li>
+            </ul>
+          </div>
+          <div class="card span-4">
+            <h3>剪辑包装</h3>
+            <ul class="mini-list">
+              <li>章节标题、数据卡片、对比表格、关键字幕。</li>
+              <li>每90-120秒设置一次信息小结。</li>
+              <li>优先提升理解效率，避免过度炫技。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publish">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>09｜发布前质检与发布标准</h2>
+            <p class="sub">
+              发布不是上传视频，而是让平台识别内容、让用户愿意点击、让内容具备长期搜索价值。
+            </p>
+          </div>
+          <span class="tag">Publish</span>
+        </div>
+
+        <div class="check-grid">
+          <label class="check"><input type="checkbox"> 标题包含品类词、场景词、价格/型号、核心冲突或结论。</label>
+          <label class="check"><input type="checkbox"> 封面主体清晰，大字不超过8-12个，冲突明确。</label>
+          <label class="check"><input type="checkbox"> 简介说明样机来源、测试条件、合作关系和时间轴。</label>
+          <label class="check"><input type="checkbox"> 标签包含品牌词、品类词、场景词、节点词。</label>
+          <label class="check"><input type="checkbox"> 字幕无明显错别字，关键参数和价格核对无误。</label>
+          <label class="check"><input type="checkbox"> 设置合集、置顶评论、互动问题和相关视频引导。</label>
+        </div>
+      </div>
+    </section>
+
+    <section id="operation">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>10｜发布后运营节奏</h2>
+            <p class="sub">
+              评论运营、动态分发、合集沉淀和补充答疑，是数码/家电内容获得长期价值的关键。
+            </p>
+          </div>
+          <span class="tag green">Operation</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>时间</th>
+                <th>运营动作</th>
+                <th>重点目标</th>
+                <th>输出物</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0-1小时</td>
+                <td>检查视频状态，回复前排评论，置顶结论。</td>
+                <td>提升初始互动质量。</td>
+                <td>置顶评论、首批回复。</td>
+              </tr>
+              <tr>
+                <td>1-6小时</td>
+                <td>发动态总结结论，附型号推荐或避坑清单。</td>
+                <td>二次触达粉丝。</td>
+                <td>动态、评论引导。</td>
+              </tr>
+              <tr>
+                <td>6-24小时</td>
+                <td>集中回复预算、型号、安装、售后相关问题。</td>
+                <td>建立专业信任。</td>
+                <td>高频问题记录。</td>
+              </tr>
+              <tr>
+                <td>2-7天</td>
+                <td>整理评论争议，做补充动态、专栏或短视频。</td>
+                <td>延长内容生命周期。</td>
+                <td>补充内容、下期选题。</td>
+              </tr>
+              <tr>
+                <td>7-30天</td>
+                <td>观察搜索流量和长尾评论，更新合集与简介。</td>
+                <td>提高长期搜索价值。</td>
+                <td>合集更新、关键词优化。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="review">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>11｜数据复盘：从单期视频变成长期资产</h2>
+            <p class="sub">
+              复盘不是只看播放量，而是判断视频在点击、留存、互动、搜索、转化和知识资产上分别贡献了什么。
+            </p>
+          </div>
+          <span class="tag purple">Review</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>指标类别</th>
+                <th>核心指标</th>
+                <th>代表含义</th>
+                <th>优化动作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>点击效率</td>
+                <td>点击率、封面转化、标题关键词</td>
+                <td>用户是否被标题封面准确吸引。</td>
+                <td>强化价格、品类、冲突、结论、场景词。</td>
+              </tr>
+              <tr>
+                <td>观看质量</td>
+                <td>前30秒留存、平均观看时长、完播率</td>
+                <td>内容结构是否清晰，开头是否有效。</td>
+                <td>前置结论，减少铺垫，增加章节小结。</td>
+              </tr>
+              <tr>
+                <td>决策价值</td>
+                <td>收藏率、投币率、评论问题质量</td>
+                <td>内容是否真正帮助用户做购买判断。</td>
+                <td>增加预算分层、型号对比、避坑清单。</td>
+              </tr>
+              <tr>
+                <td>长期流量</td>
+                <td>搜索来源、合集访问、长尾评论</td>
+                <td>视频是否具备持续被搜索的价值。</td>
+                <td>优化标题、简介、标签、合集和时间轴。</td>
+              </tr>
+              <tr>
+                <td>商业价值</td>
+                <td>带货点击、品牌咨询、商单复购</td>
+                <td>内容是否产生真实商业回报。</td>
+                <td>沉淀案例数据，完善报价单和合作规范。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="business">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>12｜商业化与风险控制</h2>
+            <p class="sub">
+              数码/家电账号商业价值高，但信任成本也高。商业化必须建立在透明、克制和可验证的内容标准上。
+            </p>
+          </div>
+          <span class="tag orange">Business</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-4">
+            <h3>可商业化形式</h3>
+            <ul class="mini-list">
+              <li>品牌测评合作、新品发布合作。</li>
+              <li>大促选购专题、榜单推荐。</li>
+              <li>电商佣金、直播带货、橱窗带货。</li>
+              <li>智能家居方案、装修家电清单。</li>
+            </ul>
+          </div>
+          <div class="card span-4">
+            <h3>透明披露标准</h3>
+            <ul class="mini-list">
+              <li>说明样机来源：自购、借测、品牌送测。</li>
+              <li>说明是否商业合作。</li>
+              <li>说明测试条件和结论适用范围。</li>
+              <li>保留缺点和不适合人群。</li>
+            </ul>
+          </div>
+          <div class="card span-4">
+            <h3>风险红线</h3>
+            <ul class="mini-list">
+              <li>不接受强制好评和删缺点要求。</li>
+              <li>不夸大功能，不做绝对化承诺。</li>
+              <li>不伪造数据，不隐藏关键测试条件。</li>
+              <li>不把商业推荐包装成完全独立结论。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="templates">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>13｜执行工作台：模板、排期与资产沉淀</h2>
+            <p class="sub">
+              将一次视频项目所需的关键表单、排期、质检、复盘和资产沉淀集中在一个紧凑工作台中，方便截图、分工和执行。
+            </p>
+          </div>
+          <span class="tag">Execution Workbench</span>
+        </div>
+
+        <div class="workbench">
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>项目立项卡</h3>
+              <span class="wb-mark">Project Brief</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>项目名称</b><span>如：2025年电视选购指南</span></div>
+                <div class="field"><b>内容形态</b><span>单品 / 横评 / 选购 / 避坑 / 长测</span></div>
+                <div class="field"><b>目标用户</b><span>装修用户 / 换机用户 / 租房党 / 玩家</span></div>
+                <div class="field"><b>核心问题</b><span>用户到底为什么需要看这期？</span></div>
+                <div class="field"><b>预期目标</b><span>播放 / 收藏 / 涨粉 / 搜索 / 转化</span></div>
+                <div class="field"><b>项目周期</b><span>调研、测试、拍摄、剪辑、发布排期</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>立项评分模型</h3>
+              <span class="wb-mark">Go / No-Go</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>用户需求强度：搜索、评论、电商评价是否充分</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>内容差异化：是否区别于官方宣传和竞品视频</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>测试可行性：是否能做可展示、可复现的测试</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>长尾搜索价值：是否适合长期被搜索和收藏</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>账号匹配度：是否符合账号定位和粉丝画像</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>商业潜力：是否可能形成合作、带货或案例沉淀</span><span class="score-badge">/10</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>测试记录卡</h3>
+              <span class="wb-mark">Test Log</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>样机来源</b><span>自购 / 借测 / 品牌送测 / 合作</span></div>
+                <div class="field"><b>测试环境</b><span>空间、温度、网络、地面、光线等</span></div>
+                <div class="field"><b>测试工具</b><span>噪音仪、功耗仪、测速仪、温枪等</span></div>
+                <div class="field"><b>对比对象</b><span>同价位、同品类、上一代或竞品</span></div>
+                <div class="field"><b>变量控制</b><span>同环境、同设置、同样本条件</span></div>
+                <div class="field"><b>结论边界</b><span>适合场景、不适合场景、限制条件</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>发布质检卡</h3>
+              <span class="wb-mark">Publish QA</span>
+            </div>
+            <div class="wb-body">
+              <div class="dense-checks">
+                <label class="dense-check"><input type="checkbox"> 标题包含品类、场景、价格或冲突</label>
+                <label class="dense-check"><input type="checkbox"> 封面主体清晰，文案不超过8-12字</label>
+                <label class="dense-check"><input type="checkbox"> 简介说明样机来源和合作关系</label>
+                <label class="dense-check"><input type="checkbox"> 添加品牌词、品类词、场景词标签</label>
+                <label class="dense-check"><input type="checkbox"> 字幕、价格、参数、型号全部复核</label>
+                <label class="dense-check"><input type="checkbox"> 设置合集、置顶评论和互动问题</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>风险控制卡</h3>
+              <span class="wb-mark">Risk</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>不接受强制好评</span><span class="score-badge">红线</span></div>
+              <div class="score-row"><span>不隐藏商业合作关系</span><span class="score-badge">披露</span></div>
+              <div class="score-row"><span>不伪造或选择性展示测试数据</span><span class="score-badge">真实</span></div>
+              <div class="score-row"><span>必须说明适合与不适合人群</span><span class="score-badge">边界</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-12">
+            <div class="wb-head">
+              <h3>7日执行排期示例</h3>
+              <span class="wb-mark">Calendar</span>
+            </div>
+            <div class="wb-body">
+              <div class="timeline">
+                <div class="day"><b>D1 立项</b><span>确定用户、品类、内容形态、评分和资源。</span></div>
+                <div class="day"><b>D2 调研</b><span>完成平台、电商、社媒、品牌资料验证。</span></div>
+                <div class="day"><b>D3 策划</b><span>输出标题方向、视频结构、测试清单。</span></div>
+                <div class="day"><b>D4 测试</b><span>完成核心性能、体验成本、风险变量测试。</span></div>
+                <div class="day"><b>D5 拍摄</b><span>拍口播、特写、场景、测试过程和补充素材。</span></div>
+                <div class="day"><b>D6 剪辑</b><span>完成粗剪、精剪、字幕、图表、封面。</span></div>
+                <div class="day"><b>D7 发布</b><span>发布、置顶评论、动态分发、答疑和记录。</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-8">
+            <div class="wb-head">
+              <h3>复盘指标面板</h3>
+              <span class="wb-mark">Dashboard</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>点击效率</b><span>点击率、标题关键词、封面转化</span></div>
+                <div class="field"><b>观看质量</b><span>前30秒留存、平均观看时长、完播率</span></div>
+                <div class="field"><b>决策价值</b><span>收藏率、投币率、评论问题质量</span></div>
+                <div class="field"><b>搜索价值</b><span>搜索来源、合集访问、长尾评论</span></div>
+                <div class="field"><b>账号增长</b><span>涨粉率、主页访问、相关视频点击</span></div>
+                <div class="field"><b>商业转化</b><span>带货点击、品牌咨询、商单复购</span></div>
+              </div>
+
+              <div class="summary-strip">
+                <div class="strip-item"><strong>1h</strong><span>看初始点击</span></div>
+                <div class="strip-item"><strong>6h</strong><span>看推荐效率</span></div>
+                <div class="strip-item"><strong>24h</strong><span>看互动质量</span></div>
+                <div class="strip-item"><strong>30d</strong><span>看长尾价值</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>栏目资产策略</h3>
+              <span class="wb-mark">Assets</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>把单品测评沉淀为品类合集</span><span class="score-badge">合集</span></div>
+              <div class="score-row"><span>把评论问题沉淀为下期选题</span><span class="score-badge">选题</span></div>
+              <div class="score-row"><span>把测试方法沉淀为标准协议</span><span class="score-badge">测试</span></div>
+              <div class="score-row"><span>把高转化视频沉淀为商业案例</span><span class="score-badge">案例</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-12">
+            <div class="wb-head">
+              <h3>长期资产沉淀清单</h3>
+              <span class="wb-mark">Content Assets</span>
+            </div>
+            <div class="wb-body">
+              <div class="asset-grid">
+                <div class="asset"><b>选题库</b><span>沉淀品类、节点、痛点和用户问题。</span></div>
+                <div class="asset"><b>关键词库</b><span>品牌词、品类词、场景词、价格词。</span></div>
+                <div class="asset"><b>测试库</b><span>测试方法、工具、变量、数据记录。</span></div>
+                <div class="asset"><b>标题库</b><span>高点击标题结构和封面文案。</span></div>
+                <div class="asset"><b>评论库</b><span>高频预算、型号、安装、售后问题。</span></div>
+                <div class="asset"><b>案例库</b><span>爆款案例、商单案例、转化案例。</span></div>
+              </div>
+
+              <div class="note green">
+                <b>最终目标：</b>不要只生产单条视频，而是持续生产“可搜索、可复用、可商业化、可建立信任”的内容资产。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="final-footer">
+    <div class="footer-inner">
+      <div>
+        <h2 class="footer-title">B站数码 / 家电博主标准执行流程报告</h2>
+        <p class="footer-desc">
+          本报告以用户画像、项目管理、科学测试、内容表达、发布运营和数据复盘为核心，
+          帮助数码/家电类创作者建立稳定、可信、可复用的内容生产系统。
+        </p>
+      </div>
+
+      <div class="footer-tags">
+        <span>用户画像</span>
+        <span>立项门禁</span>
+        <span>科学测评</span>
+        <span>脚本创作</span>
+        <span>发布运营</span>
+        <span>数据复盘</span>
+        <span>商业化沉淀</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>适用场景：数码测评 / 家电横评 / 选购指南 / 避坑科普 / 智能家居方案</span>
+      <span>建议用途：团队SOP、项目排期、商单执行、内容复盘、截图汇报</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById("themeBtn");
+      var key = "bili-digital-home-sop-theme";
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem(key, theme);
+        } catch (e) {}
+        if (btn) {
+          btn.textContent = theme === "dark" ? "☀️ 浅色模式" : "🌙 深色模式";
+        }
+      }
+
+      var saved = null;
+      try {
+        saved = localStorage.getItem(key);
+      } catch (e) {}
+
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      } else {
+        var prefersDark = false;
+        try {
+          prefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+        } catch (e) {}
+        applyTheme(prefersDark ? "dark" : "light");
+      }
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var current = html.getAttribute("data-theme");
+          applyTheme(current === "dark" ? "light" : "dark");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

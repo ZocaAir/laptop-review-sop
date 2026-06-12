@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>扫地机器人测评内容 SOP 与商务开发报告</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: #eef2f7;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: 1220px;
+      margin: 34px auto;
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero {
+      padding: 58px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 14%, rgba(34,197,94,.38), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(59,130,246,.34), transparent 32%),
+        linear-gradient(135deg, #022c22 0%, #0f172a 45%, #047857 100%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #dcfce7;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+      max-width: 940px;
+      margin-top: 18px;
+      color: #dcfce7;
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .hero-card {
+      padding: 19px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .hero-card span {
+      font-size: 13px;
+      color: #bbf7d0;
+    }
+
+    .content {
+      padding: 46px 64px 64px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .num {
+      width: 37px;
+      height: 37px;
+      border-radius: 13px;
+      background: #059669;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: #111827;
+      font-size: 18px;
+    }
+
+    p { margin: 8px 0; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15,23,42,.055);
+    }
+
+    .blue {
+      background: linear-gradient(180deg, #eff6ff 0%, #fff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .green {
+      background: linear-gradient(180deg, #ecfdf5 0%, #fff 100%);
+      border-color: #bbf7d0;
+    }
+
+    .orange {
+      background: linear-gradient(180deg, #fff7ed 0%, #fff 100%);
+      border-color: #fed7aa;
+    }
+
+    .purple {
+      background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%);
+      border-color: #ddd6fe;
+    }
+
+    .red {
+      background: linear-gradient(180deg, #fef2f2 0%, #fff 100%);
+      border-color: #fecaca;
+    }
+
+    .gray {
+      background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+      border-color: #e2e8f0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li { margin: 7px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f172a;
+      color: #fff;
+      text-align: left;
+      padding: 14px 15px;
+      font-weight: 650;
+    }
+
+    td {
+      padding: 14px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    .score {
+      color: #059669;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .danger {
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .success {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    .warning {
+      color: #ea580c;
+      font-weight: 800;
+    }
+
+    .quote {
+      padding: 22px 26px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border-left: 6px solid #059669;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .alert {
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #7f1d1d;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #16a34a;
+      font-weight: 900;
+    }
+
+    .cross {
+      color: #dc2626;
+      font-weight: 900;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 6px 6px 0;
+      padding: 4px 9px;
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+    }
+
+    .step {
+      padding: 17px 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .step b {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #059669;
+      color: #fff;
+      margin-bottom: 9px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 13px;
+      color: #0f172a;
+    }
+
+    .step span {
+      display: block;
+      color: #64748b;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 26px 64px;
+      background: #0f172a;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="hero">
+      <div class="badge">🤖 扫地机器人测评 · 内容 SOP · 商务开发 · 样品红线</div>
+      <h1>中国市场扫地机器人内容创作<br />测试体系与商务执行报告</h1>
+      <p class="subtitle">
+        适用于 B站 / YouTube 长视频博主及数码家电内容团队。报告聚焦扫地机器人、扫拖一体机、全能基站机型的标准化测试场景、工具、项目清单、内容生产 SOP、商务开发材料、样品管理与商单红线，帮助账号建立可信、可复制、可商业化的测评体系。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <strong>6类</strong>
+          <span>家庭清洁测试场景</span>
+        </div>
+        <div class="hero-card">
+          <strong>40+</strong>
+          <span>扫地机实测项目</span>
+        </div>
+        <div class="hero-card">
+          <strong>8步</strong>
+          <span>内容生产 SOP</span>
+        </div>
+        <div class="hero-card">
+          <strong>4条</strong>
+          <span>核心红线：真实、脏测、长期、披露</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>扫地机器人测评体系目标</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>对用户的价值</h3>
+            <ul>
+              <li>帮用户判断：到底能不能解放双手。</li>
+              <li>解释导航、避障、吸力、拖地、基站、耗材等复杂卖点。</li>
+              <li>区分“看起来高级”和“长期用起来省心”。</li>
+              <li>明确适合人群：宠物家庭、长发家庭、木地板、地毯、老人家庭。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>对内容团队的价值</h3>
+            <ul>
+              <li>固定测试场景，减少临时发挥和结论争议。</li>
+              <li>形成可复用素材：清扫轨迹、避障、基站、App、噪音。</li>
+              <li>建立横评数据库，方便大促推荐和品牌合作。</li>
+              <li>提高商单议价能力和长期栏目化能力。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>对商务合作的价值</h3>
+            <ul>
+              <li>向品牌证明账号具备真实家居脏测能力。</li>
+              <li>提前明确样品、耗材、售后、数据披露边界。</li>
+              <li>把单次测评升级为新品测评、横评、大促转化、长期合作。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote" style="margin-top:18px;">
+          扫地机器人测评的核心不是跑一遍地图，而是模拟真实家庭长期清洁：灰尘、毛发、湿污、障碍、地毯、基站维护和 App 策略，最终回答“它能不能稳定帮我干活”。
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>测试场景搭建</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>场景 A：标准硬地清扫区</h3>
+            <ul>
+              <li><strong>用途：</strong>测试基础吸扫能力和覆盖率。</li>
+              <li><strong>地面：</strong>瓷砖、木地板、石塑地板任选其一，建议保留固定测试区。</li>
+              <li><strong>面积：</strong>建议 6-10㎡，可用胶带标出测试边界。</li>
+              <li><strong>脏污：</strong>灰尘、面粉、米粒、猫砂、咖啡粉、碎屑。</li>
+              <li><strong>测试重点：</strong>一次清洁率、边角残留、滚刷缠绕、吸口残留。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>场景 B：拖地湿污测试区</h3>
+            <ul>
+              <li><strong>用途：</strong>测试拖地压力、拖布湿润度、顽固污渍处理。</li>
+              <li><strong>地面：</strong>建议瓷砖或防水硬地，方便反复清洁。</li>
+              <li><strong>污渍：</strong>酱油、咖啡、泥水、脚印、干掉的糖水、厨房油污模拟。</li>
+              <li><strong>测试重点：</strong>一次拖净率、水痕、回洗频率、二次污染。</li>
+              <li><strong>注意：</strong>同类污渍需控制用量和干燥时间。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>场景 C：毛发与宠物家庭测试区</h3>
+            <ul>
+              <li><strong>用途：</strong>测试毛发拾取、防缠绕和宠物家庭适配。</li>
+              <li><strong>材料：</strong>长发、短发、宠物毛、纸屑、猫砂。</li>
+              <li><strong>布局：</strong>硬地 + 地毯 + 桌椅腿附近。</li>
+              <li><strong>测试重点：</strong>主刷缠绕、边刷缠绕、尘盒堵塞、猫砂飞溅。</li>
+              <li><strong>注意：</strong>毛发重量和长度要记录，横评时保持一致。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>场景 D：复杂避障测试区</h3>
+            <ul>
+              <li><strong>用途：</strong>测试导航、避障、识别和脱困能力。</li>
+              <li><strong>障碍：</strong>数据线、袜子、拖鞋、玩具、宠物碗、纸巾、低矮门槛。</li>
+              <li><strong>家具：</strong>桌椅腿、沙发底、床底、餐桌区域。</li>
+              <li><strong>测试重点：</strong>是否碰撞、是否推走障碍、是否缠线、是否漏扫。</li>
+              <li><strong>注意：</strong>避障表现受光线影响，白天/夜间都建议测试。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>场景 E：地毯与越障测试区</h3>
+            <ul>
+              <li><strong>用途：</strong>测试地毯识别、增压、抬拖布和越障。</li>
+              <li><strong>材料：</strong>短绒地毯、长绒地毯、地垫、门槛条。</li>
+              <li><strong>高度：</strong>建议准备 1cm、1.5cm、2cm 门槛或压条。</li>
+              <li><strong>测试重点：</strong>能否上地毯、是否打湿地毯、是否卡住。</li>
+              <li><strong>注意：</strong>不同拖布升降高度会明显影响结论。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>场景 F：基站长期使用区</h3>
+            <ul>
+              <li><strong>用途：</strong>测试基站是否真的省心。</li>
+              <li><strong>条件：</strong>固定摆放位置，预留左右和前方空间。</li>
+              <li><strong>项目：</strong>自动集尘、自动洗拖布、热水洗、热风烘干、自动上下水。</li>
+              <li><strong>测试重点：</strong>回充成功率、拖布异味、污水箱、维护频率。</li>
+              <li><strong>注意：</strong>至少连续使用 7 天以上才有参考价值。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>测试环境记录模板</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>记录项</th>
+              <th>填写要求</th>
+              <th>示例</th>
+              <th>为什么重要</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>产品型号</td>
+              <td>完整型号、版本、套装配置。</td>
+              <td>某品牌 X20 Pro 上下水版</td>
+              <td>同系列不同版本基站、吸力、避障可能不同。</td>
+            </tr>
+            <tr>
+              <td>固件 / App 版本</td>
+              <td>测试前截图记录。</td>
+              <td>固件 V1.2.3 / App V6.8</td>
+              <td>导航策略、避障、清洁算法会随固件变化。</td>
+            </tr>
+            <tr>
+              <td>测试地面</td>
+              <td>记录材质、面积、是否有地毯。</td>
+              <td>瓷砖 8㎡ + 短绒地毯 1㎡</td>
+              <td>不同地面对清洁效果影响很大。</td>
+            </tr>
+            <tr>
+              <td>测试脏污</td>
+              <td>记录种类、重量、数量、干燥时间。</td>
+              <td>米粒 20g / 咖啡液 10ml / 干燥 30分钟</td>
+              <td>保证横评可复现。</td>
+            </tr>
+            <tr>
+              <td>清洁模式</td>
+              <td>记录吸力档位、水量、拖布模式、清扫次数。</td>
+              <td>标准吸力 / 中水量 / 扫拖一次</td>
+              <td>不同模式结果差异明显。</td>
+            </tr>
+            <tr>
+              <td>基站设置</td>
+              <td>记录回洗间隔、烘干时间、集尘频率。</td>
+              <td>10㎡回洗一次 / 烘干 2小时</td>
+              <td>影响拖地效果、耗水、异味和噪音。</td>
+            </tr>
+            <tr>
+              <td>测试价格</td>
+              <td>记录官方价、到手价、补贴价和日期。</td>
+              <td>到手价 3999 元，记录于 2025-06-01</td>
+              <td>推荐结论必须基于价格前提。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>测试工具清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>工具类型</th>
+              <th>推荐工具 / 材料</th>
+              <th>用途</th>
+              <th>必要程度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>脏污定量工具</td>
+              <td>电子秤、量杯、滴管、勺子、密封袋。</td>
+              <td>控制灰尘、米粒、液体污渍、猫砂用量。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>测试脏污材料</td>
+              <td>面粉、咖啡粉、米粒、猫砂、头发、宠物毛、酱油、泥水。</td>
+              <td>模拟真实家庭污渍。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>障碍物材料</td>
+              <td>数据线、袜子、拖鞋、宠物碗、玩具、纸巾、门槛条。</td>
+              <td>测试避障、缠绕、脱困、越障。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>测量工具</td>
+              <td>卷尺、水平尺、门槛高度块、计时器。</td>
+              <td>记录面积、距离、越障高度、清洁耗时。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>噪音 / 功耗</td>
+              <td>分贝仪、功耗计、智能插座。</td>
+              <td>测试清扫噪音、集尘噪音、烘干功耗。</td>
+              <td class="score">中高</td>
+            </tr>
+            <tr>
+              <td>拍摄设备</td>
+              <td>相机、俯拍支架、三脚架、运动相机、补光灯、收音设备。</td>
+              <td>拍清扫轨迹、残留、避障、基站细节。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>清洁复位工具</td>
+              <td>吸尘器、拖把、纸巾、清洁剂、刮板、备用拖布。</td>
+              <td>每轮测试后恢复相同测试环境。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>数据记录</td>
+              <td>Excel、飞书表格、Notion、Google Sheet。</td>
+              <td>记录清洁率、耗时、残留、故障、评分。</td>
+              <td class="score">高</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pill-list">
+          <span class="pill">基础必备：电子秤</span>
+          <span class="pill">基础必备：俯拍机位</span>
+          <span class="pill">基础必备：标准脏污包</span>
+          <span class="pill">基础必备：分贝仪</span>
+          <span class="pill">进阶必备：门槛高度块</span>
+          <span class="pill">进阶必备：功耗计</span>
+          <span class="pill">长期必备：耗材记录表</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>扫地机器人测试项目总清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>一、扫地能力测试</h3>
+            <ul>
+              <li>硬地灰尘清洁率：面粉、咖啡粉、细灰。</li>
+              <li>大颗粒清洁率：米粒、麦片、猫砂。</li>
+              <li>边角清洁：墙边、桌腿、踢脚线附近残留。</li>
+              <li>缝隙清洁：地板缝、瓷砖缝、门槛边。</li>
+              <li>二次污染：是否扬尘、是否推着脏污走。</li>
+              <li>尘盒残留：吸口、滤网、主刷仓是否堵塞。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>二、拖地能力测试</h3>
+            <ul>
+              <li>新鲜湿污：咖啡、酱油、泥水。</li>
+              <li>干污渍：干掉的饮料、脚印、厨房油污模拟。</li>
+              <li>拖布湿润度：是否过湿、是否拖不湿。</li>
+              <li>水痕残留：木地板和瓷砖观感。</li>
+              <li>沿边拖地：墙边、柜边是否能覆盖。</li>
+              <li>回洗后拖布状态：是否越拖越脏。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>三、毛发与防缠绕测试</h3>
+            <ul>
+              <li>长发拾取：10cm、20cm、30cm 长发。</li>
+              <li>宠物毛拾取：短毛、浮毛、毛团。</li>
+              <li>主刷缠绕程度：测试后拆开观察。</li>
+              <li>边刷缠绕程度：是否需要手动清理。</li>
+              <li>尘盒堵塞：毛发是否堵住吸口或滤网。</li>
+              <li>毛发切割 / 防缠结构是否有效。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>四、导航建图测试</h3>
+            <ul>
+              <li>首次建图速度和准确性。</li>
+              <li>房间分区是否准确。</li>
+              <li>家具腿、沙发底、床底覆盖情况。</li>
+              <li>是否漏扫、重复扫、迷路。</li>
+              <li>多楼层地图切换。</li>
+              <li>断点续扫和回充成功率。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>五、避障与脱困测试</h3>
+            <ul>
+              <li>电线识别：是否缠绕或拖走。</li>
+              <li>袜子、拖鞋、玩具识别。</li>
+              <li>宠物便便模拟物识别。</li>
+              <li>低矮家具进入与脱困。</li>
+              <li>门槛、地垫、地毯边缘脱困。</li>
+              <li>夜间避障表现。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>六、地毯与越障测试</h3>
+            <ul>
+              <li>短绒地毯清洁能力。</li>
+              <li>长绒地毯是否缠绕或卡住。</li>
+              <li>地毯识别是否准确。</li>
+              <li>地毯自动增压是否明显。</li>
+              <li>拖布抬升是否打湿地毯。</li>
+              <li>1cm / 1.5cm / 2cm 越障能力。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>七、基站功能测试</h3>
+            <ul>
+              <li>自动集尘是否干净，集尘噪音多大。</li>
+              <li>拖布自动清洗效果。</li>
+              <li>热水洗拖布是否有效。</li>
+              <li>热风烘干时间、异味、潮湿残留。</li>
+              <li>自动上下水稳定性。</li>
+              <li>污水箱、清水箱、尘袋维护频率。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>八、App 与智能体验测试</h3>
+            <ul>
+              <li>地图编辑、禁区、虚拟墙、房间命名。</li>
+              <li>清洁策略：扫拖顺序、回洗间隔、水量、吸力。</li>
+              <li>定时清洁、分区清洁、指哪扫哪。</li>
+              <li>语音助手和智能家居联动。</li>
+              <li>远程控制稳定性。</li>
+              <li>老人和非数码用户是否容易上手。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">06</span>
+          <h2>扫地机器人测评评分模型</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>权重</th>
+              <th>核心测试</th>
+              <th>结论表达</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>扫地清洁能力</td>
+              <td class="score">20%</td>
+              <td>灰尘、大颗粒、猫砂、边角、缝隙、尘盒残留。</td>
+              <td>能不能把日常灰尘和颗粒扫干净。</td>
+            </tr>
+            <tr>
+              <td>拖地清洁能力</td>
+              <td class="score">20%</td>
+              <td>湿污、干污、水痕、沿边、拖布回洗、二次污染。</td>
+              <td>能不能替代日常轻拖地。</td>
+            </tr>
+            <tr>
+              <td>导航与覆盖率</td>
+              <td class="score">15%</td>
+              <td>建图、路径、漏扫、重复、回充、多楼层。</td>
+              <td>能不能稳定把家里扫完整。</td>
+            </tr>
+            <tr>
+              <td>避障与脱困</td>
+              <td class="score">15%</td>
+              <td>电线、袜子、拖鞋、玩具、门槛、夜间避障。</td>
+              <td>会不会经常卡住、缠住、需要人工救援。</td>
+            </tr>
+            <tr>
+              <td>基站与维护</td>
+              <td class="score">15%</td>
+              <td>集尘、洗拖布、烘干、上下水、污水箱、耗材。</td>
+              <td>是不是真的省心，还是换一种麻烦。</td>
+            </tr>
+            <tr>
+              <td>毛发 / 宠物家庭适配</td>
+              <td class="score">5%</td>
+              <td>长发、宠物毛、猫砂、防缠绕、滤网堵塞。</td>
+              <td>长发和宠物家庭能不能放心买。</td>
+            </tr>
+            <tr>
+              <td>App 与智能体验</td>
+              <td class="score">5%</td>
+              <td>地图、禁区、策略、语音、智能家居联动。</td>
+              <td>设置是否简单，日常是否好用。</td>
+            </tr>
+            <tr>
+              <td>价格与耗材成本</td>
+              <td class="score">5%</td>
+              <td>到手价、历史低价、尘袋、拖布、清洁液、滤芯。</td>
+              <td>当前价格和长期使用成本是否合理。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">07</span>
+          <h2>内容生产 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>选题立项</strong>
+            <span>单品/横评/攻略</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>商务确认</strong>
+            <span>样品/合同/红线</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>样品入库</strong>
+            <span>型号/版本/配件</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>测试计划</strong>
+            <span>场景/脏污/工具</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>实测记录</strong>
+            <span>数据/视频/照片</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>脚本拍摄</strong>
+            <span>证据/结论/建议</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>审核发布</strong>
+            <span>合规/链接/披露</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘归档</strong>
+            <span>播放/转化/反馈</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>SOP环节</th>
+              <th>具体动作</th>
+              <th>责任人</th>
+              <th>交付物</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>选题立项</td>
+              <td>确定单品测评、横评、宠物家庭专题、大促推荐或新品商单。</td>
+              <td>主理人 / 选题编辑</td>
+              <td>选题单、竞品清单、标题方向。</td>
+            </tr>
+            <tr>
+              <td>样品确认</td>
+              <td>确认样品来源、是否商单、是否寄回、耗材是否齐全。</td>
+              <td>商务 / 运营</td>
+              <td>样品登记表、合作确认单。</td>
+            </tr>
+            <tr>
+              <td>测试准备</td>
+              <td>准备测试场景、标准脏污包、障碍物、拍摄机位和复位流程。</td>
+              <td>测评编辑 / 摄像</td>
+              <td>测试计划表、拍摄清单。</td>
+            </tr>
+            <tr>
+              <td>执行测试</td>
+              <td>按照项目清单逐项测试，横评必须统一模式和污渍量。</td>
+              <td>测评编辑</td>
+              <td>原始数据、残留照片、过程视频。</td>
+            </tr>
+            <tr>
+              <td>长期体验</td>
+              <td>至少连续使用 7 天，记录回充失败、异味、维护、耗材。</td>
+              <td>测评编辑 / 运营</td>
+              <td>长期体验日志。</td>
+            </tr>
+            <tr>
+              <td>结论评审</td>
+              <td>根据实测数据和长期体验形成优缺点、推荐人群、避坑点。</td>
+              <td>主理人 / 编辑</td>
+              <td>评分卡、购买建议。</td>
+            </tr>
+            <tr>
+              <td>脚本拍摄</td>
+              <td>先给结论，再展示脏测、避障、基站和长期体验证据。</td>
+              <td>出镜博主 / 摄像</td>
+              <td>口播、B-roll、测试画面。</td>
+            </tr>
+            <tr>
+              <td>发布复盘</td>
+              <td>发布后维护价格、评论答疑、转化数据、售后反馈。</td>
+              <td>运营 / 商务</td>
+              <td>复盘报告、商务案例。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">08</span>
+          <h2>单条扫地机器人测评视频结构 SOP</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>标准长视频结构</h3>
+            <ul>
+              <li><strong>00:00 - 00:30：</strong>结论前置：适合谁、不适合谁。</li>
+              <li><strong>00:30 - 02:00：</strong>型号、价格、版本、样品来源说明。</li>
+              <li><strong>02:00 - 05:00：</strong>扫地能力：灰尘、大颗粒、猫砂、边角。</li>
+              <li><strong>05:00 - 08:00：</strong>拖地能力：湿污、干污、水痕、回洗。</li>
+              <li><strong>08:00 - 10:30：</strong>避障、脱困、地毯、越障。</li>
+              <li><strong>10:30 - 12:30：</strong>基站体验：集尘、洗拖布、烘干、上下水。</li>
+              <li><strong>12:30 - 14:00：</strong>App、噪音、耗材、长期维护。</li>
+              <li><strong>14:00 - 15:30：</strong>缺点、适合人群、竞品替代、推荐等级。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>必须出现在视频里的信息</h3>
+            <ul>
+              <li>样品来源：自购 / 借测 / 送测 / 商业合作。</li>
+              <li>测试固件、App 版本、测试时间。</li>
+              <li>测试地面、脏污种类和用量。</li>
+              <li>清洁模式、吸力档位、水量档位、回洗设置。</li>
+              <li>至少 3 个明确优点和 3 个明确缺点。</li>
+              <li>适合人群和不适合人群。</li>
+              <li>如有带货链接，说明可能存在佣金。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pill-list">
+          <span class="pill">必拍：俯拍清洁轨迹</span>
+          <span class="pill">必拍：清洁前后对比</span>
+          <span class="pill">必拍：主刷缠绕</span>
+          <span class="pill">必拍：避障失败案例</span>
+          <span class="pill">必拍：基站维护</span>
+          <span class="pill">必拍：App设置</span>
+          <span class="pill">必拍：噪音实测</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">09</span>
+          <h2>样品管理规则</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>环节</th>
+              <th>规则</th>
+              <th>必须记录</th>
+              <th>风险点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品接收</td>
+              <td>开箱前拍外包装、物流面单、封条、配件。</td>
+              <td>到货日期、快递单号、包装破损情况。</td>
+              <td>基站、上下水套件、耗材遗漏责任不清。</td>
+            </tr>
+            <tr>
+              <td>样品登记</td>
+              <td>登记型号、版本、序列号、固件、App、样品来源。</td>
+              <td>样品登记表、系统截图、配件照片。</td>
+              <td>媒体机、工程机与零售机配置不同。</td>
+            </tr>
+            <tr>
+              <td>耗材登记</td>
+              <td>记录尘袋、拖布、滤网、清洁液、边刷、主刷数量。</td>
+              <td>耗材清单和使用记录。</td>
+              <td>长期测试中耗材消耗影响结论。</td>
+            </tr>
+            <tr>
+              <td>样品状态</td>
+              <td>确认是量产零售机、工程机、媒体机还是特殊固件机。</td>
+              <td>品牌书面说明。</td>
+              <td>特殊固件测试结果不能代表用户到手机。</td>
+            </tr>
+            <tr>
+              <td>测试使用</td>
+              <td>不得私自拆机、刷机、改装基站，除非合同允许。</td>
+              <td>测试日志、异常记录。</td>
+              <td>损坏赔偿、保修争议。</td>
+            </tr>
+            <tr>
+              <td>样品寄回</td>
+              <td>寄回前拍照录像，清洁机器和配件，确认耗材归属。</td>
+              <td>寄回日期、物流单号、打包视频。</td>
+              <td>运输损伤、配件缺失、污水残留。</td>
+            </tr>
+            <tr>
+              <td>样品留存</td>
+              <td>若样品不寄回，应明确归属、税务、后续使用权限。</td>
+              <td>合同或邮件确认。</td>
+              <td>利益披露不清，影响用户信任。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">10</span>
+          <h2>测试红线与商单红线</h2>
+        </div>
+
+        <div class="alert">
+          <strong>核心原则：</strong>扫地机器人属于强体验型家电，必须做真实脏测和长期体验。不能只拍品牌演示场景，更不能因为商单隐藏卡顿、缠绕、异味、漏扫、避障失败等关键问题。
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card red">
+            <h3>测试红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 虚构清洁率、避障成功率、续航、噪音等测试数据。</li>
+              <li><span class="danger">禁止</span> 用品牌提供的“理想演示物料”替代真实家庭脏污。</li>
+              <li><span class="danger">禁止</span> 横评时给不同机器设置不同清洁模式或脏污量。</li>
+              <li><span class="danger">禁止</span> 只测一次就下长期省心结论。</li>
+              <li><span class="danger">禁止</span> 隐藏缠毛、漏扫、拖布异味、基站维护麻烦等关键缺点。</li>
+              <li><span class="danger">禁止</span> 将工程机、特殊固件机表现当作零售机结论。</li>
+            </ul>
+          </div>
+
+          <div class="card red">
+            <h3>商单红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 接受“不能拍失败画面”的合作。</li>
+              <li><span class="danger">禁止</span> 接受品牌要求删除真实缺点或修改推荐等级。</li>
+              <li><span class="danger">禁止</span> 未披露商业合作、样品来源或佣金关系。</li>
+              <li><span class="danger">禁止</span> 恶意贬低竞品或使用无依据排名。</li>
+              <li><span class="danger">禁止</span> 使用“彻底解放双手、永不缠毛、全屋零残留”等绝对化表述。</li>
+              <li><span class="danger">禁止</span> 未经授权声称官方合作或官方推荐。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card orange">
+            <h3>可以接受的品牌修改</h3>
+            <ul>
+              <li><span class="success">允许</span> 修改产品名称、型号、价格、参数等事实错误。</li>
+              <li><span class="success">允许</span> 补充官方功能解释、固件计划和售后政策。</li>
+              <li><span class="success">允许</span> 修改未上市信息、保密信息、发布时间。</li>
+              <li><span class="success">允许</span> 指出测试方法中的技术错误并要求复测。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>不能接受的品牌修改</h3>
+            <ul>
+              <li><span class="danger">不允许</span> 删除真实发生的卡住、缠线、漏扫、回充失败。</li>
+              <li><span class="danger">不允许</span> 要求把“不推荐”改成“推荐”。</li>
+              <li><span class="danger">不允许</span> 要求隐藏基站异味、污水箱维护、耗材成本。</li>
+              <li><span class="danger">不允许</span> 要求删掉样品来源和商业合作披露。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">11</span>
+          <h2>商务开发需要的材料清单</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>账号基础资料</h3>
+            <ul>
+              <li>账号简介：定位、受众、平台。</li>
+              <li>B站 / YouTube 主页链接。</li>
+              <li>粉丝数、平均播放量、完播率、互动率。</li>
+              <li>用户画像：城市、年龄、消费力、家庭结构。</li>
+              <li>内容栏目：单品测评、横评、选购攻略、大促推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>专业能力证明</h3>
+            <ul>
+              <li>扫地机器人测试 SOP 文档。</li>
+              <li>测试场景照片：脏测区、避障区、地毯区、基站区。</li>
+              <li>测试工具和标准脏污包说明。</li>
+              <li>历史测评案例链接。</li>
+              <li>测试数据表样例和评分模型。</li>
+              <li>团队成员介绍与分工。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业合作材料</h3>
+            <ul>
+              <li>商务报价单。</li>
+              <li>合作权益包。</li>
+              <li>发布排期表。</li>
+              <li>内容授权报价。</li>
+              <li>佣金合作说明。</li>
+              <li>合同模板和付款条款。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>材料名称</th>
+              <th>用途</th>
+              <th>建议格式</th>
+              <th>是否必备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>账号 Media Kit</td>
+              <td>商务初次开发展示账号价值。</td>
+              <td>PDF / 网页</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>扫地机测评体系说明</td>
+              <td>证明账号有真实脏测和长期体验能力。</td>
+              <td>PDF / 网页 / 飞书文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>历史案例合集</td>
+              <td>展示内容风格、播放表现和用户反馈。</td>
+              <td>链接表 / PDF</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>报价单</td>
+              <td>明确长视频、切片、直播、授权价格。</td>
+              <td>PDF / 表格</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>合作流程图</td>
+              <td>降低品牌沟通成本，明确样品和审核流程。</td>
+              <td>PDF / 图片</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>数据复盘模板</td>
+              <td>展示发布后能交付播放、互动、点击、成交数据。</td>
+              <td>PDF / 表格</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>合规披露说明</td>
+              <td>提前说明商单、样品、佣金披露方式。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">12</span>
+          <h2>商务开发 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>目标名单</strong>
+            <span>品牌/平台/渠道</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>资料发送</strong>
+            <span>Media Kit/案例</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>需求确认</strong>
+            <span>新品/大促/转化</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>产品初筛</strong>
+            <span>是否值得测</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>方案报价</strong>
+            <span>视频/切片/授权</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>合同排期</strong>
+            <span>样品/付款/审核</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>执行发布</strong>
+            <span>测试/拍摄/上线</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘续约</strong>
+            <span>数据/ROI/节点</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>商务开发目标客户</h3>
+            <ul>
+              <li>扫地机器人品牌：科沃斯、石头、追觅、云鲸、小米、米家、美的、海尔、iRobot 等。</li>
+              <li>电商平台：京东、天猫、抖音电商、拼多多、苏宁易购。</li>
+              <li>渠道商：品牌旗舰店、线上授权店、家电卖场。</li>
+              <li>配件耗材：尘袋、拖布、清洁液、滤芯、边刷、主刷。</li>
+              <li>家居清洁相关品牌：宠物用品、家政清洁、全屋智能。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>首次商务沟通要问清楚</h3>
+            <ul>
+              <li>推广目标：新品曝光、技术解释、口碑建设还是大促转化？</li>
+              <li>合作产品：具体型号、版本、是否上下水、是否首发。</li>
+              <li>样品属性：零售机、媒体机、工程机、特殊固件机。</li>
+              <li>是否提供耗材：尘袋、拖布、清洁液、滤芯等。</li>
+              <li>合作形式：单品测评、横评、攻略植入、直播、切片。</li>
+              <li>审核范围：是否只审核事实错误，不干预结论。</li>
+              <li>是否需要竞品排他、内容授权、二次投流。</li>
+              <li>付款节点：预付比例、尾款时间、发票要求。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">13</span>
+          <h2>商务权益包建议</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>合作包</th>
+              <th>适合场景</th>
+              <th>交付内容</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="score">基础单品测评包</td>
+              <td>新品上市、单品种草。</td>
+              <td>1 条 8-15 分钟长视频 + 简介区链接 + 评论置顶。</td>
+              <td>适合品牌首次合作。</td>
+            </tr>
+            <tr>
+              <td class="score">深度脏测包</td>
+              <td>旗舰机、全能基站、技术卖点强产品。</td>
+              <td>1 条 15-25 分钟深度视频 + 全套脏测 + 3-5 条切片。</td>
+              <td>需充分测试周期和耗材。</td>
+            </tr>
+            <tr>
+              <td class="score">横评赞助包</td>
+              <td>品牌希望与竞品对比证明实力。</td>
+              <td>多机横评 + 品牌赞助鸣谢 + 客观数据展示。</td>
+              <td>必须提前约定结论不可干预。</td>
+            </tr>
+            <tr>
+              <td class="score">大促转化包</td>
+              <td>618、双11、年货节、国补。</td>
+              <td>推荐攻略 + 多平台分发 + 购买清单 + 评论价格更新。</td>
+              <td>适合商单费 + 佣金模式。</td>
+            </tr>
+            <tr>
+              <td class="score">长期体验包</td>
+              <td>强调稳定性、基站维护、宠物家庭场景。</td>
+              <td>首发测评 + 30天/60天体验更新 + 用户问答。</td>
+              <td>适合高端机型建立信任。</td>
+            </tr>
+            <tr>
+              <td class="score">内容授权包</td>
+              <td>品牌用于官方号、详情页、广告投放。</td>
+              <td>视频片段授权、口播授权、图表授权、投流白名单。</td>
+              <td>需明确授权范围、平台、期限。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">14</span>
+          <h2>合同与合作条款检查清单</h2>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 明确合作性质：商单、送测、借测、纯佣、授权。</div>
+          <div class="check-item"><span class="check">✓</span> 明确样品归属：寄回、留存、买断或折价购买。</div>
+          <div class="check-item"><span class="check">✓</span> 明确耗材提供：尘袋、拖布、滤芯、清洁液、边刷、主刷。</div>
+          <div class="check-item"><span class="check">✓</span> 明确内容形式：长视频、短视频、直播、图文、社群。</div>
+          <div class="check-item"><span class="check">✓</span> 明确发布平台：B站、YouTube、抖音、小红书、视频号。</div>
+          <div class="check-item"><span class="check">✓</span> 明确审核范围：仅限事实错误、品牌信息、保密信息。</div>
+          <div class="check-item"><span class="check">✓</span> 明确结论自主权：品牌不得要求修改真实测评结论。</div>
+          <div class="check-item"><span class="check">✓</span> 明确排他条款：竞品范围、排他周期、额外费用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确付款条款：预付款、尾款、发票、逾期责任。</div>
+          <div class="check-item"><span class="check">✓</span> 明确授权条款：是否允许二次剪辑、投流、详情页使用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确数据交付：播放量、互动、点击、转化、复盘报告。</div>
+          <div class="check-item"><span class="check">✓</span> 明确异常处理：测试发现严重问题是否延后发布或终止合作。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">15</span>
+          <h2>带货转化 SOP</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>发布前</h3>
+            <ul>
+              <li>确认主推型号、上下水版、非上下水版和备选型号。</li>
+              <li>确认京东 / 天猫 / 抖音等链接和佣金比例。</li>
+              <li>记录当前价格、历史低价、大促预估价。</li>
+              <li>准备不同人群购买清单：宠物、长发、地毯、大户型、小户型。</li>
+              <li>确认是否可叠加国补、平台券、店铺券、以旧换新。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>发布中</h3>
+            <ul>
+              <li>简介区放购买链接和价格记录时间。</li>
+              <li>评论区置顶推荐型号、适合人群、优惠说明。</li>
+              <li>章节标注“购买建议”和“缺点避坑”。</li>
+              <li>视频中说明价格会变化，以下单时页面为准。</li>
+              <li>避免“全网最低”“永久保价”“彻底解放双手”等不可控表述。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>发布后</h3>
+            <ul>
+              <li>每日更新价格变化、优惠券和库存状态。</li>
+              <li>回复用户户型、宠物、地毯、上下水安装问题。</li>
+              <li>统计链接点击、成交、佣金、退货。</li>
+              <li>收集售后、耗材、故障反馈并补充说明。</li>
+              <li>大促后复盘哪些型号转化最好。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">16</span>
+          <h2>对外披露模板</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>视频开头 / 简介披露</h3>
+            <p>
+              本期测试产品由品牌提供样机，视频包含商业合作内容。我们的测试结论基于实际脏测、避障测试和长期体验，品牌不干预最终评价。视频简介中的部分购买链接可能产生佣金，但不会影响我们的推荐标准。
+            </p>
+          </div>
+
+          <div class="card green">
+            <h3>非商单送测披露</h3>
+            <p>
+              本期产品为品牌送测 / 借测样机，未收取视频制作费用。测试内容和结论由我们独立完成。样品来源不影响我们对优点、缺点和购买建议的判断。
+            </p>
+          </div>
+
+          <div class="card orange">
+            <h3>价格披露</h3>
+            <p>
+              视频中提到的价格为录制 / 发布时参考价格，扫地机器人价格会随平台活动、补贴和优惠券变化，请以下单时页面价格为准。我会在评论区尽量更新关键价格变化。
+            </p>
+          </div>
+
+          <div class="card purple">
+            <h3>横评披露</h3>
+            <p>
+              本期横评涉及的产品型号、固件版本、App版本、测试模式、脏污用量和价格均已记录。不同版本、不同固件和不同套装配置可能存在体验差异，购买前请核对完整型号。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">17</span>
+          <h2>最终文件归档清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>归档类别</th>
+              <th>文件内容</th>
+              <th>命名建议</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品资料</td>
+              <td>型号、序列号、固件、App、来源、价格、物流信息。</td>
+              <td>品牌_型号_样品登记</td>
+              <td>后续复查和商务对账。</td>
+            </tr>
+            <tr>
+              <td>耗材资料</td>
+              <td>尘袋、拖布、滤芯、清洁液、边刷、主刷数量和使用情况。</td>
+              <td>品牌_型号_耗材登记</td>
+              <td>计算长期使用成本。</td>
+            </tr>
+            <tr>
+              <td>测试数据</td>
+              <td>清洁率、耗时、噪音、功耗、避障、越障、回充、残留。</td>
+              <td>品牌_型号_测试数据</td>
+              <td>生成图表和结论依据。</td>
+            </tr>
+            <tr>
+              <td>视频素材</td>
+              <td>口播、B-roll、俯拍、清洁前后、避障、基站、App。</td>
+              <td>日期_型号_素材类型</td>
+              <td>剪辑和二次切片。</td>
+            </tr>
+            <tr>
+              <td>脚本文件</td>
+              <td>选题、口播、章节、标题、简介、评论置顶。</td>
+              <td>型号_视频脚本_V1</td>
+              <td>发布和复盘。</td>
+            </tr>
+            <tr>
+              <td>商务文件</td>
+              <td>合同、报价、需求单、发票、付款记录、授权文件。</td>
+              <td>客户_项目_商务文件</td>
+              <td>项目管理和财务归档。</td>
+            </tr>
+            <tr>
+              <td>复盘报告</td>
+              <td>播放、完播、互动、链接点击、成交、退货、用户反馈。</td>
+              <td>项目_发布后7天复盘</td>
+              <td>商务续约和选题优化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© 扫地机器人测评内容 SOP 与商务开发报告 · 适用于 B站 / YouTube 数码家电长视频团队</div>
+      <div>版本：V1.0</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026年下半年中国市场冰箱长视频项目策划报告</title>
+  <style>
+    :root {
+      --bg:#f4f8fb;
+      --surface:#fff;
+      --surface-2:#f8fafc;
+      --text:#101828;
+      --text-2:#344054;
+      --muted:#667085;
+      --line:#dbe6ef;
+
+      --primary:#0891b2;
+      --primary-2:#22d3ee;
+      --green:#16a34a;
+      --blue:#2563eb;
+      --orange:#ea580c;
+      --purple:#7c3aed;
+      --red:#dc2626;
+
+      --primary-soft:#ecfeff;
+      --green-soft:#ecfdf3;
+      --blue-soft:#eff6ff;
+      --orange-soft:#fff7ed;
+      --purple-soft:#f5f3ff;
+      --red-soft:#fef2f2;
+
+      --shadow:0 16px 42px rgba(15,23,42,.08);
+      --radius-xl:26px;
+      --radius-lg:18px;
+      --max:1260px;
+    }
+
+    html[data-theme="dark"] {
+      --bg:#061316;
+      --surface:#101d22;
+      --surface-2:#17272e;
+      --text:#f8fafc;
+      --text-2:#d1d5db;
+      --muted:#9ca3af;
+      --line:#29424a;
+
+      --primary:#67e8f9;
+      --primary-2:#22d3ee;
+      --green:#4ade80;
+      --blue:#60a5fa;
+      --orange:#fb923c;
+      --purple:#a78bfa;
+      --red:#f87171;
+
+      --primary-soft:#0d2a34;
+      --green-soft:#10291d;
+      --blue-soft:#10233f;
+      --orange-soft:#321d12;
+      --purple-soft:#21183b;
+      --red-soft:#351616;
+
+      --shadow:0 16px 42px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 0% 0%,rgba(8,145,178,.16),transparent 28%),
+        radial-gradient(circle at 100% 0%,rgba(34,211,238,.16),transparent 30%),
+        radial-gradient(circle at 60% 10%,rgba(37,99,235,.08),transparent 24%),
+        linear-gradient(180deg,var(--bg),var(--bg));
+      line-height:1.6;
+    }
+
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+
+    .page {
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .hero {
+      padding:28px 0 18px;
+    }
+
+    .hero-card,
+    .footer-card {
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius-xl);
+      color:#fff;
+      background:
+        linear-gradient(135deg,rgba(6,25,31,.98),rgba(8,145,178,.94)),
+        radial-gradient(circle at 78% 18%,rgba(103,232,249,.4),transparent 36%),
+        radial-gradient(circle at 18% 82%,rgba(37,99,235,.22),transparent 34%);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card { padding:36px; }
+    .footer-card { padding:22px 24px; margin-bottom:24px; }
+
+    .hero-card::after,
+    .footer-card::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+      background-size:36px 36px;
+      opacity:.5;
+      pointer-events:none;
+    }
+
+    .hero-main,
+    .hero-kpis,
+    .footer-inner {
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-main {
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:26px;
+      align-items:end;
+    }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.22);
+      color:rgba(255,255,255,.9);
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(31px,4.6vw,58px);
+      line-height:1.06;
+      letter-spacing:-1.2px;
+    }
+
+    .hero-desc {
+      max-width:920px;
+      margin:16px 0 0;
+      color:rgba(255,255,255,.83);
+      font-size:16px;
+    }
+
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    .btn {
+      cursor:pointer;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:900;
+      color:#fff;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.24);
+      backdrop-filter:blur(8px);
+    }
+
+    .hero-kpis {
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:10px;
+      margin-top:24px;
+    }
+
+    .hero-kpi {
+      padding:13px;
+      border-radius:16px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    .hero-kpi strong {
+      display:block;
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .hero-kpi span {
+      color:rgba(255,255,255,.76);
+      font-size:12px;
+    }
+
+    .nav-wrap {
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(244,248,251,.9);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    html[data-theme="dark"] .nav-wrap {
+      background:rgba(6,19,22,.9);
+    }
+
+    .nav {
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:10px 0;
+      scrollbar-width:none;
+    }
+
+    .nav::-webkit-scrollbar { display:none; }
+
+    .nav a {
+      flex:0 0 auto;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      color:var(--text-2);
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .nav a:hover {
+      color:#fff;
+      background:var(--primary);
+      border-color:var(--primary);
+    }
+
+    main { padding:18px 0; }
+
+    section {
+      margin-bottom:16px;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .section-inner { padding:22px; }
+
+    .section-head {
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:start;
+      margin-bottom:16px;
+    }
+
+    h2 {
+      margin:0;
+      font-size:clamp(22px,2.5vw,30px);
+      line-height:1.25;
+    }
+
+    h3 {
+      margin:0 0 8px;
+      line-height:1.35;
+    }
+
+    .sub {
+      margin:7px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      max-width:980px;
+    }
+
+    .tag {
+      white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      border-radius:999px;
+      padding:6px 11px;
+      color:var(--primary);
+      background:var(--primary-soft);
+      border:1px solid var(--line);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .tag.green { color:var(--green); background:var(--green-soft); }
+    .tag.blue { color:var(--blue); background:var(--blue-soft); }
+    .tag.orange { color:var(--orange); background:var(--orange-soft); }
+    .tag.purple { color:var(--purple); background:var(--purple-soft); }
+    .tag.red { color:var(--red); background:var(--red-soft); }
+
+    .grid-12 {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+    }
+
+    .span-3 { grid-column:span 3; }
+    .span-4 { grid-column:span 4; }
+    .span-6 { grid-column:span 6; }
+    .span-12 { grid-column:span 12; }
+
+    .card {
+      min-width:0;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      padding:16px;
+    }
+
+    .card.soft { background:var(--surface-2); }
+
+    .card p,
+    .card li {
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .metric strong {
+      display:block;
+      color:var(--primary);
+      font-size:25px;
+      line-height:1.1;
+      margin-bottom:5px;
+    }
+
+    .metric span {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .mini-list {
+      margin:8px 0 0;
+      padding-left:18px;
+    }
+
+    .mini-list li { margin:4px 0; }
+
+    .table-wrap {
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:var(--surface);
+    }
+
+    table {
+      width:100%;
+      min-width:1040px;
+      border-collapse:collapse;
+    }
+
+    th,
+    td {
+      padding:10px 12px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+      font-size:13.5px;
+      text-align:left;
+    }
+
+    th:last-child,
+    td:last-child { border-right:0; }
+
+    tr:last-child td { border-bottom:0; }
+
+    th {
+      color:var(--text);
+      background:var(--primary-soft);
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    td { color:var(--text-2); }
+
+    .note {
+      margin-top:12px;
+      padding:13px 15px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:var(--primary-soft);
+      color:var(--text-2);
+      font-size:14px;
+    }
+
+    .brand-grid,
+    .persona-grid,
+    .pillar-grid,
+    .score-grid {
+      display:grid;
+      gap:10px;
+    }
+
+    .brand-grid {
+      grid-template-columns:repeat(6,minmax(0,1fr));
+    }
+
+    .persona-grid {
+      grid-template-columns:repeat(5,minmax(0,1fr));
+    }
+
+    .pillar-grid,
+    .score-grid {
+      grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+
+    .brand,
+    .persona,
+    .pillar,
+    .score-card {
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:17px;
+      padding:14px;
+      background:var(--surface-2);
+    }
+
+    .brand b,
+    .persona h3,
+    .pillar h3,
+    .score-card h3 {
+      display:block;
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .brand span,
+    .persona p,
+    .pillar p,
+    .score-card p {
+      display:block;
+      margin:0;
+      color:var(--muted);
+      font-size:12.8px;
+    }
+
+    .brand-logo,
+    .persona-icon,
+    .pillar-num {
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    .pillar-num {
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-2));
+    }
+
+    .timeline {
+      display:grid;
+      grid-template-columns:repeat(6,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .month {
+      min-width:0;
+      padding:14px;
+      border-radius:17px;
+      border:1px solid var(--line);
+      background:var(--surface-2);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .month::before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg,var(--primary),var(--primary-2));
+    }
+
+    .month b {
+      display:block;
+      color:var(--primary);
+      font-size:15px;
+      margin-bottom:6px;
+    }
+
+    .month span {
+      display:block;
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.5;
+    }
+
+    .score {
+      display:inline-block;
+      min-width:42px;
+      text-align:center;
+      padding:2px 7px;
+      border-radius:999px;
+      color:var(--primary);
+      background:var(--primary-soft);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    .priority-high { color:var(--green); background:var(--green-soft); }
+    .priority-mid { color:var(--orange); background:var(--orange-soft); }
+    .priority-low { color:var(--muted); background:var(--surface-2); }
+
+    .episode-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .episode {
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--surface-2);
+      overflow:hidden;
+    }
+
+    .episode-head {
+      padding:12px 14px;
+      background:var(--primary-soft);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+
+    .episode-head b { font-size:15px; }
+
+    .episode-body { padding:13px 14px; }
+
+    .episode-body p {
+      margin:0 0 8px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .chips {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+
+    .chip {
+      padding:4px 8px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      color:var(--text-2);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .workbench {
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:12px;
+    }
+
+    .wb-card {
+      min-width:0;
+      border:1px solid var(--line);
+      background:var(--surface);
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+    }
+
+    .wb-card.span-4 { grid-column:span 4; }
+    .wb-card.span-6 { grid-column:span 6; }
+    .wb-card.span-12 { grid-column:span 12; }
+
+    .wb-head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      background:var(--primary-soft);
+      border-bottom:1px solid var(--line);
+    }
+
+    .wb-head h3 {
+      margin:0;
+      font-size:15px;
+    }
+
+    .wb-mark {
+      flex:0 0 auto;
+      font-size:11px;
+      font-weight:900;
+      color:var(--primary);
+      padding:3px 8px;
+      border-radius:999px;
+      background:var(--surface);
+      border:1px solid var(--line);
+    }
+
+    .wb-body { padding:12px 14px 14px; }
+
+    .score-row {
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:8px;
+      align-items:center;
+      padding:7px 0;
+      border-bottom:1px dashed var(--line);
+      font-size:13px;
+      color:var(--text-2);
+    }
+
+    .score-row:last-child { border-bottom:0; }
+
+    .score-badge {
+      min-width:48px;
+      text-align:center;
+      color:var(--primary);
+      font-weight:900;
+      border-radius:999px;
+      padding:2px 8px;
+      background:var(--primary-soft);
+      font-size:12px;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+    }
+
+    .field {
+      min-width:0;
+      padding:8px 10px;
+      border-radius:11px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+    }
+
+    .field b {
+      display:block;
+      color:var(--text);
+      font-size:12px;
+      margin-bottom:2px;
+    }
+
+    .field span {
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .footer-inner {
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:18px;
+    }
+
+    .footer-card h2 {
+      margin:0;
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .footer-card p {
+      margin:6px 0 0;
+      color:rgba(255,255,255,.76);
+      font-size:13px;
+    }
+
+    .footer-mini {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+
+    .footer-mini span {
+      padding:6px 9px;
+      border-radius:999px;
+      color:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    @media (max-width:1180px) {
+      .hero-kpis,
+      .timeline { grid-template-columns:repeat(3,1fr); }
+
+      .brand-grid,
+      .persona-grid { grid-template-columns:repeat(3,1fr); }
+
+      .pillar-grid,
+      .score-grid { grid-template-columns:repeat(2,1fr); }
+
+      .episode-grid { grid-template-columns:repeat(2,1fr); }
+
+      .span-3,
+      .span-4,
+      .span-6 { grid-column:span 6; }
+
+      .wb-card.span-4,
+      .wb-card.span-6 { grid-column:span 6; }
+    }
+
+    @media (max-width:760px) {
+      .page,
+      .nav { width:min(100% - 22px,var(--max)); }
+
+      .hero-card { padding:24px; }
+
+      .hero-main { grid-template-columns:1fr; }
+
+      .hero-actions { justify-content:flex-start; }
+
+      .hero-kpis,
+      .timeline,
+      .brand-grid,
+      .persona-grid,
+      .pillar-grid,
+      .score-grid,
+      .episode-grid,
+      .field-grid { grid-template-columns:1fr; }
+
+      .section-head { grid-template-columns:1fr; }
+
+      .span-3,
+      .span-4,
+      .span-6,
+      .span-12,
+      .wb-card.span-4,
+      .wb-card.span-6,
+      .wb-card.span-12 {
+        grid-column:span 12;
+      }
+
+      .section-inner { padding:16px; }
+
+      table { min-width:860px; }
+
+      .footer-inner { grid-template-columns:1fr; }
+
+      .footer-mini { justify-content:flex-start; }
+    }
+
+    @media print {
+      .nav-wrap,
+      .hero-actions { display:none; }
+
+      body { background:#fff; }
+
+      section,
+      .hero-card,
+      .footer-card { box-shadow:none; }
+
+      section { break-inside:avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="page">
+      <div class="hero-card">
+        <div class="hero-main">
+          <div>
+            <div class="badge">🧊 2026 H2 China Refrigerator Long Video Project</div>
+            <h1>2026年下半年<br />中国市场冰箱长视频项目策划报告</h1>
+            <p class="hero-desc">
+              面向B站家电、家居、装修和品质生活类内容，聚焦中国冰箱市场主流品牌与家庭使用场景，围绕海尔、卡萨帝、美的、COLMO、容声、海信、西门子、博世、松下、日立、东芝、TCL、小米、云米等品牌，建立从选题库、评分模型、科学测试到双11转化的完整长视频项目系统。
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn" id="themeBtn" type="button">🌙 深色模式</button>
+            <button class="btn" type="button" onclick="window.print()">🖨️ 打印 / PDF</button>
+          </div>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="hero-kpi"><strong>6个月</strong><span>2026年7-12月周期</span></div>
+          <div class="hero-kpi"><strong>12期</strong><span>核心长视频规划</span></div>
+          <div class="hero-kpi"><strong>30+</strong><span>冰箱选题库</span></div>
+          <div class="hero-kpi"><strong>100分</strong><span>选题评分模型</span></div>
+          <div class="hero-kpi"><strong>10维</strong><span>冰箱科学测试体系</span></div>
+          <div class="hero-kpi"><strong>闭环</strong><span>测评/装修/大促/商单</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-wrap">
+    <div class="nav">
+      <a href="#overview">总览</a>
+      <a href="#brands">品牌格局</a>
+      <a href="#timing">节点</a>
+      <a href="#persona">用户画像</a>
+      <a href="#strategy">内容主线</a>
+      <a href="#topic-library">选题库</a>
+      <a href="#score-model">评分模型</a>
+      <a href="#calendar">半年排期</a>
+      <a href="#episodes">12期规划</a>
+      <a href="#testing">测试体系</a>
+      <a href="#operation">运营转化</a>
+      <a href="#dashboard">工作台</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="overview">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>01｜项目总览：建立“中国家庭冰箱选购决策型内容资产”</h2>
+            <p class="sub">
+              冰箱是典型的家庭长期耐用品，购买决策不只看容量和价格，还涉及保鲜、制冷、除味、分区、嵌入安装、能耗、噪音、售后和长期稳定性。本项目目标是把冰箱内容从“参数推荐”升级为“家庭场景购买顾问”。
+            </p>
+          </div>
+          <span class="tag">Overview</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-3 metric">
+            <strong>内容目标</strong>
+            <span>覆盖冰箱选购、品牌对比、保鲜测试、嵌入装修、大促推荐。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>市场目标</strong>
+            <span>聚焦中国用户高频购买品牌、价位段和厨房装修场景。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>平台目标</strong>
+            <span>沉淀B站搜索资产、合集、评论答疑和测试标准。</span>
+          </div>
+          <div class="card span-3 metric">
+            <strong>商业目标</strong>
+            <span>形成品牌测评、双11榜单、带货转化、商单案例。</span>
+          </div>
+
+          <div class="card span-6">
+            <h3>2026下半年中国冰箱市场判断</h3>
+            <ul class="mini-list">
+              <li><b>嵌入式与平嵌冰箱继续普及：</b>厨房一体化装修带动零嵌、平嵌、超薄机身需求。</li>
+              <li><b>保鲜技术成为核心卖点：</b>全空间保鲜、真空保鲜、微冻锁鲜、干湿分储、除菌净味需要实测验证。</li>
+              <li><b>大容量成为主流：</b>多口之家、囤货、母婴、养宠和预制菜需求推动500L以上冰箱增长。</li>
+              <li><b>法式多门和十字对开门高关注：</b>分区合理性、冷冻能力、抽屉体验和开门空间成为购买痛点。</li>
+              <li><b>双11转化强：</b>冰箱客单价高，用户会提前搜索型号、尺寸、嵌入方式和真实评价。</li>
+            </ul>
+          </div>
+
+          <div class="card span-6">
+            <h3>栏目建议</h3>
+            <ul class="mini-list">
+              <li><b>栏目名：</b>《中国冰箱选购实验室》或《厨房冷鲜研究所》。</li>
+              <li><b>核心标签：</b>真实保鲜测试、嵌入式避坑、中国品牌横评、双11冰箱推荐。</li>
+              <li><b>内容节奏：</b>7-9月建立保鲜和品牌测试可信度，10月承接装修厨房，11月集中转化，12月沉淀年度榜单。</li>
+              <li><b>长期资产：</b>品牌库、型号库、尺寸库、价格库、测试协议库、评论问题库。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>02｜中国市场冰箱品牌格局</h2>
+            <p class="sub">
+              冰箱内容必须贴近中国用户真实购买环境。国产品牌是销量和价格段主线，高端品牌用于品质、保鲜技术和嵌入式体验参照。
+            </p>
+          </div>
+          <span class="tag blue">China Market Brands</span>
+        </div>
+
+        <div class="brand-grid">
+          <div class="brand">
+            <div class="brand-logo">海</div>
+            <b>海尔 / 卡萨帝</b>
+            <span>中国冰箱核心品牌，高端保鲜、嵌入、全空间保鲜。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">美</div>
+            <b>美的 / COLMO</b>
+            <span>性价比到高端全覆盖，智能化、净味、嵌入式。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">容</div>
+            <b>容声 / 海信</b>
+            <span>大众价位、高性价比、保鲜技术、双11强关注。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">西</div>
+            <b>西门子 / 博世</b>
+            <span>德系高端、嵌入式、做工、静音和长期稳定性。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">日</div>
+            <b>松下 / 日立 / 东芝</b>
+            <span>日系多门、制冰、真空/微冻保鲜、紧凑大容量。</span>
+          </div>
+          <div class="brand">
+            <div class="brand-logo">新</div>
+            <b>TCL / 小米 / 云米</b>
+            <span>智能化、价格、互联网品牌、年轻用户与全屋智能。</span>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>品牌/阵营</th>
+                <th>内容定位</th>
+                <th>适合选题</th>
+                <th>重点测试</th>
+                <th>用户关注点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>海尔 / 卡萨帝</td>
+                <td>国产主流与高端标杆，适合做保鲜和嵌入式样本。</td>
+                <td>高端冰箱横评、全空间保鲜、零嵌冰箱。</td>
+                <td>保鲜、温控、净味、噪音、嵌入安装。</td>
+                <td>品牌可靠、售后、长期耐用、高端是否值得。</td>
+              </tr>
+              <tr>
+                <td>美的 / COLMO</td>
+                <td>覆盖大众到高端，适合做同价位性价比和智能化对比。</td>
+                <td>5000元档横评、智能冰箱、净味除菌测试。</td>
+                <td>温控、净味、空间、系统、能耗。</td>
+                <td>价格、功能、智能联动、售后。</td>
+              </tr>
+              <tr>
+                <td>容声 / 海信</td>
+                <td>高性价比冰箱重要品牌，双11推荐价值高。</td>
+                <td>3000-6000元冰箱推荐、大容量冰箱横评。</td>
+                <td>制冷、保鲜、噪音、容量、耗电。</td>
+                <td>便宜是否靠谱、容量是否虚标、保鲜够不够。</td>
+              </tr>
+              <tr>
+                <td>西门子 / 博世</td>
+                <td>高端与嵌入式参照品牌，适合做品质和做工对比。</td>
+                <td>高端冰箱是否值得买、嵌入式冰箱避坑。</td>
+                <td>做工、噪音、温控、嵌入、售后。</td>
+                <td>品牌溢价、进口/国产差异、长期稳定性。</td>
+              </tr>
+              <tr>
+                <td>松下 / 日立 / 东芝</td>
+                <td>日系多门和保鲜技术代表，适合精致厨房人群。</td>
+                <td>日系多门冰箱、真空/微冻保鲜、制冰体验。</td>
+                <td>分区、制冰、微冻、保鲜、空间效率。</td>
+                <td>小厨房大容量、价格高不高、维修成本。</td>
+              </tr>
+              <tr>
+                <td>TCL / 小米 / 云米</td>
+                <td>年轻用户与智能家居场景，适合做低预算和智能化。</td>
+                <td>年轻人第一台冰箱、智能冰箱是不是噱头。</td>
+                <td>价格、App、能耗、噪音、基础制冷。</td>
+                <td>便宜能不能买、智能功能有没有用。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>品牌策略：</b>
+          内容主体以国产主流品牌和中国家庭真实价位段为核心，高端品牌用于保鲜、嵌入、做工和长期体验参照。
+        </div>
+      </div>
+    </section>
+
+    <section id="timing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>03｜2026年下半年时事节点与内容机会</h2>
+            <p class="sub">
+              冰箱购买通常由装修入住、夏季囤货、开学家庭节奏、国庆置家、双11大促和春节前囤货触发。
+            </p>
+          </div>
+          <span class="tag blue">Market Timing</span>
+        </div>
+
+        <div class="timeline">
+          <div class="month">
+            <b>7月｜高温保鲜 / 夏季囤货</b>
+            <span>水果、饮料、冷冻食品需求上升，适合做保鲜、制冷和大容量内容。</span>
+          </div>
+          <div class="month">
+            <b>8月｜开学季 / 家庭备餐</b>
+            <span>母婴、学生家庭、预制菜和一周备餐需求增加，适合做分区和囤货方案。</span>
+          </div>
+          <div class="month">
+            <b>9月｜IFA / 秋季新品</b>
+            <span>品牌新品和保鲜技术传播窗口，适合做技术趋势和高端冰箱解读。</span>
+          </div>
+          <div class="month">
+            <b>10月｜国庆装修入住</b>
+            <span>厨房装修、嵌入式、平嵌、橱柜预留是内容高峰。</span>
+          </div>
+          <div class="month">
+            <b>11月｜双11大促</b>
+            <span>全年冰箱购买高峰，适合做价格监测、横评和预算推荐。</span>
+          </div>
+          <div class="month">
+            <b>12月｜年终囤货 / 春节前置家</b>
+            <span>年货囤储、春节前换新，适合做年度红黑榜和长期体验。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="persona">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>04｜中国冰箱消费用户画像</h2>
+            <p class="sub">
+              冰箱购买是高度家庭化、装修化和长期化的决策。每期内容必须明确目标人群，否则容易陷入“参数堆叠”。
+            </p>
+          </div>
+          <span class="tag purple">User Persona</span>
+        </div>
+
+        <div class="persona-grid">
+          <div class="persona">
+            <div class="persona-icon">装</div>
+            <h3>装修置家用户</h3>
+            <p>关注嵌入尺寸、散热、开门空间、橱柜预留、厨房动线。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">囤</div>
+            <h3>多口之家/囤货用户</h3>
+            <p>关注大容量、冷冻空间、分区合理性、拿取便利和能耗。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">鲜</div>
+            <h3>品质保鲜用户</h3>
+            <p>关注蔬果保鲜、肉类微冻、干湿分储、净味除菌和温控稳定。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">母</div>
+            <h3>母婴/健康家庭</h3>
+            <p>关注母婴独立空间、除菌、异味、冷藏稳定和食材安全。</p>
+          </div>
+          <div class="persona">
+            <div class="persona-icon">省</div>
+            <h3>性价比用户</h3>
+            <p>关注3000-6000元档是否够用，品牌售后和长期耗电。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>05｜四条内容主线</h2>
+            <p class="sub">
+              冰箱内容要同时服务装修前决策、日常使用体验、保鲜信任和大促转化。
+            </p>
+          </div>
+          <span class="tag green">Content Strategy</span>
+        </div>
+
+        <div class="pillar-grid">
+          <div class="pillar">
+            <div class="pillar-num">1</div>
+            <h3>中国品牌横评线</h3>
+            <p>海尔、美的、容声、海信、TCL、小米等同价位冰箱对比。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">2</div>
+            <h3>保鲜技术实测线</h3>
+            <p>蔬果、肉类、干湿分储、微冻、真空、除菌净味等功能实测。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">3</div>
+            <h3>嵌入式装修线</h3>
+            <p>零嵌、平嵌、超薄、散热、开门半径、橱柜预留和厨房尺寸。</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">4</div>
+            <h3>双11导购转化线</h3>
+            <p>价格监测、预算分层、型号推荐、红黑榜和评论答疑。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topic-library">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>06｜中国市场冰箱长视频选题库</h2>
+            <p class="sub">
+              选题库用于半年内容储备和团队评审。高优先级进入长视频，中优先级适合做短切片、动态答疑或作为长视频章节。
+            </p>
+          </div>
+          <span class="tag orange">Topic Library</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>选题方向</th>
+                <th>标题参考</th>
+                <th>核心品牌/对象</th>
+                <th>服务用户</th>
+                <th>测试/内容点</th>
+                <th>适合月份</th>
+                <th>优先级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>夏季保鲜</td>
+                <td>高温天才知道，冰箱保鲜差距有多大</td>
+                <td>海尔、美的、容声、松下</td>
+                <td>品质保鲜用户</td>
+                <td>蔬果失水、肉类保鲜、温控波动、净味。</td>
+                <td>7月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>国产冰箱横评</td>
+                <td>国产冰箱横评：海尔、美的、容声、海信谁更值得买？</td>
+                <td>海尔、美的、容声、海信</td>
+                <td>主流购买用户</td>
+                <td>容量、保鲜、制冷、噪音、能耗、售后。</td>
+                <td>7-9月 / 11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>低预算推荐</td>
+                <td>3000元冰箱怎么选？别只看容量</td>
+                <td>容声、美的、海尔、TCL、小米</td>
+                <td>性价比用户</td>
+                <td>风冷、变频、容量、噪音、耗电、售后。</td>
+                <td>8月 / 11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>囤货家庭</td>
+                <td>一家四口冰箱买多大？500L、600L、700L怎么选</td>
+                <td>全品牌</td>
+                <td>多口之家</td>
+                <td>冷冻比例、冷藏分区、抽屉、开门便利。</td>
+                <td>8月 / 12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>IFA趋势</td>
+                <td>2026冰箱趋势：零嵌、真空保鲜、AI控温谁是真升级？</td>
+                <td>海尔、美的、卡萨帝、COLMO、西门子</td>
+                <td>技术关注用户</td>
+                <td>嵌入式、保鲜技术、AI、除菌、节能。</td>
+                <td>9月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>保鲜专项</td>
+                <td>冰箱保鲜是不是玄学？蔬菜、肉、草莓实测给你看</td>
+                <td>海尔、卡萨帝、美的、松下、日立</td>
+                <td>品质用户</td>
+                <td>失水率、颜色、气味、温度波动、微冻。</td>
+                <td>9月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>装修避坑</td>
+                <td>装修买冰箱最容易踩的10个坑：零嵌、散热、尺寸全讲清</td>
+                <td>全品牌</td>
+                <td>装修置家用户</td>
+                <td>尺寸、开门、散热、插座、橱柜、搬运。</td>
+                <td>10月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>高端冰箱</td>
+                <td>万元冰箱到底贵在哪？卡萨帝、COLMO、西门子、日立对比</td>
+                <td>卡萨帝、COLMO、西门子、日立、东芝</td>
+                <td>高端用户</td>
+                <td>保鲜、做工、噪音、制冰、分区、售后。</td>
+                <td>10月 / 12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11价格监测</td>
+                <td>双11冰箱价格监测：哪些是真降价，哪些是型号套路？</td>
+                <td>全品牌</td>
+                <td>购买用户</td>
+                <td>历史低价、预售、补贴、赠品、型号差异。</td>
+                <td>11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>双11终极推荐</td>
+                <td>2026双11冰箱推荐：3000到15000元怎么买？</td>
+                <td>全品牌</td>
+                <td>全体用户</td>
+                <td>预算分层、适合人群、不适合人群。</td>
+                <td>11月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>长期体验</td>
+                <td>冰箱用了30天才知道，真正影响体验的是这些</td>
+                <td>全品牌</td>
+                <td>谨慎购买用户</td>
+                <td>噪音、结霜、异味、空间、耗电、稳定性。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>年度红黑榜</td>
+                <td>2026中国冰箱红黑榜：这些值得买，这些别碰</td>
+                <td>全品牌</td>
+                <td>全体用户</td>
+                <td>值得买、慎买、等降价、2027趋势。</td>
+                <td>12月</td>
+                <td><span class="score priority-high">高</span></td>
+              </tr>
+              <tr>
+                <td>母婴冰箱</td>
+                <td>有宝宝的家庭，冰箱到底该怎么选？</td>
+                <td>海尔、卡萨帝、美的、松下</td>
+                <td>母婴家庭</td>
+                <td>独立空间、除菌、温控、异味、分储。</td>
+                <td>8月 / 12月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>智能冰箱</td>
+                <td>智能冰箱到底有没有用？屏幕、App、AI控温实测</td>
+                <td>美的、COLMO、海尔、小米、云米</td>
+                <td>年轻/智能家居用户</td>
+                <td>App、屏幕、菜谱、食材管理、AI控温。</td>
+                <td>9月 / 10月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+              <tr>
+                <td>日系多门</td>
+                <td>日系多门冰箱为什么贵？松下、日立、东芝适合谁？</td>
+                <td>松下、日立、东芝</td>
+                <td>小厨房/品质用户</td>
+                <td>制冰、微冻、真空、抽屉、空间效率。</td>
+                <td>10月 / 12月</td>
+                <td><span class="score priority-mid">中</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>选题库使用原则：</b>
+          冰箱内容不要只讲“容量大不大”，要把保鲜、分区、嵌入、噪音、能耗、售后和家庭结构讲清楚。
+        </div>
+      </div>
+    </section>
+
+    <section id="score-model">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>07｜选题评分模型：100分制立项判断</h2>
+            <p class="sub">
+              建议所有长视频选题统一评分。80分以上进入核心长视频；70-79分进入备选；低于70分适合做短内容或暂缓。
+            </p>
+          </div>
+          <span class="tag red">Scoring Model</span>
+        </div>
+
+        <div class="score-grid">
+          <div class="score-card">
+            <h3>用户需求强度｜25分</h3>
+            <p>是否有明确装修、购买、搜索、评论和电商咨询需求。</p>
+          </div>
+          <div class="score-card">
+            <h3>测试可展示性｜20分</h3>
+            <p>是否能拍出保鲜、温控、噪音、空间和嵌入差异。</p>
+          </div>
+          <div class="score-card">
+            <h3>品牌关注度｜15分</h3>
+            <p>是否覆盖中国市场高关注品牌和主流价格段。</p>
+          </div>
+          <div class="score-card">
+            <h3>搜索长尾价值｜15分</h3>
+            <p>是否能长期被搜索、收藏和用于购买决策。</p>
+          </div>
+          <div class="score-card">
+            <h3>节点匹配度｜10分</h3>
+            <p>是否绑定高温、开学、IFA、国庆装修、双11、年终。</p>
+          </div>
+          <div class="score-card">
+            <h3>商业转化潜力｜10分</h3>
+            <p>是否能承接品牌合作、带货、榜单或直播答疑。</p>
+          </div>
+          <div class="score-card">
+            <h3>制作可行性｜5分</h3>
+            <p>样机、场地、食材、测试周期和人力是否可控。</p>
+          </div>
+          <div class="score-card">
+            <h3>评分结论</h3>
+            <p>80+核心长视频；70-79备选；60-69短内容；60以下暂缓。</p>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>示例选题</th>
+                <th>需求 25</th>
+                <th>展示 20</th>
+                <th>品牌 15</th>
+                <th>长尾 15</th>
+                <th>节点 10</th>
+                <th>商业 10</th>
+                <th>可行 5</th>
+                <th>总分</th>
+                <th>结论</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>国产冰箱横评</td>
+                <td>24</td>
+                <td>18</td>
+                <td>15</td>
+                <td>14</td>
+                <td>8</td>
+                <td>9</td>
+                <td>4</td>
+                <td><span class="score priority-high">92</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>双11冰箱终极推荐</td>
+                <td>25</td>
+                <td>14</td>
+                <td>15</td>
+                <td>15</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td><span class="score priority-high">94</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>装修嵌入式冰箱避坑</td>
+                <td>23</td>
+                <td>16</td>
+                <td>12</td>
+                <td>15</td>
+                <td>9</td>
+                <td>8</td>
+                <td>5</td>
+                <td><span class="score priority-high">88</span></td>
+                <td>核心长视频</td>
+              </tr>
+              <tr>
+                <td>智能冰箱是不是噱头</td>
+                <td>16</td>
+                <td>12</td>
+                <td>10</td>
+                <td>9</td>
+                <td>6</td>
+                <td>5</td>
+                <td>5</td>
+                <td><span class="score priority-mid">63</span></td>
+                <td>适合短内容或章节</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>08｜2026年7-12月内容排期</h2>
+            <p class="sub">
+              推荐每月2期核心长视频，配合3-5条短切片和1-2条动态答疑。10-11月为全年转化重点。
+            </p>
+          </div>
+          <span class="tag blue">Calendar</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>月份</th>
+                <th>节点</th>
+                <th>内容目标</th>
+                <th>核心长视频</th>
+                <th>配套运营</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7月</td>
+                <td>夏季高温、囤饮料水果</td>
+                <td>建立保鲜和国产品牌测试标签</td>
+                <td>夏季保鲜实测 / 国产冰箱横评</td>
+                <td>征集水果保鲜、异味、冷冻空间问题。</td>
+              </tr>
+              <tr>
+                <td>8月</td>
+                <td>开学季、家庭备餐</td>
+                <td>覆盖低预算和多口之家</td>
+                <td>3000元冰箱怎么选 / 一家四口冰箱买多大</td>
+                <td>短切片讲容量、分区、耗电、噪音坑点。</td>
+              </tr>
+              <tr>
+                <td>9月</td>
+                <td>IFA、新品发布</td>
+                <td>建立技术趋势和保鲜测试权威</td>
+                <td>2026冰箱趋势 / 保鲜是不是玄学</td>
+                <td>新品速评、保鲜技术投票、食材测试图解。</td>
+              </tr>
+              <tr>
+                <td>10月</td>
+                <td>国庆装修入住</td>
+                <td>承接嵌入式和高端用户</td>
+                <td>装修冰箱避坑 / 万元高端冰箱对比</td>
+                <td>发布冰箱预留尺寸清单和价格关注池。</td>
+              </tr>
+              <tr>
+                <td>11月</td>
+                <td>双11大促</td>
+                <td>集中转化</td>
+                <td>双11价格监测 / 双11冰箱终极推荐</td>
+                <td>置顶价格更新，橱窗、直播和评论答疑联动。</td>
+              </tr>
+              <tr>
+                <td>12月</td>
+                <td>年终囤货、春节前置家</td>
+                <td>沉淀年度内容资产</td>
+                <td>30天长期体验 / 年度红黑榜</td>
+                <td>整理合集，发布年度冰箱购买报告。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="episodes">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>09｜12期核心长视频规划</h2>
+            <p class="sub">
+              单期建议12-25分钟，横评和榜单可到30分钟。每期必须包含：适合谁、不适合谁、测试依据、购买建议。
+            </p>
+          </div>
+          <span class="tag purple">Episodes</span>
+        </div>
+
+        <div class="episode-grid">
+          <div class="episode">
+            <div class="episode-head"><b>EP01｜夏季保鲜实测</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>测试蔬果失水、肉类保鲜、温控波动和异味控制。</p>
+              <div class="chips"><span class="chip">保鲜</span><span class="chip">高温</span><span class="chip">蔬果</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP02｜国产冰箱横评</b><span class="score">7月</span></div>
+            <div class="episode-body">
+              <p>海尔、美的、容声、海信等主流品牌同价位对比。</p>
+              <div class="chips"><span class="chip">国产品牌</span><span class="chip">横评</span><span class="chip">性价比</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP03｜3000元冰箱怎么选</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>面向首次置家和预算有限用户，讲清风冷、变频、容量和售后。</p>
+              <div class="chips"><span class="chip">低预算</span><span class="chip">避坑</span><span class="chip">入门</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP04｜一家四口买多大</b><span class="score">8月</span></div>
+            <div class="episode-body">
+              <p>结合冷藏、冷冻、母婴、备餐和囤货讲清容量选择。</p>
+              <div class="chips"><span class="chip">容量</span><span class="chip">多口之家</span><span class="chip">囤货</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP05｜2026冰箱趋势</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>解读零嵌、真空保鲜、AI控温、除菌净味和节能趋势。</p>
+              <div class="chips"><span class="chip">IFA</span><span class="chip">趋势</span><span class="chip">新品</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP06｜保鲜是不是玄学</b><span class="score">9月</span></div>
+            <div class="episode-body">
+              <p>用草莓、青菜、肉类和干货测试不同保鲜技术。</p>
+              <div class="chips"><span class="chip">保鲜技术</span><span class="chip">实测</span><span class="chip">净味</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP07｜装修冰箱避坑</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>讲清零嵌、平嵌、散热、插座、开门半径和橱柜预留。</p>
+              <div class="chips"><span class="chip">装修</span><span class="chip">嵌入式</span><span class="chip">尺寸</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP08｜万元高端冰箱对比</b><span class="score">10月</span></div>
+            <div class="episode-body">
+              <p>卡萨帝、COLMO、西门子、日立、东芝等高端冰箱体验对比。</p>
+              <div class="chips"><span class="chip">高端</span><span class="chip">保鲜</span><span class="chip">做工</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP09｜双11价格监测</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>分析预售价、历史低价、补贴、赠品和型号马甲。</p>
+              <div class="chips"><span class="chip">双11</span><span class="chip">价格</span><span class="chip">避坑</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP10｜双11终极推荐</b><span class="score">11月</span></div>
+            <div class="episode-body">
+              <p>按3000、5000、8000、10000、15000元以上分层推荐。</p>
+              <div class="chips"><span class="chip">榜单</span><span class="chip">预算</span><span class="chip">转化</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP11｜30天长期体验</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>复盘噪音、耗电、异味、结霜、空间、温控和日常便利。</p>
+              <div class="chips"><span class="chip">长期</span><span class="chip">复盘</span><span class="chip">真实使用</span></div>
+            </div>
+          </div>
+
+          <div class="episode">
+            <div class="episode-head"><b>EP12｜年度红黑榜</b><span class="score">12月</span></div>
+            <div class="episode-body">
+              <p>总结值得买、慎买、适合等降价和2027值得关注的技术。</p>
+              <div class="chips"><span class="chip">年终</span><span class="chip">红黑榜</span><span class="chip">搜索资产</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testing">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>10｜冰箱科学测试体系</h2>
+            <p class="sub">
+              冰箱测评不能只读容量、能效和品牌。需要用真实食材、固定周期、温度记录和家庭场景验证保鲜、制冷、噪音、净味和嵌入体验。
+            </p>
+          </div>
+          <span class="tag orange">Testing Protocol</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>测试维度</th>
+                <th>关键指标</th>
+                <th>测试方法</th>
+                <th>结论重点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>保鲜能力</td>
+                <td>蔬果失水、颜色、口感、气味、腐败速度</td>
+                <td>草莓、青菜、蓝莓等固定重量放置3-7天，对比重量和状态。</td>
+                <td>保鲜不是看宣传名词，要看失水率和真实状态。</td>
+              </tr>
+              <tr>
+                <td>温控稳定</td>
+                <td>冷藏温度波动、冷冻温度、回温速度</td>
+                <td>温度记录仪连续记录24-72小时，模拟开门使用。</td>
+                <td>温度波动小，对保鲜和食品安全更重要。</td>
+              </tr>
+              <tr>
+                <td>冷冻能力</td>
+                <td>冻结速度、冷冻空间、抽屉容量、结霜情况</td>
+                <td>固定重量肉类或水袋测试冻结速度和空间可用性。</td>
+                <td>大容量家庭要看冷冻比例，不只看总升数。</td>
+              </tr>
+              <tr>
+                <td>净味除菌</td>
+                <td>异味残留、串味、净味速度</td>
+                <td>放置榴莲、洋葱、熟食等气味源，记录气味扩散和残留。</td>
+                <td>净味功能要结合实际气味源验证。</td>
+              </tr>
+              <tr>
+                <td>噪音体验</td>
+                <td>压缩机噪音、夜间噪音、启停声音</td>
+                <td>固定距离用噪音仪测试白天和夜间环境。</td>
+                <td>开放式厨房和客餐厅一体用户尤其关注。</td>
+              </tr>
+              <tr>
+                <td>能耗表现</td>
+                <td>日耗电、开门频率影响、环境温度影响</td>
+                <td>功率计连续记录24-72小时，模拟家庭使用。</td>
+                <td>能效标识是参考，实际用电看环境和习惯。</td>
+              </tr>
+              <tr>
+                <td>空间与分区</td>
+                <td>冷藏/冷冻比例、抽屉、门架、瓶装饮料、锅具容纳</td>
+                <td>用真实食材、饮料瓶、饭盒和锅具进行装载测试。</td>
+                <td>好冰箱不是只大，而是好放、好拿、好分类。</td>
+              </tr>
+              <tr>
+                <td>嵌入安装</td>
+                <td>机身厚度、散热、开门角度、橱柜预留、插座位置</td>
+                <td>实测尺寸、开门半径、两侧留缝和背部散热要求。</td>
+                <td>装修用户必须在买前确认尺寸和散热方式。</td>
+              </tr>
+              <tr>
+                <td>系统智能</td>
+                <td>App、屏幕、食材管理、AI控温、联动</td>
+                <td>测试连接、提醒、菜谱、控温和家庭成员使用难度。</td>
+                <td>智能功能要看实际高频使用，而不是演示效果。</td>
+              </tr>
+              <tr>
+                <td>长期体验</td>
+                <td>异味、结霜、噪音变化、售后、保修、清洁难度</td>
+                <td>连续使用30天，记录日常问题和维护频率。</td>
+                <td>冰箱是长周期产品，长期稳定性比短期参数更重要。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <b>测试声明模板：</b>
+          本期测试基于固定食材、固定放置周期、固定环境温度和当前样机状态，结论适用于类似家庭场景，不代表所有户型、气候和长期极端使用环境。
+        </div>
+      </div>
+    </section>
+
+    <section id="operation">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>11｜发布运营与商业转化</h2>
+            <p class="sub">
+              冰箱长视频具有强搜索、强收藏和强购买决策属性。保鲜、嵌入、容量负责信任和搜索；价格监测、预算推荐和榜单负责转化。
+            </p>
+          </div>
+          <span class="tag green">Operation & Business</span>
+        </div>
+
+        <div class="grid-12">
+          <div class="card span-4">
+            <h3>发布前</h3>
+            <ul class="mini-list">
+              <li>动态征集预算、品牌、厨房尺寸、家庭人数、是否嵌入。</li>
+              <li>提前投票：海尔/美的/容声/卡萨帝/西门子谁更想看。</li>
+              <li>预埋关键词：冰箱怎么选、零嵌冰箱、双11冰箱推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>发布后</h3>
+            <ul class="mini-list">
+              <li>置顶评论写清适合谁、不适合谁、价格更新时间。</li>
+              <li>剪3-5条短切片：保鲜、净味、噪音、嵌入、价格。</li>
+              <li>评论区按预算、尺寸、家庭人数、厨房预留进行答疑。</li>
+            </ul>
+          </div>
+
+          <div class="card span-4">
+            <h3>商业化</h3>
+            <ul class="mini-list">
+              <li>品牌新品测评、保鲜技术专项、双11榜单合作。</li>
+              <li>橱窗带货、直播答疑、大促价格监测。</li>
+              <li>年度红黑榜、冰箱选购报告、装修清单合作。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>12｜项目执行工作台</h2>
+            <p class="sub">
+              用于团队执行、选题评审、测试记录、发布质检和复盘沉淀。
+            </p>
+          </div>
+          <span class="tag">Dashboard</span>
+        </div>
+
+        <div class="workbench">
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>单期项目评分卡</h3>
+              <span class="wb-mark">100分</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>用户需求强度</span><span class="score-badge">/25</span></div>
+              <div class="score-row"><span>测试可展示性</span><span class="score-badge">/20</span></div>
+              <div class="score-row"><span>品牌关注度</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>搜索长尾价值</span><span class="score-badge">/15</span></div>
+              <div class="score-row"><span>节点匹配度</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>商业转化潜力</span><span class="score-badge">/10</span></div>
+              <div class="score-row"><span>制作可行性</span><span class="score-badge">/5</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-6">
+            <div class="wb-head">
+              <h3>项目立项卡</h3>
+              <span class="wb-mark">Brief</span>
+            </div>
+            <div class="wb-body">
+              <div class="field-grid">
+                <div class="field"><b>选题名称</b><span>如：国产冰箱横评</span></div>
+                <div class="field"><b>目标用户</b><span>装修 / 囤货 / 保鲜 / 母婴 / 性价比</span></div>
+                <div class="field"><b>核心品牌</b><span>海尔 / 美的 / 容声 / 卡萨帝 / 西门子等</span></div>
+                <div class="field"><b>测试清单</b><span>保鲜、温控、噪音、能耗、空间、嵌入</span></div>
+                <div class="field"><b>商业目标</b><span>播放 / 收藏 / 带货 / 商单 / 搜索</span></div>
+                <div class="field"><b>发布节点</b><span>高温 / IFA / 国庆装修 / 双11 / 年终</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>发布质检</h3>
+              <span class="wb-mark">QA</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>标题包含品牌、预算、场景或冲突</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>封面有冰箱、食材或尺寸对比</span><span class="score-badge">检查</span></div>
+              <div class="score-row"><span>简介说明样机来源和测试条件</span><span class="score-badge">必备</span></div>
+              <div class="score-row"><span>置顶评论含适合/不适合人群</span><span class="score-badge">必备</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>评论答疑模板</h3>
+              <span class="wb-mark">Comment</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>预算 + 家庭人数 + 厨房尺寸</span><span class="score-badge">推荐</span></div>
+              <div class="score-row"><span>是否装修，是否需要零嵌/平嵌</span><span class="score-badge">安装</span></div>
+              <div class="score-row"><span>更需要冷冻、冷藏还是母婴分区</span><span class="score-badge">分区</span></div>
+              <div class="score-row"><span>是否在意噪音、耗电和售后</span><span class="score-badge">体验</span></div>
+            </div>
+          </div>
+
+          <div class="wb-card span-4">
+            <div class="wb-head">
+              <h3>复盘指标</h3>
+              <span class="wb-mark">Review</span>
+            </div>
+            <div class="wb-body">
+              <div class="score-row"><span>点击率与封面转化</span><span class="score-badge">点击</span></div>
+              <div class="score-row"><span>前30秒留存与章节留存</span><span class="score-badge">留存</span></div>
+              <div class="score-row"><span>收藏率、评论质量、搜索来源</span><span class="score-badge">价值</span></div>
+              <div class="score-row"><span>带货点击、商单咨询、品牌线索</span><span class="score-badge">商业</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <div class="footer-card">
+      <div class="footer-inner">
+        <div>
+          <h2>2026 H2 中国市场冰箱长视频项目策划</h2>
+          <p>中国品牌横评 × 保鲜实测 × 嵌入式装修 × 双11转化 × 年度红黑榜</p>
+        </div>
+        <div class="footer-mini">
+          <span>海尔</span>
+          <span>美的</span>
+          <span>容声</span>
+          <span>卡萨帝</span>
+          <span>西门子</span>
+          <span>松下</span>
+          <span>TCL</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var btn = document.getElementById("themeBtn");
+      var key = "fridge-china-market-project-theme";
+
+      function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem(key, theme);
+        } catch (e) {}
+        if (btn) {
+          btn.textContent = theme === "dark" ? "☀️ 浅色模式" : "🌙 深色模式";
+        }
+      }
+
+      var saved = null;
+      try {
+        saved = localStorage.getItem(key);
+      } catch (e) {}
+
+      if (saved === "dark" || saved === "light") {
+        applyTheme(saved);
+      } else {
+        var prefersDark = false;
+        try {
+          prefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+        } catch (e) {}
+        applyTheme(prefersDark ? "dark" : "light");
+      }
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var current = html.getAttribute("data-theme");
+          applyTheme(current === "dark" ? "light" : "dark");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

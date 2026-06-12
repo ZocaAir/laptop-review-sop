@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>空调测评内容 SOP 与商务开发报告</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Arial, sans-serif;
+      background: #eef4fb;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: 1220px;
+      margin: 34px auto;
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 26px 80px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero {
+      padding: 58px 64px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 14%, rgba(14,165,233,.42), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(59,130,246,.34), transparent 32%),
+        linear-gradient(135deg, #082f49 0%, #0f172a 45%, #0284c7 100%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #e0f2fe;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+      max-width: 960px;
+      margin-top: 18px;
+      color: #e0f2fe;
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .hero-card {
+      padding: 19px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .hero-card span {
+      font-size: 13px;
+      color: #bae6fd;
+    }
+
+    .content {
+      padding: 46px 64px 64px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .num {
+      width: 37px;
+      height: 37px;
+      border-radius: 13px;
+      background: #0284c7;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      color: #111827;
+      font-size: 18px;
+    }
+
+    p { margin: 8px 0; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15,23,42,.055);
+    }
+
+    .blue {
+      background: linear-gradient(180deg, #eff6ff 0%, #fff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .cyan {
+      background: linear-gradient(180deg, #ecfeff 0%, #fff 100%);
+      border-color: #a5f3fc;
+    }
+
+    .green {
+      background: linear-gradient(180deg, #ecfdf5 0%, #fff 100%);
+      border-color: #bbf7d0;
+    }
+
+    .orange {
+      background: linear-gradient(180deg, #fff7ed 0%, #fff 100%);
+      border-color: #fed7aa;
+    }
+
+    .purple {
+      background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%);
+      border-color: #ddd6fe;
+    }
+
+    .red {
+      background: linear-gradient(180deg, #fef2f2 0%, #fff 100%);
+      border-color: #fecaca;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 10px 0 0;
+    }
+
+    li { margin: 7px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f172a;
+      color: #fff;
+      text-align: left;
+      padding: 14px 15px;
+      font-weight: 650;
+    }
+
+    td {
+      padding: 14px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    .score {
+      color: #0284c7;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .danger {
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .success {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    .warning {
+      color: #ea580c;
+      font-weight: 800;
+    }
+
+    .quote {
+      padding: 22px 26px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border-left: 6px solid #0284c7;
+      color: #334155;
+      font-size: 16px;
+    }
+
+    .alert {
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #7f1d1d;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #16a34a;
+      font-weight: 900;
+    }
+
+    .cross {
+      color: #dc2626;
+      font-weight: 900;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+    }
+
+    .step {
+      padding: 17px 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .step b {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0284c7;
+      color: #fff;
+      margin-bottom: 9px;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 13px;
+      color: #0f172a;
+    }
+
+    .step span {
+      display: block;
+      color: #64748b;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 26px 64px;
+      background: #0f172a;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="hero">
+      <div class="badge">❄️ 空调测评 · 内容 SOP · 商务开发 · 安装与测试红线</div>
+      <h1>中国市场空调内容创作<br />测试体系与商务执行报告</h1>
+      <p class="subtitle">
+        适用于 B站 / YouTube 长视频博主及数码家电内容团队。报告聚焦壁挂式空调、柜机、新风空调、中央空调部分场景的标准化测试场景、工具、测试项目清单、内容生产 SOP、商务开发材料、样品安装管理与商单红线。
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <strong>6类</strong>
+          <span>真实家庭测试场景</span>
+        </div>
+        <div class="hero-card">
+          <strong>40+</strong>
+          <span>空调实测项目</span>
+        </div>
+        <div class="hero-card">
+          <strong>8步</strong>
+          <span>内容生产 SOP</span>
+        </div>
+        <div class="hero-card">
+          <strong>5条</strong>
+          <span>核心红线：真实、安装、安全、能效、披露</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">01</span>
+          <h2>空调测评体系目标</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>对用户的价值</h3>
+            <ul>
+              <li>帮用户判断：这台空调制冷快不快、制热稳不稳、省不省电。</li>
+              <li>解释匹数、能效、压缩机、电子膨胀阀、循环风量、新风量等参数。</li>
+              <li>关注安装、售后、噪音、风感、除湿、清洁等真实家庭痛点。</li>
+              <li>给出不同房间面积、朝向、楼层、人群的购买建议。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>对内容团队的价值</h3>
+            <ul>
+              <li>形成可复用的温度、湿度、功耗、噪音、风速测试流程。</li>
+              <li>减少“主观凉不凉”的争议，用数据和场景说话。</li>
+              <li>沉淀长期横评数据库，服务 618、双11、夏季高峰选题。</li>
+              <li>提升空调赛道商单报价和长期合作能力。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>对商务合作的价值</h3>
+            <ul>
+              <li>向品牌证明账号具备真实安装和环境测试能力。</li>
+              <li>提前明确样机、安装、拆机、售后、能耗数据的合作边界。</li>
+              <li>把单品测评升级为新品发布、横评、大促转化和年度合作。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote" style="margin-top:18px;">
+          空调测评的核心不是读能效标识，而是在真实房间、固定环境、标准安装条件下，回答用户最关心的五个问题：降温快吗？省电吗？吵不吵？吹得舒服吗？安装售后坑不坑？
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">02</span>
+          <h2>测试场景搭建</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>场景 A：标准卧室制冷测试</h3>
+            <ul>
+              <li><strong>用途：</strong>模拟中国家庭最常见的卧室挂机使用场景。</li>
+              <li><strong>面积：</strong>建议 10-18㎡，记录层高、朝向、窗户面积。</li>
+              <li><strong>初始条件：</strong>测试前关闭空调 2 小时以上，让房间回到自然温度。</li>
+              <li><strong>测试设置：</strong>制冷 26℃ / 24℃，自动风或高风分别测试。</li>
+              <li><strong>测试重点：</strong>降温速度、温度均匀性、夜间噪音、直吹感。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>场景 B：客厅柜机制冷 / 制热测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试大空间覆盖、循环风量和送风距离。</li>
+              <li><strong>面积：</strong>建议 20-40㎡，适合 2匹、3匹柜机测试。</li>
+              <li><strong>测点：</strong>近端、中间、远端、沙发位、餐桌位。</li>
+              <li><strong>测试重点：</strong>降温均匀性、出风距离、噪音、功耗、风感舒适度。</li>
+              <li><strong>注意：</strong>客厅开放程度会显著影响结果，需记录户型。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>场景 C：高温暴晒制冷压力测试</h3>
+            <ul>
+              <li><strong>用途：</strong>观察极端夏季环境下的制冷能力。</li>
+              <li><strong>条件：</strong>西晒房、顶楼、午后高温，或室外机处于高温环境。</li>
+              <li><strong>测试内容：</strong>开机 5/10/20/30/60 分钟温度变化。</li>
+              <li><strong>测试重点：</strong>高负载下是否降频、出风温度是否稳定、耗电变化。</li>
+              <li><strong>注意：</strong>不能刻意遮挡室外机散热制造异常工况。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>场景 D：冬季制热 / 化霜测试</h3>
+            <ul>
+              <li><strong>用途：</strong>验证南方冬季和低温环境下制热体验。</li>
+              <li><strong>条件：</strong>室外低温、湿冷、阴雨天更有参考价值。</li>
+              <li><strong>测试项目：</strong>制热升温、出风温度、化霜频率、电辅热功耗。</li>
+              <li><strong>测试重点：</strong>起热速度、温度稳定、化霜是否频繁、是否干燥。</li>
+              <li><strong>注意：</strong>不同地区冬季差异大，必须标明测试城市和室外温度。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>场景 E：静音睡眠测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试卧室夜间真实使用体验。</li>
+              <li><strong>条件：</strong>夜间安静环境，关闭电视、风扇、电脑等噪音源。</li>
+              <li><strong>测点：</strong>床头耳朵位置、空调下方 1 米、房间中央。</li>
+              <li><strong>测试重点：</strong>低风噪音、压缩机启停、导风板异响、温度波动。</li>
+              <li><strong>注意：</strong>分贝值必须记录环境底噪。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>场景 F：新风 / 除湿 / 自清洁测试</h3>
+            <ul>
+              <li><strong>用途：</strong>测试新风空调和健康功能是否有实际价值。</li>
+              <li><strong>新风：</strong>测试 CO₂ 变化、新风噪音、新风量主观体感。</li>
+              <li><strong>除湿：</strong>测试湿度下降速度、室温变化、舒适度。</li>
+              <li><strong>自清洁：</strong>观察蒸发器清洁流程、异味、出风洁净感。</li>
+              <li><strong>注意：</strong>新风功能受房间密闭性和人数影响，需记录条件。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">03</span>
+          <h2>测试环境记录模板</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>记录项</th>
+              <th>填写要求</th>
+              <th>示例</th>
+              <th>为什么重要</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>产品型号</td>
+              <td>完整型号、匹数、能效等级、版本。</td>
+              <td>某品牌 1.5匹 新一级能效 挂机</td>
+              <td>同系列不同匹数和能效配置差异明显。</td>
+            </tr>
+            <tr>
+              <td>测试房间</td>
+              <td>面积、层高、朝向、窗户面积、是否西晒。</td>
+              <td>卧室 14㎡ / 层高 2.7m / 西南向</td>
+              <td>决定制冷制热负载，影响所有结论。</td>
+            </tr>
+            <tr>
+              <td>室外条件</td>
+              <td>室外温度、湿度、天气、室外机位置。</td>
+              <td>室外 36℃ / 晴 / 室外机无遮挡</td>
+              <td>空调性能强烈依赖室外环境。</td>
+            </tr>
+            <tr>
+              <td>安装信息</td>
+              <td>铜管长度、内外机高度差、抽真空时间、安装收费。</td>
+              <td>铜管 4m / 抽真空 15分钟 / 加管 200元</td>
+              <td>安装质量直接影响制冷、噪音和寿命。</td>
+            </tr>
+            <tr>
+              <td>测试模式</td>
+              <td>制冷/制热/除湿/睡眠，温度、风量、扫风状态。</td>
+              <td>制冷 26℃ / 高风 / 上下扫风</td>
+              <td>不同模式功耗、噪音、舒适度完全不同。</td>
+            </tr>
+            <tr>
+              <td>测点位置</td>
+              <td>记录温度计、分贝仪、风速仪位置。</td>
+              <td>床头、房间中央、出风口 30cm</td>
+              <td>保证横评和复测可复现。</td>
+            </tr>
+            <tr>
+              <td>价格信息</td>
+              <td>官方价、到手价、安装费、辅材费、补贴价和日期。</td>
+              <td>到手价 2799 元，安装加管 200 元，记录于 2025-06-01</td>
+              <td>空调购买成本必须包含安装和辅材。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">04</span>
+          <h2>测试工具清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>工具类型</th>
+              <th>推荐工具 / 材料</th>
+              <th>用途</th>
+              <th>必要程度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>温湿度测试</td>
+              <td>多点温湿度计、温湿度记录仪、红外测温仪。</td>
+              <td>记录房间升降温曲线、温度均匀性、湿度变化。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>功耗测试</td>
+              <td>功耗计、智能插座、电量统计插座。</td>
+              <td>测试开机功率、稳定功耗、1小时耗电、夜间耗电。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>噪音测试</td>
+              <td>分贝仪、手机辅助 App 仅作参考。</td>
+              <td>测试低风、高风、睡眠、室外机、压缩机启停噪音。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>风量 / 风速</td>
+              <td>风速仪、飘带、烟雾笔或可视化气流道具。</td>
+              <td>测试出风速度、送风距离、风感方向。</td>
+              <td class="score">中高</td>
+            </tr>
+            <tr>
+              <td>空气质量</td>
+              <td>CO₂ 检测仪、PM2.5 检测仪、甲醛检测仪。</td>
+              <td>测试新风、净化、换气和密闭房间空气变化。</td>
+              <td class="score">中</td>
+            </tr>
+            <tr>
+              <td>安装检查</td>
+              <td>卷尺、水平尺、真空泵记录、压力表照片、安装过程录像。</td>
+              <td>记录铜管、抽真空、排水、支架、打孔、收费。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>拍摄设备</td>
+              <td>相机、三脚架、延时摄影设备、收音设备、补光灯。</td>
+              <td>拍摄温度曲线、安装过程、出风、噪音、遥控和 App。</td>
+              <td class="score">高</td>
+            </tr>
+            <tr>
+              <td>数据记录</td>
+              <td>Excel、飞书表格、Notion、Google Sheet。</td>
+              <td>记录时间轴、温湿度、功耗、噪音、收费和评分。</td>
+              <td class="score">高</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pill-list">
+          <span class="pill">基础必备：温湿度计 × 3</span>
+          <span class="pill">基础必备：功耗计</span>
+          <span class="pill">基础必备：分贝仪</span>
+          <span class="pill">基础必备：卷尺</span>
+          <span class="pill">进阶必备：风速仪</span>
+          <span class="pill">进阶必备：CO₂ 检测仪</span>
+          <span class="pill">进阶必备：温湿度记录仪</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">05</span>
+          <h2>空调测试项目总清单</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>一、制冷能力测试</h3>
+            <ul>
+              <li>开机 5 / 10 / 20 / 30 / 60 分钟房间温度变化。</li>
+              <li>出风口温度变化和最低出风温度。</li>
+              <li>房间多点温差：床头、门口、窗边、房间中央。</li>
+              <li>高温暴晒环境下降温速度。</li>
+              <li>达到设定温度后的稳定性和温度波动。</li>
+              <li>长时间运行是否频繁降频或忽冷忽热。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>二、制热能力测试</h3>
+            <ul>
+              <li>开机制热起热速度。</li>
+              <li>出风温度和房间升温速度。</li>
+              <li>是否启用电辅热以及电辅热功耗。</li>
+              <li>低温环境下制热是否衰减明显。</li>
+              <li>化霜频率、化霜时长、化霜期间体感。</li>
+              <li>制热时是否干燥、是否有冷风感。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>三、能耗与能效测试</h3>
+            <ul>
+              <li>制冷 1 小时耗电量。</li>
+              <li>制热 1 小时耗电量。</li>
+              <li>夜间 8 小时睡眠模式耗电。</li>
+              <li>达到设定温度前后的功率变化。</li>
+              <li>不同温度设定下耗电差异：24℃ / 26℃ / 28℃。</li>
+              <li>新一级能效实际体感是否匹配价格。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>四、噪音与舒适性测试</h3>
+            <ul>
+              <li>环境底噪记录。</li>
+              <li>低风、中风、高风、睡眠模式噪音。</li>
+              <li>压缩机启停、导风板、塑料件异响。</li>
+              <li>室外机噪音和邻里影响。</li>
+              <li>直吹感、柔风感、无风感、扫风范围。</li>
+              <li>夜间温度波动和睡眠舒适度。</li>
+            </ul>
+          </div>
+
+          <div class="card purple">
+            <h3>五、除湿 / 新风 / 净化测试</h3>
+            <ul>
+              <li>除湿模式 30 / 60 分钟湿度下降。</li>
+              <li>除湿时房间温度变化。</li>
+              <li>新风模式 CO₂ 变化。</li>
+              <li>新风模式噪音和功耗。</li>
+              <li>PM2.5 / 滤网 / 净化功能效果。</li>
+              <li>自清洁、蒸发器清洁、异味改善。</li>
+            </ul>
+          </div>
+
+          <div class="card blue">
+            <h3>六、安装与售后测试</h3>
+            <ul>
+              <li>安装师傅是否按规范抽真空。</li>
+              <li>铜管长度、辅材收费、支架收费、打孔收费。</li>
+              <li>排水是否顺畅，是否有倒灌风险。</li>
+              <li>室外机安装是否稳固、是否影响散热。</li>
+              <li>售后响应、保修政策、移机费用。</li>
+              <li>安装过程是否主动推销高价辅材。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>七、智能与使用体验测试</h3>
+            <ul>
+              <li>遥控器按键逻辑、显示是否清晰。</li>
+              <li>App 配网成功率和控制稳定性。</li>
+              <li>语音助手、智能家居联动。</li>
+              <li>定时、睡眠曲线、儿童锁、节能模式。</li>
+              <li>老人和租房用户是否容易上手。</li>
+              <li>断电恢复、记忆模式、故障提示。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>八、长期使用测试</h3>
+            <ul>
+              <li>连续 7 天使用温度稳定性。</li>
+              <li>滤网积灰、清洁便利性。</li>
+              <li>冷凝水、异味、霉味、出风洁净感。</li>
+              <li>高频使用下噪音变化。</li>
+              <li>App 断连、遥控不灵、异常报错。</li>
+              <li>用户评论集中反馈问题复查。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">06</span>
+          <h2>空调测评评分模型</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>权重</th>
+              <th>核心测试</th>
+              <th>结论表达</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>制冷 / 制热能力</td>
+              <td class="score">25%</td>
+              <td>降温、升温、出风温度、稳定性、高温/低温表现。</td>
+              <td>能不能快速把房间调到舒服温度。</td>
+            </tr>
+            <tr>
+              <td>能耗表现</td>
+              <td class="score">20%</td>
+              <td>1小时耗电、夜间耗电、稳定功率、节能模式。</td>
+              <td>长期使用电费压力大不大。</td>
+            </tr>
+            <tr>
+              <td>舒适性</td>
+              <td class="score">15%</td>
+              <td>风感、温度均匀性、湿度、睡眠体验、温度波动。</td>
+              <td>凉得快不等于吹得舒服。</td>
+            </tr>
+            <tr>
+              <td>噪音控制</td>
+              <td class="score">10%</td>
+              <td>低风、高风、睡眠、室外机、异响。</td>
+              <td>卧室能不能安心睡觉。</td>
+            </tr>
+            <tr>
+              <td>安装与售后</td>
+              <td class="score">15%</td>
+              <td>抽真空、辅材收费、排水、外机安装、保修。</td>
+              <td>买空调一半看机器，一半看安装。</td>
+            </tr>
+            <tr>
+              <td>功能体验</td>
+              <td class="score">10%</td>
+              <td>除湿、新风、自清洁、App、语音、智能联动。</td>
+              <td>附加功能是不是有实际价值。</td>
+            </tr>
+            <tr>
+              <td>价格与长期成本</td>
+              <td class="score">5%</td>
+              <td>到手价、安装费、辅材费、维修移机成本。</td>
+              <td>综合购买成本是否合理。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">07</span>
+          <h2>内容生产 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>选题立项</strong>
+            <span>单品/横评/攻略</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>商务确认</strong>
+            <span>样机/安装/合同</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>安装记录</strong>
+            <span>抽真空/收费/外机</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>测试计划</strong>
+            <span>房间/工具/测点</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>实测记录</strong>
+            <span>温度/功耗/噪音</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>脚本拍摄</strong>
+            <span>证据/结论/建议</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>审核发布</strong>
+            <span>合规/链接/披露</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘归档</strong>
+            <span>播放/转化/反馈</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>SOP环节</th>
+              <th>具体动作</th>
+              <th>责任人</th>
+              <th>交付物</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>选题立项</td>
+              <td>确定单品测评、横评、夏季攻略、制热专题、安装避坑或新品商单。</td>
+              <td>主理人 / 选题编辑</td>
+              <td>选题单、竞品清单、标题方向。</td>
+            </tr>
+            <tr>
+              <td>样机确认</td>
+              <td>确认样机来源、匹数、版本、是否商单、是否寄回或拆除。</td>
+              <td>商务 / 运营</td>
+              <td>样品登记表、合作确认单。</td>
+            </tr>
+            <tr>
+              <td>安装记录</td>
+              <td>拍摄送装过程，记录抽真空、铜管、支架、打孔、收费。</td>
+              <td>运营 / 摄像</td>
+              <td>安装记录表、安装过程素材。</td>
+            </tr>
+            <tr>
+              <td>测试准备</td>
+              <td>确定房间、测点、初始条件、温度设定、风量模式。</td>
+              <td>测评编辑</td>
+              <td>测试计划表、测点图。</td>
+            </tr>
+            <tr>
+              <td>执行测试</td>
+              <td>按时间轴记录温湿度、功耗、噪音、风速、体感。</td>
+              <td>测评编辑</td>
+              <td>原始数据、曲线图、过程视频。</td>
+            </tr>
+            <tr>
+              <td>长期体验</td>
+              <td>连续使用 7 天以上，记录电量、异味、噪音、App、滤网。</td>
+              <td>测评编辑 / 运营</td>
+              <td>长期体验日志。</td>
+            </tr>
+            <tr>
+              <td>结论评审</td>
+              <td>根据实测数据形成优缺点、适合房间、购买建议。</td>
+              <td>主理人 / 编辑</td>
+              <td>评分卡、购买建议。</td>
+            </tr>
+            <tr>
+              <td>发布复盘</td>
+              <td>维护价格、安装费、评论答疑、转化数据和售后反馈。</td>
+              <td>运营 / 商务</td>
+              <td>复盘报告、商务案例。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">08</span>
+          <h2>单条空调测评视频结构 SOP</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>标准长视频结构</h3>
+            <ul>
+              <li><strong>00:00 - 00:30：</strong>结论前置：适合谁、不适合谁。</li>
+              <li><strong>00:30 - 02:00：</strong>型号、匹数、价格、样品来源、测试房间说明。</li>
+              <li><strong>02:00 - 04:30：</strong>安装体验：抽真空、辅材收费、室外机位置。</li>
+              <li><strong>04:30 - 08:00：</strong>制冷 / 制热实测：温度曲线、出风温度、均匀性。</li>
+              <li><strong>08:00 - 10:00：</strong>功耗测试：1小时耗电、夜间耗电、稳定功率。</li>
+              <li><strong>10:00 - 12:00：</strong>噪音、风感、睡眠、除湿、新风或自清洁。</li>
+              <li><strong>12:00 - 14:00：</strong>缺点、安装坑、适用面积、竞品对比。</li>
+              <li><strong>14:00 - 15:30：</strong>最终推荐等级、购买节点、替代型号。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>必须出现在视频里的信息</h3>
+            <ul>
+              <li>样品来源：自购 / 借测 / 送测 / 商业合作。</li>
+              <li>测试城市、室外温度、测试房间面积和朝向。</li>
+              <li>安装过程：是否抽真空、安装收费、辅材收费。</li>
+              <li>测试模式：温度设定、风量、运行时长、测点位置。</li>
+              <li>至少 3 个明确优点和 3 个明确缺点。</li>
+              <li>适合面积、适合人群和不适合人群。</li>
+              <li>如有带货链接，说明可能存在佣金。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pill-list">
+          <span class="pill">必拍：安装过程</span>
+          <span class="pill">必拍：抽真空记录</span>
+          <span class="pill">必拍：温度曲线</span>
+          <span class="pill">必拍：功耗数据</span>
+          <span class="pill">必拍：分贝仪实测</span>
+          <span class="pill">必拍：室外机位置</span>
+          <span class="pill">必拍：安装收费单</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">09</span>
+          <h2>样品与安装管理规则</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>环节</th>
+              <th>规则</th>
+              <th>必须记录</th>
+              <th>风险点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样机接收</td>
+              <td>拍摄包装、型号、外观、内外机铭牌和配件。</td>
+              <td>到货日期、快递单号、外观状态。</td>
+              <td>内外机型号不匹配、运输损伤。</td>
+            </tr>
+            <tr>
+              <td>样机登记</td>
+              <td>登记型号、匹数、能效、序列号、样品来源。</td>
+              <td>样品登记表、铭牌照片。</td>
+              <td>媒体机、工程机与零售机不一致。</td>
+            </tr>
+            <tr>
+              <td>安装预约</td>
+              <td>尽量走品牌官方安装流程，保留预约记录。</td>
+              <td>预约截图、安装师傅信息。</td>
+              <td>非官方安装影响保修和测试公平性。</td>
+            </tr>
+            <tr>
+              <td>安装过程</td>
+              <td>记录抽真空时间、铜管长度、排水、支架、打孔。</td>
+              <td>安装视频、收费明细、抽真空照片。</td>
+              <td>安装不规范导致性能差，被误判机器问题。</td>
+            </tr>
+            <tr>
+              <td>辅材收费</td>
+              <td>记录加管、支架、高空费、打孔费、漏保等费用。</td>
+              <td>收费单、支付截图。</td>
+              <td>空调真实购买成本被低估。</td>
+            </tr>
+            <tr>
+              <td>拆机 / 移机</td>
+              <td>若样机需寄回或更换，必须由专业人员处理。</td>
+              <td>拆机视频、物流单号。</td>
+              <td>制冷剂回收、铜管损坏、墙体损坏。</td>
+            </tr>
+            <tr>
+              <td>样品留存</td>
+              <td>若样品不寄回，应明确归属、税务、后续使用权限。</td>
+              <td>合同或邮件确认。</td>
+              <td>利益披露不清，影响信任。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">10</span>
+          <h2>测试红线与商单红线</h2>
+        </div>
+
+        <div class="alert">
+          <strong>核心原则：</strong>空调测评必须把安装条件、房间条件和室外环境说清楚。不能只用“体感很凉”“非常省电”做结论，更不能隐藏安装收费、抽真空不规范、噪音、异味、制热差等关键问题。
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card red">
+            <h3>测试红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 虚构温度、功耗、噪音、新风量、除湿量等数据。</li>
+              <li><span class="danger">禁止</span> 不说明房间面积、室外温度和安装条件就下结论。</li>
+              <li><span class="danger">禁止</span> 横评时使用不同房间、不同初始温度、不同模式直接对比。</li>
+              <li><span class="danger">禁止</span> 隐藏安装不规范、辅材收费、售后问题。</li>
+              <li><span class="danger">禁止</span> 将工程机、特殊调校机表现当作零售机结论。</li>
+              <li><span class="danger">禁止</span> 用短时间测试替代长期耗电和睡眠体验结论。</li>
+            </ul>
+          </div>
+
+          <div class="card red">
+            <h3>商单红线</h3>
+            <ul>
+              <li><span class="danger">禁止</span> 接受“不能拍安装收费和安装过程”的合作。</li>
+              <li><span class="danger">禁止</span> 接受品牌要求删除真实缺点或修改推荐等级。</li>
+              <li><span class="danger">禁止</span> 未披露商业合作、样品来源或佣金关系。</li>
+              <li><span class="danger">禁止</span> 恶意贬低竞品或使用无依据行业排名。</li>
+              <li><span class="danger">禁止</span> 使用“全网最省电、零噪音、永不直吹、全屋秒冷”等绝对表述。</li>
+              <li><span class="danger">禁止</span> 未经授权声称官方合作或官方推荐。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card orange">
+            <h3>可以接受的品牌修改</h3>
+            <ul>
+              <li><span class="success">允许</span> 修改产品名称、型号、价格、参数等事实错误。</li>
+              <li><span class="success">允许</span> 补充官方功能解释、保修政策、安装政策。</li>
+              <li><span class="success">允许</span> 修改未上市信息、保密信息、发布时间。</li>
+              <li><span class="success">允许</span> 指出测试方法中的技术问题并要求复测。</li>
+            </ul>
+          </div>
+
+          <div class="card green">
+            <h3>不能接受的品牌修改</h3>
+            <ul>
+              <li><span class="danger">不允许</span> 删除真实噪音、异响、直吹、温控波动等问题。</li>
+              <li><span class="danger">不允许</span> 要求把“不推荐”改成“推荐”。</li>
+              <li><span class="danger">不允许</span> 隐藏安装收费、售后争议和辅材加价。</li>
+              <li><span class="danger">不允许</span> 删除样品来源和商业合作披露。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">11</span>
+          <h2>商务开发需要的材料清单</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>账号基础资料</h3>
+            <ul>
+              <li>账号简介：定位、受众、平台。</li>
+              <li>B站 / YouTube 主页链接。</li>
+              <li>粉丝数、平均播放量、完播率、互动率。</li>
+              <li>用户画像：城市、年龄、消费力、家庭结构、装修阶段。</li>
+              <li>内容栏目：单品测评、横评、安装避坑、选购攻略、大促推荐。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>专业能力证明</h3>
+            <ul>
+              <li>空调测试 SOP 文档。</li>
+              <li>测试房间、测点、工具照片。</li>
+              <li>安装记录模板和安装过程案例。</li>
+              <li>历史测评案例链接。</li>
+              <li>温度 / 功耗 / 噪音数据表样例。</li>
+              <li>评分模型和推荐等级说明。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>商业合作材料</h3>
+            <ul>
+              <li>商务报价单。</li>
+              <li>合作权益包。</li>
+              <li>发布排期表。</li>
+              <li>内容授权报价。</li>
+              <li>佣金合作说明。</li>
+              <li>合同模板、付款条款、安装条款。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>材料名称</th>
+              <th>用途</th>
+              <th>建议格式</th>
+              <th>是否必备</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>账号 Media Kit</td>
+              <td>商务初次开发展示账号价值。</td>
+              <td>PDF / 网页</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>空调测评体系说明</td>
+              <td>证明账号具备真实安装、环境测试和数据记录能力。</td>
+              <td>PDF / 网页 / 飞书文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>历史案例合集</td>
+              <td>展示内容风格、播放表现和用户反馈。</td>
+              <td>链接表 / PDF</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>报价单</td>
+              <td>明确长视频、切片、直播、授权价格。</td>
+              <td>PDF / 表格</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>安装执行说明</td>
+              <td>提前说明安装流程、拍摄要求、收费记录。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+            <tr>
+              <td>数据复盘模板</td>
+              <td>展示合作后可交付播放、互动、点击、成交数据。</td>
+              <td>PDF / 表格</td>
+              <td class="score">建议</td>
+            </tr>
+            <tr>
+              <td>合规披露说明</td>
+              <td>提前说明商单、样品、佣金披露方式。</td>
+              <td>合同附件 / 文档</td>
+              <td class="score">必备</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">12</span>
+          <h2>商务开发 SOP</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="step">
+            <b>1</b>
+            <strong>目标名单</strong>
+            <span>品牌/平台/渠道</span>
+          </div>
+          <div class="step">
+            <b>2</b>
+            <strong>资料发送</strong>
+            <span>Media Kit/案例</span>
+          </div>
+          <div class="step">
+            <b>3</b>
+            <strong>需求确认</strong>
+            <span>新品/旺季/转化</span>
+          </div>
+          <div class="step">
+            <b>4</b>
+            <strong>产品初筛</strong>
+            <span>匹数/安装/卖点</span>
+          </div>
+          <div class="step">
+            <b>5</b>
+            <strong>方案报价</strong>
+            <span>视频/切片/授权</span>
+          </div>
+          <div class="step">
+            <b>6</b>
+            <strong>合同排期</strong>
+            <span>样机/安装/付款</span>
+          </div>
+          <div class="step">
+            <b>7</b>
+            <strong>执行发布</strong>
+            <span>安装/测试/上线</span>
+          </div>
+          <div class="step">
+            <b>8</b>
+            <strong>复盘续约</strong>
+            <span>数据/ROI/节点</span>
+          </div>
+        </div>
+
+        <div style="height:18px;"></div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>商务开发目标客户</h3>
+            <ul>
+              <li>空调品牌：格力、美的、海尔、海信、TCL、奥克斯、小米、华凌、松下、大金、三菱电机等。</li>
+              <li>电商平台：京东、天猫、抖音电商、拼多多、苏宁易购。</li>
+              <li>渠道商：品牌旗舰店、区域家电卖场、线上授权店。</li>
+              <li>安装与服务：官方安装、第三方安装、清洗保养、移机服务。</li>
+              <li>家装相关：中央空调、新风系统、全屋智能、家居装修平台。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>首次商务沟通要问清楚</h3>
+            <ul>
+              <li>推广目标：新品曝光、技术解释、口碑建设还是大促转化？</li>
+              <li>合作产品：具体型号、匹数、能效、是否首发。</li>
+              <li>样机属性：零售机、媒体机、工程机、特殊调校机。</li>
+              <li>安装方式：官方安装、品牌安排、博主自购自装。</li>
+              <li>安装费用：基础安装、加管、高空、支架、打孔谁承担？</li>
+              <li>合作形式：单品测评、横评、攻略植入、直播、切片。</li>
+              <li>审核范围：是否只审核事实错误，不干预结论。</li>
+              <li>是否需要竞品排他、内容授权、二次投流。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">13</span>
+          <h2>商务权益包建议</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>合作包</th>
+              <th>适合场景</th>
+              <th>交付内容</th>
+              <th>注意事项</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="score">基础单品测评包</td>
+              <td>新品上市、单品种草。</td>
+              <td>1 条 8-15 分钟长视频 + 简介区链接 + 评论置顶。</td>
+              <td>需明确安装记录是否纳入视频。</td>
+            </tr>
+            <tr>
+              <td class="score">深度实测包</td>
+              <td>旗舰挂机、柜机、新风空调、高端机型。</td>
+              <td>1 条 15-25 分钟深度视频 + 温度曲线 + 功耗噪音图表 + 3-5 条切片。</td>
+              <td>需充分测试周期和稳定环境。</td>
+            </tr>
+            <tr>
+              <td class="score">安装避坑包</td>
+              <td>品牌希望强调官方安装和售后。</td>
+              <td>安装全流程记录 + 辅材收费说明 + 售后政策解读。</td>
+              <td>适合空调差异化内容。</td>
+            </tr>
+            <tr>
+              <td class="score">横评赞助包</td>
+              <td>品牌希望与竞品对比证明实力。</td>
+              <td>多机横评 + 品牌赞助鸣谢 + 客观数据展示。</td>
+              <td>必须提前约定结论不可干预。</td>
+            </tr>
+            <tr>
+              <td class="score">大促转化包</td>
+              <td>618、双11、夏季高温、国补。</td>
+              <td>推荐攻略 + 多平台分发 + 购买清单 + 评论价格更新。</td>
+              <td>适合商单费 + 佣金模式。</td>
+            </tr>
+            <tr>
+              <td class="score">内容授权包</td>
+              <td>品牌用于官方号、详情页、广告投放。</td>
+              <td>视频片段授权、口播授权、图表授权、投流白名单。</td>
+              <td>需明确授权范围、平台、期限。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">14</span>
+          <h2>合同与合作条款检查清单</h2>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item"><span class="check">✓</span> 明确合作性质：商单、送测、借测、纯佣、授权。</div>
+          <div class="check-item"><span class="check">✓</span> 明确样机归属：安装留用、拆机寄回、买断或折价购买。</div>
+          <div class="check-item"><span class="check">✓</span> 明确安装责任：官方安装、品牌安排或博主自行预约。</div>
+          <div class="check-item"><span class="check">✓</span> 明确安装费用：加管、高空、支架、打孔、漏保、拆旧。</div>
+          <div class="check-item"><span class="check">✓</span> 明确内容形式：长视频、短视频、直播、图文、社群。</div>
+          <div class="check-item"><span class="check">✓</span> 明确发布平台：B站、YouTube、抖音、小红书、视频号。</div>
+          <div class="check-item"><span class="check">✓</span> 明确审核范围：仅限事实错误、品牌信息、保密信息。</div>
+          <div class="check-item"><span class="check">✓</span> 明确结论自主权：品牌不得要求修改真实测评结论。</div>
+          <div class="check-item"><span class="check">✓</span> 明确排他条款：竞品范围、排他周期、额外费用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确付款条款：预付款、尾款、发票、逾期责任。</div>
+          <div class="check-item"><span class="check">✓</span> 明确授权条款：是否允许二次剪辑、投流、详情页使用。</div>
+          <div class="check-item"><span class="check">✓</span> 明确异常处理：安装不规范、机器故障、测试严重翻车如何处理。</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">15</span>
+          <h2>带货转化 SOP</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card blue">
+            <h3>发布前</h3>
+            <ul>
+              <li>确认主推型号、匹数、能效、适用面积。</li>
+              <li>确认京东 / 天猫 / 抖音等链接和佣金比例。</li>
+              <li>记录当前价格、历史低价、大促预估价。</li>
+              <li>准备不同房间清单：卧室、客厅、西晒房、租房、南方制热。</li>
+              <li>确认是否可叠加国补、平台券、店铺券、以旧换新。</li>
+            </ul>
+          </div>
+
+          <div class="card cyan">
+            <h3>发布中</h3>
+            <ul>
+              <li>简介区放购买链接、价格记录时间和安装费用提醒。</li>
+              <li>评论区置顶推荐型号、适合面积、优惠说明。</li>
+              <li>章节标注“安装避坑”和“购买建议”。</li>
+              <li>视频中提醒价格和安装费会变化，以下单页面和当地政策为准。</li>
+              <li>避免“全网最低”“永久保价”“零安装费”等不可控表述。</li>
+            </ul>
+          </div>
+
+          <div class="card orange">
+            <h3>发布后</h3>
+            <ul>
+              <li>每日更新价格变化、优惠券、库存和安装政策。</li>
+              <li>回复用户面积、朝向、匹数、安装费用问题。</li>
+              <li>统计链接点击、成交、佣金、退货。</li>
+              <li>收集安装和售后反馈并补充说明。</li>
+              <li>大促后复盘哪些型号转化最好。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">16</span>
+          <h2>对外披露模板</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>视频开头 / 简介披露</h3>
+            <p>
+              本期测试产品由品牌提供样机，视频包含商业合作内容。我们的测试结论基于实际安装、温度测试、功耗测试和使用体验，品牌不干预最终评价。视频简介中的部分购买链接可能产生佣金，但不会影响我们的推荐标准。
+            </p>
+          </div>
+
+          <div class="card cyan">
+            <h3>非商单送测披露</h3>
+            <p>
+              本期产品为品牌送测 / 借测样机，未收取视频制作费用。测试内容和结论由我们独立完成。样品来源不影响我们对制冷、功耗、噪音、安装和购买建议的判断。
+            </p>
+          </div>
+
+          <div class="card orange">
+            <h3>价格 / 安装费披露</h3>
+            <p>
+              视频中提到的价格为录制 / 发布时参考价格，空调价格和安装费用会随平台活动、地区、楼层、辅材和补贴变化，请以下单页面和当地安装政策为准。我会在评论区尽量更新关键价格变化。
+            </p>
+          </div>
+
+          <div class="card purple">
+            <h3>横评披露</h3>
+            <p>
+              本期横评涉及的产品型号、匹数、能效、测试房间、室外温度、安装条件、测试模式和价格均已记录。不同房间、不同安装质量和不同地区气候可能导致结果差异，购买前请结合自家情况判断。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <span class="num">17</span>
+          <h2>最终文件归档清单</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>归档类别</th>
+              <th>文件内容</th>
+              <th>命名建议</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>样品资料</td>
+              <td>型号、序列号、能效、样品来源、价格、物流信息。</td>
+              <td>品牌_型号_样品登记</td>
+              <td>后续复查和商务对账。</td>
+            </tr>
+            <tr>
+              <td>安装资料</td>
+              <td>预约记录、抽真空、铜管、支架、打孔、收费、外机位置。</td>
+              <td>品牌_型号_安装记录</td>
+              <td>验证安装质量和真实成本。</td>
+            </tr>
+            <tr>
+              <td>测试数据</td>
+              <td>温度、湿度、功耗、噪音、风速、室外温度、运行模式。</td>
+              <td>品牌_型号_测试数据</td>
+              <td>生成图表和结论依据。</td>
+            </tr>
+            <tr>
+              <td>视频素材</td>
+              <td>口播、B-roll、安装过程、温度曲线、功耗、噪音、App。</td>
+              <td>日期_型号_素材类型</td>
+              <td>剪辑和二次切片。</td>
+            </tr>
+            <tr>
+              <td>脚本文件</td>
+              <td>选题、口播、章节、标题、简介、评论置顶。</td>
+              <td>型号_视频脚本_V1</td>
+              <td>发布和复盘。</td>
+            </tr>
+            <tr>
+              <td>商务文件</td>
+              <td>合同、报价、需求单、发票、付款记录、授权文件。</td>
+              <td>客户_项目_商务文件</td>
+              <td>项目管理和财务归档。</td>
+            </tr>
+            <tr>
+              <td>复盘报告</td>
+              <td>播放、完播、互动、链接点击、成交、退货、用户反馈。</td>
+              <td>项目_发布后7天复盘</td>
+              <td>商务续约和选题优化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© 空调测评内容 SOP 与商务开发报告 · 适用于 B站 / YouTube 数码家电长视频团队</div>
+      <div>版本：V1.0</div>
+    </footer>
+  </div>
+</body>
+</html>
